@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#f9f9f9</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="backgroundColor">#000000</color>
+    <color name ="backgroundTextView">#ffffff</color>
+    <color name="circlesView1">#04FFFFFF</color>
+    <color name="circlesView2">#05FFFFFF</color>
+    <color name="progressBarColor">#863134</color>
+    <color name="progressBarColorCharge">#2b2d2c</color>
+</resources>

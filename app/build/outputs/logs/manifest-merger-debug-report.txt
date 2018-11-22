@@ -1,0 +1,756 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:2:1-49:12
+MERGED from [com.google.android.gms:play-services:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-9.2.0.aar/3d8652bba5f1076354bce6653961e850/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-cast-framework:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-9.2.0.aar/b7ed24444dc061211c8bf8daa5eb96ba/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-cast:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-9.2.0.aar/a9866f7b9cefad303f7a9637109c1bce/AndroidManifest.xml:16:1-20:12
+MERGED from [com.android.support:mediarouter-v7:23.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-23.0.0.aar/082fedcd0db67dc023d67ea4f94e3923/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/3b37f6848a463671a8d101f6e243b440/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/4f91fa22a44f27eb15a62cd98ccb2fd0/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-contextmanager:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-contextmanager-9.2.0.aar/b6d0a57f6d8cb76720e8b18710f02e72/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-fitness:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-fitness-9.2.0.aar/05fdf54b97075047bc38ae37812b5d3a/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-location:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-location-9.2.0.aar/9d02f4e0bf8af84ce5296c269a4b6544/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-ads:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-9.2.0.aar/278aa8132b7bd6217879da9d0da1bacb/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-ads-lite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-9.2.0.aar/ae52fcd020093b370023457a9f065490/AndroidManifest.xml:16:1-33:12
+MERGED from [com.google.android.gms:play-services-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-9.2.0.aar/6e699c46fd75f92ceafdafd2bacd11bc/AndroidManifest.xml:16:1-28:12
+MERGED from [com.google.android.gms:play-services-tagmanager:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-9.2.0.aar/46f997673b6c3a833255bd9ef505bd52/AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-9.2.0.aar/6a75146462dd3f39f604d53c5bb1feb5/AndroidManifest.xml:16:1-28:12
+MERGED from [com.google.android.gms:play-services-appinvite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-9.2.0.aar/2e47be76dd65bd0698f956e7f02e23bd/AndroidManifest.xml:16:1-31:12
+MERGED from [com.google.android.gms:play-services-auth:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.2.0.aar/073c91f03c80f25270df30709f5025a4/AndroidManifest.xml:16:1-33:12
+MERGED from [com.google.android.gms:play-services-auth-base:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-9.2.0.aar/4d2e82b7a216f1c2c4b6ee4f8e0d9b8c/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-clearcut:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-clearcut-9.2.0.aar/567bbebab200f0695ace295e746bcd5b/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.firebase:firebase-config:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-config-9.2.0.aar/25a2bd4958883c38fe3c459607c5c07d/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.firebase:firebase-crash:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-crash-9.2.0.aar/01c0f73516e358bc8f68b5e0924559d5/AndroidManifest.xml:16:1-34:12
+MERGED from [com.google.android.gms:play-services-games:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-games-9.2.0.aar/c380fd51f936a19931d0221ea2c3c32d/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-drive:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-drive-9.2.0.aar/a6f007b9ef2103f800a3a48f50ff80bf/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.firebase:firebase-auth:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-auth-9.2.0.aar/5411ab276c985fcd933af0cea6f98048/AndroidManifest.xml:16:1-22:12
+MERGED from [com.google.firebase:firebase-auth-common:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-auth-common-9.2.0.aar/fa632d21ee6dacd25b50a36fa9959041/AndroidManifest.xml:16:1-22:12
+MERGED from [com.google.firebase:firebase-auth-module:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-auth-module-9.2.0.aar/ae8918d2a22499b470d222db0a9ebc6b/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-database:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-database-9.2.0.aar/53da4c931d736549b5b57424a483d14f/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-database-connection:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-9.2.0.aar/7dbc6d82f87017bc4b2095236cbdfae3/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-storage:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-storage-9.2.0.aar/2fb5ea7ca8189d17a1c42b0af476a63c/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-storage-common:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-9.2.0.aar/0b6abad9074b92883e289b4cf306c0e3/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-gcm:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-gcm-9.2.0.aar/1df0a048c1531ebefea707c214323516/AndroidManifest.xml:16:1-25:12
+MERGED from [com.google.android.gms:play-services-appindexing:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appindexing-9.2.0.aar/33a291a7f53df38c1b0473826b575328/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-wallet:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-wallet-9.2.0.aar/3a0ae8375cab7ccdc54466babf4f283b/AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.android.gms:play-services-identity:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-identity-9.2.0.aar/4f9b98a43bdc04863d78c6175f75c7b3/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-iid-9.2.0.aar/a758c35a44ef8183453c4fb33ac9c9f2/AndroidManifest.xml:16:1-25:12
+MERGED from [com.google.android.gms:play-services-places:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-places-9.2.0.aar/633cd75c7b89bcc99bf80c7544a639f3/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-maps:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.2.0.aar/678daf7f28bbcb33bc5f677bb02f89f8/AndroidManifest.xml:16:1-28:12
+MERGED from [com.google.android.gms:play-services-nearby:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-nearby-9.2.0.aar/428b267392b7de4a7b38d6f56867cbec/AndroidManifest.xml:2:1-7:12
+MERGED from [com.google.android.gms:play-services-panorama:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-panorama-9.2.0.aar/2b4dbc0d3f455dc829bfd240589477b4/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-plus:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-plus-9.2.0.aar/13bc8be7c8d5a7119cd06fa020e89d7f/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-safetynet:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-9.2.0.aar/9eb13f1a2475f585e752a51113fbc901/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-vision:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-vision-9.2.0.aar/11d34f8040c779358b85fd61d83c3798/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-wearable:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-wearable-9.2.0.aar/26d8fe989dd4ca5ebce6ff7f452a8a2c/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-base:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-base-9.2.0.aar/6c7d931a542adff442bd521089f94e26/AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.firebase:firebase-messaging:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-messaging-9.2.0.aar/d9a4affa91148f2e3dee6fb2bb6c0aab/AndroidManifest.xml:16:1-33:12
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:16:1-39:12
+MERGED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:16:1-42:12
+MERGED from [com.google.firebase:firebase-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.2.0.aar/63f4ed8d10c5025c6ac0313264bc6442/AndroidManifest.xml:16:1-42:12
+MERGED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:16:1-60:12
+MERGED from [com.google.firebase:firebase-common:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-common-9.2.0.aar/3b897f2dee16d669c4936861ba469319/AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.android.gms:play-services-gass:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-gass-9.2.0.aar/02656d132df13fe37aa3b9333131df93/AndroidManifest.xml:16:1-20:12
+MERGED from [com.google.android.gms:play-services-tasks:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tasks-9.2.0.aar/b5067471887a880f574b56b9731b253f/AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.2.0.aar/01696592cc5c9cadffb514ce43ab85d1/AndroidManifest.xml:16:1-26:12
+MERGED from [com.android.support:support-v4:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-v4-28.0.0.aar/ea9a3ca6d767b26aa44d1ed55b107f43/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/51c3718e2d8a728b5cc57e461274f753/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.volley:volley:1.1.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/e944f626cc4b05765668bf6d1faefe16/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/74a0cb5edf33634a0e6abcb25ada15bf/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/2667adbafd7718720fee3e7abdb0ff04/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/8c2198bece0f700721317b8bb13e52ab/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/0fd1283690f1787becd203843f548533/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/dbf41085651c02b2bc9cd102550554c3/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/9fbe9281cc723eae850026dc00bb3872/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/fee21e48408bbc7cfe9e18dd1c7aca4f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/6ce3c7edd51111458c6579f5594a051d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/fe9690b34387d4fc619847d8b2b1922d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/dd514c020326c0650c3f1c0e38e14bcf/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/a6aaeec25b0cb35c4b399638d274b23a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/0304bf19a522040abc188040f95360de/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/46247c94449a075c3857265c7eda6746/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/9ed0177195e1594293b1ad6d357495e5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/eaf2c7df0aa011766eea40d17c4d06d0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/1e2d3553fd8bf8b3c0a619730a8f6727/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/2a731ba51abe8e7f1d3c057d1d126a8d/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/59071b71ec10a902584efe298b9ea3c1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/cf5e80a46d488dca05835734348fd266/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/7a0beaee251c702a73d867040ce05358/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/182bf53f1b9da267d5569ef6f86b0d69/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/b819a3aabb26f184f0fd30bd899720ca/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/a097882489143f2e5b0b92c0e13ac3b4/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/78975e62f44a1e1eb28b4771999ef2f2/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/f5a7ffecea31c17be33255711353efb6/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/b363067f56f11927126504b2ff4c5e08/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:2:1-49:12
+INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:2:1-49:12
+	package
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:3:5-56
+		INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:2:1-49:12
+		INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:2:1-49:12
+		INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:6:5-67
+MERGED from [com.google.android.gms:play-services-ads-lite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-9.2.0.aar/ae52fcd020093b370023457a9f065490/AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-ads-lite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-9.2.0.aar/ae52fcd020093b370023457a9f065490/AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-9.2.0.aar/6e699c46fd75f92ceafdafd2bacd11bc/AndroidManifest.xml:21:5-67
+MERGED from [com.google.android.gms:play-services-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-9.2.0.aar/6e699c46fd75f92ceafdafd2bacd11bc/AndroidManifest.xml:21:5-67
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-9.2.0.aar/6a75146462dd3f39f604d53c5bb1feb5/AndroidManifest.xml:21:5-67
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-9.2.0.aar/6a75146462dd3f39f604d53c5bb1feb5/AndroidManifest.xml:21:5-67
+MERGED from [com.google.android.gms:play-services-appinvite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-9.2.0.aar/2e47be76dd65bd0698f956e7f02e23bd/AndroidManifest.xml:19:5-67
+MERGED from [com.google.android.gms:play-services-appinvite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-9.2.0.aar/2e47be76dd65bd0698f956e7f02e23bd/AndroidManifest.xml:19:5-67
+MERGED from [com.google.firebase:firebase-crash:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-crash-9.2.0.aar/01c0f73516e358bc8f68b5e0924559d5/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-crash:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-crash-9.2.0.aar/01c0f73516e358bc8f68b5e0924559d5/AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-gcm:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-gcm-9.2.0.aar/1df0a048c1531ebefea707c214323516/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-gcm:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-gcm-9.2.0.aar/1df0a048c1531ebefea707c214323516/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-iid-9.2.0.aar/a758c35a44ef8183453c4fb33ac9c9f2/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-iid-9.2.0.aar/a758c35a44ef8183453c4fb33ac9c9f2/AndroidManifest.xml:22:5-67
+MERGED from [com.google.android.gms:play-services-maps:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.2.0.aar/678daf7f28bbcb33bc5f677bb02f89f8/AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-maps:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.2.0.aar/678daf7f28bbcb33bc5f677bb02f89f8/AndroidManifest.xml:21:5-66
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:21:5-67
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.2.0.aar/63f4ed8d10c5025c6ac0313264bc6442/AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.2.0.aar/63f4ed8d10c5025c6ac0313264bc6442/AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:21:5-67
+	android:name
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:6:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-ads-lite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-9.2.0.aar/ae52fcd020093b370023457a9f065490/AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-ads-lite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-9.2.0.aar/ae52fcd020093b370023457a9f065490/AndroidManifest.xml:21:5-78
+MERGED from [com.google.android.gms:play-services-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-9.2.0.aar/6e699c46fd75f92ceafdafd2bacd11bc/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-9.2.0.aar/6e699c46fd75f92ceafdafd2bacd11bc/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-9.2.0.aar/6a75146462dd3f39f604d53c5bb1feb5/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-9.2.0.aar/6a75146462dd3f39f604d53c5bb1feb5/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-maps:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.2.0.aar/678daf7f28bbcb33bc5f677bb02f89f8/AndroidManifest.xml:20:5-78
+MERGED from [com.google.android.gms:play-services-maps:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.2.0.aar/678daf7f28bbcb33bc5f677bb02f89f8/AndroidManifest.xml:20:5-78
+MERGED from [com.google.android.gms:play-services-nearby:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-nearby-9.2.0.aar/428b267392b7de4a7b38d6f56867cbec/AndroidManifest.xml:5:5-79
+MERGED from [com.google.android.gms:play-services-nearby:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-nearby-9.2.0.aar/428b267392b7de4a7b38d6f56867cbec/AndroidManifest.xml:5:5-79
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:22:5-79
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.2.0.aar/63f4ed8d10c5025c6ac0313264bc6442/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.2.0.aar/63f4ed8d10c5025c6ac0313264bc6442/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:20:5-79
+MERGED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:20:5-79
+	android:name
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:7:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:8:5-81
+	android:name
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:8:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:9:5-79
+	android:name
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:9:22-76
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:10:5-75
+	android:name
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:10:22-73
+uses-permission#android.permission.WAKE_LOCK
+ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:11:5-67
+MERGED from [com.google.android.gms:play-services-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-9.2.0.aar/6e699c46fd75f92ceafdafd2bacd11bc/AndroidManifest.xml:25:5-67
+MERGED from [com.google.android.gms:play-services-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-9.2.0.aar/6e699c46fd75f92ceafdafd2bacd11bc/AndroidManifest.xml:25:5-67
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-9.2.0.aar/6a75146462dd3f39f604d53c5bb1feb5/AndroidManifest.xml:25:5-67
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-9.2.0.aar/6a75146462dd3f39f604d53c5bb1feb5/AndroidManifest.xml:25:5-67
+MERGED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.2.0.aar/63f4ed8d10c5025c6ac0313264bc6442/AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.2.0.aar/63f4ed8d10c5025c6ac0313264bc6442/AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:22:5-68
+MERGED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:22:5-68
+	android:name
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:11:22-65
+application
+ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:13:5-47:19
+MERGED from [com.google.android.gms:play-services:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-9.2.0.aar/3d8652bba5f1076354bce6653961e850/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-9.2.0.aar/3d8652bba5f1076354bce6653961e850/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-cast-framework:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-9.2.0.aar/b7ed24444dc061211c8bf8daa5eb96ba/AndroidManifest.xml:5:5-9:19
+MERGED from [com.google.android.gms:play-services-cast-framework:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-9.2.0.aar/b7ed24444dc061211c8bf8daa5eb96ba/AndroidManifest.xml:5:5-9:19
+MERGED from [com.google.android.gms:play-services-cast:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-9.2.0.aar/a9866f7b9cefad303f7a9637109c1bce/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-cast:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-9.2.0.aar/a9866f7b9cefad303f7a9637109c1bce/AndroidManifest.xml:19:5-20
+MERGED from [com.android.support:mediarouter-v7:23.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-23.0.0.aar/082fedcd0db67dc023d67ea4f94e3923/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:mediarouter-v7:23.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-23.0.0.aar/082fedcd0db67dc023d67ea4f94e3923/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/4f91fa22a44f27eb15a62cd98ccb2fd0/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/4f91fa22a44f27eb15a62cd98ccb2fd0/AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-contextmanager:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-contextmanager-9.2.0.aar/b6d0a57f6d8cb76720e8b18710f02e72/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-contextmanager:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-contextmanager-9.2.0.aar/b6d0a57f6d8cb76720e8b18710f02e72/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-fitness:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-fitness-9.2.0.aar/05fdf54b97075047bc38ae37812b5d3a/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-fitness:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-fitness-9.2.0.aar/05fdf54b97075047bc38ae37812b5d3a/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-location:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-location-9.2.0.aar/9d02f4e0bf8af84ce5296c269a4b6544/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-location:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-location-9.2.0.aar/9d02f4e0bf8af84ce5296c269a4b6544/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-ads-lite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-9.2.0.aar/ae52fcd020093b370023457a9f065490/AndroidManifest.xml:24:5-32:19
+MERGED from [com.google.android.gms:play-services-ads-lite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-9.2.0.aar/ae52fcd020093b370023457a9f065490/AndroidManifest.xml:24:5-32:19
+MERGED from [com.google.android.gms:play-services-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-9.2.0.aar/6e699c46fd75f92ceafdafd2bacd11bc/AndroidManifest.xml:27:5-20
+MERGED from [com.google.android.gms:play-services-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-9.2.0.aar/6e699c46fd75f92ceafdafd2bacd11bc/AndroidManifest.xml:27:5-20
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-9.2.0.aar/6a75146462dd3f39f604d53c5bb1feb5/AndroidManifest.xml:27:5-20
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-9.2.0.aar/6a75146462dd3f39f604d53c5bb1feb5/AndroidManifest.xml:27:5-20
+MERGED from [com.google.android.gms:play-services-appinvite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-9.2.0.aar/2e47be76dd65bd0698f956e7f02e23bd/AndroidManifest.xml:20:5-30:19
+MERGED from [com.google.android.gms:play-services-appinvite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-9.2.0.aar/2e47be76dd65bd0698f956e7f02e23bd/AndroidManifest.xml:20:5-30:19
+MERGED from [com.google.android.gms:play-services-auth:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.2.0.aar/073c91f03c80f25270df30709f5025a4/AndroidManifest.xml:20:5-32:19
+MERGED from [com.google.android.gms:play-services-auth:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.2.0.aar/073c91f03c80f25270df30709f5025a4/AndroidManifest.xml:20:5-32:19
+MERGED from [com.google.android.gms:play-services-clearcut:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-clearcut-9.2.0.aar/567bbebab200f0695ace295e746bcd5b/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-clearcut:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-clearcut-9.2.0.aar/567bbebab200f0695ace295e746bcd5b/AndroidManifest.xml:19:5-20
+MERGED from [com.google.firebase:firebase-config:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-config-9.2.0.aar/25a2bd4958883c38fe3c459607c5c07d/AndroidManifest.xml:19:5-20
+MERGED from [com.google.firebase:firebase-config:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-config-9.2.0.aar/25a2bd4958883c38fe3c459607c5c07d/AndroidManifest.xml:19:5-20
+MERGED from [com.google.firebase:firebase-crash:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-crash-9.2.0.aar/01c0f73516e358bc8f68b5e0924559d5/AndroidManifest.xml:24:5-32:19
+MERGED from [com.google.firebase:firebase-crash:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-crash-9.2.0.aar/01c0f73516e358bc8f68b5e0924559d5/AndroidManifest.xml:24:5-32:19
+MERGED from [com.google.android.gms:play-services-games:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-games-9.2.0.aar/c380fd51f936a19931d0221ea2c3c32d/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-games:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-games-9.2.0.aar/c380fd51f936a19931d0221ea2c3c32d/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-drive:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-drive-9.2.0.aar/a6f007b9ef2103f800a3a48f50ff80bf/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-drive:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-drive-9.2.0.aar/a6f007b9ef2103f800a3a48f50ff80bf/AndroidManifest.xml:19:5-20
+MERGED from [com.google.firebase:firebase-auth:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-auth-9.2.0.aar/5411ab276c985fcd933af0cea6f98048/AndroidManifest.xml:20:5-21:19
+MERGED from [com.google.firebase:firebase-auth:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-auth-9.2.0.aar/5411ab276c985fcd933af0cea6f98048/AndroidManifest.xml:20:5-21:19
+MERGED from [com.google.firebase:firebase-auth-common:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-auth-common-9.2.0.aar/fa632d21ee6dacd25b50a36fa9959041/AndroidManifest.xml:20:5-21:19
+MERGED from [com.google.firebase:firebase-auth-common:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-auth-common-9.2.0.aar/fa632d21ee6dacd25b50a36fa9959041/AndroidManifest.xml:20:5-21:19
+MERGED from [com.google.android.gms:play-services-gcm:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-gcm-9.2.0.aar/1df0a048c1531ebefea707c214323516/AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-gcm:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-gcm-9.2.0.aar/1df0a048c1531ebefea707c214323516/AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-appindexing:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appindexing-9.2.0.aar/33a291a7f53df38c1b0473826b575328/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-appindexing:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appindexing-9.2.0.aar/33a291a7f53df38c1b0473826b575328/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-identity:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-identity-9.2.0.aar/4f9b98a43bdc04863d78c6175f75c7b3/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-identity:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-identity-9.2.0.aar/4f9b98a43bdc04863d78c6175f75c7b3/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-iid-9.2.0.aar/a758c35a44ef8183453c4fb33ac9c9f2/AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-iid-9.2.0.aar/a758c35a44ef8183453c4fb33ac9c9f2/AndroidManifest.xml:24:5-20
+MERGED from [com.google.android.gms:play-services-places:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-places-9.2.0.aar/633cd75c7b89bcc99bf80c7544a639f3/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-places:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-places-9.2.0.aar/633cd75c7b89bcc99bf80c7544a639f3/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-maps:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.2.0.aar/678daf7f28bbcb33bc5f677bb02f89f8/AndroidManifest.xml:27:5-20
+MERGED from [com.google.android.gms:play-services-maps:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.2.0.aar/678daf7f28bbcb33bc5f677bb02f89f8/AndroidManifest.xml:27:5-20
+MERGED from [com.google.android.gms:play-services-nearby:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-nearby-9.2.0.aar/428b267392b7de4a7b38d6f56867cbec/AndroidManifest.xml:6:5-20
+MERGED from [com.google.android.gms:play-services-nearby:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-nearby-9.2.0.aar/428b267392b7de4a7b38d6f56867cbec/AndroidManifest.xml:6:5-20
+MERGED from [com.google.android.gms:play-services-panorama:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-panorama-9.2.0.aar/2b4dbc0d3f455dc829bfd240589477b4/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-panorama:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-panorama-9.2.0.aar/2b4dbc0d3f455dc829bfd240589477b4/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-plus:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-plus-9.2.0.aar/13bc8be7c8d5a7119cd06fa020e89d7f/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-plus:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-plus-9.2.0.aar/13bc8be7c8d5a7119cd06fa020e89d7f/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-safetynet:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-9.2.0.aar/9eb13f1a2475f585e752a51113fbc901/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-safetynet:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-9.2.0.aar/9eb13f1a2475f585e752a51113fbc901/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-vision:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-vision-9.2.0.aar/11d34f8040c779358b85fd61d83c3798/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-vision:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-vision-9.2.0.aar/11d34f8040c779358b85fd61d83c3798/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-wearable:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-wearable-9.2.0.aar/26d8fe989dd4ca5ebce6ff7f452a8a2c/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-wearable:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-wearable-9.2.0.aar/26d8fe989dd4ca5ebce6ff7f452a8a2c/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-base:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-base-9.2.0.aar/6c7d931a542adff442bd521089f94e26/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-base-9.2.0.aar/6c7d931a542adff442bd521089f94e26/AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.firebase:firebase-messaging:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-messaging-9.2.0.aar/d9a4affa91148f2e3dee6fb2bb6c0aab/AndroidManifest.xml:20:5-32:19
+MERGED from [com.google.firebase:firebase-messaging:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-messaging-9.2.0.aar/d9a4affa91148f2e3dee6fb2bb6c0aab/AndroidManifest.xml:20:5-32:19
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:24:5-38:19
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:24:5-38:19
+MERGED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:26:5-41:19
+MERGED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:26:5-41:19
+MERGED from [com.google.firebase:firebase-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.2.0.aar/63f4ed8d10c5025c6ac0313264bc6442/AndroidManifest.xml:26:5-41:19
+MERGED from [com.google.firebase:firebase-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.2.0.aar/63f4ed8d10c5025c6ac0313264bc6442/AndroidManifest.xml:26:5-41:19
+MERGED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:30:5-59:19
+MERGED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:30:5-59:19
+MERGED from [com.google.firebase:firebase-common:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-common-9.2.0.aar/3b897f2dee16d669c4936861ba469319/AndroidManifest.xml:5:5-12:19
+MERGED from [com.google.firebase:firebase-common:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-common-9.2.0.aar/3b897f2dee16d669c4936861ba469319/AndroidManifest.xml:5:5-12:19
+MERGED from [com.google.android.gms:play-services-gass:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-gass-9.2.0.aar/02656d132df13fe37aa3b9333131df93/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-gass:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-gass-9.2.0.aar/02656d132df13fe37aa3b9333131df93/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-tasks:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tasks-9.2.0.aar/b5067471887a880f574b56b9731b253f/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tasks-9.2.0.aar/b5067471887a880f574b56b9731b253f/AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.2.0.aar/01696592cc5c9cadffb514ce43ab85d1/AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.2.0.aar/01696592cc5c9cadffb514ce43ab85d1/AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.volley:volley:1.1.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/e944f626cc4b05765668bf6d1faefe16/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/e944f626cc4b05765668bf6d1faefe16/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-compat:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/eaf2c7df0aa011766eea40d17c4d06d0/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/eaf2c7df0aa011766eea40d17c4d06d0/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/1e2d3553fd8bf8b3c0a619730a8f6727/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/1e2d3553fd8bf8b3c0a619730a8f6727/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/eaf2c7df0aa011766eea40d17c4d06d0/AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:19:9-35
+	android:label
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:17:9-41
+	android:hardwareAccelerated
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:15:9-44
+	android:roundIcon
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:18:9-48
+	android:largeHeap
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:20:9-33
+	android:icon
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:16:9-43
+	android:allowBackup
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:14:9-35
+	android:theme
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:21:9-53
+	android:usesCleartextTraffic
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:22:9-44
+activity#com.example.gabriela.legalsecurityandroid.activities.SplashActivity
+ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:24:9-32:20
+	android:screenOrientation
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:26:13-49
+	android:name
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:25:13-54
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:27:13-31:29
+action#android.intent.action.MAIN
+ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:28:17-69
+	android:name
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:28:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:30:17-77
+	android:name
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:30:27-74
+activity#com.example.gabriela.legalsecurityandroid.activities.LoginActivity
+ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:33:9-36:15
+	android:screenOrientation
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:35:13-49
+	android:name
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:34:13-53
+activity#com.example.gabriela.legalsecurityandroid.activities.SelectUserActivity
+ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:37:9-39:52
+	android:screenOrientation
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:39:13-49
+	android:name
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:38:13-58
+activity#com.example.gabriela.legalsecurityandroid.activities.HomeActivity
+ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:40:9-42:52
+	android:screenOrientation
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:42:13-49
+	android:name
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:41:13-52
+activity#com.example.gabriela.legalsecurityandroid.activities.InHomeActivity
+ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:43:9-45:52
+	android:screenOrientation
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:45:13-49
+	android:name
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml:44:13-54
+uses-sdk
+INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml
+INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml
+MERGED from [com.google.android.gms:play-services:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-9.2.0.aar/3d8652bba5f1076354bce6653961e850/AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-9.2.0.aar/3d8652bba5f1076354bce6653961e850/AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-cast-framework:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-9.2.0.aar/b7ed24444dc061211c8bf8daa5eb96ba/AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-cast-framework:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-9.2.0.aar/b7ed24444dc061211c8bf8daa5eb96ba/AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-cast:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-9.2.0.aar/a9866f7b9cefad303f7a9637109c1bce/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-cast:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-9.2.0.aar/a9866f7b9cefad303f7a9637109c1bce/AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:mediarouter-v7:23.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-23.0.0.aar/082fedcd0db67dc023d67ea4f94e3923/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:mediarouter-v7:23.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-23.0.0.aar/082fedcd0db67dc023d67ea4f94e3923/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/3b37f6848a463671a8d101f6e243b440/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/3b37f6848a463671a8d101f6e243b440/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/4f91fa22a44f27eb15a62cd98ccb2fd0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/4f91fa22a44f27eb15a62cd98ccb2fd0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-contextmanager:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-contextmanager-9.2.0.aar/b6d0a57f6d8cb76720e8b18710f02e72/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-contextmanager:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-contextmanager-9.2.0.aar/b6d0a57f6d8cb76720e8b18710f02e72/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-fitness:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-fitness-9.2.0.aar/05fdf54b97075047bc38ae37812b5d3a/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-fitness:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-fitness-9.2.0.aar/05fdf54b97075047bc38ae37812b5d3a/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-location:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-location-9.2.0.aar/9d02f4e0bf8af84ce5296c269a4b6544/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-location:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-location-9.2.0.aar/9d02f4e0bf8af84ce5296c269a4b6544/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-ads:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-9.2.0.aar/278aa8132b7bd6217879da9d0da1bacb/AndroidManifest.xml:19:5-42
+MERGED from [com.google.android.gms:play-services-ads:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-9.2.0.aar/278aa8132b7bd6217879da9d0da1bacb/AndroidManifest.xml:19:5-42
+MERGED from [com.google.android.gms:play-services-ads-lite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-9.2.0.aar/ae52fcd020093b370023457a9f065490/AndroidManifest.xml:23:5-42
+MERGED from [com.google.android.gms:play-services-ads-lite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-9.2.0.aar/ae52fcd020093b370023457a9f065490/AndroidManifest.xml:23:5-42
+MERGED from [com.google.android.gms:play-services-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-9.2.0.aar/6e699c46fd75f92ceafdafd2bacd11bc/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-9.2.0.aar/6e699c46fd75f92ceafdafd2bacd11bc/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-tagmanager:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-9.2.0.aar/46f997673b6c3a833255bd9ef505bd52/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-tagmanager:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-9.2.0.aar/46f997673b6c3a833255bd9ef505bd52/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-9.2.0.aar/6a75146462dd3f39f604d53c5bb1feb5/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-9.2.0.aar/6a75146462dd3f39f604d53c5bb1feb5/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appinvite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-9.2.0.aar/2e47be76dd65bd0698f956e7f02e23bd/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appinvite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-9.2.0.aar/2e47be76dd65bd0698f956e7f02e23bd/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-auth:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.2.0.aar/073c91f03c80f25270df30709f5025a4/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-auth:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.2.0.aar/073c91f03c80f25270df30709f5025a4/AndroidManifest.xml:18:5-43
+MERGED from [com.google.android.gms:play-services-auth-base:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-9.2.0.aar/4d2e82b7a216f1c2c4b6ee4f8e0d9b8c/AndroidManifest.xml:5:5-43
+MERGED from [com.google.android.gms:play-services-auth-base:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-auth-base-9.2.0.aar/4d2e82b7a216f1c2c4b6ee4f8e0d9b8c/AndroidManifest.xml:5:5-43
+MERGED from [com.google.android.gms:play-services-clearcut:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-clearcut-9.2.0.aar/567bbebab200f0695ace295e746bcd5b/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-clearcut:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-clearcut-9.2.0.aar/567bbebab200f0695ace295e746bcd5b/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-config:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-config-9.2.0.aar/25a2bd4958883c38fe3c459607c5c07d/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-config:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-config-9.2.0.aar/25a2bd4958883c38fe3c459607c5c07d/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-crash:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-crash-9.2.0.aar/01c0f73516e358bc8f68b5e0924559d5/AndroidManifest.xml:22:5-42
+MERGED from [com.google.firebase:firebase-crash:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-crash-9.2.0.aar/01c0f73516e358bc8f68b5e0924559d5/AndroidManifest.xml:22:5-42
+MERGED from [com.google.android.gms:play-services-games:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-games-9.2.0.aar/c380fd51f936a19931d0221ea2c3c32d/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-games:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-games-9.2.0.aar/c380fd51f936a19931d0221ea2c3c32d/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-drive:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-drive-9.2.0.aar/a6f007b9ef2103f800a3a48f50ff80bf/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-drive:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-drive-9.2.0.aar/a6f007b9ef2103f800a3a48f50ff80bf/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-auth:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-auth-9.2.0.aar/5411ab276c985fcd933af0cea6f98048/AndroidManifest.xml:18:5-43
+MERGED from [com.google.firebase:firebase-auth:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-auth-9.2.0.aar/5411ab276c985fcd933af0cea6f98048/AndroidManifest.xml:18:5-43
+MERGED from [com.google.firebase:firebase-auth-common:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-auth-common-9.2.0.aar/fa632d21ee6dacd25b50a36fa9959041/AndroidManifest.xml:18:5-43
+MERGED from [com.google.firebase:firebase-auth-common:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-auth-common-9.2.0.aar/fa632d21ee6dacd25b50a36fa9959041/AndroidManifest.xml:18:5-43
+MERGED from [com.google.firebase:firebase-auth-module:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-auth-module-9.2.0.aar/ae8918d2a22499b470d222db0a9ebc6b/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-auth-module:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-auth-module-9.2.0.aar/ae8918d2a22499b470d222db0a9ebc6b/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-database:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-database-9.2.0.aar/53da4c931d736549b5b57424a483d14f/AndroidManifest.xml:5:5-43
+MERGED from [com.google.firebase:firebase-database:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-database-9.2.0.aar/53da4c931d736549b5b57424a483d14f/AndroidManifest.xml:5:5-43
+MERGED from [com.google.firebase:firebase-database-connection:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-9.2.0.aar/7dbc6d82f87017bc4b2095236cbdfae3/AndroidManifest.xml:5:5-43
+MERGED from [com.google.firebase:firebase-database-connection:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-9.2.0.aar/7dbc6d82f87017bc4b2095236cbdfae3/AndroidManifest.xml:5:5-43
+MERGED from [com.google.firebase:firebase-storage:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-storage-9.2.0.aar/2fb5ea7ca8189d17a1c42b0af476a63c/AndroidManifest.xml:5:5-43
+MERGED from [com.google.firebase:firebase-storage:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-storage-9.2.0.aar/2fb5ea7ca8189d17a1c42b0af476a63c/AndroidManifest.xml:5:5-43
+MERGED from [com.google.firebase:firebase-storage-common:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-9.2.0.aar/0b6abad9074b92883e289b4cf306c0e3/AndroidManifest.xml:5:5-43
+MERGED from [com.google.firebase:firebase-storage-common:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-storage-common-9.2.0.aar/0b6abad9074b92883e289b4cf306c0e3/AndroidManifest.xml:5:5-43
+MERGED from [com.google.android.gms:play-services-gcm:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-gcm-9.2.0.aar/1df0a048c1531ebefea707c214323516/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-gcm:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-gcm-9.2.0.aar/1df0a048c1531ebefea707c214323516/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appindexing:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appindexing-9.2.0.aar/33a291a7f53df38c1b0473826b575328/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-appindexing:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appindexing-9.2.0.aar/33a291a7f53df38c1b0473826b575328/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-wallet:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-wallet-9.2.0.aar/3a0ae8375cab7ccdc54466babf4f283b/AndroidManifest.xml:19:5-42
+MERGED from [com.google.android.gms:play-services-wallet:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-wallet-9.2.0.aar/3a0ae8375cab7ccdc54466babf4f283b/AndroidManifest.xml:19:5-42
+MERGED from [com.google.android.gms:play-services-identity:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-identity-9.2.0.aar/4f9b98a43bdc04863d78c6175f75c7b3/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-identity:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-identity-9.2.0.aar/4f9b98a43bdc04863d78c6175f75c7b3/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-iid-9.2.0.aar/a758c35a44ef8183453c4fb33ac9c9f2/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-iid-9.2.0.aar/a758c35a44ef8183453c4fb33ac9c9f2/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-places:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-places-9.2.0.aar/633cd75c7b89bcc99bf80c7544a639f3/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-places:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-places-9.2.0.aar/633cd75c7b89bcc99bf80c7544a639f3/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-maps:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.2.0.aar/678daf7f28bbcb33bc5f677bb02f89f8/AndroidManifest.xml:26:5-42
+MERGED from [com.google.android.gms:play-services-maps:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.2.0.aar/678daf7f28bbcb33bc5f677bb02f89f8/AndroidManifest.xml:26:5-42
+MERGED from [com.google.android.gms:play-services-nearby:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-nearby-9.2.0.aar/428b267392b7de4a7b38d6f56867cbec/AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-nearby:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-nearby-9.2.0.aar/428b267392b7de4a7b38d6f56867cbec/AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-panorama:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-panorama-9.2.0.aar/2b4dbc0d3f455dc829bfd240589477b4/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-panorama:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-panorama-9.2.0.aar/2b4dbc0d3f455dc829bfd240589477b4/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-plus:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-plus-9.2.0.aar/13bc8be7c8d5a7119cd06fa020e89d7f/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-plus:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-plus-9.2.0.aar/13bc8be7c8d5a7119cd06fa020e89d7f/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-safetynet:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-9.2.0.aar/9eb13f1a2475f585e752a51113fbc901/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-safetynet:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-safetynet-9.2.0.aar/9eb13f1a2475f585e752a51113fbc901/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-vision:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-vision-9.2.0.aar/11d34f8040c779358b85fd61d83c3798/AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-vision:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-vision-9.2.0.aar/11d34f8040c779358b85fd61d83c3798/AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-wearable:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-wearable-9.2.0.aar/26d8fe989dd4ca5ebce6ff7f452a8a2c/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-wearable:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-wearable-9.2.0.aar/26d8fe989dd4ca5ebce6ff7f452a8a2c/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-base-9.2.0.aar/6c7d931a542adff442bd521089f94e26/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-base-9.2.0.aar/6c7d931a542adff442bd521089f94e26/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-messaging:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-messaging-9.2.0.aar/d9a4affa91148f2e3dee6fb2bb6c0aab/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-messaging:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-messaging-9.2.0.aar/d9a4affa91148f2e3dee6fb2bb6c0aab/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.2.0.aar/63f4ed8d10c5025c6ac0313264bc6442/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.2.0.aar/63f4ed8d10c5025c6ac0313264bc6442/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-common:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-common-9.2.0.aar/3b897f2dee16d669c4936861ba469319/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-common:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-common-9.2.0.aar/3b897f2dee16d669c4936861ba469319/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-gass:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-gass-9.2.0.aar/02656d132df13fe37aa3b9333131df93/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-gass:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-gass-9.2.0.aar/02656d132df13fe37aa3b9333131df93/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-tasks:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tasks-9.2.0.aar/b5067471887a880f574b56b9731b253f/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tasks-9.2.0.aar/b5067471887a880f574b56b9731b253f/AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.2.0.aar/01696592cc5c9cadffb514ce43ab85d1/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.2.0.aar/01696592cc5c9cadffb514ce43ab85d1/AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-v4-28.0.0.aar/ea9a3ca6d767b26aa44d1ed55b107f43/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-v4-28.0.0.aar/ea9a3ca6d767b26aa44d1ed55b107f43/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/51c3718e2d8a728b5cc57e461274f753/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/51c3718e2d8a728b5cc57e461274f753/AndroidManifest.xml:20:5-44
+MERGED from [com.android.volley:volley:1.1.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/e944f626cc4b05765668bf6d1faefe16/AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/e944f626cc4b05765668bf6d1faefe16/AndroidManifest.xml:7:5-43
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/74a0cb5edf33634a0e6abcb25ada15bf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/74a0cb5edf33634a0e6abcb25ada15bf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/2667adbafd7718720fee3e7abdb0ff04/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/2667adbafd7718720fee3e7abdb0ff04/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/8c2198bece0f700721317b8bb13e52ab/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/8c2198bece0f700721317b8bb13e52ab/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/0fd1283690f1787becd203843f548533/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/0fd1283690f1787becd203843f548533/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/dbf41085651c02b2bc9cd102550554c3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/dbf41085651c02b2bc9cd102550554c3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/9fbe9281cc723eae850026dc00bb3872/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/9fbe9281cc723eae850026dc00bb3872/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/fee21e48408bbc7cfe9e18dd1c7aca4f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/fee21e48408bbc7cfe9e18dd1c7aca4f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/6ce3c7edd51111458c6579f5594a051d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/6ce3c7edd51111458c6579f5594a051d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/fe9690b34387d4fc619847d8b2b1922d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/fe9690b34387d4fc619847d8b2b1922d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/dd514c020326c0650c3f1c0e38e14bcf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/dd514c020326c0650c3f1c0e38e14bcf/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/a6aaeec25b0cb35c4b399638d274b23a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/a6aaeec25b0cb35c4b399638d274b23a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/0304bf19a522040abc188040f95360de/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/0304bf19a522040abc188040f95360de/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/46247c94449a075c3857265c7eda6746/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/46247c94449a075c3857265c7eda6746/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/9ed0177195e1594293b1ad6d357495e5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/9ed0177195e1594293b1ad6d357495e5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/eaf2c7df0aa011766eea40d17c4d06d0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/eaf2c7df0aa011766eea40d17c4d06d0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/1e2d3553fd8bf8b3c0a619730a8f6727/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/1e2d3553fd8bf8b3c0a619730a8f6727/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/2a731ba51abe8e7f1d3c057d1d126a8d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/2a731ba51abe8e7f1d3c057d1d126a8d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/59071b71ec10a902584efe298b9ea3c1/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/59071b71ec10a902584efe298b9ea3c1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/cf5e80a46d488dca05835734348fd266/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/cf5e80a46d488dca05835734348fd266/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/7a0beaee251c702a73d867040ce05358/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/7a0beaee251c702a73d867040ce05358/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/182bf53f1b9da267d5569ef6f86b0d69/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/182bf53f1b9da267d5569ef6f86b0d69/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/b819a3aabb26f184f0fd30bd899720ca/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/b819a3aabb26f184f0fd30bd899720ca/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/a097882489143f2e5b0b92c0e13ac3b4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/a097882489143f2e5b0b92c0e13ac3b4/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/78975e62f44a1e1eb28b4771999ef2f2/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/78975e62f44a1e1eb28b4771999ef2f2/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/f5a7ffecea31c17be33255711353efb6/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/f5a7ffecea31c17be33255711353efb6/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/b363067f56f11927126504b2ff4c5e08/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/b363067f56f11927126504b2ff4c5e08/AndroidManifest.xml:20:5-44
+INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml
+INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml
+		ADDED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/src/main/AndroidManifest.xml
+receiver#com.google.android.gms.cast.framework.media.MediaIntentReceiver
+ADDED from [com.google.android.gms:play-services-cast-framework:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-9.2.0.aar/b7ed24444dc061211c8bf8daa5eb96ba/AndroidManifest.xml:6:9-100
+	android:name
+		ADDED from [com.google.android.gms:play-services-cast-framework:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-9.2.0.aar/b7ed24444dc061211c8bf8daa5eb96ba/AndroidManifest.xml:6:19-97
+service#com.google.android.gms.cast.framework.media.MediaNotificationService
+ADDED from [com.google.android.gms:play-services-cast-framework:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-9.2.0.aar/b7ed24444dc061211c8bf8daa5eb96ba/AndroidManifest.xml:7:9-104
+	android:name
+		ADDED from [com.google.android.gms:play-services-cast-framework:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-9.2.0.aar/b7ed24444dc061211c8bf8daa5eb96ba/AndroidManifest.xml:7:18-101
+service#com.google.android.gms.cast.framework.ReconnectionService
+ADDED from [com.google.android.gms:play-services-cast-framework:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-9.2.0.aar/b7ed24444dc061211c8bf8daa5eb96ba/AndroidManifest.xml:8:9-92
+	android:name
+		ADDED from [com.google.android.gms:play-services-cast-framework:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-9.2.0.aar/b7ed24444dc061211c8bf8daa5eb96ba/AndroidManifest.xml:8:18-90
+activity#com.google.android.gms.ads.AdActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-9.2.0.aar/ae52fcd020093b370023457a9f065490/AndroidManifest.xml:26:9-29:64
+	android:configChanges
+		ADDED from [com.google.android.gms:play-services-ads-lite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-9.2.0.aar/ae52fcd020093b370023457a9f065490/AndroidManifest.xml:28:13-122
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-9.2.0.aar/ae52fcd020093b370023457a9f065490/AndroidManifest.xml:29:13-61
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-9.2.0.aar/ae52fcd020093b370023457a9f065490/AndroidManifest.xml:27:13-65
+activity#com.google.android.gms.ads.purchase.InAppPurchaseActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-9.2.0.aar/ae52fcd020093b370023457a9f065490/AndroidManifest.xml:30:9-31:52
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-9.2.0.aar/ae52fcd020093b370023457a9f065490/AndroidManifest.xml:31:13-50
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-9.2.0.aar/ae52fcd020093b370023457a9f065490/AndroidManifest.xml:30:19-91
+activity#com.google.android.gms.appinvite.PreviewActivity
+ADDED from [com.google.android.gms:play-services-appinvite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-9.2.0.aar/2e47be76dd65bd0698f956e7f02e23bd/AndroidManifest.xml:21:9-29:20
+	android:exported
+		ADDED from [com.google.android.gms:play-services-appinvite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-9.2.0.aar/2e47be76dd65bd0698f956e7f02e23bd/AndroidManifest.xml:23:17-40
+	android:theme
+		ADDED from [com.google.android.gms:play-services-appinvite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-9.2.0.aar/2e47be76dd65bd0698f956e7f02e23bd/AndroidManifest.xml:24:17-63
+	android:name
+		ADDED from [com.google.android.gms:play-services-appinvite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-9.2.0.aar/2e47be76dd65bd0698f956e7f02e23bd/AndroidManifest.xml:22:17-48
+intent-filter#action:name:com.google.android.gms.appinvite.ACTION_PREVIEW+category:name:android.intent.category.DEFAULT
+ADDED from [com.google.android.gms:play-services-appinvite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-9.2.0.aar/2e47be76dd65bd0698f956e7f02e23bd/AndroidManifest.xml:25:13-28:29
+action#com.google.android.gms.appinvite.ACTION_PREVIEW
+ADDED from [com.google.android.gms:play-services-appinvite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-9.2.0.aar/2e47be76dd65bd0698f956e7f02e23bd/AndroidManifest.xml:26:17-89
+	android:name
+		ADDED from [com.google.android.gms:play-services-appinvite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-9.2.0.aar/2e47be76dd65bd0698f956e7f02e23bd/AndroidManifest.xml:26:25-87
+category#android.intent.category.DEFAULT
+ADDED from [com.google.android.gms:play-services-appinvite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-9.2.0.aar/2e47be76dd65bd0698f956e7f02e23bd/AndroidManifest.xml:27:17-75
+	android:name
+		ADDED from [com.google.android.gms:play-services-appinvite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-9.2.0.aar/2e47be76dd65bd0698f956e7f02e23bd/AndroidManifest.xml:27:27-73
+activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
+ADDED from [com.google.android.gms:play-services-auth:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.2.0.aar/073c91f03c80f25270df30709f5025a4/AndroidManifest.xml:21:9-24:46
+	android:excludeFromRecents
+		ADDED from [com.google.android.gms:play-services-auth:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.2.0.aar/073c91f03c80f25270df30709f5025a4/AndroidManifest.xml:23:19-52
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.2.0.aar/073c91f03c80f25270df30709f5025a4/AndroidManifest.xml:24:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-auth:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.2.0.aar/073c91f03c80f25270df30709f5025a4/AndroidManifest.xml:22:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.2.0.aar/073c91f03c80f25270df30709f5025a4/AndroidManifest.xml:21:19-68
+service#com.google.android.gms.auth.api.signin.RevocationBoundService
+ADDED from [com.google.android.gms:play-services-auth:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.2.0.aar/073c91f03c80f25270df30709f5025a4/AndroidManifest.xml:28:9-31:110
+	android:exported
+		ADDED from [com.google.android.gms:play-services-auth:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.2.0.aar/073c91f03c80f25270df30709f5025a4/AndroidManifest.xml:30:13-36
+	android:permission
+		ADDED from [com.google.android.gms:play-services-auth:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.2.0.aar/073c91f03c80f25270df30709f5025a4/AndroidManifest.xml:31:13-107
+	android:name
+		ADDED from [com.google.android.gms:play-services-auth:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-auth-9.2.0.aar/073c91f03c80f25270df30709f5025a4/AndroidManifest.xml:29:13-58
+service#com.google.firebase.crash.internal.service.FirebaseCrashReceiverService
+ADDED from [com.google.firebase:firebase-crash:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-crash-9.2.0.aar/01c0f73516e358bc8f68b5e0924559d5/AndroidManifest.xml:26:9-27:50
+	android:process
+		ADDED from [com.google.firebase:firebase-crash:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-crash-9.2.0.aar/01c0f73516e358bc8f68b5e0924559d5/AndroidManifest.xml:27:13-48
+	android:name
+		ADDED from [com.google.firebase:firebase-crash:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-crash-9.2.0.aar/01c0f73516e358bc8f68b5e0924559d5/AndroidManifest.xml:26:18-79
+service#com.google.firebase.crash.internal.service.FirebaseCrashSenderService
+ADDED from [com.google.firebase:firebase-crash:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-crash-9.2.0.aar/01c0f73516e358bc8f68b5e0924559d5/AndroidManifest.xml:29:9-30:50
+	android:process
+		ADDED from [com.google.firebase:firebase-crash:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-crash-9.2.0.aar/01c0f73516e358bc8f68b5e0924559d5/AndroidManifest.xml:30:13-48
+	android:name
+		ADDED from [com.google.firebase:firebase-crash:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-crash-9.2.0.aar/01c0f73516e358bc8f68b5e0924559d5/AndroidManifest.xml:29:18-77
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.android.gms:play-services-gcm:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-gcm-9.2.0.aar/1df0a048c1531ebefea707c214323516/AndroidManifest.xml:21:5-82
+MERGED from [com.google.android.gms:play-services-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-iid-9.2.0.aar/a758c35a44ef8183453c4fb33ac9c9f2/AndroidManifest.xml:21:5-82
+MERGED from [com.google.android.gms:play-services-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-iid-9.2.0.aar/a758c35a44ef8183453c4fb33ac9c9f2/AndroidManifest.xml:21:5-82
+MERGED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:23:5-82
+MERGED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:23:5-82
+	android:name
+		ADDED from [com.google.android.gms:play-services-gcm:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-gcm-9.2.0.aar/1df0a048c1531ebefea707c214323516/AndroidManifest.xml:21:22-79
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.2.0.aar/678daf7f28bbcb33bc5f677bb02f89f8/AndroidManifest.xml:22:5-24:33
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.2.0.aar/678daf7f28bbcb33bc5f677bb02f89f8/AndroidManifest.xml:23:8-40
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-maps-9.2.0.aar/678daf7f28bbcb33bc5f677bb02f89f8/AndroidManifest.xml:24:8-31
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-base-9.2.0.aar/6c7d931a542adff442bd521089f94e26/AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-base-9.2.0.aar/6c7d931a542adff442bd521089f94e26/AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-base-9.2.0.aar/6c7d931a542adff442bd521089f94e26/AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-base-9.2.0.aar/6c7d931a542adff442bd521089f94e26/AndroidManifest.xml:20:19-85
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-messaging-9.2.0.aar/d9a4affa91148f2e3dee6fb2bb6c0aab/AndroidManifest.xml:24:9-30:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-messaging-9.2.0.aar/d9a4affa91148f2e3dee6fb2bb6c0aab/AndroidManifest.xml:26:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-messaging-9.2.0.aar/d9a4affa91148f2e3dee6fb2bb6c0aab/AndroidManifest.xml:25:13-82
+intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from [com.google.firebase:firebase-messaging:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-messaging-9.2.0.aar/d9a4affa91148f2e3dee6fb2bb6c0aab/AndroidManifest.xml:27:13-29:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-messaging:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-messaging-9.2.0.aar/d9a4affa91148f2e3dee6fb2bb6c0aab/AndroidManifest.xml:27:28-51
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from [com.google.firebase:firebase-messaging:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-messaging-9.2.0.aar/d9a4affa91148f2e3dee6fb2bb6c0aab/AndroidManifest.xml:28:17-78
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-messaging-9.2.0.aar/d9a4affa91148f2e3dee6fb2bb6c0aab/AndroidManifest.xml:28:25-75
+service#com.google.android.gms.tagmanager.TagManagerService
+ADDED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:25:9-27:42
+	android:enabled
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:27:17-39
+	android:exported
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:26:17-41
+	android:name
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:25:18-84
+activity#com.google.android.gms.tagmanager.TagManagerPreviewActivity
+ADDED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:28:9-37:20
+	android:noHistory
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:29:13-87
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:tagmanager.c.${applicationId}
+ADDED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:31:13-36:29
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:tagmanager.c.com.example.gabriela.legalsecurityandroid
+ADDED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:31:13-36:29
+data
+ADDED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:32:17-72
+	android:scheme
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:32:23-69
+action#android.intent.action.VIEW
+ADDED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:33:17-69
+	android:name
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:33:25-66
+category#android.intent.category.BROWSABLE
+ADDED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:35:17-77
+	android:name
+		ADDED from [com.google.android.gms:play-services-tagmanager-api:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tagmanager-api-9.2.0.aar/e14848da0b03c447fa61b67166aed877/AndroidManifest.xml:35:27-75
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:28:7-34:18
+MERGED from [com.google.firebase:firebase-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.2.0.aar/63f4ed8d10c5025c6ac0313264bc6442/AndroidManifest.xml:28:7-34:18
+MERGED from [com.google.firebase:firebase-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.2.0.aar/63f4ed8d10c5025c6ac0313264bc6442/AndroidManifest.xml:28:7-34:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:30:11-33
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:29:11-83
+intent-filter#action:name:com.google.android.gms.measurement.UPLOAD
+ADDED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:31:9-33:25
+action#com.google.android.gms.measurement.UPLOAD
+ADDED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:32:11-77
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:32:19-75
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:36:7-39:37
+MERGED from [com.google.firebase:firebase-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.2.0.aar/63f4ed8d10c5025c6ac0313264bc6442/AndroidManifest.xml:36:7-39:37
+MERGED from [com.google.firebase:firebase-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.2.0.aar/63f4ed8d10c5025c6ac0313264bc6442/AndroidManifest.xml:36:7-39:37
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:38:11-33
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:39:11-35
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:37:11-82
+permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:25:5-26:47
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:26:9-44
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:25:17-71
+permission#com.example.gabriela.legalsecurityandroid.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:25:5-26:47
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:26:9-44
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:25:17-71
+uses-permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:28:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:28:22-76
+uses-permission#com.example.gabriela.legalsecurityandroid.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:28:5-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:28:22-76
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:32:9-41:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:34:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:35:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:33:13-78
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+action:name:com.google.android.c2dm.intent.REGISTRATION+category:name:${applicationId}
+ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:36:13-40:29
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE+action:name:com.google.android.c2dm.intent.REGISTRATION+category:name:com.example.gabriela.legalsecurityandroid
+ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:36:13-40:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:37:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:37:25-78
+action#com.google.android.c2dm.intent.REGISTRATION
+ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:38:17-86
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:38:25-83
+category#${applicationId}
+ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:39:17-61
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:39:27-58
+category#com.example.gabriela.legalsecurityandroid
+ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:39:17-61
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:39:27-58
+receiver#com.google.firebase.iid.FirebaseInstanceIdInternalReceiver
+ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:45:9-47:40
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:47:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:46:13-86
+service#com.google.firebase.iid.FirebaseInstanceIdService
+ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:51:9-57:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:53:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:52:13-77
+intent-filter#action:name:com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:54:13-56:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:54:28-51
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:55:17-80
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:55:25-77
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-common-9.2.0.aar/3b897f2dee16d669c4936861ba469319/AndroidManifest.xml:7:9-11:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-common-9.2.0.aar/3b897f2dee16d669c4936861ba469319/AndroidManifest.xml:8:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-common-9.2.0.aar/3b897f2dee16d669c4936861ba469319/AndroidManifest.xml:10:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-common-9.2.0.aar/3b897f2dee16d669c4936861ba469319/AndroidManifest.xml:11:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-common-9.2.0.aar/3b897f2dee16d669c4936861ba469319/AndroidManifest.xml:9:13-58
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.2.0.aar/01696592cc5c9cadffb514ce43ab85d1/AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.2.0.aar/01696592cc5c9cadffb514ce43ab85d1/AndroidManifest.xml:23:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-basement-9.2.0.aar/01696592cc5c9cadffb514ce43ab85d1/AndroidManifest.xml:22:13-58

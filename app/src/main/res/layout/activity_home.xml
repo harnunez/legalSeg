@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context=".activities.HomeActivity">
+
+    <ImageView
+        android:id="@+id/background_select_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:contentDescription="@string/BackgoundIV"
+        android:cropToPadding="false"
+        android:focusable="true"
+        android:scaleType="centerCrop"
+        android:visibility="visible"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background_gray3x" />
+
+    <TextView
+        android:id="@+id/TextUserNameSelected"
+        android:layout_width="226dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/antenna_medium"
+        android:text="@string/TextUserNameSelected"
+        android:textAlignment="textStart"
+        android:textSize="21sp"
+        app:layout_constraintHorizontal_bias="0.196"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_description_user_home"
+        android:layout_width="226dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/lato_regular"
+        android:text="@string/text_description_user_home"
+        android:textAlignment="textStart"
+        android:textSize="21sp"
+        app:layout_constraintHorizontal_bias="0.196"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ingresar_btn"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="112dp"
+        android:background="@drawable/prueba_ingresar"
+        android:contentDescription="@string/ingresar_btn"
+        app:layout_constraintHorizontal_bias="0.524"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ingresar_tv"
+        android:layout_width="67dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="292dp"
+        android:fontFamily="@font/lato_regular"
+        android:text="@string/enter_title_header"
+        android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/salir_btn"
+        android:layout_width="170dp"
+        android:layout_height="156dp"
+        android:layout_marginTop="352dp"
+        android:background="@drawable/prueba_salir"
+        android:contentDescription="@string/salir_btn"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/salir_tv"
+        android:layout_width="67dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="524dp"
+        android:fontFamily="@font/lato_regular"
+        android:text="@string/salir_tv"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/icon_shut_down"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginStart="324dp"
+        android:layout_marginEnd="23dp"
+        android:background="@drawable/ic_power_settings_new_black_24dp"
+        android:contentDescription="@string/button_shut_down"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

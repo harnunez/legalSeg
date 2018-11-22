@@ -1,0 +1,4 @@
+#Thu Nov 22 12:12:24 ART 2018
+base.0=/Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/build/intermediates/transforms/dexMerger/debug/7
+path.0=classes.dex
+renamed.0=classes.dex
