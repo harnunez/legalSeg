@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "/Users/gabriela/Developer/legalsec/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
                     "source": "/Users/gabriela/.gradle/caches/transforms-1/files-1.1/mediarouter-v7-23.0.0.aar/082fedcd0db67dc023d67ea4f94e3923/res/values-sw600dp/values-sw600dp.xml",

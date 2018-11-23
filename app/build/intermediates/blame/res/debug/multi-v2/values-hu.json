@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hu/values-hu.xml",
+            "outputFile": "/Users/gabriela/Developer/legalsec/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-hu/values-hu.xml",
             "map": [
                 {
                     "source": "/Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-wallet-9.2.0.aar/3a0ae8375cab7ccdc54466babf4f283b/res/values-hu/values.xml",

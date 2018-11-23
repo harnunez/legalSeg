@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-am/values-am.xml",
+            "outputFile": "/Users/gabriela/Developer/legalsec/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-am/values-am.xml",
             "map": [
                 {
                     "source": "/Users/gabriela/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/3b37f6848a463671a8d101f6e243b440/res/values-am/values-am.xml",

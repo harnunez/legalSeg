@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-it/values-it.xml",
+            "outputFile": "/Users/gabriela/Developer/legalsec/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-it/values-it.xml",
             "map": [
                 {
                     "source": "/Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-9.2.0.aar/b7ed24444dc061211c8bf8daa5eb96ba/res/values-it/values.xml",

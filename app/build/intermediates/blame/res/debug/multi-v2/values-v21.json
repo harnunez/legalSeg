@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/gabriela/AndroidStudioProjects/LegalSecurityAndroid/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
+            "outputFile": "/Users/gabriela/Developer/legalsec/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v21/values-v21.xml",
             "map": [
                 {
                     "source": "/Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-9.2.0.aar/2e47be76dd65bd0698f956e7f02e23bd/res/values-v21/values.xml",
