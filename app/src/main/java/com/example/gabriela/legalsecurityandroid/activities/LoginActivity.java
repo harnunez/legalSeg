@@ -35,9 +35,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        // Status bar
-        // this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         this.initProperties();
         this.executeAccessLocation();
         this.initializeEvents();
@@ -56,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         if (ActivityCompat.checkSelfPermission(LoginActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(LoginActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(LoginActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
             return;
-        }else{
+        } else {
             // Write you code here if permission already given.
         }
     }
@@ -96,7 +93,12 @@ public class LoginActivity extends AppCompatActivity {
                 Log.d("Login", "Error Respuesta en JSON: " + error.getMessage());
             }
         });
-        vimp.buildJsonLogin(user.getText().toString(), password.getText().toString());
+
+        if (user.getText().toString() != "" && user.getText().toString() != null && password.getText().toString() != "" && password.getText().toString() != null) {
+            vimp.buildJsonLogin(user.getText().toString(), password.getText().toString());
+        } else {
+            alertError("Algunos datos ingresados son inválidos, por favor verifique y reintente");
+        }
         vimp.doConnectionLogin();
     }
 

@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Nov 23 10:27:16 ART 2018
+#Mon Nov 26 14:04:15 ART 2018
 4.path=fonts/Lato-Regular.ttf
 13.baseType=DIRECTORY
 8.set=DEX

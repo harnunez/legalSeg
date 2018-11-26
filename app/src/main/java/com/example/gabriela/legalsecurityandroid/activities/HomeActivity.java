@@ -41,9 +41,6 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // Status bar
-        // this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         initProperties();
     }
 
@@ -78,7 +75,6 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 executeService(eventSelected);
-                // showNewActivity(event);
             }
         });
     }
@@ -91,7 +87,6 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 executeService(eventSelected);
-                // showNewActivity(event);
             }
         });
     }

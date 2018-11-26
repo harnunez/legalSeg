@@ -113,7 +113,6 @@ public class InHomeActivity extends AppCompatActivity {
                 Long timer = millisUntilFinished / 1000;
                 timerBack.setText("" + timer);
                 int progress = (int) (millisUntilFinished / 1000);
-                // progressBar.setRotation((-progress / 100f * 360f) - 90f);
                 progressBar.setProgress(progress);
 
                 timerServiceCall();
@@ -123,7 +122,6 @@ public class InHomeActivity extends AppCompatActivity {
             public void onFinish() {
                 loadingService.setVisibility(View.GONE);
                 changeViewForLevelAlert();
-                // executeService();
             }
         };
         activeAlarm();
@@ -202,8 +200,26 @@ public class InHomeActivity extends AppCompatActivity {
                 Log.d("Login", "Error Respuesta en JSON: " + error.getMessage());
             }
         });
-        vimp.buildJsonNews(event, latitud, longitud, useNameSelect);
+        if (latitud != "" && latitud != null && longitud != "" && longitud != null) {
+            vimp.buildJsonNews(event, latitud, longitud, useNameSelect);
+        } else {
+            timeService.cancel();
+            executeAccessLocation();
+            getLocation();
+        }
         vimp.doConnectionNovedades();
+    }
+
+
+
+    // Permissions Location
+    private void executeAccessLocation() {
+        if (ActivityCompat.checkSelfPermission(InHomeActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(InHomeActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(InHomeActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+            return;
+        } else {
+            // Write you code here if permission already given.
+        }
     }
 
 
