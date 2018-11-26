@@ -6,6 +6,10 @@
 # Files for the ART/Dalvik VM
 *.dex
 
+
+# Files for the log
+*.class
+
 # Generated files
 bin/
 gen/
@@ -37,4 +41,5 @@ captures/
 
 # Keystore files
 *.jks
+
 
