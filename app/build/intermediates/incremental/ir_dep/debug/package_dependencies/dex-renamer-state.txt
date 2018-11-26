@@ -1,7 +1,0 @@
-#Mon Nov 26 14:01:22 ART 2018
-base.0=/Users/gabriela/Developer/legalsec/app/build/intermediates/transforms/dexMerger/debug/10
-path.1=classes2.dex
-renamed.1=classes2.dex
-path.0=classes.dex
-renamed.0=classes.dex
-base.1=/Users/gabriela/Developer/legalsec/app/build/intermediates/transforms/dexMerger/debug/10
