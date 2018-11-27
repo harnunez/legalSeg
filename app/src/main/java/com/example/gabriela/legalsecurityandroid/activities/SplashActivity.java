@@ -9,8 +9,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.WindowManager;
-
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.R;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
@@ -60,12 +58,14 @@ public class SplashActivity extends AppCompatActivity {
                 if (mLogin.codeResponse == 0) {
                     startNewActivity(mLogin);
                 } else {
+                    alertError("Error, No se puede acceder a la información por favor reintente más tarde");
                     Log.d("Error", mLogin.message);
                 }
             }
 
             @Override
             public void onError(VolleyError error) {
+                alertError("Error, Algo salió mal por favor reintente más tarde");
                 Log.d("Login", "Error Respuesta en JSON: " + error.getMessage());
             }
         });
@@ -81,5 +81,19 @@ public class SplashActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
+
+    // Alert error
+    private void alertError(String message) {
+        final AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
+        dlgAlert.setMessage(message);
+        dlgAlert.setTitle("Error");
+        dlgAlert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        dlgAlert.setCancelable(true);
+        dlgAlert.create().show();
+    }
 }
 

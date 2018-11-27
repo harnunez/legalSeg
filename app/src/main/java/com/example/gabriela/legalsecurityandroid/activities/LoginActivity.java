@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
 
     // Init properties
     private void initProperties() {
+
         user = findViewById(R.id.user);
         password = findViewById(R.id.password);
         login = findViewById(R.id.button_login);
@@ -90,6 +91,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onError(VolleyError error) {
+                alertError("Error, Algo salió mal por favor reintente más tarde");
                 Log.d("Login", "Error Respuesta en JSON: " + error.getMessage());
             }
         });
