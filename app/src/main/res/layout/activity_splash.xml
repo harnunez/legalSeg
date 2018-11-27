@@ -10,6 +10,7 @@
     tools:context=".activities.SplashActivity">
 
     <ImageView
+        android:id="@+id/Background_splash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/BackgoundIV"
@@ -23,7 +24,7 @@
         />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/logo_splash"
         android:layout_width="162dp"
         android:layout_height="162dp"
         android:layout_marginTop="203dp"

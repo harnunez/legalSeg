@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-50:12
-INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-50:12
-INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-50:12
-INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-50:12
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-55:12
 MERGED from [com.google.android.gms:play-services:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-9.2.0.aar/3d8652bba5f1076354bce6653961e850/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-cast-framework:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-9.2.0.aar/b7ed24444dc061211c8bf8daa5eb96ba/AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.android.gms:play-services-cast:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-9.2.0.aar/a9866f7b9cefad303f7a9637109c1bce/AndroidManifest.xml:16:1-20:12
@@ -85,20 +85,20 @@ MERGED from [com.android.support:interpolator:28.0.0] /Users/gabriela/.gradle/ca
 MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/78975e62f44a1e1eb28b4771999ef2f2/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/f5a7ffecea31c17be33255711353efb6/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/b363067f56f11927126504b2ff4c5e08/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-50:12
-INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-50:12
-INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-50:12
+INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-55:12
 	package
 		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:3:5-56
 		INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-50:12
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-55:12
 		INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-50:12
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-55:12
 		INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:11-69
@@ -164,22 +164,28 @@ uses-permission#android.permission.ACCESS_WIFI_STATE
 ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:10:5-75
 	android:name
 		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:10:22-73
-uses-permission#android.permission.WAKE_LOCK
-ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:11:5-67
-MERGED from [com.google.android.gms:play-services-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-9.2.0.aar/6e699c46fd75f92ceafdafd2bacd11bc/AndroidManifest.xml:25:5-67
-MERGED from [com.google.android.gms:play-services-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-9.2.0.aar/6e699c46fd75f92ceafdafd2bacd11bc/AndroidManifest.xml:25:5-67
-MERGED from [com.google.android.gms:play-services-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-9.2.0.aar/6a75146462dd3f39f604d53c5bb1feb5/AndroidManifest.xml:25:5-67
-MERGED from [com.google.android.gms:play-services-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-9.2.0.aar/6a75146462dd3f39f604d53c5bb1feb5/AndroidManifest.xml:25:5-67
-MERGED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:24:5-67
-MERGED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:24:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.2.0.aar/63f4ed8d10c5025c6ac0313264bc6442/AndroidManifest.xml:24:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.2.0.aar/63f4ed8d10c5025c6ac0313264bc6442/AndroidManifest.xml:24:5-67
-MERGED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:22:5-68
-MERGED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:22:5-68
+uses-permission-sdk-23#android.permission.INTERNET
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:14:5-73
 	android:name
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:11:22-65
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:14:29-71
+uses-permission-sdk-23#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:15:5-86
+	android:name
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:15:29-83
+uses-permission-sdk-23#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:16:5-88
+	android:name
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:16:29-85
+uses-permission-sdk-23#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:17:5-86
+	android:name
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:17:29-83
+uses-permission-sdk-23#android.permission.ACCESS_WIFI_STATE
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:18:5-82
+	android:name
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:18:29-80
 application
-ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:14:5-48:19
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:20:5-53:19
 MERGED from [com.google.android.gms:play-services:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-9.2.0.aar/3d8652bba5f1076354bce6653961e850/AndroidManifest.xml:5:5-20
 MERGED from [com.google.android.gms:play-services:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-9.2.0.aar/3d8652bba5f1076354bce6653961e850/AndroidManifest.xml:5:5-20
 MERGED from [com.google.android.gms:play-services-cast-framework:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-9.2.0.aar/b7ed24444dc061211c8bf8daa5eb96ba/AndroidManifest.xml:5:5-9:19
@@ -273,63 +279,63 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/gabriela/.gr
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/eaf2c7df0aa011766eea40d17c4d06d0/AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:20:9-35
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:26:9-35
 	android:label
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:18:9-41
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:24:9-41
 	android:hardwareAccelerated
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:16:9-44
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:22:9-44
 	android:roundIcon
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:19:9-48
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:25:9-48
 	android:largeHeap
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:21:9-33
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:27:9-33
 	android:icon
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:17:9-43
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:23:9-43
 	android:allowBackup
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:15:9-35
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:21:9-35
 	android:theme
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:22:9-53
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:28:9-53
 	android:usesCleartextTraffic
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:23:9-44
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:29:9-44
 activity#com.example.gabriela.legalsecurityandroid.activities.SplashActivity
-ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:25:9-33:20
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:31:9-39:20
 	android:screenOrientation
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:27:13-49
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:33:13-49
 	android:name
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:26:13-54
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:32:13-54
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:28:13-32:29
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:34:13-38:29
 action#android.intent.action.MAIN
-ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:29:17-69
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:35:17-69
 	android:name
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:29:25-66
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:35:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:31:17-77
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:37:17-77
 	android:name
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:31:27-74
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:37:27-74
 activity#com.example.gabriela.legalsecurityandroid.activities.LoginActivity
-ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:34:9-37:15
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:40:9-43:15
 	android:screenOrientation
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:36:13-49
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:42:13-49
 	android:name
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:35:13-53
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:41:13-53
 activity#com.example.gabriela.legalsecurityandroid.activities.SelectUserActivity
-ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:38:9-40:52
-	android:screenOrientation
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:40:13-49
-	android:name
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:39:13-58
-activity#com.example.gabriela.legalsecurityandroid.activities.HomeActivity
-ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:41:9-43:52
-	android:screenOrientation
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:43:13-49
-	android:name
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:42:13-52
-activity#com.example.gabriela.legalsecurityandroid.activities.InHomeActivity
 ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:44:9-46:52
 	android:screenOrientation
 		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:46:13-49
 	android:name
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:45:13-54
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:45:13-58
+activity#com.example.gabriela.legalsecurityandroid.activities.HomeActivity
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:47:9-49:52
+	android:screenOrientation
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:49:13-49
+	android:name
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:48:13-52
+activity#com.example.gabriela.legalsecurityandroid.activities.InHomeActivity
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:50:9-52:52
+	android:screenOrientation
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:52:13-49
+	android:name
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:51:13-54
 uses-sdk
 INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml
@@ -532,6 +538,18 @@ ADDED from [com.google.android.gms:play-services-ads-lite:9.2.0] /Users/gabriela
 		ADDED from [com.google.android.gms:play-services-ads-lite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-9.2.0.aar/ae52fcd020093b370023457a9f065490/AndroidManifest.xml:31:13-50
 	android:name
 		ADDED from [com.google.android.gms:play-services-ads-lite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-ads-lite-9.2.0.aar/ae52fcd020093b370023457a9f065490/AndroidManifest.xml:30:19-91
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.android.gms:play-services-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-9.2.0.aar/6e699c46fd75f92ceafdafd2bacd11bc/AndroidManifest.xml:25:5-67
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-9.2.0.aar/6a75146462dd3f39f604d53c5bb1feb5/AndroidManifest.xml:25:5-67
+MERGED from [com.google.android.gms:play-services-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-impl-9.2.0.aar/6a75146462dd3f39f604d53c5bb1feb5/AndroidManifest.xml:25:5-67
+MERGED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-9.2.0.aar/4eba0ac56ca70cf61bc4b408c46afe76/AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.2.0.aar/63f4ed8d10c5025c6ac0313264bc6442/AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-9.2.0.aar/63f4ed8d10c5025c6ac0313264bc6442/AndroidManifest.xml:24:5-67
+MERGED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:22:5-68
+MERGED from [com.google.firebase:firebase-iid:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/firebase-iid-9.2.0.aar/5b56ee6d3def3505f5599c28d14463ca/AndroidManifest.xml:22:5-68
+	android:name
+		ADDED from [com.google.android.gms:play-services-analytics:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-analytics-9.2.0.aar/6e699c46fd75f92ceafdafd2bacd11bc/AndroidManifest.xml:25:22-65
 activity#com.google.android.gms.appinvite.PreviewActivity
 ADDED from [com.google.android.gms:play-services-appinvite:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-appinvite-9.2.0.aar/2e47be76dd65bd0698f956e7f02e23bd/AndroidManifest.xml:21:9-29:20
 	android:exported

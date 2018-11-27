@@ -1015,6 +1015,7 @@ font font
 font lato_bold
 font lato_regular
 id ALT
+id Background_splash
 id CTRL
 id FUNCTION
 id META
@@ -1143,7 +1144,6 @@ id ifRoom
 id image
 id imageView
 id imageView2
-id imageView4
 id index_entity_types
 id info
 id ingresar_btn
@@ -1167,6 +1167,7 @@ id list_item
 id loadingService
 id loading_view
 id logo_only
+id logo_splash
 id match_global_nicknames
 id match_parent
 id media_actions
