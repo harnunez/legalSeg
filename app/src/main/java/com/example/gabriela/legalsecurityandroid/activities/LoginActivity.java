@@ -64,7 +64,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(user.getText().toString().isEmpty() && password.getText().toString().isEmpty()) {
-                    Log.d("error", "error isEmpty()");
+                    alertError("Por favor complete los campos y reintente");
                 } else {
                     loading.setVisibility(View.GONE);
                     executeService();
@@ -92,7 +92,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onError(VolleyError error) {
                 alertError("Error, Algo salió mal por favor reintente más tarde");
-                Log.d("Login", "Error Respuesta en JSON: " + error.getMessage());
             }
         });
 

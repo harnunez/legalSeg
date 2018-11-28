@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-55:12
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-54:12
 MERGED from [com.google.android.gms:play-services:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-9.2.0.aar/3d8652bba5f1076354bce6653961e850/AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-cast-framework:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-9.2.0.aar/b7ed24444dc061211c8bf8daa5eb96ba/AndroidManifest.xml:2:1-10:12
 MERGED from [com.google.android.gms:play-services-cast:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-9.2.0.aar/a9866f7b9cefad303f7a9637109c1bce/AndroidManifest.xml:16:1-20:12
@@ -85,20 +85,20 @@ MERGED from [com.android.support:interpolator:28.0.0] /Users/gabriela/.gradle/ca
 MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/78975e62f44a1e1eb28b4771999ef2f2/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/f5a7ffecea31c17be33255711353efb6/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/b363067f56f11927126504b2ff4c5e08/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-55:12
-INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-55:12
+INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-54:12
+INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-54:12
 	package
 		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:3:5-56
 		INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-55:12
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-54:12
 		INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-55:12
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:1-54:12
 		INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:2:11-69
@@ -185,7 +185,7 @@ ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:1
 	android:name
 		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:18:29-80
 application
-ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:20:5-53:19
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:20:5-52:19
 MERGED from [com.google.android.gms:play-services:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-9.2.0.aar/3d8652bba5f1076354bce6653961e850/AndroidManifest.xml:5:5-20
 MERGED from [com.google.android.gms:play-services:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-9.2.0.aar/3d8652bba5f1076354bce6653961e850/AndroidManifest.xml:5:5-20
 MERGED from [com.google.android.gms:play-services-cast-framework:9.2.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-cast-framework-9.2.0.aar/b7ed24444dc061211c8bf8daa5eb96ba/AndroidManifest.xml:5:5-9:19
@@ -297,45 +297,45 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/gabriela/.gr
 	android:usesCleartextTraffic
 		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:29:9-44
 activity#com.example.gabriela.legalsecurityandroid.activities.SplashActivity
-ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:31:9-39:20
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:30:9-38:20
 	android:screenOrientation
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:33:13-49
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:32:13-49
 	android:name
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:32:13-54
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:31:13-54
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:34:13-38:29
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:33:13-37:29
 action#android.intent.action.MAIN
-ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:35:17-69
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:34:17-69
 	android:name
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:35:25-66
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:34:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:37:17-77
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:36:17-77
 	android:name
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:37:27-74
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:36:27-74
 activity#com.example.gabriela.legalsecurityandroid.activities.LoginActivity
-ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:40:9-43:15
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:39:9-42:15
 	android:screenOrientation
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:42:13-49
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:41:13-49
 	android:name
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:41:13-53
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:40:13-53
 activity#com.example.gabriela.legalsecurityandroid.activities.SelectUserActivity
-ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:44:9-46:52
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:43:9-45:52
 	android:screenOrientation
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:46:13-49
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:45:13-49
 	android:name
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:45:13-58
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:44:13-58
 activity#com.example.gabriela.legalsecurityandroid.activities.HomeActivity
-ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:47:9-49:52
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:46:9-48:52
 	android:screenOrientation
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:49:13-49
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:48:13-49
 	android:name
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:48:13-52
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:47:13-52
 activity#com.example.gabriela.legalsecurityandroid.activities.InHomeActivity
-ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:50:9-52:52
+ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:49:9-51:52
 	android:screenOrientation
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:52:13-49
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:51:13-49
 	android:name
-		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:51:13-54
+		ADDED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml:50:13-54
 uses-sdk
 INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/gabriela/Developer/legalsec/app/src/main/AndroidManifest.xml

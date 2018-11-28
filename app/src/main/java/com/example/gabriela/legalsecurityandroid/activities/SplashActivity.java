@@ -20,6 +20,7 @@ import org.json.JSONObject;
 
 public class SplashActivity extends AppCompatActivity {
 
+
     private static int splashTimeOut=5000;
 
     @Override
@@ -34,6 +35,7 @@ public class SplashActivity extends AppCompatActivity {
                 finish();
             }
         },splashTimeOut);
+
     }
 
 
@@ -49,7 +51,10 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
+
+
     private void executeService(String user, String password) {
+
         VolleyImplementation vimp = new VolleyImplementation(this, new doConnectionEvent() {
             @Override
             public void onOk(JSONObject response) {
@@ -58,15 +63,18 @@ public class SplashActivity extends AppCompatActivity {
                 if (mLogin.codeResponse == 0) {
                     startNewActivity(mLogin);
                 } else {
-                    alertError("Error, No se puede acceder a la información por favor reintente más tarde");
-                    Log.d("Error", mLogin.message);
+                    if (mLogin.message != "" && mLogin.message != null) {
+                        alertError(mLogin.message);
+                    } else {
+                        alertError("No se puede acceder a la información por favor reintente más tarde");
+                    }
+                   //  alertError(messageError);
                 }
             }
 
             @Override
             public void onError(VolleyError error) {
                 alertError("Error, Algo salió mal por favor reintente más tarde");
-                Log.d("Login", "Error Respuesta en JSON: " + error.getMessage());
             }
         });
         vimp.buildJsonLogin(user, password);

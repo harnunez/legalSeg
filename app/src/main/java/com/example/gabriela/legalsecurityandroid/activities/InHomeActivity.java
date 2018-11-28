@@ -2,6 +2,7 @@ package com.example.gabriela.legalsecurityandroid.activities;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Application;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -56,6 +57,7 @@ public class InHomeActivity extends AppCompatActivity {
     private String event;
     private String useNameSelect;
     private Timer timeService;
+    // private boolean onPause;
 
 
     // Model News
@@ -66,17 +68,34 @@ public class InHomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_home);
-
-        // Status bar
-        // this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-                // setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         initProperties();
 
         getLocation();
         timer();
         executeEventCancel();
+
     }
+
+
+
+    // Activity state
+   /* @Override
+    protected void onPause() {
+        super.onPause();
+        onPause = true;
+        executeEventCancel();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        if (onPause) {
+
+            Intent myIntent = new Intent(InHomeActivity.this, HomeActivity.class);
+            startActivity(myIntent);
+        }
+    }*/
 
     // Properties
     private  void initProperties() {
@@ -166,15 +185,13 @@ public class InHomeActivity extends AppCompatActivity {
         if (location != null) {
             onLocationChanged(location);
         } else {
-            Log.d("Error", "Error: Location not available");
+            alertError("No es posible acceder a tu ubicación, por favor verificá los permisos y reintenta nuevamente");
         }
     }
 
     public void onLocationChanged(Location location) {
         latitud = String.valueOf(((location.getLatitude())));
         longitud = String.valueOf((location.getLongitude()));
-        Log.d("lat", latitud);
-        Log.d("Long", longitud);
     }
 
     // Execute service
@@ -197,7 +214,7 @@ public class InHomeActivity extends AppCompatActivity {
 
             @Override
             public void onError(VolleyError error) {
-                Log.d("Login", "Error Respuesta en JSON: " + error.getMessage());
+                alertError("Error, Algo salió mal por favor reintente más tarde");
             }
         });
         if (latitud != "" && latitud != null && longitud != "" && longitud != null) {
@@ -271,6 +288,8 @@ public class InHomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 alarm.stop();
+                timeService.cancel();
+                downTimer.cancel();
                 InHomeActivity.this.finish();
             }
         });
@@ -299,6 +318,8 @@ public class InHomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 alarm.stop();
+                timeService.cancel();
+                downTimer.cancel();
                 cleanPreferencesUserLogued();
                 backRootActivity();
             }

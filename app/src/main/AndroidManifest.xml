@@ -26,8 +26,7 @@
         android:supportsRtl="true"
         android:largeHeap="true"
         android:theme="@style/FullScreenCustomTheme"
-        android:usesCleartextTraffic="true"
-        >
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".activities.SplashActivity"
             android:screenOrientation="portrait">
