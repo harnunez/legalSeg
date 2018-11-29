@@ -40,12 +40,13 @@ public class VolleyImplementation {
         this.mParametros = new JSONObject(params);
     }
 
-    public void buildJsonNews(String event, String latitude, String longitude, String billActive) {
+    public void buildJsonNews(String event, String latitude, String longitude, String billActive, String idCliente) {
         Map<String, String > params = new HashMap();
         params.put("evento", event);
         params.put("latitud", latitude);
         params.put("longitud", longitude);
         params.put("cuenta", billActive);
+        params.put("idCliente", idCliente);
         this.mParametros = new JSONObject(params);
     }
 
@@ -57,7 +58,6 @@ public class VolleyImplementation {
 
 
     // Custom DoConecction
-
     public void setDoConnection(Integer method, String url, JSONObject parameters) {
         mRequestQueue = Volley.newRequestQueue(this.mContext);
 

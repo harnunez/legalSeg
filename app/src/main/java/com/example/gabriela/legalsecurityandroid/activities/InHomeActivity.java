@@ -56,6 +56,7 @@ public class InHomeActivity extends AppCompatActivity {
     private String longitud;
     private String event;
     private String useNameSelect;
+    private String cliente;
     private Timer timeService;
     // private boolean onPause;
 
@@ -111,7 +112,9 @@ public class InHomeActivity extends AppCompatActivity {
 
         // getPut Extras
         event = getIntent().getExtras().getString("event");
-        useNameSelect = getIntent().getExtras().getString("UserName");
+        useNameSelect = getIntent().getExtras().getString("userName");
+        cliente = getIntent().getExtras().getString("idCliente");
+
 
         if (event.equals("Entrando")) {
             title_header_event.setText(R.string.enter_title_header);
@@ -156,7 +159,6 @@ public class InHomeActivity extends AppCompatActivity {
                 executeService();
             }
         };
-
         timeService.schedule(myTask, 5000);
     }
 
@@ -185,7 +187,7 @@ public class InHomeActivity extends AppCompatActivity {
         if (location != null) {
             onLocationChanged(location);
         } else {
-            alertError("No es posible acceder a tu ubicación, por favor verificá los permisos y reintenta nuevamente");
+            // alertError("No es posible acceder a tu ubicación, por favor verificá los permisos y reintenta nuevamente");
         }
     }
 
@@ -218,7 +220,7 @@ public class InHomeActivity extends AppCompatActivity {
             }
         });
         if (latitud != "" && latitud != null && longitud != "" && longitud != null) {
-            vimp.buildJsonNews(event, latitud, longitud, useNameSelect);
+            vimp.buildJsonNews(event, latitud, longitud, useNameSelect, cliente);
         } else {
             timeService.cancel();
             executeAccessLocation();
