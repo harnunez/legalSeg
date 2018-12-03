@@ -50,7 +50,6 @@
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/FullScreenCustomTheme"
         android:usesCleartextTraffic="true" >
         <activity

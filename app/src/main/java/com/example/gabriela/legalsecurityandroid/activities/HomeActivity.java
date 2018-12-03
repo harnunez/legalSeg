@@ -1,9 +1,13 @@
 package com.example.gabriela.legalsecurityandroid.activities;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +16,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.R;
@@ -34,7 +39,9 @@ public class HomeActivity extends AppCompatActivity {
     private ImageButton shutDown;
     private String useNameSelect;
     private String idCliente;
+    private int eventSelected;
 
+    private final int ACCESS_FINE_LOCATION_CODE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,32 +74,72 @@ public class HomeActivity extends AppCompatActivity {
         executeShutDown();
     }
 
+
+
+    // Get Current Location
+    private boolean checkCurrentAndroidVersion(){
+        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.M;
+    }
+
+    private void getAppLocationPermisson(int eventSelected) {
+        if( checkCurrentAndroidVersion()){
+            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, ACCESS_FINE_LOCATION_CODE );
+        }
+        else {
+            executeService(eventSelected);
+        }
+    }
+
     // Event enter
     private void executeEventEnterHome() {
 
-       final String eventSelected = "Entrando";
+        eventSelected = 3;
         inHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                executeService(eventSelected);
+                getAppLocationPermisson(eventSelected);
             }
         });
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        switch (requestCode){
+            case ACCESS_FINE_LOCATION_CODE:
+                String permission = permissions[0];
+                int result = grantResults[0];
+
+                if(permission.equals(Manifest.permission.ACCESS_FINE_LOCATION)){
+                    if(result == PackageManager.PERMISSION_GRANTED){
+                        executeService(eventSelected);
+                    }
+                    else{
+                        Toast.makeText(this, "Permiso denegado", Toast.LENGTH_LONG).show();
+                    }
+                }
+                break;
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+                break;
+        }
     }
 
     // Event leave
     private void executeEventLeaveHome() {
         // out
-        final String eventSelected = "Saliendo";
+        eventSelected = 2;
         outHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                executeService(eventSelected);
+                getAppLocationPermisson(eventSelected);
             }
         });
     }
 
     // EventsWS
-    public void executeService(final String eventSelected) {
+    public void executeService(final int eventSelected) {
         VolleyImplementation vimp = new VolleyImplementation(this, new doConnectionEvent() {
             @Override
             public void onOk(JSONObject response) {
@@ -144,7 +191,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     // Start new Activity
-    private  void showNewActivity(String event) {
+    private  void showNewActivity(int event) {
         Intent myIntent = new Intent(HomeActivity.this, InHomeActivity.class);
         myIntent.putExtra("event", event);
         myIntent.putExtra("userName", useNameSelect);
