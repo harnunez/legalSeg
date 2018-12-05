@@ -104,16 +104,20 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
+    <Button
         android:id="@+id/cancel_button_image"
         android:layout_width="270dp"
         android:layout_height="54dp"
         android:layout_marginTop="512dp"
-        android:contentDescription="@string/cancel_button_image"
+        android:text="@string/cancel_button_image"
+        android:textAlignment="center"
+        android:fontFamily="@font/lato_regular"
+        android:textSize="18sp"
+        android:background="@drawable/default_button"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cancel" />
+        />
 
     <ProgressBar
         android:id="@+id/progressBarCircle"

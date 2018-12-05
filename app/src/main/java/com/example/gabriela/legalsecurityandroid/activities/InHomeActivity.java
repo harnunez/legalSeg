@@ -13,12 +13,15 @@ import android.location.LocationManager;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -33,9 +36,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.json.JSONObject;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
 
 public class InHomeActivity extends AppCompatActivity {
 
@@ -46,7 +46,7 @@ public class InHomeActivity extends AppCompatActivity {
     private TextView titleHeader;
     private TextView timerBack;
     private TextView timerMessage;
-    private ImageButton cancel;
+    private Button buttonDefault;
     private CountDownTimer downTimer;
     private MediaPlayer alarm;
     private LocationManager locationManager;
@@ -59,10 +59,12 @@ public class InHomeActivity extends AppCompatActivity {
     private String event;
     private String useNameSelect;
     private String cliente;
-    private Timer timeService;
+    private Boolean timerActive;
+    private int count = 5;
 
     private static final int COUNTDOWN_MINUTES = 2;
     private static final int ACCESS_FINE_LOCATION_CODE = 100;
+
 
     // Model News
     private NewsModel newsModel;
@@ -89,7 +91,7 @@ public class InHomeActivity extends AppCompatActivity {
         titleHeader = findViewById(R.id.description_access_strong);
         timerBack = findViewById(R.id.timer_back);
         timerMessage = findViewById(R.id.description_access);
-        cancel = findViewById(R.id.cancel_button_image);
+        buttonDefault = findViewById(R.id.cancel_button_image);
         loadingService = findViewById(R.id.loadingService);
 
         // getPut Extras
@@ -99,7 +101,7 @@ public class InHomeActivity extends AppCompatActivity {
         cliente = getIntent().getExtras().getString("idCliente");
 
 
-        if (event.equals(2)) {
+        if (event.equals("3")) {
             title_header_event.setText(R.string.enter_title_header);
         } else {
             title_header_event.setText(R.string.leave_title_header);
@@ -110,40 +112,56 @@ public class InHomeActivity extends AppCompatActivity {
 
     // Timer
     private  void timer(int minutes) {
+
         downTimer = new CountDownTimer(minutes * 60 * 1000, 1000) {
 
             @Override
             public void onTick(long millisUntilFinished) {
+                count--;
                 Long timer = millisUntilFinished / 1000;
                 timerBack.setText("" + timer);
                 int progress = (int) (millisUntilFinished / 1000);
                 progressBar.setProgress(progress);
+                timerActive = true;
 
-                timerServiceCall();
+                if (count == 0) {
+                    timerServiceCall();
+                    count = 5;
+                }
+
+
             }
-
             @Override
             public void onFinish() {
+                timerActive = false;
                 loadingService.setVisibility(View.GONE);
-                timeService.cancel();
-                downTimer.cancel();
-                changeViewForLevelAlert();
+                // downTimer.cancel();
+//                executeService();
+                timerServiceCall();
+                //timerServiceCall();
             }
         };
-        activeAlarm();
+        // activeAlarm();
         downTimer.start();
     }
 
     // Timer Service call
     private void timerServiceCall() {
-        timeService = new Timer();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                executeService();
+            }
+        }, 5000);
+
+        /*timeService = new Timer();
         TimerTask myTask = new TimerTask() {
             @Override
             public void run() {
                 executeService();
             }
         };
-        timeService.schedule(myTask, 5000);
+        timeService.schedule(myTask, 5000);*/
     }
 
     // Add sound alarm
@@ -198,11 +216,10 @@ public class InHomeActivity extends AppCompatActivity {
                 if(permission.equals(Manifest.permission.ACCESS_FINE_LOCATION)){
                     if(result == PackageManager.PERMISSION_GRANTED){
                         executeLocationManager();
-
                         //Toast.makeText(this, "Permiso concedido", Toast.LENGTH_LONG).show();
                     }
                     else{
-                        Toast.makeText(this, "Permiso denegado", Toast.LENGTH_LONG).show();
+                        // Toast.makeText(this, "Permiso denegado", Toast.LENGTH_LONG).show();
                     }
                 }
                 break;
@@ -229,11 +246,11 @@ public class InHomeActivity extends AppCompatActivity {
                 Gson gson = new GsonBuilder().create();
                 newsModel = gson.fromJson(response.toString(), NewsModel.class);
                 if (newsModel.codeResponse == 0) {
-                    alarm.stop();
+                    /*timerBack.setVisibility(View.INVISIBLE);
                     loadingService.setVisibility(View.INVISIBLE);
-                    timeService.cancel();
-                    timerBack.setVisibility(View.INVISIBLE);
-                    downTimer.onFinish();
+                    downTimer.cancel();
+                    timerBack.setText("");*/
+                    changeViewForLevelAlert();
                 } else {
                     alertError(String.valueOf(R.string.error_default));
                 }
@@ -241,19 +258,21 @@ public class InHomeActivity extends AppCompatActivity {
 
             @Override
             public void onError(VolleyError error) {
-
-                alertError("Error, Algo salió mal por favor reintente más tarde");
+                //TODO: REVISAR
+                // alertError("Error, Algo salió mal por favor reintente más tarde");
             }
         });
-        if (latitud != "" && latitud != null && longitud != "" && longitud != null) {
+        /*if (latitud != "" && latitud != null && longitud != "" && longitud != null) {
             vimp.buildJsonNews(event, latitud, longitud, useNameSelect, cliente);
         } else {
-            timeService.cancel();
+            // timeService.cancel();
             downTimer.cancel();
-            backRootActivity();
-            executeAccessLocation();
-            // getLocation();
-        }
+            // backRootActivity();
+            executeLocationManager();
+            //executeAccessLocation();
+            getLocation();
+        }*/
+        vimp.buildJsonNews(event, latitud, longitud, useNameSelect, cliente);
         vimp.doConnectionNovedades();
     }
 
@@ -274,39 +293,70 @@ public class InHomeActivity extends AppCompatActivity {
     // Get parselable response
     private void changeViewForLevelAlert() {
         if (newsModel.alertLevel == 0) {
-            // TODO: MODIFICAR
-            if (event.equals("Entrando")) {
-                setViewLevel(R.drawable.prueba_ok, R.string.message_strong_succes, R.string.message_succes);
+            Log.d("TIMER SERVICE", "newsModel.alertLevel");
+            if (timerActive) {
+                timerServiceCall();
             } else {
+                reset();
+                buttonDefault.setText(R.string.salir_btn);
                 setViewLevel(R.drawable.prueba_ok, R.string.message_strong_succes, R.string.message_succes);
             }
+
+            /* if (event.equals("3")) {
+
+                setViewLevel(R.drawable.prueba_aguada, R.string.message_strong_aguarda_icon, R.string.message_aguarda_icon);
+            } else {
+
+                setViewLevel(R.drawable.prueba_aguada, R.string.message_strong_aguarda_icon, R.string.message_aguarda_icon);
+            }*/
         } else if (newsModel.alertLevel == 1) {
-            if (event.equals("Entrando")) {
+            reset();
+            setViewLevel(R.drawable.prueba_ok, R.string.message_strong_succes, R.string.message_succes);
+            buttonDefault.setText(R.string.salir_btn);
+            /*if (event.equals("3")) {
                 setViewLevel(R.drawable.prueba_ok, R.string.message_strong_succes, R.string.message_succes);
             } else {
                 setViewLevel(R.drawable.prueba_ok, R.string.message_strong_succes, R.string.message_succes);
-            }
+            }*/
         } else if (newsModel.alertLevel == 2) {
-            if (event.equals("Entrando")) {
+            reset();
+            buttonDefault.setText(R.string.salir_btn);
+            setViewLevel(R.drawable.prueba_aguada, R.string.message_strong_aguarda_icon, R.string.message_aguarda_icon);
+
+            /*if (event.equals("Entrando")) {
                 setViewLevel(R.drawable.prueba_aguada, R.string.message_strong_aguarda_icon, R.string.message_aguarda_icon);
             } else {
                 setViewLevel(R.drawable.prueba_aguada, R.string.message_strong_aguarda_icon, R.string.message_aguarda_icon);
-            }
+            }*/
         } else if (newsModel.alertLevel == 3) {
-            if (event.equals("Entrando")) {
+            reset();
+            buttonDefault.setText(R.string.salir_btn);
+            setViewLevel(R.drawable.prueba_peligro, R.string.message_strong_peligro, R.string.message_peligro);
+            activeAlarm();
+            /*if (event.equals("Entrando")) {
                 setViewLevel(R.drawable.prueba_peligro, R.string.message_strong_peligro, R.string.message_peligro);
             } else {
                 setViewLevel(R.drawable.prueba_peligro, R.string.message_strong_peligro, R.string.message_peligro);
-            }
+            }*/
         } else {
             alertError(String.valueOf(R.string.error_default));
         }
     }
 
+
+
+    private void reset() {
+        timerBack.setVisibility(View.INVISIBLE);
+        loadingService.setVisibility(View.INVISIBLE);
+        downTimer.cancel();
+        timerBack.setText("");
+    }
+
     // Data for view Level
     private void setViewLevel(Integer image, Integer titleHeaderDescription, Integer description) {
+        title_header_event.setText("");
         viewTimer.setBackgroundResource(image);
-        titleHeader.setText(titleHeaderDescription);
+       //  titleHeader.setText(titleHeaderDescription);
         timerMessage.setText(description);
         timerBack.setText("");
         progressBar.setVisibility(View.INVISIBLE);
@@ -315,13 +365,18 @@ public class InHomeActivity extends AppCompatActivity {
 
     // Action button cancel
     private void executeEventCancel() {
-        cancel.setOnClickListener(new View.OnClickListener() {
+        buttonDefault.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                alarm.stop();
-                timeService.cancel();
-                downTimer.cancel();
-                InHomeActivity.this.finish();
+
+                if (timerActive) {
+                    //alarm.stop();
+                    //timeService.cancel();
+                    downTimer.cancel();
+                    InHomeActivity.this.finish();
+                } else {
+                    // cerrar app
+                }
             }
         });
     }
@@ -342,14 +397,12 @@ public class InHomeActivity extends AppCompatActivity {
     }
 
 
-    // Action shut Down
     private void executeShutDown() {
         // shutDown
         shutDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 alarm.stop();
-                timeService.cancel();
                 downTimer.cancel();
                 cleanPreferencesUserLogued();
                 backRootActivity();

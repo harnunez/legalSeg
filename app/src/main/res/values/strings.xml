@@ -14,8 +14,8 @@
     <string name="text_description_user_home">¿Què vas a hacer hoy?</string>
     <string name="salir_tv">Salir</string>
     <string name="ingresar_btn">ingresar_btn</string>
-    <string name="salir_btn">salir_btn</string>
-    <string name="cancel_button_image">cancel_button_image</string>
+    <string name="salir_btn">Salir</string>
+    <string name="cancel_button_image">Cancelar</string>
     <string name="cuenta_atras">cuenta_atras</string>
     <string name="enter_title_header">Ingresar</string>
     <string name="leave_title_header">Salir</string>
