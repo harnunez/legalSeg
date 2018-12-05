@@ -95,7 +95,6 @@ public class InHomeActivity extends AppCompatActivity {
         loadingService = findViewById(R.id.loadingService);
 
         // getPut Extras
-        // eventSelected = getIntent().getExtras().getString("event");
         event = getIntent().getExtras().getString("event");
         useNameSelect = getIntent().getExtras().getString("userName");
         cliente = getIntent().getExtras().getString("idCliente");
@@ -319,8 +318,9 @@ public class InHomeActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (timerActive) {
-                    //alarm.stop();
-                    //timeService.cancel();
+                    /*if (newsModel.alertLevel == 3) {
+                        alarm.stop();
+                    }*/
                     downTimer.cancel();
                     InHomeActivity.this.finish();
                 } else {
@@ -351,7 +351,9 @@ public class InHomeActivity extends AppCompatActivity {
         shutDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                alarm.stop();
+                /*if (newsModel.alertLevel == 3) {
+                    alarm.stop();
+                }*/
                 downTimer.cancel();
                 cleanPreferencesUserLogued();
                 backRootActivity();
