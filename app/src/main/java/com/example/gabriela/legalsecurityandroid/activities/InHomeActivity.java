@@ -95,8 +95,8 @@ public class InHomeActivity extends AppCompatActivity {
         loadingService = findViewById(R.id.loadingService);
 
         // getPut Extras
-        int eventSelected = getIntent().getExtras().getInt("event");
-        event = Integer.toString(eventSelected);
+        // eventSelected = getIntent().getExtras().getString("event");
+        event = getIntent().getExtras().getString("event");
         useNameSelect = getIntent().getExtras().getString("userName");
         cliente = getIntent().getExtras().getString("idCliente");
 
@@ -128,20 +128,14 @@ public class InHomeActivity extends AppCompatActivity {
                     timerServiceCall();
                     count = 5;
                 }
-
-
             }
             @Override
             public void onFinish() {
                 timerActive = false;
                 loadingService.setVisibility(View.GONE);
-                // downTimer.cancel();
-//                executeService();
                 timerServiceCall();
-                //timerServiceCall();
             }
         };
-        // activeAlarm();
         downTimer.start();
     }
 
@@ -153,15 +147,6 @@ public class InHomeActivity extends AppCompatActivity {
                 executeService();
             }
         }, 5000);
-
-        /*timeService = new Timer();
-        TimerTask myTask = new TimerTask() {
-            @Override
-            public void run() {
-                executeService();
-            }
-        };
-        timeService.schedule(myTask, 5000);*/
     }
 
     // Add sound alarm
@@ -175,7 +160,6 @@ public class InHomeActivity extends AppCompatActivity {
     private void getLocation() {
         if( checkCurrentAndroidVersion()){
             requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, ACCESS_FINE_LOCATION_CODE );
-            // requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, ACCESS_COARSE_LOCATION_CODE );
         }
         else {
             executeLocationManager();
@@ -201,8 +185,6 @@ public class InHomeActivity extends AppCompatActivity {
         } else {
             // alertError("No es posible acceder a tu ubicación, por favor verificá los permisos y reintenta nuevamente");
         }
-
-        // timer(COUNTDOWN_MINUTES);
     }
 
     @Override
@@ -246,13 +228,9 @@ public class InHomeActivity extends AppCompatActivity {
                 Gson gson = new GsonBuilder().create();
                 newsModel = gson.fromJson(response.toString(), NewsModel.class);
                 if (newsModel.codeResponse == 0) {
-                    /*timerBack.setVisibility(View.INVISIBLE);
-                    loadingService.setVisibility(View.INVISIBLE);
-                    downTimer.cancel();
-                    timerBack.setText("");*/
                     changeViewForLevelAlert();
                 } else {
-                    alertError(String.valueOf(R.string.error_default));
+                    // alertError(String.valueOf(R.string.error_default));
                 }
             }
 
@@ -289,61 +267,33 @@ public class InHomeActivity extends AppCompatActivity {
         }
     }
 
-
-    // Get parselable response
+    // Get response
     private void changeViewForLevelAlert() {
         if (newsModel.alertLevel == 0) {
-            Log.d("TIMER SERVICE", "newsModel.alertLevel");
             if (timerActive) {
                 timerServiceCall();
             } else {
                 reset();
                 buttonDefault.setText(R.string.salir_btn);
-                setViewLevel(R.drawable.prueba_ok, R.string.message_strong_succes, R.string.message_succes);
+                setViewLevel(R.drawable.prueba_ok, R.string.message_succes);
             }
-
-            /* if (event.equals("3")) {
-
-                setViewLevel(R.drawable.prueba_aguada, R.string.message_strong_aguarda_icon, R.string.message_aguarda_icon);
-            } else {
-
-                setViewLevel(R.drawable.prueba_aguada, R.string.message_strong_aguarda_icon, R.string.message_aguarda_icon);
-            }*/
         } else if (newsModel.alertLevel == 1) {
             reset();
-            setViewLevel(R.drawable.prueba_ok, R.string.message_strong_succes, R.string.message_succes);
+            setViewLevel(R.drawable.prueba_ok,R.string.message_succes);
             buttonDefault.setText(R.string.salir_btn);
-            /*if (event.equals("3")) {
-                setViewLevel(R.drawable.prueba_ok, R.string.message_strong_succes, R.string.message_succes);
-            } else {
-                setViewLevel(R.drawable.prueba_ok, R.string.message_strong_succes, R.string.message_succes);
-            }*/
         } else if (newsModel.alertLevel == 2) {
             reset();
             buttonDefault.setText(R.string.salir_btn);
-            setViewLevel(R.drawable.prueba_aguada, R.string.message_strong_aguarda_icon, R.string.message_aguarda_icon);
-
-            /*if (event.equals("Entrando")) {
-                setViewLevel(R.drawable.prueba_aguada, R.string.message_strong_aguarda_icon, R.string.message_aguarda_icon);
-            } else {
-                setViewLevel(R.drawable.prueba_aguada, R.string.message_strong_aguarda_icon, R.string.message_aguarda_icon);
-            }*/
+            setViewLevel(R.drawable.prueba_aguada, R.string.message_aguarda_icon);
         } else if (newsModel.alertLevel == 3) {
             reset();
             buttonDefault.setText(R.string.salir_btn);
-            setViewLevel(R.drawable.prueba_peligro, R.string.message_strong_peligro, R.string.message_peligro);
+            setViewLevel(R.drawable.prueba_peligro, R.string.message_peligro);
             activeAlarm();
-            /*if (event.equals("Entrando")) {
-                setViewLevel(R.drawable.prueba_peligro, R.string.message_strong_peligro, R.string.message_peligro);
-            } else {
-                setViewLevel(R.drawable.prueba_peligro, R.string.message_strong_peligro, R.string.message_peligro);
-            }*/
         } else {
             alertError(String.valueOf(R.string.error_default));
         }
     }
-
-
 
     private void reset() {
         timerBack.setVisibility(View.INVISIBLE);
@@ -353,10 +303,9 @@ public class InHomeActivity extends AppCompatActivity {
     }
 
     // Data for view Level
-    private void setViewLevel(Integer image, Integer titleHeaderDescription, Integer description) {
+    private void setViewLevel(Integer image, Integer description) {
         title_header_event.setText("");
         viewTimer.setBackgroundResource(image);
-       //  titleHeader.setText(titleHeaderDescription);
         timerMessage.setText(description);
         timerBack.setText("");
         progressBar.setVisibility(View.INVISIBLE);
@@ -375,7 +324,7 @@ public class InHomeActivity extends AppCompatActivity {
                     downTimer.cancel();
                     InHomeActivity.this.finish();
                 } else {
-                    // cerrar app
+                    finishAffinity();
                 }
             }
         });

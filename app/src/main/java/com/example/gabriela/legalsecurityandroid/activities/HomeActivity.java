@@ -63,7 +63,6 @@ public class HomeActivity extends AppCompatActivity {
 
         userName.setText("Hola " + useNameSelect);
 
-
         executeActionButtons();
     }
 
@@ -74,14 +73,12 @@ public class HomeActivity extends AppCompatActivity {
         executeShutDown();
     }
 
-
-
     // Get Current Location
     private boolean checkCurrentAndroidVersion(){
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.M;
     }
 
-    private void getAppLocationPermisson(int eventSelected) {
+    private void getAppLocationPermisson(final String eventSelected) {
         if( checkCurrentAndroidVersion()){
             requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, ACCESS_FINE_LOCATION_CODE );
         }
@@ -93,7 +90,7 @@ public class HomeActivity extends AppCompatActivity {
     // Event enter
     private void executeEventEnterHome() {
 
-        eventSelected = 3;
+        final String eventSelected = "3";
         inHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,14 +103,14 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
-        switch (requestCode){
+        switch (requestCode) {
             case ACCESS_FINE_LOCATION_CODE:
                 String permission = permissions[0];
                 int result = grantResults[0];
 
                 if(permission.equals(Manifest.permission.ACCESS_FINE_LOCATION)){
-                    if(result == PackageManager.PERMISSION_GRANTED){
-                        executeService(eventSelected);
+                    if(result == PackageManager.PERMISSION_GRANTED) {
+                        // executeService(eventSelected);
                     }
                     else{
                         Toast.makeText(this, "Permiso denegado", Toast.LENGTH_LONG).show();
@@ -129,7 +126,7 @@ public class HomeActivity extends AppCompatActivity {
     // Event leave
     private void executeEventLeaveHome() {
         // out
-        eventSelected = 2;
+       final String eventSelected = "2";
         outHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -139,7 +136,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     // EventsWS
-    public void executeService(final int eventSelected) {
+    public void executeService(final String eventSelected) {
         VolleyImplementation vimp = new VolleyImplementation(this, new doConnectionEvent() {
             @Override
             public void onOk(JSONObject response) {
@@ -191,7 +188,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     // Start new Activity
-    private  void showNewActivity(int event) {
+    private  void showNewActivity(String event) {
         Intent myIntent = new Intent(HomeActivity.this, InHomeActivity.class);
         myIntent.putExtra("event", event);
         myIntent.putExtra("userName", useNameSelect);
