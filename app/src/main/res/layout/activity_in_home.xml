@@ -94,7 +94,7 @@
     <TextView
         android:id="@+id/description_access"
         android:layout_width="270dp"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
         android:layout_marginTop="376dp"
         android:fontFamily="@font/lato_regular"
         android:text="@string/description_message"
@@ -113,7 +113,6 @@
         android:textAlignment="center"
         android:fontFamily="@font/lato_regular"
         android:textSize="18sp"
-        android:background="@drawable/default_button"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
