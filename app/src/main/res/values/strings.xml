@@ -40,7 +40,8 @@
 
     // Error default
     <string name="error_default">Ocurrio un error, por favor reintente más tarde</string>
-
+    <string name="error_login">No se puede acceder a la información por favor reintente más tarde</string>
+    <string name="error_connection">Algo salió mal por favor reintente más tarde</string>
 
     // login text
     <string name="complete_fields">Por favor complete los campos y reintente</string>

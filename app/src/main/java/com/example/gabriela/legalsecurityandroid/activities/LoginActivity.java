@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(user.getText().toString().isEmpty() && password.getText().toString().isEmpty()) {
-                    alertError(String.valueOf(R.string.complete_fields));
+                    alertError(getResources().getString(R.string.complete_fields));
                 } else {
                     loading.setVisibility(View.GONE);
                     executeService();
@@ -89,14 +89,14 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onError(VolleyError error) {
-                alertError(String.valueOf(R.string.error_connection));
+                alertError(getResources().getString(R.string.error_connection) );
             }
         });
 
         if (user.getText().toString() != "" && user.getText().toString() != null && password.getText().toString() != "" && password.getText().toString() != null) {
             vimp.buildJsonLogin(user.getText().toString(), password.getText().toString());
         } else {
-            alertError(String.valueOf(R.string.invalid_data));
+            alertError(getResources().getString(R.string.invalid_data));
         }
         vimp.doConnectionLogin();
     }
