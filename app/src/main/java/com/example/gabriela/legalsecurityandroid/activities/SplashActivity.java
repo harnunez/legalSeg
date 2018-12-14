@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.R;
+import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
 import com.example.gabriela.legalsecurityandroid.models.LoginUserModel;
 import com.example.gabriela.legalsecurityandroid.services.VolleyImplementation;
@@ -20,7 +21,7 @@ import org.json.JSONObject;
 public class SplashActivity extends AppCompatActivity {
 
 
-    private static int splashTimeOut=5000;
+    private static int splashTimeOut=2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,9 +64,11 @@ public class SplashActivity extends AppCompatActivity {
                     startNewActivity(mLogin);
                 } else {
                     if (mLogin.message != "" && mLogin.message != null) {
-                        alertError(mLogin.message);
+                        Util.alertError(mLogin.message, SplashActivity.this);
+                        //alertError(mLogin.message);
                     } else {
-                        alertError("No se puede acceder a la información por favor reintente más tarde");
+                        Util.alertError(getResources().getString(R.string.error_login), SplashActivity.this);
+                        //alertError(getResources().getString(R.string.error_login));
                     }
                    //  alertError(messageError);
                 }
@@ -73,7 +76,8 @@ public class SplashActivity extends AppCompatActivity {
 
             @Override
             public void onError(VolleyError error) {
-                alertError("Error, Algo salió mal por favor reintente más tarde");
+                Util.alertError(getResources().getString(R.string.error_connection), SplashActivity.this);
+               // alertError(getResources().getString(R.string.error_connection));
             }
         });
         vimp.buildJsonLogin(user, password);
@@ -90,17 +94,17 @@ public class SplashActivity extends AppCompatActivity {
 
 
     // Alert error
-    private void alertError(String message) {
-        final AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
-        dlgAlert.setMessage(message);
-        dlgAlert.setTitle("Error");
-        dlgAlert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        dlgAlert.setCancelable(true);
-        dlgAlert.create().show();
-    }
+//    private void alertError(String message) {
+//        final AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
+//        dlgAlert.setMessage(message);
+//        dlgAlert.setTitle("Error");
+//        dlgAlert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//            public void onClick(DialogInterface dialog, int which) {
+//                dialog.dismiss();
+//            }
+//        });
+//        dlgAlert.setCancelable(true);
+//        dlgAlert.create().show();
+//    }
 }
 

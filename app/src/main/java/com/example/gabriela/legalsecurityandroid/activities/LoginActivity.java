@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.R;
+import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.models.LoginUserModel;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
 import com.example.gabriela.legalsecurityandroid.services.VolleyImplementation;
@@ -62,7 +63,8 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(user.getText().toString().isEmpty() && password.getText().toString().isEmpty()) {
-                    alertError(getResources().getString(R.string.complete_fields));
+                    Util.alertError(getResources().getString(R.string.complete_fields), LoginActivity.this);
+                    //alertError(getResources().getString(R.string.complete_fields));
                 } else {
                     loading.setVisibility(View.GONE);
                     executeService();
@@ -83,39 +85,40 @@ public class LoginActivity extends AppCompatActivity {
                     sharedPreferenceLogin();
                     startNewActivity(mLogin);
                 } else {
-                    alertError(mLogin.message);
+                    Util.alertError(mLogin.message,LoginActivity.this);
+                   // alertError(mLogin.message);
                 }
             }
 
             @Override
             public void onError(VolleyError error) {
-                alertError(getResources().getString(R.string.error_connection) );
+                Util.alertError(getResources().getString(R.string.error_connection), LoginActivity.this);
             }
         });
 
         if (user.getText().toString() != "" && user.getText().toString() != null && password.getText().toString() != "" && password.getText().toString() != null) {
             vimp.buildJsonLogin(user.getText().toString(), password.getText().toString());
         } else {
-            alertError(getResources().getString(R.string.invalid_data));
+            Util.alertError(getResources().getString(R.string.invalid_data), LoginActivity.this);
+            //alertError(getResources().getString(R.string.invalid_data));
         }
         vimp.doConnectionLogin();
     }
 
-
     // Alert error
-    private void alertError(String message) {
-        final AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
-        dlgAlert.setMessage(message);
-        dlgAlert.setTitle("Error");
-        dlgAlert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                cleanText();
-                dialog.dismiss();
-            }
-        });
-        dlgAlert.setCancelable(true);
-        dlgAlert.create().show();
-    }
+//    private void alertError(String message) {
+//        final AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
+//        dlgAlert.setMessage(message);
+//        dlgAlert.setTitle("Error");
+//        dlgAlert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//            public void onClick(DialogInterface dialog, int which) {
+//                cleanText();
+//                dialog.dismiss();
+//            }
+//        });
+//        dlgAlert.setCancelable(true);
+//        dlgAlert.create().show();
+//    }
 
     // cleanText
     private void cleanText() {

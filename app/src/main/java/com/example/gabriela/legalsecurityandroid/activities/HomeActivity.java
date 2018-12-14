@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.R;
+import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
 import com.example.gabriela.legalsecurityandroid.models.EventModel;
 import com.example.gabriela.legalsecurityandroid.services.VolleyImplementation;
@@ -138,7 +139,8 @@ public class HomeActivity extends AppCompatActivity {
                 if (event.availableEvents > 0) {
                     showNewActivity(eventSelected);
                 } else {
-                    showAlertError(event.message);
+                    Util.alertError(event.message, HomeActivity.this);
+                   // showAlertError(event.message);
                 }
             }
 
@@ -187,16 +189,16 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     // Alert dialog error
-    private void showAlertError(String message) {
-        final AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
-        dlgAlert.setMessage(message);
-        dlgAlert.setTitle("Error");
-        dlgAlert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        dlgAlert.setCancelable(true);
-        dlgAlert.create().show();
-    }
+//    private void showAlertError(String message) {
+//        final AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
+//        dlgAlert.setMessage(message);
+//        dlgAlert.setTitle("Error");
+//        dlgAlert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+//            public void onClick(DialogInterface dialog, int which) {
+//                dialog.dismiss();
+//            }
+//        });
+//        dlgAlert.setCancelable(true);
+//        dlgAlert.create().show();
+//    }
 }
