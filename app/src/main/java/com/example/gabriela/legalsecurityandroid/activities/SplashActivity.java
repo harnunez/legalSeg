@@ -18,7 +18,6 @@ import org.json.JSONObject;
 
 public class SplashActivity extends AppCompatActivity {
 
-
     private static int splashTimeOut=2000;
 
     @Override
@@ -30,12 +29,10 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 checkExistCredentialUserLogued();
-                finish();
             }
         },splashTimeOut);
 
     }
-
 
     private void checkExistCredentialUserLogued() {
         SharedPreferences prefs = getSharedPreferences("CredentialsUserLogued",Context.MODE_PRIVATE);
@@ -46,10 +43,9 @@ public class SplashActivity extends AppCompatActivity {
         } else {
             Intent myIntent = new Intent(SplashActivity.this,  LoginActivity.class);
             startActivity(myIntent);
+            finish();
         }
     }
-
-
 
     private void executeService(String user, String password) {
 
@@ -60,6 +56,7 @@ public class SplashActivity extends AppCompatActivity {
                 LoginUserModel mLogin = gson.fromJson(response.toString(), LoginUserModel.class);
                 if (mLogin.codeResponse == 0) {
                     startNewActivity(mLogin);
+                    finish();
                 } else {
                     if (mLogin.message != "" && mLogin.message != null) {
                         Util.alertError(mLogin.message, SplashActivity.this);
@@ -78,7 +75,6 @@ public class SplashActivity extends AppCompatActivity {
         vimp.buildJsonLogin(user, password);
         vimp.doConnectionLogin();
     }
-
 
     // start new Activity
     private void startNewActivity(LoginUserModel mLogin) {
