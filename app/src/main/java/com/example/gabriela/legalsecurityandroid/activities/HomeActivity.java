@@ -13,7 +13,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,8 +21,6 @@ import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.R;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
 import com.example.gabriela.legalsecurityandroid.models.EventModel;
-import com.example.gabriela.legalsecurityandroid.models.LoginUserModel;
-import com.example.gabriela.legalsecurityandroid.models.NewsModel;
 import com.example.gabriela.legalsecurityandroid.services.VolleyImplementation;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -39,18 +36,18 @@ public class HomeActivity extends AppCompatActivity {
     private ImageButton shutDown;
     private String useNameSelect;
     private String idCliente;
-    private int eventSelected;
-
+    private String eventSelected;
+    private static final String EVENT_ENTER_HOME = "3";
+    private static final String EVENT_LEAVE_HOME = "2";
     private final int ACCESS_FINE_LOCATION_CODE = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
         initProperties();
+        executeActionButtons();
     }
-
 
     // Init properties
     private void initProperties() {
@@ -60,10 +57,7 @@ public class HomeActivity extends AppCompatActivity {
         inHome = findViewById(R.id.ingresar_btn);
         outHome = findViewById(R.id.salir_btn);
         shutDown = findViewById(R.id.icon_shut_down);
-
         userName.setText("Hola " + useNameSelect);
-
-        executeActionButtons();
     }
 
     // Execute Buttons
@@ -89,20 +83,17 @@ public class HomeActivity extends AppCompatActivity {
 
     // Event enter
     private void executeEventEnterHome() {
-
-        final String eventSelected = "3";
         inHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                eventSelected = EVENT_ENTER_HOME;
                 getAppLocationPermisson(eventSelected);
             }
         });
     }
 
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
         switch (requestCode) {
             case ACCESS_FINE_LOCATION_CODE:
                 String permission = permissions[0];
@@ -110,7 +101,7 @@ public class HomeActivity extends AppCompatActivity {
 
                 if(permission.equals(Manifest.permission.ACCESS_FINE_LOCATION)){
                     if(result == PackageManager.PERMISSION_GRANTED) {
-                        // executeService(eventSelected);
+                        executeService(eventSelected);
                     }
                     else{
                         Toast.makeText(this, "Permiso denegado", Toast.LENGTH_LONG).show();
@@ -125,11 +116,10 @@ public class HomeActivity extends AppCompatActivity {
 
     // Event leave
     private void executeEventLeaveHome() {
-        // out
-       final String eventSelected = "2";
         outHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                eventSelected = EVENT_LEAVE_HOME;
                 getAppLocationPermisson(eventSelected);
             }
         });
