@@ -27,6 +27,7 @@
     // succes text description
     <string name="message_strong_succes">Listo</string>
     <string name="message_succes">Podés salir tranquilo de tu vivienda</string>
+    <string name="message_succes_entry">Podés entrar tranquilo a tu vivienda</string>
 
     // wait text description
     <string name="message_strong_aguarda_icon">Aguardá un momento</string>
@@ -40,5 +41,9 @@
     // Error default
     <string name="error_default">Ocurrio un error, por favor reintente más tarde</string>
 
+
+    // login text
+    <string name="complete_fields">Por favor complete los campos y reintente</string>
+    <string name="invalid_data">Algunos datos ingresados son inválidos, por favor verifique y reintente</string>
 
 </resources>

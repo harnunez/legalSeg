@@ -10,7 +10,6 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,7 +41,6 @@ public class LoginActivity extends AppCompatActivity {
 
     // Init properties
     private void initProperties() {
-
         user = findViewById(R.id.user);
         password = findViewById(R.id.password);
         login = findViewById(R.id.button_login);
@@ -64,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(user.getText().toString().isEmpty() && password.getText().toString().isEmpty()) {
-                    alertError("Por favor complete los campos y reintente");
+                    alertError(String.valueOf(R.string.complete_fields));
                 } else {
                     loading.setVisibility(View.GONE);
                     executeService();
@@ -91,14 +89,14 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onError(VolleyError error) {
-                alertError("Error, Algo salió mal por favor reintente más tarde");
+                alertError(String.valueOf(R.string.error_connection));
             }
         });
 
         if (user.getText().toString() != "" && user.getText().toString() != null && password.getText().toString() != "" && password.getText().toString() != null) {
             vimp.buildJsonLogin(user.getText().toString(), password.getText().toString());
         } else {
-            alertError("Algunos datos ingresados son inválidos, por favor verifique y reintente");
+            alertError(String.valueOf(R.string.invalid_data));
         }
         vimp.doConnectionLogin();
     }
@@ -139,6 +137,7 @@ public class LoginActivity extends AppCompatActivity {
     private void startNewActivity(LoginUserModel mLogin) {
         Intent myIntent = new Intent(LoginActivity.this, SelectUserActivity.class);
         myIntent.putExtra("useLogued", mLogin);
+        myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(myIntent);
     }
 
