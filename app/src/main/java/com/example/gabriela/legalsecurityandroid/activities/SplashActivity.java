@@ -1,11 +1,9 @@
 package com.example.gabriela.legalsecurityandroid.activities;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Handler;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import com.android.volley.VolleyError;
@@ -65,10 +63,8 @@ public class SplashActivity extends AppCompatActivity {
                 } else {
                     if (mLogin.message != "" && mLogin.message != null) {
                         Util.alertError(mLogin.message, SplashActivity.this);
-                        //alertError(mLogin.message);
                     } else {
                         Util.alertError(getResources().getString(R.string.error_login), SplashActivity.this);
-                        //alertError(getResources().getString(R.string.error_login));
                     }
                    //  alertError(messageError);
                 }
@@ -77,7 +73,6 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onError(VolleyError error) {
                 Util.alertError(getResources().getString(R.string.error_connection), SplashActivity.this);
-               // alertError(getResources().getString(R.string.error_connection));
             }
         });
         vimp.buildJsonLogin(user, password);
@@ -92,19 +87,5 @@ public class SplashActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
-
-    // Alert error
-//    private void alertError(String message) {
-//        final AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
-//        dlgAlert.setMessage(message);
-//        dlgAlert.setTitle("Error");
-//        dlgAlert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//            public void onClick(DialogInterface dialog, int which) {
-//                dialog.dismiss();
-//            }
-//        });
-//        dlgAlert.setCancelable(true);
-//        dlgAlert.create().show();
-//    }
 }
 

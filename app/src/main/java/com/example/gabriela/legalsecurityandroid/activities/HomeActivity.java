@@ -2,13 +2,11 @@ package com.example.gabriela.legalsecurityandroid.activities;
 
 import android.Manifest;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -140,7 +138,6 @@ public class HomeActivity extends AppCompatActivity {
                     showNewActivity(eventSelected);
                 } else {
                     Util.alertError(event.message, HomeActivity.this);
-                   // showAlertError(event.message);
                 }
             }
 
@@ -188,17 +185,4 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
-    // Alert dialog error
-//    private void showAlertError(String message) {
-//        final AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(this);
-//        dlgAlert.setMessage(message);
-//        dlgAlert.setTitle("Error");
-//        dlgAlert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//            public void onClick(DialogInterface dialog, int which) {
-//                dialog.dismiss();
-//            }
-//        });
-//        dlgAlert.setCancelable(true);
-//        dlgAlert.create().show();
-//    }
 }
