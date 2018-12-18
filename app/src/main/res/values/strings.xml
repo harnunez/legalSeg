@@ -47,4 +47,7 @@
     <string name="complete_fields">Por favor complete los campos y reintente</string>
     <string name="invalid_data">Algunos datos ingresados son inválidos, por favor verifique y reintente</string>
 
+    // warning
+    <string name="warning_title">Atención</string>
+    <string name="warning_connection">Necesitamos que estes conectado a internet para que la aplicación pueda funcionar</string>
 </resources>
