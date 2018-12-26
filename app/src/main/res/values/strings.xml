@@ -20,7 +20,7 @@
     <string name="enter_title_header">Ingresar</string>
     <string name="leave_title_header">Salir</string>
 
-    // timer text description
+    // timenotification_title_alertr text description
     <string name="description_message">Nuestros operadores en unos segundos van a tomar su pedido.</string>
 
 
@@ -28,6 +28,8 @@
     <string name="message_strong_succes">Listo</string>
     <string name="message_succes">Podés salir tranquilo de tu vivienda</string>
     <string name="message_succes_entry">Podés entrar tranquilo a tu vivienda</string>
+    <string name="notification_title">Te informamos que</string>
+    <string name="notification_title_alert">Alerta !</string>
 
     // wait text description
     <string name="message_strong_aguarda_icon">Aguardá un momento</string>
@@ -36,18 +38,25 @@
     // danger text description
     <string name="message_strong_peligro">Movimientos inesperados</string>
     <string name="message_peligro">Estamos comunicándonos con el 911.\n Aguarda dentro de tu vehículo\n o mantenete fuera del área</string>
-
+    <string name="message_call911">Estamos comunicándonos con el 911</string>
 
     // Error default
     <string name="error_default">Ocurrio un error, por favor reintente más tarde</string>
     <string name="error_login">No se puede acceder a la información por favor reintente más tarde</string>
     <string name="error_connection">Algo salió mal por favor reintente más tarde</string>
+    <string name="error_location">No se pudo obtener tu ubicación, por favor volve a intentalo nuevamente</string>
 
     // login text
     <string name="complete_fields">Por favor complete los campos y reintente</string>
+    <string name="complete_user_field">Por favor, ingrese el nombre de usuario</string>
+    <string name="complete_password_field">Por favor, ingrese la contraseña</string>
     <string name="invalid_data">Algunos datos ingresados son inválidos, por favor verifique y reintente</string>
 
     // warning
     <string name="warning_title">Atención</string>
+    <string name="warning_gps">Necesitamos que tengas encendido el GPS para que la aplicación pueda funcionar</string>
     <string name="warning_connection">Necesitamos que estes conectado a internet para que la aplicación pueda funcionar</string>
+    <string name="warning_out_of_coverage">En este momento estas fuera del área de alcance, en cuanto te acerques más a tu hogar te estaremos monitoreando</string>
+    <string name="warning_lost_connection">Por favor, revisa tu conexión a internet para poder seguir utilizando la aplicación</string>
+
 </resources>

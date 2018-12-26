@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.R;
+import com.example.gabriela.legalsecurityandroid.Utils.NetworkUtil;
 import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.models.LoginUserModel;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
@@ -27,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText user;
     private EditText password;
     private ProgressBar loading;
+    private boolean serviceInstanceBeenCalled = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,17 +62,22 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(user.getText().toString().isEmpty() && password.getText().toString().isEmpty()) {
-                    Util.alertError(getResources().getString(R.string.complete_fields), LoginActivity.this);
-                    //alertError(getResources().getString(R.string.complete_fields));
-                } else {
+                if(Util.fieldIsEmpty(user)){
+                    Util.warningDialog( getResources().getString( R.string.complete_user_field ), LoginActivity.this );
+                }
+                else  if(Util.fieldIsEmpty( password )){
+                    Util.warningDialog( getResources().getString( R.string.complete_password_field ), LoginActivity.this );
+                }
+                else {
                     loading.setVisibility(View.GONE);
-                    executeService();
+                    if(!serviceInstanceBeenCalled){
+                        serviceInstanceBeenCalled = true;
+                        executeService();
+                    }
                 }
             }
         });
     }
-
 
     private void executeService() {
         VolleyImplementation vimp = new VolleyImplementation(this, new doConnectionEvent() {
@@ -83,27 +90,36 @@ public class LoginActivity extends AppCompatActivity {
                     sharedPreferenceLogin();
                     startNewActivity(mLogin);
                 } else {
-                    Util.alertError(mLogin.message,LoginActivity.this);
-                   // alertError(mLogin.message);
+                    Util.warningDialog( mLogin.message,LoginActivity.this );
                 }
+                serviceInstanceBeenCalled = false;
             }
 
             @Override
             public void onError(VolleyError error) {
-                Util.alertError(getResources().getString(R.string.error_connection), LoginActivity.this);
+                Util.warningDialog( getResources().getString(R.string.error_connection), LoginActivity.this );
+                serviceInstanceBeenCalled = false;
             }
         });
 
-        if (user.getText().toString() != "" && user.getText().toString() != null && password.getText().toString() != "" && password.getText().toString() != null) {
+        if (validateLoginFields() ) {
             vimp.buildJsonLogin(user.getText().toString(), password.getText().toString());
         } else {
-            Util.alertError(getResources().getString(R.string.invalid_data), LoginActivity.this);
-            //alertError(getResources().getString(R.string.invalid_data));
+            Util.warningDialog( getResources().getString(R.string.invalid_data), LoginActivity.this );
         }
-        vimp.doConnectionLogin();
+
+        if(NetworkUtil.isNetworkEnable( LoginActivity.this )){
+            vimp.doConnectionLogin();
+        }
+        else {
+            Util.warningDialog( getResources().getString( R.string.warning_connection ), LoginActivity.this );
+        }
     }
 
-    // cleanText
+    private boolean validateLoginFields(){
+        return user.getText().toString() != "" && user.getText().toString() != null && password.getText().toString() != "" && password.getText().toString() != null;
+    }
+
     private void cleanText() {
         user.getText().clear();
         password.getText().clear();
@@ -126,5 +142,4 @@ public class LoginActivity extends AppCompatActivity {
         myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(myIntent);
     }
-
 }

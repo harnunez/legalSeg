@@ -8,6 +8,9 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ProgressBar;
+
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.R;
 import com.example.gabriela.legalsecurityandroid.Utils.NetworkUtil;
@@ -21,6 +24,7 @@ import org.json.JSONObject;
 
 public class SplashActivity extends AppCompatActivity {
 
+    private ProgressBar progressBar;
     private static final long splashTimeOut=2000;
     private final static String CONNECTIVITY_ACTION = "android.net.conn.CONNECTIVITY_CHANGE";
     //private final static String WIFI_STATE = "android.net.wifi.WIFI_STATE_CHANGED";
@@ -29,7 +33,15 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+        initProperties();
+        //startAppSplashActivity();
+    }
 
+    private void initProperties() {
+        progressBar = findViewById( R.id.splash_progress_bar );
+    }
+
+    private void startAppSplashActivity(){
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -57,11 +69,11 @@ public class SplashActivity extends AppCompatActivity {
             String password = prefs.getString("password", "");
 
             //check connection
-            if (NetworkUtil.networkEnable(this)){
+            if (NetworkUtil.isNetworkEnable(this)){
                 executeService(user, password);
             }
             else {
-                showWarningMessage();
+                showWarningConnectionMessage();
             }
         } else {
             startLoginActivity();
@@ -99,7 +111,7 @@ public class SplashActivity extends AppCompatActivity {
         vimp.doConnectionLogin();
     }
 
-    private void showWarningMessage() {
+    private void showWarningConnectionMessage() {
         Util.warningDialog(getResources().getString(R.string.warning_connection), SplashActivity.this);
     }
 
@@ -125,8 +137,13 @@ public class SplashActivity extends AppCompatActivity {
     private BroadcastReceiver networkStatus = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if(NetworkUtil.networkEnable(context)){
-                checkExistCredentialUserLogued();
+            if(NetworkUtil.isNetworkEnable(context)){
+                startAppSplashActivity();
+                progressBar.setVisibility( View.INVISIBLE );
+            }else{
+                showWarningConnectionMessage();
+                progressBar.setVisibility( View.VISIBLE );
+
             }
         }
     };

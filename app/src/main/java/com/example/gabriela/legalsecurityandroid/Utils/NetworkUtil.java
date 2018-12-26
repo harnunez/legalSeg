@@ -9,7 +9,7 @@ public class NetworkUtil {
     public static final boolean NETWORK_DISABLE = false;
 
 
-    public static boolean networkEnable(Context context) {
+    public static boolean isNetworkEnable(Context context) {
         //check connection
         ConnectivityManager cm =  (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();

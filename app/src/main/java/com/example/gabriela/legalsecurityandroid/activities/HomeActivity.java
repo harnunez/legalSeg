@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,6 +16,7 @@ import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.R;
+import com.example.gabriela.legalsecurityandroid.Utils.NetworkUtil;
 import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
 import com.example.gabriela.legalsecurityandroid.models.EventModel;
@@ -48,7 +48,6 @@ public class HomeActivity extends AppCompatActivity {
         executeActionButtons();
     }
 
-    // Init properties
     private void initProperties() {
         useNameSelect = getIntent().getExtras().getString("UserName");
         idCliente = getIntent().getExtras().getString("idCliente");
@@ -59,34 +58,39 @@ public class HomeActivity extends AppCompatActivity {
         userName.setText("Hola " + useNameSelect);
     }
 
-    // Execute Buttons
     private void executeActionButtons() {
         executeEventEnterHome();
         executeEventLeaveHome();
         executeShutDown();
     }
 
-    // Get Current Location
-    private boolean checkCurrentAndroidVersion(){
-        return Build.VERSION.SDK_INT >= Build.VERSION_CODES.M;
-    }
-
-    private void getAppLocationPermisson(final String eventSelected) {
-        if( checkCurrentAndroidVersion()){
+    private void checkAppLocationPermisson(final String eventSelected) {
+        if( Util.checkCurrentAndroidVersion()){
             requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, ACCESS_FINE_LOCATION_CODE );
         }
         else {
+            checkAppProviders();
+        }
+    }
+
+    private void checkAppProviders() {
+        if(! Util.isGPSEnable(HomeActivity.this)){
+            Util.warningDialog( getResources().getString( R.string.warning_gps ), HomeActivity.this);
+        }
+        else if(! NetworkUtil.isNetworkEnable( HomeActivity.this )){
+            Util.warningDialog( getResources().getString( R.string.warning_connection ), HomeActivity.this);
+        }
+        else{
             executeService(eventSelected);
         }
     }
 
-    // Event enter
     private void executeEventEnterHome() {
         inHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 eventSelected = EVENT_ENTER_HOME;
-                getAppLocationPermisson(eventSelected);
+                checkAppLocationPermisson(eventSelected);
             }
         });
     }
@@ -100,10 +104,10 @@ public class HomeActivity extends AppCompatActivity {
 
                 if(permission.equals(Manifest.permission.ACCESS_FINE_LOCATION)){
                     if(result == PackageManager.PERMISSION_GRANTED) {
-                        executeService(eventSelected);
+                        checkAppProviders();
                     }
                     else{
-                        Toast.makeText(this, "Permiso denegado", Toast.LENGTH_LONG).show();
+                        Toast.makeText(this, "Es necesario habilitar este permiso para que funcione la aplicación", Toast.LENGTH_LONG).show();
                     }
                 }
                 break;
@@ -119,7 +123,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 eventSelected = EVENT_LEAVE_HOME;
-                getAppLocationPermisson(eventSelected);
+                checkAppLocationPermisson(eventSelected);
             }
         });
     }
@@ -150,9 +154,7 @@ public class HomeActivity extends AppCompatActivity {
         vimp.doConnectionEvents();
     }
 
-    // Action shut Down
     private void executeShutDown() {
-        // shutDown
         shutDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -162,13 +164,11 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    // root Activity
     private void backRootActivity() {
         Intent myIntent = new Intent(HomeActivity.this, LoginActivity.class);
         startActivity(myIntent);
     }
 
-    // Clean preferences session
     private void cleanPreferencesUserLogued() {
         SharedPreferences preferences =getSharedPreferences("CredentialsUserLogued",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
@@ -176,7 +176,6 @@ public class HomeActivity extends AppCompatActivity {
         editor.commit();
     }
 
-    // Start new Activity
     private  void showNewActivity(String event) {
         Intent myIntent = new Intent(HomeActivity.this, InHomeActivity.class);
         myIntent.putExtra("event", event);
@@ -184,5 +183,4 @@ public class HomeActivity extends AppCompatActivity {
         myIntent.putExtra("idCliente", idCliente);
         startActivity(myIntent);
     }
-
 }
