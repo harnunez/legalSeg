@@ -93,7 +93,8 @@ public class SplashActivity extends AppCompatActivity {
                     finish();
                 } else {
                     if (mLogin.message != "" && mLogin.message != null) {
-                        Util.alertError(mLogin.message, SplashActivity.this);
+                        startLoginActivity();
+                        //Util.alertError(mLogin.message, SplashActivity.this);
                     } else {
                         Util.alertError(getResources().getString(R.string.error_login), SplashActivity.this);
 
@@ -121,7 +122,6 @@ public class SplashActivity extends AppCompatActivity {
         finish();
     }
 
-    // start new Activity
     private void startNewActivity(LoginUserModel mLogin) {
         Intent myIntent = new Intent(SplashActivity.this, SelectUserActivity.class);
         myIntent.putExtra("useLogued", mLogin);
