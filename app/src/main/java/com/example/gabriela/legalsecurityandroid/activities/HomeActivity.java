@@ -36,6 +36,7 @@ public class HomeActivity extends AppCompatActivity {
     private String useNameSelect;
     private String idCliente;
     private String eventSelected;
+    private boolean runningServiceCall = false;
     private static final String EVENT_ENTER_HOME = "3";
     private static final String EVENT_LEAVE_HOME = "2";
     private final int ACCESS_FINE_LOCATION_CODE = 100;
@@ -89,8 +90,12 @@ public class HomeActivity extends AppCompatActivity {
         inHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eventSelected = EVENT_ENTER_HOME;
-                checkAppLocationPermisson(eventSelected);
+                if(!runningServiceCall){
+                    eventSelected = EVENT_ENTER_HOME;
+                    checkAppLocationPermisson(eventSelected);
+                    runningServiceCall = true;
+                }
+
             }
         });
     }
@@ -122,8 +127,12 @@ public class HomeActivity extends AppCompatActivity {
         outHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                eventSelected = EVENT_LEAVE_HOME;
-                checkAppLocationPermisson(eventSelected);
+                if(!runningServiceCall){
+                    eventSelected = EVENT_LEAVE_HOME;
+                    checkAppLocationPermisson(eventSelected);
+                    runningServiceCall= true;
+                }
+
             }
         });
     }
@@ -143,11 +152,13 @@ public class HomeActivity extends AppCompatActivity {
                 } else {
                     Util.alertError(event.message, HomeActivity.this);
                 }
+                runningServiceCall = false;
             }
 
             @Override
             public void onError(VolleyError error) {
                 Log.d("Event", "Error Respuesta en JSON: " + error.getMessage());
+                runningServiceCall = false;
             }
         });
         vimp.buildJsonEvents(idCliente);
