@@ -2,10 +2,12 @@ package com.example.gabriela.legalsecurityandroid.activities;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
@@ -18,7 +20,6 @@ import android.media.MediaPlayer;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.CountDownTimer;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
@@ -85,11 +86,9 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
     private static final int OUTSIDE_COVERAGE_AREA_RESPONSE = 5;
 
     private static final String EVENT_ENTER_HOME = "3";
-    int contador = 0;//FIXME -- BORRAR VARIABLE SOLO PARA TESTING
+    //int contador = 0;//FIXME -- BORRAR VARIABLE SOLO PARA TESTING
 
     private final static String CONNECTIVITY_ACTION = "android.net.conn.CONNECTIVITY_CHANGE";
-    private static final long LOCATION_TIME_BW_UPDATES = 1000;
-    private static final long LOCATION_DISTANCE_CHANGE_FOR_UPDATES = 2;
     // Model News
     private NewsModel newsModel;
 
@@ -340,8 +339,8 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
     }
 
     private void executeService() {
-        contador = contador + 1;
-        Toast.makeText(this,"longitud: " + longitud + " latitud: " + latitud + " \n contador: " + contador, Toast.LENGTH_SHORT).show();
+       //contador = contador + 1;
+       //Toast.makeText(this,"longitud: " + longitud + " latitud: " + latitud + " \n contador: " + contador, Toast.LENGTH_SHORT).show();
 
 
         if(checkCoordStatus()){
@@ -402,12 +401,12 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
                 reset();
                // finishTimer();
                 setViewLevel(R.drawable.prueba_ok, setViewLevelOkOperationMessage() );
-                buttonDefault.setText(R.string.salir_btn);
+                //buttonDefault.setText(R.string.salir_btn);
                 showNotificationMessage( getResources().getString( R.string.notification_title ), getResources().getString( setViewLevelOkOperationMessage() ));
                 break;
             case WAIT_RESPONSE:
                 reset();
-                buttonDefault.setText(R.string.salir_btn);
+                //buttonDefault.setText(R.string.salir_btn);
                 setViewLevel(R.drawable.prueba_aguada, R.string.message_aguarda_icon);
                 break;
             case DANGER_RESPONSE :
@@ -428,7 +427,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
                 showNotificationMessage( getResources().getString( R.string.notification_title ), getResources().getString( setViewLevelOkOperationMessage() ));
                 break;
             case OUTSIDE_COVERAGE_AREA_RESPONSE:
-                Toast.makeText( InHomeActivity.this, "fuera de rango: FIXME" , Toast.LENGTH_SHORT);
+                Toast.makeText( InHomeActivity.this, "fuera de rango" , Toast.LENGTH_SHORT);
                // reset();
                // pauseTimer();
                // Util.warningDialog(getResources().getString(R.string.warning_out_of_coverage), InHomeActivity.this);
@@ -473,8 +472,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
         buttonDefault.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                executeEventsBeforeLeave();
-                finishApplicationTask();
+                popupAppRequest();
             }
         });
     }
@@ -553,4 +551,29 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
         NotificationManager notificationManager = (NotificationManager) getSystemService( getApplicationContext().NOTIFICATION_SERVICE );
         notificationManager.notify( 1,notificationBuilder.build() );
     }
+
+    private void popupAppRequest(){
+        if(timerActive){ pauseTimer(); }
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(InHomeActivity.this)
+                .setTitle( getResources().getString( R.string.warning_title ) )
+                .setMessage( getResources().getString( R.string.popup_message ))
+                .setPositiveButton( getResources().getString( R.string.yes_message ), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        executeEventsBeforeLeave();
+                        finishApplicationTask();
+                    }
+                } )
+                .setNegativeButton( getResources().getString( R.string.no_message ), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        startTimer(millisToFinish);
+                    }
+                } );
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
 }

@@ -59,4 +59,9 @@
     <string name="warning_out_of_coverage">En este momento estas fuera del área de alcance, en cuanto te acerques más a tu hogar te estaremos monitoreando</string>
     <string name="warning_lost_connection">Por favor, revisa tu conexión a internet para poder seguir utilizando la aplicación</string>
 
+    //popup cancel alert
+    <string name="popup_message">¿Desea cancelar la operación?</string>
+    <string name="yes_message">Sí</string>
+    <string name="no_message">No</string>
+
 </resources>
