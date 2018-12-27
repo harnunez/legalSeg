@@ -18,6 +18,7 @@ import android.media.MediaPlayer;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
@@ -72,7 +73,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
     private boolean isAppOnBackground = false;
     private boolean endResponseApp = false;
 
-    private static final long STARTING_COUNTDOWN_TIME = 10000;//121000;
+    private static final long STARTING_COUNTDOWN_TIME = 121000;
     private static final int SERVICE_INTERVAL_TIME = 5;
     private static final int ACCESS_FINE_LOCATION_CODE = 100;
 
@@ -177,12 +178,18 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
                 finishTimer();
                 loadingService.setVisibility(View.GONE);
                 setSuccessViewLevel();
-                progressBar.setVisibility( View.INVISIBLE );
-                timerBack.setVisibility( View.INVISIBLE );
-                if(!endResponseApp){startTimer( STARTING_COUNTDOWN_TIME ); }
+                hideProgressBar();
+                if(!endResponseApp){
+                    startTimer( STARTING_COUNTDOWN_TIME );
+                }
             }
         }.start();
         timerActive = true;
+    }
+
+    private void hideProgressBar(){
+        progressBar.setVisibility( View.INVISIBLE );
+        timerBack.setVisibility( View.INVISIBLE );
     }
 
     private void updateProgressBar(long millisUntilFinished) {
@@ -405,10 +412,11 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
                 break;
             case DANGER_RESPONSE :
                 reset();
-               // finishTimer();
+                finishTimer();
                 activateAlarm();
                 buttonDefault.setText(R.string.salir_btn);
                 setViewLevel(R.drawable.prueba_peligro, R.string.message_peligro);
+                endResponseApp = true;
                 showNotificationMessage( getResources().getString( R.string.notification_title_alert ), getResources().getString( R.string.message_call911 ));
                 break;
             case END_RESPONSE:
@@ -438,7 +446,6 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
     private void setSuccessViewLevel() {
         buttonDefault.setText(R.string.salir_btn);
         setViewLevel(R.drawable.prueba_ok, setViewLevelOkOperationMessage() );
-        //showNotificationMessage();
         isOperationEnd = true;
     }
 
@@ -459,7 +466,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
         viewTimer.setBackgroundResource(image);
         timerMessage.setText(description);
         timerBack.setText("");
-        progressBar.setVisibility(View.INVISIBLE);
+        hideProgressBar();
     }
 
     private void executeEventCancel() {
@@ -546,5 +553,4 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
         NotificationManager notificationManager = (NotificationManager) getSystemService( getApplicationContext().NOTIFICATION_SERVICE );
         notificationManager.notify( 1,notificationBuilder.build() );
     }
-
 }
