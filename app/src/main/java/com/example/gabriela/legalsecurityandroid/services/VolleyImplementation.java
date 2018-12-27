@@ -34,7 +34,7 @@ public class VolleyImplementation {
 
     public void buildJsonLogin(String user, String password) {
         Map<String, String > params = new HashMap();
-        params.put("user", user);
+        params.put("username", user);
         params.put("password", password);
 
         this.mParametros = new JSONObject(params);
