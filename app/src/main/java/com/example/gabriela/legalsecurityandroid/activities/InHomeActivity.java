@@ -199,12 +199,13 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
 
     private void pauseTimer(){
         if(timerCount != null){
+            timerActive = false;
             timerCount.cancel();
         }
     }
 
     private void resetTimer(){
-        timerActive = true;
+        timerActive = false;
         millisToFinish = STARTING_COUNTDOWN_TIME;
     }
 
@@ -317,9 +318,12 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
 
     @Override
     public void onProviderEnabled(String provider) {
+
         if(Util.isGPSEnable(InHomeActivity.this ) && NetworkUtil.isNetworkEnable( InHomeActivity.this )){
-            Toast.makeText(this,"Ubicacion adquirida", Toast.LENGTH_SHORT).show();
-            startTimer(millisToFinish);
+            if(!timerActive){
+                Toast.makeText(this,"Ubicacion adquirida", Toast.LENGTH_SHORT).show();
+                startTimer(millisToFinish);
+            }
         }
     }
 
@@ -529,11 +533,12 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
     private BroadcastReceiver networkStatus = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if(! NetworkUtil.isNetworkEnable(context)){
+
+            if(! NetworkUtil.isNetworkEnable(context) && !Util.isGPSEnable( context )){
                 pauseTimer();
                 Util.warningDialog(getResources().getString(R.string.warning_lost_connection), InHomeActivity.this);
             }else {
-                if(timerActive){
+                if(!timerActive){
                     startTimer(millisToFinish);
                 }
             }
