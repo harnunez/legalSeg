@@ -61,6 +61,7 @@
 
     //popup cancel alert
     <string name="popup_message">¿Desea cancelar la operación?</string>
+    <string name="popup_shutdown">¿Desea salir de la operación?</string>
     <string name="yes_message">Sí</string>
     <string name="no_message">No</string>
 

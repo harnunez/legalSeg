@@ -1,7 +1,9 @@
 package com.example.gabriela.legalsecurityandroid.activities;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -169,8 +171,7 @@ public class HomeActivity extends AppCompatActivity {
         shutDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                cleanPreferencesUserLogued();
-                backRootActivity();
+                popupShoutDown();
             }
         });
     }
@@ -193,5 +194,26 @@ public class HomeActivity extends AppCompatActivity {
         myIntent.putExtra("userName", useNameSelect);
         myIntent.putExtra("idCliente", idCliente);
         startActivity(myIntent);
+    }
+
+    private void popupShoutDown(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this)
+                .setTitle( getResources().getString( R.string.warning_title ) )
+                .setMessage( getResources().getString( R.string.popup_shutdown ))
+                .setPositiveButton( getResources().getString( R.string.yes_message ), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        cleanPreferencesUserLogued();
+                        backRootActivity();
+                    }
+                } )
+                .setNegativeButton( getResources().getString( R.string.no_message ), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                } );
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

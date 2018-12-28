@@ -97,7 +97,6 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_home);
-
         initProperties();
         getLocation();
         executeEventCancel();
@@ -141,7 +140,6 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
         buttonDefault = findViewById(R.id.cancel_button_image);
         loadingService = findViewById(R.id.loadingService);
 
-        // getPut Extras
         event = getIntent().getExtras().getString("event");
         useNameSelect = getIntent().getExtras().getString("userName");
         cliente = getIntent().getExtras().getString("idCliente");
@@ -153,7 +151,6 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
             title_header_event.setText(R.string.leave_title_header);
         }
         resetTimer();
-
     }
 
     private void startTimer(long timeLeftInMillis){
@@ -281,7 +278,6 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
         switch (requestCode){
             case ACCESS_FINE_LOCATION_CODE:
                 String permission = permissions[0];
@@ -290,7 +286,6 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
                 if(permission.equals(Manifest.permission.ACCESS_FINE_LOCATION)){
                     if(result == PackageManager.PERMISSION_GRANTED){
                         executeLocationManager();
-                        //Toast.makeText(this, "Permiso concedido", Toast.LENGTH_LONG).show();
                     }
                     else{
                         Toast.makeText(this, "Permiso denegado", Toast.LENGTH_LONG).show();
@@ -479,9 +474,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
         shutDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                executeEventsBeforeLeave();
-                cleanPreferencesUserLogued();
-                backRootActivity();
+                popupShoutDown();
             }
         });
     }
@@ -562,6 +555,28 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         startTimer(millisToFinish);
+                    }
+                } );
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
+
+    private void popupShoutDown(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(InHomeActivity.this)
+                .setTitle( getResources().getString( R.string.warning_title ) )
+                .setMessage( getResources().getString( R.string.popup_shutdown ))
+                .setPositiveButton( getResources().getString( R.string.yes_message ), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        executeEventsBeforeLeave();
+                        cleanPreferencesUserLogued();
+                        backRootActivity();
+                    }
+                } )
+                .setNegativeButton( getResources().getString( R.string.no_message ), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
                     }
                 } );
 
