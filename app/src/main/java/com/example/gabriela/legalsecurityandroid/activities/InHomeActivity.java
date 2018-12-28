@@ -342,7 +342,6 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
        //contador = contador + 1;
        //Toast.makeText(this,"longitud: " + longitud + " latitud: " + latitud + " \n contador: " + contador, Toast.LENGTH_SHORT).show();
 
-
         if(checkCoordStatus()){
             VolleyImplementation vimp = new VolleyImplementation(this, new doConnectionEvent() {
                 @Override
@@ -390,45 +389,40 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
     private void changeViewForLevelAlert(){
         switch (newsModel.alertLevel){
             case OPERATOR_NOT_RESPONDING :
-                if(!timerActive){
-                    reset();
-                   // finishTimer();
-                    setSuccessViewLevel();
-                    showNotificationMessage( getResources().getString( R.string.notification_title ), getResources().getString( setViewLevelOkOperationMessage() ));
-                }
+                //default response from service
                 break;
             case OPERATION_OK_RESPONSE :
                 reset();
-               // finishTimer();
-                setViewLevel(R.drawable.prueba_ok, setViewLevelOkOperationMessage() );
-                //buttonDefault.setText(R.string.salir_btn);
-                showNotificationMessage( getResources().getString( R.string.notification_title ), getResources().getString( setViewLevelOkOperationMessage() ));
+                setSuccessViewLevel();
                 break;
             case WAIT_RESPONSE:
                 reset();
-                //buttonDefault.setText(R.string.salir_btn);
                 setViewLevel(R.drawable.prueba_aguada, R.string.message_aguarda_icon);
+                showNotificationMessage( getResources().getString( R.string.notification_title ), getResources().getString( R.string.message_aguarda_icon ));
                 break;
             case DANGER_RESPONSE :
                 reset();
                 finishTimer();
                 activateAlarm();
+                endResponseApp = true;
+                isOperationEnd = true;
                 buttonDefault.setText(R.string.salir_btn);
                 setViewLevel(R.drawable.prueba_peligro, R.string.message_peligro);
-                endResponseApp = true;
                 showNotificationMessage( getResources().getString( R.string.notification_title_alert ), getResources().getString( R.string.message_call911 ));
                 break;
             case END_RESPONSE:
                 reset();
                 finishTimer();
-                buttonDefault.setText(R.string.salir_btn);
-                setViewLevel(R.drawable.prueba_ok, setViewLevelOkOperationMessage() );
                 endResponseApp = true;
-                showNotificationMessage( getResources().getString( R.string.notification_title ), getResources().getString( setViewLevelOkOperationMessage() ));
+                isOperationEnd = true;
+                buttonDefault.setText(R.string.salir_btn);
+                setSuccessViewLevel();
                 break;
             case OUTSIDE_COVERAGE_AREA_RESPONSE:
                 Toast.makeText( InHomeActivity.this, "fuera de rango" , Toast.LENGTH_SHORT);
-               // reset();
+                showNotificationMessage( getResources().getString( R.string.notification_title ), "Te encontras fuera del área de cobertura" );
+               //TODO: comportamiento para cuando esta fuera del área de cobertura
+                // reset();
                // pauseTimer();
                // Util.warningDialog(getResources().getString(R.string.warning_out_of_coverage), InHomeActivity.this);
                 break;
@@ -443,9 +437,8 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
     }
 
     private void setSuccessViewLevel() {
-        buttonDefault.setText(R.string.salir_btn);
         setViewLevel(R.drawable.prueba_ok, setViewLevelOkOperationMessage() );
-        isOperationEnd = true;
+        showNotificationMessage( getResources().getString( R.string.notification_title ), getResources().getString( setViewLevelOkOperationMessage() ));
     }
 
     private void showNotificationMessage(String notificationTitle, String notificationMessage ) {
@@ -454,7 +447,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
         }
     }
 
-    private void reset() {
+    private void reset(){
         timerBack.setVisibility(View.INVISIBLE);
         loadingService.setVisibility(View.INVISIBLE);
         timerBack.setText("");
