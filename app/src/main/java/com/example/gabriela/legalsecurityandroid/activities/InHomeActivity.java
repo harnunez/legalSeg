@@ -84,7 +84,9 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
     private static final int DANGER_RESPONSE = 3;
     private static final int END_RESPONSE = 4;
     private static final int OUTSIDE_COVERAGE_AREA_RESPONSE = 5;
+    private static final int CANCEL_BACKEND_CALL_RESPONSE = 6;
 
+    private static final String CANCEL_BACKEND_CALL = "5";
     private static final String EVENT_ENTER_HOME = "3";
     //int contador = 0;//FIXME -- BORRAR VARIABLE SOLO PARA TESTING
 
@@ -399,6 +401,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
                 reset();
                 finishTimer();
                 activateAlarm();
+                cancelServiceCall();
                 endResponseApp = true;
                 isOperationEnd = true;
                 buttonDefault.setText(R.string.salir_btn);
@@ -408,6 +411,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
             case END_RESPONSE:
                 reset();
                 finishTimer();
+                cancelServiceCall();
                 endResponseApp = true;
                 isOperationEnd = true;
                 buttonDefault.setText(R.string.salir_btn);
@@ -415,11 +419,15 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
                 break;
             case OUTSIDE_COVERAGE_AREA_RESPONSE:
                 Toast.makeText( InHomeActivity.this, "fuera de rango" , Toast.LENGTH_SHORT);
+                cancelServiceCall();
                 showNotificationMessage( getResources().getString( R.string.notification_title ), "Te encontras fuera del área de cobertura" );
                //TODO: comportamiento para cuando esta fuera del área de cobertura
                 // reset();
                // pauseTimer();
                // Util.warningDialog(getResources().getString(R.string.warning_out_of_coverage), InHomeActivity.this);
+                break;
+            case CANCEL_BACKEND_CALL_RESPONSE:
+                // response succesfull of backend's call
                 break;
             default:
                 Util.alertError( getResources().getString(R.string.error_default), InHomeActivity.this);
@@ -538,6 +546,11 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
         notificationManager.notify( 1,notificationBuilder.build() );
     }
 
+    private void cancelServiceCall(){
+        event = CANCEL_BACKEND_CALL;
+        executeService();
+    }
+
     private void popupAppRequest(){
         if(timerActive){ pauseTimer(); }
 
@@ -547,6 +560,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
                 .setPositiveButton( getResources().getString( R.string.yes_message ), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        cancelServiceCall();
                         executeEventsBeforeLeave();
                         finishApplicationTask();
                     }
@@ -554,7 +568,15 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
                 .setNegativeButton( getResources().getString( R.string.no_message ), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        startTimer(millisToFinish);
+                        if(!NetworkUtil.isNetworkEnable( InHomeActivity.this )) {
+                            Toast.makeText( InHomeActivity.this, getResources().getString( R.string.warning_connection ), Toast.LENGTH_SHORT );
+                        }
+                        if(!Util.isGPSEnable( InHomeActivity.this )){
+                            Toast.makeText( InHomeActivity.this, getResources().getString( R.string.warning_gps ), Toast.LENGTH_SHORT);
+                        }
+                        else{
+                            startTimer(millisToFinish);
+                        }
                     }
                 } );
 
@@ -569,6 +591,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
                 .setPositiveButton( getResources().getString( R.string.yes_message ), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        cancelServiceCall();
                         executeEventsBeforeLeave();
                         cleanPreferencesUserLogued();
                         backRootActivity();
