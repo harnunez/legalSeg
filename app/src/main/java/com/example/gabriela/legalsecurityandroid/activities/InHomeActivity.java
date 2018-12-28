@@ -401,21 +401,21 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
                 reset();
                 finishTimer();
                 activateAlarm();
-                cancelServiceCall();
                 endResponseApp = true;
                 isOperationEnd = true;
                 buttonDefault.setText(R.string.salir_btn);
                 setViewLevel(R.drawable.prueba_peligro, R.string.message_peligro);
                 showNotificationMessage( getResources().getString( R.string.notification_title_alert ), getResources().getString( R.string.message_call911 ));
+                cancelServiceCall();
                 break;
             case END_RESPONSE:
                 reset();
                 finishTimer();
-                cancelServiceCall();
                 endResponseApp = true;
                 isOperationEnd = true;
                 buttonDefault.setText(R.string.salir_btn);
                 setSuccessViewLevel();
+                cancelServiceCall();
                 break;
             case OUTSIDE_COVERAGE_AREA_RESPONSE:
                 Toast.makeText( InHomeActivity.this, "fuera de rango" , Toast.LENGTH_SHORT);
@@ -468,7 +468,12 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
         buttonDefault.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                popupAppRequest();
+                if(!isOperationEnd){
+                    popupAppRequest();
+                }else{
+                    executeEventsBeforeLeave();
+                    finishApplicationTask();
+                }
             }
         });
     }
@@ -482,7 +487,14 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
         shutDown.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                popupShoutDown();
+                if(!isOperationEnd){
+                    popupShoutDown();
+                }
+                else{
+                    executeEventsBeforeLeave();
+                    cleanPreferencesUserLogued();
+                    backRootActivity();
+                }
             }
         });
     }
@@ -560,9 +572,17 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
                 .setPositiveButton( getResources().getString( R.string.yes_message ), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        cancelServiceCall();
-                        executeEventsBeforeLeave();
-                        finishApplicationTask();
+                        if(!NetworkUtil.isNetworkEnable( InHomeActivity.this )) {
+                            Toast.makeText( InHomeActivity.this, getResources().getString( R.string.warning_connection ), Toast.LENGTH_SHORT );
+                        }
+                        if(!Util.isGPSEnable( InHomeActivity.this )){
+                            Toast.makeText( InHomeActivity.this, getResources().getString( R.string.warning_gps ), Toast.LENGTH_SHORT);
+                        }
+                        else{
+                            cancelServiceCall();
+                            executeEventsBeforeLeave();
+                            finishApplicationTask();
+                        }
                     }
                 } )
                 .setNegativeButton( getResources().getString( R.string.no_message ), new DialogInterface.OnClickListener() {
@@ -591,7 +611,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
                 .setPositiveButton( getResources().getString( R.string.yes_message ), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        cancelServiceCall();
+                        //cancelServiceCall();
                         executeEventsBeforeLeave();
                         cleanPreferencesUserLogued();
                         backRootActivity();
