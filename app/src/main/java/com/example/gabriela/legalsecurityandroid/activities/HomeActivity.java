@@ -84,6 +84,7 @@ public class HomeActivity extends AppCompatActivity {
             Util.warningDialog( getResources().getString( R.string.warning_connection ), HomeActivity.this);
         }
         else{
+            runningServiceCall = true;
             executeService(eventSelected);
         }
     }
@@ -95,7 +96,6 @@ public class HomeActivity extends AppCompatActivity {
                 if(!runningServiceCall){
                     eventSelected = EVENT_ENTER_HOME;
                     checkAppLocationPermisson(eventSelected);
-                    runningServiceCall = true;
                 }
 
             }
@@ -132,9 +132,7 @@ public class HomeActivity extends AppCompatActivity {
                 if(!runningServiceCall){
                     eventSelected = EVENT_LEAVE_HOME;
                     checkAppLocationPermisson(eventSelected);
-                    runningServiceCall= true;
                 }
-
             }
         });
     }
