@@ -78,13 +78,14 @@ public class HomeActivity extends AppCompatActivity {
 
     private void checkAppProviders() {
         if(! Util.isGPSEnable(HomeActivity.this)){
+            endRunningServiceCall();
             Util.warningDialog( getResources().getString( R.string.warning_gps ), HomeActivity.this);
         }
         else if(! NetworkUtil.isNetworkEnable( HomeActivity.this )){
+            endRunningServiceCall();
             Util.warningDialog( getResources().getString( R.string.warning_connection ), HomeActivity.this);
         }
         else{
-            runningServiceCall = true;
             executeService(eventSelected);
         }
     }
@@ -94,12 +95,21 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(!runningServiceCall){
+                    startRunningServiceCall();
                     eventSelected = EVENT_ENTER_HOME;
                     checkAppLocationPermisson(eventSelected);
                 }
 
             }
         });
+    }
+
+    private void startRunningServiceCall(){
+        runningServiceCall = true;
+    }
+
+    private void endRunningServiceCall(){
+        runningServiceCall = false;
     }
 
     @Override
@@ -130,6 +140,7 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(!runningServiceCall){
+                    startRunningServiceCall();
                     eventSelected = EVENT_LEAVE_HOME;
                     checkAppLocationPermisson(eventSelected);
                 }
@@ -152,13 +163,13 @@ public class HomeActivity extends AppCompatActivity {
                 } else {
                     Util.alertError(event.message, HomeActivity.this);
                 }
-                runningServiceCall = false;
+                endRunningServiceCall();
             }
 
             @Override
             public void onError(VolleyError error) {
                 Log.d("Event", "Error Respuesta en JSON: " + error.getMessage());
-                runningServiceCall = false;
+                endRunningServiceCall();
             }
         });
         vimp.buildJsonEvents(idCliente);
@@ -187,11 +198,13 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private  void showNewActivity(String event) {
+
         Intent myIntent = new Intent(HomeActivity.this, InHomeActivity.class);
         myIntent.putExtra("event", event);
         myIntent.putExtra("userName", useNameSelect);
         myIntent.putExtra("idCliente", idCliente);
         startActivity(myIntent);
+        finish();
     }
 
     private void popupShoutDown(){
