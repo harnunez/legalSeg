@@ -626,6 +626,11 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
         dialog.show();
     }
 
+    @Override
+    public void onBackPressed() {
+        popupAppRequest();
+    }
+
     private void executeEventsBeforeLeave(){
         if(NetworkUtil.isNetworkEnable( InHomeActivity.this )) {
             cancelServiceCall();
