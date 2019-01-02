@@ -330,12 +330,12 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
     @Override
     public void onProviderDisabled(String provider) {
         if(! Util.isGPSEnable(InHomeActivity.this)){
-            pauseTimer();
             Util.warningDialog( getResources().getString( R.string.warning_gps ), InHomeActivity.this);
+            pauseTimer();
         }
         else if(! NetworkUtil.isNetworkEnable( InHomeActivity.this )){
-            pauseTimer();
             Util.warningDialog( getResources().getString( R.string.warning_connection ), InHomeActivity.this);
+            pauseTimer();
         }
     }
 
@@ -390,8 +390,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
 
     private void changeViewForLevelAlert(){
         contador = contador + 1;
-        Toast.makeText(this,"longitud: " + longitud + " latitud: " + latitud +
-                            " \n  " + ", nivel Alerta: "+ newsModel.alertLevel, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"nivel Alerta: "+ newsModel.alertLevel, Toast.LENGTH_SHORT).show();
 
         switch (newsModel.alertLevel){
             case OPERATOR_NOT_RESPONDING :
