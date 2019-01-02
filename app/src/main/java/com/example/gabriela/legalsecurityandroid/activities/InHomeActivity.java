@@ -88,7 +88,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
 
     private static final String CANCEL_BACKEND_CALL = "5";
     private static final String EVENT_ENTER_HOME = "3";
-    //int contador = 0;//FIXME -- BORRAR VARIABLE SOLO PARA TESTING
+    int contador = 0;//FIXME -- BORRAR VARIABLE SOLO PARA TESTING
 
     private final static String CONNECTIVITY_ACTION = "android.net.conn.CONNECTIVITY_CHANGE";
     // Model News
@@ -275,7 +275,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
     }
 
     private void executeErrorLocationEvent() {
-        executeEventsBeforeLeave();
+        finishActivityComponents();
         Util.alertError( getResources().getString( R.string.error_login ), InHomeActivity.this );
     }
 
@@ -340,8 +340,9 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
     }
 
     private void executeService() {
-       //contador = contador + 1;
-       //Toast.makeText(this,"longitud: " + longitud + " latitud: " + latitud + " \n contador: " + contador, Toast.LENGTH_SHORT).show();
+        contador = contador + 1;
+        Toast.makeText(this,"longitud: " + longitud + " latitud: " + latitud +
+                " \n contador: " + contador , Toast.LENGTH_SHORT).show();
 
         if(checkCoordStatus()){
             VolleyImplementation vimp = new VolleyImplementation(this, new doConnectionEvent() {
@@ -368,7 +369,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
             vimp.doConnectionNovedades();
 
         }else{
-            executeEventsBeforeLeave();
+            finishActivityComponents();
             Util.alertError( getResources().getString( R.string.error_location ), InHomeActivity.this );
         }
     }
@@ -388,6 +389,10 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
     }
 
     private void changeViewForLevelAlert(){
+        contador = contador + 1;
+        Toast.makeText(this,"longitud: " + longitud + " latitud: " + latitud +
+                            " \n  " + ", nivel Alerta: "+ newsModel.alertLevel, Toast.LENGTH_SHORT).show();
+
         switch (newsModel.alertLevel){
             case OPERATOR_NOT_RESPONDING :
                 //default response from service
@@ -475,7 +480,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
                 if(!isOperationEnd){
                     popupAppRequest();
                 }else{
-                    executeEventsBeforeLeave();
+                    finishActivityComponents();
                     finishApplicationTask();
                 }
             }
@@ -495,7 +500,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
                     popupShoutDown();
                 }
                 else{
-                    executeEventsBeforeLeave();
+                    finishActivityComponents();
                     cleanPreferencesUserLogued();
                     backRootActivity();
                 }
@@ -503,7 +508,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
         });
     }
 
-    private void executeEventsBeforeLeave(){
+    private void finishActivityComponents(){
         if(alarmIsPlaying()){
             stopAlarm();
         }
@@ -577,17 +582,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
                 .setPositiveButton( getResources().getString( R.string.yes_message ), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        if(!NetworkUtil.isNetworkEnable( InHomeActivity.this )) {
-                            Toast.makeText( InHomeActivity.this, getResources().getString( R.string.warning_connection ), Toast.LENGTH_SHORT );
-                        }
-                        if(!Util.isGPSEnable( InHomeActivity.this )){
-                            Toast.makeText( InHomeActivity.this, getResources().getString( R.string.warning_gps ), Toast.LENGTH_SHORT);
-                        }
-                        else{
-                            cancelServiceCall();
-                            executeEventsBeforeLeave();
-                            finishApplicationTask();
-                        }
+                        executeEventsBeforeLeave();
                     }
                 } )
                 .setNegativeButton( getResources().getString( R.string.no_message ), new DialogInterface.OnClickListener() {
@@ -616,7 +611,6 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
                 .setPositiveButton( getResources().getString( R.string.yes_message ), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        //cancelServiceCall();
                         executeEventsBeforeLeave();
                         cleanPreferencesUserLogued();
                         backRootActivity();
@@ -632,4 +626,11 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
         dialog.show();
     }
 
+    private void executeEventsBeforeLeave(){
+        if(NetworkUtil.isNetworkEnable( InHomeActivity.this )) {
+            cancelServiceCall();
+        }
+        finishActivityComponents();
+        finishApplicationTask();
+    }
 }
