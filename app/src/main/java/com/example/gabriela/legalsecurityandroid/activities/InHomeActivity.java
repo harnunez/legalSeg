@@ -539,7 +539,8 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
         @Override
         public void onReceive(Context context, Intent intent) {
 
-            if(! NetworkUtil.isNetworkEnable(context) && !Util.isGPSEnable( context )){
+            //if(! NetworkUtil.isNetworkEnable(context) && !Util.isGPSEnable( context )){
+            if(! NetworkUtil.isNetworkEnable( context )){
                 pauseTimer();
                 Util.warningDialog(getResources().getString(R.string.warning_lost_connection), InHomeActivity.this);
             }else {
