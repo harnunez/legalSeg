@@ -511,9 +511,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
         if(alarmIsPlaying()){
             stopAlarm();
         }
-        if(timerActive){
-            finishTimer();
-        }
+        finishTimer();
     }
 
     private void backRootActivity() {
@@ -636,6 +634,12 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
             cancelServiceCall();
         }
         finishActivityComponents();
+        stopLocationManager();
         finishApplicationTask();
     }
+
+    private void stopLocationManager(){
+        locationManager.removeUpdates( this );
+    }
+
 }
