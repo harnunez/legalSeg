@@ -12,39 +12,39 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 
 import com.example.gabriela.legalsecurityandroid.R;
-import com.example.gabriela.legalsecurityandroid.activities.HomeActivity;
-import com.example.gabriela.legalsecurityandroid.activities.InHomeActivity;
 
 public class Util extends AppCompatActivity {
     public static MediaPlayer alarm;
+    private static AlertDialog.Builder dlgAlert;
+    private static AlertDialog.Builder dlgWarning;
 
     public static void  alertError(String message, final Context context) {
-        AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(context);
+        dlgAlert  = new AlertDialog.Builder(context);
         dlgAlert.setMessage(message);
         dlgAlert.setTitle("Error");
         dlgAlert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
                 ActivityCompat.finishAffinity((Activity) context);
-
             }
         });
         dlgAlert.setCancelable(true);
         dlgAlert.create().show();
+
     }
 
-    public static void warningDialog(String message, final Context context){
-        AlertDialog.Builder dlgAlert  = new AlertDialog.Builder(context);
-        dlgAlert.setMessage(message);
-        dlgAlert.setTitle(R.string.warning_title);
-        dlgAlert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-            }
-        });
-        dlgAlert.setCancelable(true);
-        dlgAlert.create().show();
+    public static void warningDialog(String message,Context context){
+        dlgWarning  = new AlertDialog.Builder(context)
+            .setMessage(message)
+            .setTitle(R.string.warning_title)
+            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            })
+            .setCancelable(false);
 
+        dlgWarning.create().show();
     }
 
     public static boolean checkCurrentAndroidVersion(){
