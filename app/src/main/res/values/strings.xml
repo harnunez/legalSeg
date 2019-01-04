@@ -1,5 +1,6 @@
 <resources>
-    <string name="Title_Splash">LEGAL SECURITY</string>
+    <string name="Title_Splash">Legal SAT 24</string>
+    <string name="splash_caption">un producto de Legal Security</string>
     <string name="app_name">Legal Security</string>
     <string name="password">Contraseña</string>
     <string name="LogoImageView">LogoImageView</string>
