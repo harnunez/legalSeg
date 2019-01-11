@@ -35,24 +35,25 @@ public class Util extends AppCompatActivity {
     public static final String EVENT_LEAVE_HOME = "2";
     public static final String EVENT_ENTER_HOME = "3";
     public static final String CANCEL_BACKEND_CALL = "5";
+
     public static MediaPlayer alarm;
 
     private static AlertDialog.Builder dlgAlert;
     private static AlertDialog.Builder dlgWarning;
 
     public static void  alertError(String message, final Context context) {
+        dlgAlert  = new AlertDialog.Builder(context)
+            .setMessage(message)
+            .setTitle("Error")
+            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                    ActivityCompat.finishAffinity((Activity) context);
+                    showingDialogMessage = false;
+                }
+            })
+            .setCancelable(true);
 
-        dlgAlert  = new AlertDialog.Builder(context);
-        dlgAlert.setMessage(message);
-        dlgAlert.setTitle("Error");
-        dlgAlert.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
-                ActivityCompat.finishAffinity((Activity) context);
-                showingDialogMessage = false;
-            }
-        });
-        dlgAlert.setCancelable(true);
         if(!showingDialogMessage){
             showingDialogMessage = true;
             dlgAlert.create().show();
@@ -70,6 +71,7 @@ public class Util extends AppCompatActivity {
                 }
             })
             .setCancelable(false);
+
         if(!showingDialogMessage){
             showingDialogMessage = true;
             dlgWarning.create().show();
