@@ -48,12 +48,8 @@ public class HomeActivity extends AppCompatActivity {
     private String idCliente;
     private String eventSelected;
     private boolean runningServiceCall = false;
-    private static final String EVENT_ENTER_HOME = "3";
-    private static final String EVENT_LEAVE_HOME = "2";
-    private final int ACCESS_FINE_LOCATION_CODE = 100;
-    private final int ACCESS_COARSE_LOCATION = 102;
+
     private GoogleApiClient mGoogleApiClient;
-    private static final int REQUEST_CHECK_SETTINGS = 0x1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,7 +79,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private void checkAppLocationPermisson() {
         if (Util.checkCurrentAndroidVersion()) {
-            requestPermissions( new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, ACCESS_FINE_LOCATION_CODE );
+            requestPermissions( new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, Util.ACCESS_FINE_LOCATION_CODE );
         } else {
             checkGpsSettings();
         }
@@ -105,7 +101,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(!runningServiceCall){
                     startRunningServiceCall();
-                    eventSelected = EVENT_ENTER_HOME;
+                    eventSelected = Util.EVENT_ENTER_HOME;
                     checkAppLocationPermisson();
                 }
             }
@@ -125,7 +121,7 @@ public class HomeActivity extends AppCompatActivity {
         String permission = permissions[0];
         int result = grantResults[0];
         switch (requestCode) {
-            case (ACCESS_FINE_LOCATION_CODE ):
+            case (Util.ACCESS_FINE_LOCATION_CODE ):
                 if(permission.equals(Manifest.permission.ACCESS_FINE_LOCATION)){
                     if(result == PackageManager.PERMISSION_GRANTED) {
                         checkGpsSettings();
@@ -147,7 +143,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(!runningServiceCall){
                     startRunningServiceCall();
-                    eventSelected = EVENT_LEAVE_HOME;
+                    eventSelected = Util.EVENT_LEAVE_HOME;
                     checkAppLocationPermisson();
                 }
             }
@@ -241,7 +237,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult( requestCode, resultCode, data );
         switch (requestCode) {
-            case REQUEST_CHECK_SETTINGS:
+            case Util.REQUEST_CHECK_SETTINGS:
                 switch (resultCode) {
                     case RESULT_OK:
                         checkAppProviders();

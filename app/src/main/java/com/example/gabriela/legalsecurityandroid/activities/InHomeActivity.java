@@ -90,22 +90,8 @@ public class InHomeActivity extends AppCompatActivity {
 
     private static final long STARTING_COUNTDOWN_TIME = 121000;
     private static final int SERVICE_INTERVAL_TIME = 5;
-    private static final int ACCESS_FINE_LOCATION_CODE = 100;
-
-    private static final int OPERATOR_NOT_RESPONDING = 0;
-    private static final int OPERATION_OK_RESPONSE = 1;
-    private static final int WAIT_RESPONSE = 2;
-    private static final int DANGER_RESPONSE = 3;
-    private static final int END_RESPONSE = 4;
-    private static final int OUTSIDE_COVERAGE_AREA_RESPONSE = 5;
-    private static final int CANCEL_BACKEND_CALL_RESPONSE = 6;
-
-    private static final String CANCEL_BACKEND_CALL = "5";
-    private static final String EVENT_ENTER_HOME = "3";
 
     private FusedLocationProviderClient fusedLocationClient;
-    private static final String CONNECTIVITY_ACTION = "android.net.conn.CONNECTIVITY_CHANGE";
-    private static final int REQUEST_CHECK_SETTINGS = 0x1;
     // Model News
     private NewsModel newsModel;
 
@@ -161,7 +147,7 @@ public class InHomeActivity extends AppCompatActivity {
         useNameSelect = getIntent().getExtras().getString("userName");
         cliente = getIntent().getExtras().getString("idCliente");
 
-        if (event.equals(EVENT_ENTER_HOME)) {
+        if (event.equals(Util.EVENT_ENTER_HOME)) {
             title_header_event.setText(R.string.enter_title_header);
         }
         else {
@@ -248,7 +234,7 @@ public class InHomeActivity extends AppCompatActivity {
 
     private void getLocation() {
         if (Util.checkCurrentAndroidVersion()) {
-            requestPermissions( new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, ACCESS_FINE_LOCATION_CODE );
+            requestPermissions( new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, Util.ACCESS_FINE_LOCATION_CODE );
         } else {
             getUserLocation();
         }
@@ -305,7 +291,7 @@ public class InHomeActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode){
-            case ACCESS_FINE_LOCATION_CODE:
+            case Util.ACCESS_FINE_LOCATION_CODE:
                 String permission = permissions[0];
                 int result = grantResults[0];
 
@@ -418,19 +404,19 @@ public class InHomeActivity extends AppCompatActivity {
         checkCoverageArea();
 
         switch (newsModel.alertLevel){
-            case OPERATOR_NOT_RESPONDING :
+            case Util.OPERATOR_NOT_RESPONDING :
                 handleTimerTask();
                 break;
-            case OPERATION_OK_RESPONSE :
+            case Util.OPERATION_OK_RESPONSE :
                 reset();
                 setSuccessViewLevel();
                 break;
-            case WAIT_RESPONSE:
+            case Util.WAIT_RESPONSE:
                 reset();
                 setViewLevel(R.drawable.prueba_aguada, R.string.message_aguarda_icon);
                 showNotificationMessage( getResources().getString( R.string.notification_title ), getResources().getString( R.string.message_aguarda_icon ));
                 break;
-            case DANGER_RESPONSE :
+            case Util.DANGER_RESPONSE :
                 reset();
                 finishTimer();
                 activateAlarm();
@@ -440,7 +426,7 @@ public class InHomeActivity extends AppCompatActivity {
                 setViewLevel(R.drawable.prueba_peligro, R.string.message_peligro);
                 showNotificationMessage( getResources().getString( R.string.notification_title_alert ), getResources().getString( R.string.message_call911 ));
                 break;
-            case END_RESPONSE:
+            case Util.END_RESPONSE:
                 reset();
                 finishTimer();
                 endResponseApp = true;
@@ -448,14 +434,14 @@ public class InHomeActivity extends AppCompatActivity {
                 buttonDefault.setText(R.string.salir_btn);
                 setSuccessViewLevel();
                 break;
-            case OUTSIDE_COVERAGE_AREA_RESPONSE:
+            case Util.OUTSIDE_COVERAGE_AREA_RESPONSE:
                 if(!endActivity && !Util.showingDialogMessage){
                     millisOnHold =  millisToFinish;
                     Util.warningDialog(getResources().getString(R.string.warning_out_of_coverage), InHomeActivity.this);
                     showNotificationMessage( getResources().getString( R.string.notification_title ), "Te encontras fuera del área de cobertura" );
                 }
                 break;
-            case CANCEL_BACKEND_CALL_RESPONSE:
+            case Util.CANCEL_BACKEND_CALL_RESPONSE:
                 // response succesfull of backend's call
                 break;
             default:
@@ -474,7 +460,7 @@ public class InHomeActivity extends AppCompatActivity {
     }
 
     private void checkCoverageArea() {
-        if(newsModel.alertLevel == OUTSIDE_COVERAGE_AREA_RESPONSE){
+        if(newsModel.alertLevel == Util.OUTSIDE_COVERAGE_AREA_RESPONSE){
             isOnCoverageArea = false;
         }else{
             isOnCoverageArea = true;
@@ -482,7 +468,7 @@ public class InHomeActivity extends AppCompatActivity {
     }
 
     private int setViewLevelOkOperationMessage() {
-        return  event.equals(EVENT_ENTER_HOME) ?  R.string.message_succes_entry  : R.string.message_succes ;
+        return  event.equals(Util.EVENT_ENTER_HOME) ?  R.string.message_succes_entry  : R.string.message_succes ;
     }
 
     private void setSuccessViewLevel() {
@@ -565,7 +551,7 @@ public class InHomeActivity extends AppCompatActivity {
     }
 
     private void setRegisterReceiver() {
-        registerReceiver(networkStatus, new IntentFilter( CONNECTIVITY_ACTION ));
+        registerReceiver(networkStatus, new IntentFilter( Util.CONNECTIVITY_ACTION ));
     }
 
     private BroadcastReceiver networkStatus = new BroadcastReceiver() {
@@ -599,7 +585,7 @@ public class InHomeActivity extends AppCompatActivity {
     }
 
     private void cancelServiceCall(){
-        event = CANCEL_BACKEND_CALL;
+        event = Util.CANCEL_BACKEND_CALL;
         executeService();
     }
 
@@ -708,7 +694,7 @@ public class InHomeActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult( requestCode, resultCode, data );
         switch (requestCode) {
-            case REQUEST_CHECK_SETTINGS:
+            case Util.REQUEST_CHECK_SETTINGS:
                 switch (resultCode) {
                     case RESULT_OK:
                         checkProvidersEnabled();
