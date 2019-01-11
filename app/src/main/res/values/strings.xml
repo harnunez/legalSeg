@@ -55,7 +55,7 @@
 
     // warning
     <string name="warning_title">Atención</string>
-    <string name="warning_gps">Necesitamos que tengas encendido el GPS para que la aplicación pueda funcionar</string>
+    <string name="warning_gps">Necesitamos que aceptes utilizar los servicios de Google para que la aplicación pueda funcionar</string>
     <string name="warning_connection">Necesitamos que estes conectado a internet para que la aplicación pueda funcionar</string>
     <string name="warning_out_of_coverage">En este momento estas fuera del área de alcance, en cuanto te acerques más a tu hogar te estaremos monitoreando</string>
     <string name="warning_lost_connection">Por favor, revisa tu conexión a internet para poder seguir utilizando la aplicación</string>
