@@ -19,11 +19,14 @@ import com.google.android.gms.location.LocationRequest;
 
 public class Util extends AppCompatActivity {
     public static MediaPlayer alarm;
+    public static boolean showingDialogMessage = false;
     private static AlertDialog.Builder dlgAlert;
     private static AlertDialog.Builder dlgWarning;
     private static final int REQUEST_CHECK_SETTINGS = 0x1;
 
+
     public static void  alertError(String message, final Context context) {
+
         dlgAlert  = new AlertDialog.Builder(context);
         dlgAlert.setMessage(message);
         dlgAlert.setTitle("Error");
@@ -31,11 +34,14 @@ public class Util extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
                 ActivityCompat.finishAffinity((Activity) context);
+                showingDialogMessage = false;
             }
         });
         dlgAlert.setCancelable(true);
-        dlgAlert.create().show();
-
+        if(!showingDialogMessage){
+            showingDialogMessage = true;
+            dlgAlert.create().show();
+        }
     }
 
     public static void warningDialog(String message,Context context){
@@ -45,11 +51,14 @@ public class Util extends AppCompatActivity {
             .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.dismiss();
+                    showingDialogMessage = false;
                 }
             })
             .setCancelable(false);
-
-        dlgWarning.create().show();
+        if(!showingDialogMessage){
+            showingDialogMessage = true;
+            dlgWarning.create().show();
+        }
     }
 
     public static boolean checkCurrentAndroidVersion(){

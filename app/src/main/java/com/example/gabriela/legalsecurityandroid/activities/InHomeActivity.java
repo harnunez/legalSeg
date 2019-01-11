@@ -81,8 +81,11 @@ public class InHomeActivity extends AppCompatActivity {
 
     private CountDownTimer timerCount;
     private long millisToFinish;
+    private long millisOnHold = 0;
     private boolean isOperationEnd = false;
     private boolean isAppOnBackground = false;
+    private boolean isOnCoverageArea = true;
+    private boolean endActivity = false;
     private boolean endResponseApp = false;
 
     private static final long STARTING_COUNTDOWN_TIME = 121000;
@@ -176,8 +179,10 @@ public class InHomeActivity extends AppCompatActivity {
             public void onTick(long millisUntilFinished) {
                 millisToFinish = millisUntilFinished;
                 secondsTillServiceCall--;
-                updateProgressBar(millisUntilFinished);
 
+                if(isOnCoverageArea){
+                    updateProgressBar(millisUntilFinished);
+                }
 
                 if(secondsTillServiceCall == 0){
                     secondsTillServiceCall = SERVICE_INTERVAL_TIME;
@@ -187,10 +192,12 @@ public class InHomeActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                finishTimer();
-                loadingService.setVisibility(View.GONE);
-                setSuccessViewLevel();
-                hideProgressBar();
+                if(isOnCoverageArea){
+                    finishTimer();
+                    loadingService.setVisibility(View.GONE);
+                    setSuccessViewLevel();
+                    hideProgressBar();
+                }
                 if(!endResponseApp){
                     startTimer( STARTING_COUNTDOWN_TIME );
                 }
@@ -423,10 +430,11 @@ public class InHomeActivity extends AppCompatActivity {
 
     private void changeViewForLevelAlert(){
         Toast.makeText(this,"nivel Alerta: "+ newsModel.alertLevel, Toast.LENGTH_SHORT).show();
+        checkCoverageArea();
 
         switch (newsModel.alertLevel){
             case OPERATOR_NOT_RESPONDING :
-                //default response from service
+                handleTimerTask();
                 break;
             case OPERATION_OK_RESPONSE :
                 reset();
@@ -446,7 +454,7 @@ public class InHomeActivity extends AppCompatActivity {
                 buttonDefault.setText(R.string.salir_btn);
                 setViewLevel(R.drawable.prueba_peligro, R.string.message_peligro);
                 showNotificationMessage( getResources().getString( R.string.notification_title_alert ), getResources().getString( R.string.message_call911 ));
-                cancelServiceCall();
+                //cancelServiceCall();
                 break;
             case END_RESPONSE:
                 reset();
@@ -455,16 +463,14 @@ public class InHomeActivity extends AppCompatActivity {
                 isOperationEnd = true;
                 buttonDefault.setText(R.string.salir_btn);
                 setSuccessViewLevel();
-                cancelServiceCall();
+                //cancelServiceCall();
                 break;
             case OUTSIDE_COVERAGE_AREA_RESPONSE:
-                Toast.makeText( InHomeActivity.this, "fuera de rango" , Toast.LENGTH_SHORT);
-                cancelServiceCall();
-                showNotificationMessage( getResources().getString( R.string.notification_title ), "Te encontras fuera del área de cobertura" );
-               //TODO: comportamiento para cuando esta fuera del área de cobertura
-                // reset();
-               // pauseTimer();
-               // Util.warningDialog(getResources().getString(R.string.warning_out_of_coverage), InHomeActivity.this);
+                if(!endActivity && !Util.showingDialogMessage){
+                    millisOnHold =  millisToFinish;
+                    Util.warningDialog(getResources().getString(R.string.warning_out_of_coverage), InHomeActivity.this);
+                    showNotificationMessage( getResources().getString( R.string.notification_title ), "Te encontras fuera del área de cobertura" );
+                }
                 break;
             case CANCEL_BACKEND_CALL_RESPONSE:
                 // response succesfull of backend's call
@@ -475,6 +481,23 @@ public class InHomeActivity extends AppCompatActivity {
         }
     }
 
+    private void handleTimerTask() {
+        if(millisOnHold != 0){
+            finishTimer();
+            startTimer( millisOnHold );
+        }else{
+            initTimer();
+        }
+    }
+
+    private void checkCoverageArea() {
+        if(newsModel.alertLevel == OUTSIDE_COVERAGE_AREA_RESPONSE){
+            isOnCoverageArea = false;
+        }else{
+            isOnCoverageArea = true;
+        }
+
+    }
     private int setViewLevelOkOperationMessage() {
         return  event.equals(EVENT_ENTER_HOME) ?  R.string.message_succes_entry  : R.string.message_succes ;
     }
@@ -662,6 +685,7 @@ public class InHomeActivity extends AppCompatActivity {
         finishActivityComponents();
         stopLocationManager();
         finishApplicationTask();
+        endActivity = true;
     }
 
     private void stopLocationManager(){
