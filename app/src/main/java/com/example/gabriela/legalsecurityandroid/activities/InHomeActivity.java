@@ -102,11 +102,9 @@ public class InHomeActivity extends AppCompatActivity {
 
     private static final String CANCEL_BACKEND_CALL = "5";
     private static final String EVENT_ENTER_HOME = "3";
-    int contador = 0;//FIXME -- BORRAR VARIABLE SOLO PARA TESTING
 
     private FusedLocationProviderClient fusedLocationClient;
-    private final static String CONNECTIVITY_ACTION = "android.net.conn.CONNECTIVITY_CHANGE";
-    private final static String CONNECTIVITY_GPS = "android.location.PROVIDERS_CHANGED";
+    private static final String CONNECTIVITY_ACTION = "android.net.conn.CONNECTIVITY_CHANGE";
     private static final int REQUEST_CHECK_SETTINGS = 0x1;
     // Model News
     private NewsModel newsModel;
@@ -132,7 +130,7 @@ public class InHomeActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        pauseTimer();
+        finishTimer();
         unregisterReceiver(networkStatus);
     }
 
@@ -216,13 +214,6 @@ public class InHomeActivity extends AppCompatActivity {
         timerBack.setText("" + timer);
         int progress = (int) (millisUntilFinished / 1000);
         progressBar.setProgress(progress);
-    }
-
-    private void pauseTimer(){
-        if(timerCount != null){
-            timerActive = false;
-            timerCount.cancel();
-        }
     }
 
     private void resetTimer(){
@@ -359,11 +350,10 @@ public class InHomeActivity extends AppCompatActivity {
             if(! Util.isGPSEnable(InHomeActivity.this)){
                 checkGpsSettings();
                 //Util.warningDialog( getResources().getString( R.string.warning_gps ), InHomeActivity.this);
-               // pauseTimer();
             }
             else if(! NetworkUtil.isNetworkEnable( InHomeActivity.this )){
                 Util.warningDialog( getResources().getString( R.string.warning_connection ), InHomeActivity.this);
-                pauseTimer();
+                finishTimer();
             }
         }
     };
@@ -381,10 +371,6 @@ public class InHomeActivity extends AppCompatActivity {
     }
 
     private void executeService() {
-        contador = contador + 1;
-        Toast.makeText(this,"longitud: " + longitud + " latitud: " + latitud +
-                " \n contador: " + contador , Toast.LENGTH_SHORT).show();
-
         if(checkCoordStatus()){
             VolleyImplementation vimp = new VolleyImplementation(this, new doConnectionEvent() {
                 @Override
@@ -429,7 +415,6 @@ public class InHomeActivity extends AppCompatActivity {
     }
 
     private void changeViewForLevelAlert(){
-        Toast.makeText(this,"nivel Alerta: "+ newsModel.alertLevel, Toast.LENGTH_SHORT).show();
         checkCoverageArea();
 
         switch (newsModel.alertLevel){
@@ -454,7 +439,6 @@ public class InHomeActivity extends AppCompatActivity {
                 buttonDefault.setText(R.string.salir_btn);
                 setViewLevel(R.drawable.prueba_peligro, R.string.message_peligro);
                 showNotificationMessage( getResources().getString( R.string.notification_title_alert ), getResources().getString( R.string.message_call911 ));
-                //cancelServiceCall();
                 break;
             case END_RESPONSE:
                 reset();
@@ -463,7 +447,6 @@ public class InHomeActivity extends AppCompatActivity {
                 isOperationEnd = true;
                 buttonDefault.setText(R.string.salir_btn);
                 setSuccessViewLevel();
-                //cancelServiceCall();
                 break;
             case OUTSIDE_COVERAGE_AREA_RESPONSE:
                 if(!endActivity && !Util.showingDialogMessage){
@@ -496,8 +479,8 @@ public class InHomeActivity extends AppCompatActivity {
         }else{
             isOnCoverageArea = true;
         }
-
     }
+
     private int setViewLevelOkOperationMessage() {
         return  event.equals(EVENT_ENTER_HOME) ?  R.string.message_succes_entry  : R.string.message_succes ;
     }
@@ -543,7 +526,7 @@ public class InHomeActivity extends AppCompatActivity {
 
     private void finishApplicationTask() {
         if(isOperationEnd ){  finishAffinity(); }
-        else {  finish();  }
+        else {finish();}
     }
 
     private void executeEventShutDown() {
@@ -589,7 +572,7 @@ public class InHomeActivity extends AppCompatActivity {
         @Override
         public void onReceive(Context context, Intent intent) {
             if(! NetworkUtil.isNetworkEnable( context )){
-                pauseTimer();
+                finishTimer();
                 Util.warningDialog(getResources().getString(R.string.warning_lost_connection), InHomeActivity.this);
             }else {
                 initTimer();
@@ -621,7 +604,7 @@ public class InHomeActivity extends AppCompatActivity {
     }
 
     private void popupAppRequest(){
-        if(timerActive){ pauseTimer(); }
+        if(timerActive){ finishTimer(); }
 
         AlertDialog.Builder builder = new AlertDialog.Builder(InHomeActivity.this)
                 .setTitle( getResources().getString( R.string.warning_title ) )
@@ -708,7 +691,7 @@ public class InHomeActivity extends AppCompatActivity {
                         case LocationSettingsStatusCodes.SUCCESS:
                             break;
                         case LocationSettingsStatusCodes.RESOLUTION_REQUIRED:
-                            pauseTimer();
+                            finishTimer();
                             Util.showGpsDialog( e,InHomeActivity.this );
                             break;
                         case LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE:
@@ -732,7 +715,7 @@ public class InHomeActivity extends AppCompatActivity {
                         break;
                     case RESULT_CANCELED:
                         checkGpsSettings();
-                        pauseTimer();
+                        finishTimer();
                         break;
                 }
                 break;
