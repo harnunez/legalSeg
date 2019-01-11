@@ -21,6 +21,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -40,12 +41,22 @@ import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
 import com.example.gabriela.legalsecurityandroid.models.NewsModel;
 import com.example.gabriela.legalsecurityandroid.services.VolleyImplementation;
+import com.google.android.gms.common.api.ApiException;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.location.LocationSettingsRequest;
+import com.google.android.gms.location.LocationSettingsResponse;
+import com.google.android.gms.location.LocationSettingsStatusCodes;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 import org.json.JSONObject;
 
-public class InHomeActivity extends AppCompatActivity implements LocationListener {
-
+public class InHomeActivity extends AppCompatActivity {
     private ImageButton shutDown;
     private View viewTimer;
     private ProgressBar progressBar;
@@ -90,7 +101,10 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
     private static final String EVENT_ENTER_HOME = "3";
     int contador = 0;//FIXME -- BORRAR VARIABLE SOLO PARA TESTING
 
+    private FusedLocationProviderClient fusedLocationClient;
     private final static String CONNECTIVITY_ACTION = "android.net.conn.CONNECTIVITY_CHANGE";
+    private final static String CONNECTIVITY_GPS = "android.location.PROVIDERS_CHANGED";
+    private static final int REQUEST_CHECK_SETTINGS = 0x1;
     // Model News
     private NewsModel newsModel;
 
@@ -100,6 +114,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_home);
         initProperties();
+        initFusedLocationClient();
         getLocation();
         executeEventCancel();
         executeEventShutDown();
@@ -108,7 +123,6 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
     @Override
     protected void onStart() {
         super.onStart();
-        //startTimer(STARTING_COUNTDOWN_TIME);
         setRegisterReceiver();
     }
 
@@ -234,44 +248,55 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
         alarm.setLooping(false);
     }
 
-    // Get Current Location
     private void getLocation() {
-        if( Util.checkCurrentAndroidVersion() ){
-            requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, ACCESS_FINE_LOCATION_CODE );
-        }
-        else {
-            executeLocationManager();
+        if (Util.checkCurrentAndroidVersion()) {
+            requestPermissions( new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, ACCESS_FINE_LOCATION_CODE );
+        } else {
+            getUserLocation();
         }
     }
 
-    private void executeLocationManager(){
+    private void initFusedLocationClient() {
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient( this );
+    }
+
+    private void getUserLocation() {
+        if (ActivityCompat.checkSelfPermission( this, Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission( this, Manifest.permission.ACCESS_COARSE_LOCATION ) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        fusedLocationClient.getLastLocation()
+                .addOnSuccessListener( InHomeActivity.this, new OnSuccessListener<Location>() {
+                    @Override
+                    public void onSuccess(Location location) {
+                            executeLocationManager();
+                            setLocationCoord( location );
+                            initTimer();
+                    }
+                } )
+                .addOnFailureListener( new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        executeErrorLocationEvent();
+                    }
+                } );
+    }
+
+    private void executeLocationManager() {
         try {
-            // CheckPermissions
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
-                    && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.checkSelfPermission( this, Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED
+                    && ActivityCompat.checkSelfPermission( this, Manifest.permission.ACCESS_COARSE_LOCATION ) != PackageManager.PERMISSION_GRANTED) {
                 return;
             }
 
-            locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            locationManager = (LocationManager) getSystemService( Context.LOCATION_SERVICE );
             Criteria criteria = new Criteria();
-            provider = locationManager.getBestProvider(criteria, false);
+            provider = locationManager.getBestProvider( criteria, false );
+            locationManager.requestLocationUpdates( provider, 0, 0, locationListener );
 
-            Location location = locationManager.getLastKnownLocation(provider);
-
-              if(location ==null){
-                  provider = LocationManager.NETWORK_PROVIDER;
-                  location = locationManager.getLastKnownLocation(provider );
-              }
-            locationManager.requestLocationUpdates(provider, 0, 0, this);
-
-            setLocationCoord(location);
-
-        }catch (SecurityException e) {
-            executeErrorLocationEvent();
-        }catch (Exception e){
+        } catch (Exception e) {
             executeErrorLocationEvent();
         }
-
     }
 
     private void executeErrorLocationEvent() {
@@ -288,7 +313,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
 
                 if(permission.equals(Manifest.permission.ACCESS_FINE_LOCATION)){
                     if(result == PackageManager.PERMISSION_GRANTED){
-                        executeLocationManager();
+                        getUserLocation();
                     }
                     else{
                         Toast.makeText(this, "Permiso denegado", Toast.LENGTH_LONG).show();
@@ -308,34 +333,43 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
         }
     }
 
-    @Override
-    public void onLocationChanged(Location location) {
-        setLocationCoord( location );
-    }
+    LocationListener locationListener = new LocationListener() {
+        @Override
+        public void onLocationChanged(Location location) {
+            setLocationCoord( location );
+        }
 
-    @Override
-    public void onStatusChanged(String provider, int status, Bundle extras) {}
+        @Override
+        public void onStatusChanged(String provider, int status, Bundle extras) {}
 
-    @Override
-    public void onProviderEnabled(String provider) {
+        @Override
+        public void onProviderEnabled(String provider) {
+            checkProvidersEnabled();
+        }
 
-        if(Util.isGPSEnable(InHomeActivity.this ) && NetworkUtil.isNetworkEnable( InHomeActivity.this )){
-            if(!timerActive){
-                Toast.makeText(this,"Ubicacion adquirida", Toast.LENGTH_SHORT).show();
-                startTimer(millisToFinish);
+        @Override
+        public void onProviderDisabled(String provider) {
+            if(! Util.isGPSEnable(InHomeActivity.this)){
+                checkGpsSettings();
+                //Util.warningDialog( getResources().getString( R.string.warning_gps ), InHomeActivity.this);
+               // pauseTimer();
+            }
+            else if(! NetworkUtil.isNetworkEnable( InHomeActivity.this )){
+                Util.warningDialog( getResources().getString( R.string.warning_connection ), InHomeActivity.this);
+                pauseTimer();
             }
         }
+    };
+
+    private void checkProvidersEnabled(){
+        if (Util.isGPSEnable(InHomeActivity.this ) && NetworkUtil.isNetworkEnable( InHomeActivity.this )){
+            initTimer();
+        }
     }
 
-    @Override
-    public void onProviderDisabled(String provider) {
-        if(! Util.isGPSEnable(InHomeActivity.this)){
-            Util.warningDialog( getResources().getString( R.string.warning_gps ), InHomeActivity.this);
-            pauseTimer();
-        }
-        else if(! NetworkUtil.isNetworkEnable( InHomeActivity.this )){
-            Util.warningDialog( getResources().getString( R.string.warning_connection ), InHomeActivity.this);
-            pauseTimer();
+    private void initTimer(){
+        if(!timerActive){
+            startTimer( millisToFinish );
         }
     }
 
@@ -369,8 +403,7 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
             vimp.doConnectionNovedades();
 
         }else{
-            finishActivityComponents();
-            Util.alertError( getResources().getString( R.string.error_location ), InHomeActivity.this );
+            getUserLocation();
         }
     }
 
@@ -389,7 +422,6 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
     }
 
     private void changeViewForLevelAlert(){
-        contador = contador + 1;
         Toast.makeText(this,"nivel Alerta: "+ newsModel.alertLevel, Toast.LENGTH_SHORT).show();
 
         switch (newsModel.alertLevel){
@@ -527,23 +559,17 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
     }
 
     private void setRegisterReceiver() {
-        IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(CONNECTIVITY_ACTION);
-        registerReceiver(networkStatus, intentFilter);
+        registerReceiver(networkStatus, new IntentFilter( CONNECTIVITY_ACTION ));
     }
 
     private BroadcastReceiver networkStatus = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-
-            //if(! NetworkUtil.isNetworkEnable(context) && !Util.isGPSEnable( context )){
             if(! NetworkUtil.isNetworkEnable( context )){
                 pauseTimer();
                 Util.warningDialog(getResources().getString(R.string.warning_lost_connection), InHomeActivity.this);
             }else {
-                if(!timerActive){
-                    startTimer(millisToFinish);
-                }
+                initTimer();
             }
         }
     };
@@ -639,7 +665,53 @@ public class InHomeActivity extends AppCompatActivity implements LocationListene
     }
 
     private void stopLocationManager(){
-        locationManager.removeUpdates( this );
+        locationManager.removeUpdates( locationListener );
     }
 
+    private void checkGpsSettings() {
+        LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
+                .addLocationRequest(Util.getUserLocation());
+
+        Task<LocationSettingsResponse> task = LocationServices.getSettingsClient(this).checkLocationSettings(builder.build());
+        task.addOnCompleteListener( new OnCompleteListener<LocationSettingsResponse>() {
+            @Override
+            public void onComplete(@NonNull Task<LocationSettingsResponse> task) {
+                try {
+                    LocationSettingsResponse response = task.getResult(ApiException.class);
+
+                }catch (ApiException e){
+                    switch (e.getStatusCode()) {
+                        case LocationSettingsStatusCodes.SUCCESS:
+                            break;
+                        case LocationSettingsStatusCodes.RESOLUTION_REQUIRED:
+                            pauseTimer();
+                            Util.showGpsDialog( e,InHomeActivity.this );
+                            break;
+                        case LocationSettingsStatusCodes.SETTINGS_CHANGE_UNAVAILABLE:
+                            // Location settings are not satisfied. However, we have no way to fix the
+                            // settings so we won't show the dialog.
+                            break;
+                    }
+                }
+            }
+        } );
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult( requestCode, resultCode, data );
+        switch (requestCode) {
+            case REQUEST_CHECK_SETTINGS:
+                switch (resultCode) {
+                    case RESULT_OK:
+                        checkProvidersEnabled();
+                        break;
+                    case RESULT_CANCELED:
+                        checkGpsSettings();
+                        pauseTimer();
+                        break;
+                }
+                break;
+        }
+    }
 }
