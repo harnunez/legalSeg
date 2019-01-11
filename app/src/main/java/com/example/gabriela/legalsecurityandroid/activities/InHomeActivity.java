@@ -245,10 +245,7 @@ public class InHomeActivity extends AppCompatActivity {
     }
 
     private void getUserLocation() {
-        if (ActivityCompat.checkSelfPermission( this, Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED
-                && ActivityCompat.checkSelfPermission( this, Manifest.permission.ACCESS_COARSE_LOCATION ) != PackageManager.PERMISSION_GRANTED) {
-            return;
-        }
+        checkProvidersPermission();
         fusedLocationClient.getLastLocation()
                 .addOnSuccessListener( InHomeActivity.this, new OnSuccessListener<Location>() {
                     @Override
@@ -268,11 +265,7 @@ public class InHomeActivity extends AppCompatActivity {
 
     private void executeLocationManager() {
         try {
-            if (ActivityCompat.checkSelfPermission( this, Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED
-                    && ActivityCompat.checkSelfPermission( this, Manifest.permission.ACCESS_COARSE_LOCATION ) != PackageManager.PERMISSION_GRANTED) {
-                return;
-            }
-
+            checkProvidersPermission();
             locationManager = (LocationManager) getSystemService( Context.LOCATION_SERVICE );
             Criteria criteria = new Criteria();
             provider = locationManager.getBestProvider( criteria, false );
@@ -280,6 +273,14 @@ public class InHomeActivity extends AppCompatActivity {
 
         } catch (Exception e) {
             executeErrorLocationEvent();
+        }
+    }
+
+    private void checkProvidersPermission() {
+        if (ActivityCompat.checkSelfPermission( this, Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission( this, Manifest.permission.ACCESS_COARSE_LOCATION ) != PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText( this,"permisos denegados",Toast.LENGTH_LONG ).show();
+            return;
         }
     }
 
