@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.R;
+import com.example.gabriela.legalsecurityandroid.Constants.Constants;
 import com.example.gabriela.legalsecurityandroid.Utils.NetworkUtil;
 import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
@@ -76,10 +77,9 @@ public class HomeActivity extends AppCompatActivity {
         executeShutDown();
     }
 
-
     private void checkAppLocationPermisson() {
         if (Util.checkCurrentAndroidVersion()) {
-            requestPermissions( new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, Util.ACCESS_FINE_LOCATION_CODE );
+            requestPermissions( new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, Constants.ACCESS_FINE_LOCATION_CODE );
         } else {
             checkGpsSettings();
         }
@@ -101,7 +101,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(!runningServiceCall){
                     startRunningServiceCall();
-                    eventSelected = Util.EVENT_ENTER_HOME;
+                    eventSelected = Constants.EVENT_ENTER_HOME;
                     checkAppLocationPermisson();
                 }
             }
@@ -121,7 +121,7 @@ public class HomeActivity extends AppCompatActivity {
         String permission = permissions[0];
         int result = grantResults[0];
         switch (requestCode) {
-            case (Util.ACCESS_FINE_LOCATION_CODE ):
+            case (Constants.ACCESS_FINE_LOCATION_CODE ):
                 if(permission.equals(Manifest.permission.ACCESS_FINE_LOCATION)){
                     if(result == PackageManager.PERMISSION_GRANTED) {
                         checkGpsSettings();
@@ -143,7 +143,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(!runningServiceCall){
                     startRunningServiceCall();
-                    eventSelected = Util.EVENT_LEAVE_HOME;
+                    eventSelected = Constants.EVENT_LEAVE_HOME;
                     checkAppLocationPermisson();
                 }
             }
@@ -237,7 +237,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult( requestCode, resultCode, data );
         switch (requestCode) {
-            case Util.REQUEST_CHECK_SETTINGS:
+            case Constants.REQUEST_CHECK_SETTINGS:
                 switch (resultCode) {
                     case RESULT_OK:
                         checkAppProviders();
