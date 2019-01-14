@@ -586,7 +586,7 @@ public class InHomeActivity extends AppCompatActivity {
     }
 
     private void cancelServiceCall(){
-        event = Constants.CANCEL_BACKEND_CALL;
+        event = Constants.EVENT_CANCEL_BACKEND_CALL;
         executeService();
     }
 
