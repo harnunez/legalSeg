@@ -14,6 +14,7 @@ import android.widget.ProgressBar;
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.Constants.Constants;
 import com.example.gabriela.legalsecurityandroid.R;
+import com.example.gabriela.legalsecurityandroid.Utils.UtilDialog;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilNetwork;
 import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
@@ -94,9 +95,9 @@ public class SplashActivity extends AppCompatActivity {
                 } else {
                     if (mLogin.message != "" && mLogin.message != null) {
                         startLoginActivity();
-                        //Util.alertError(mLogin.message, SplashActivity.this);
+                        //UtilDialog.alertError(mLogin.message, SplashActivity.this);
                     } else {
-                        Util.alertError(getResources().getString(R.string.error_login), SplashActivity.this);
+                        UtilDialog.alertError(getResources().getString(R.string.error_login), SplashActivity.this);
 
                     }
                    //  alertError(messageError);
@@ -105,7 +106,7 @@ public class SplashActivity extends AppCompatActivity {
 
             @Override
             public void onError(VolleyError error) {
-                Util.alertError(getResources().getString(R.string.error_connection), SplashActivity.this);
+                UtilDialog.alertError(getResources().getString(R.string.error_connection), SplashActivity.this);
             }
         });
         vimp.buildJsonLogin(user, password);
@@ -113,7 +114,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void showWarningConnectionMessage() {
-        Util.warningDialog(getResources().getString(R.string.warning_connection), SplashActivity.this);
+        UtilDialog.warningDialog(getResources().getString(R.string.warning_connection), SplashActivity.this);
     }
 
     private void startLoginActivity(){

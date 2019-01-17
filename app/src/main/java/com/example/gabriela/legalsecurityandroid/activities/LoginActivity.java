@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.R;
+import com.example.gabriela.legalsecurityandroid.Utils.UtilDialog;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilNetwork;
 import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.models.LoginUserModel;
@@ -63,10 +64,10 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(Util.fieldIsEmpty(user)){
-                    Util.warningDialog( getResources().getString( R.string.complete_user_field ), LoginActivity.this );
+                    UtilDialog.warningDialog( getResources().getString( R.string.complete_user_field ), LoginActivity.this );
                 }
                 else  if(Util.fieldIsEmpty( password )){
-                    Util.warningDialog( getResources().getString( R.string.complete_password_field ), LoginActivity.this );
+                    UtilDialog.warningDialog( getResources().getString( R.string.complete_password_field ), LoginActivity.this );
                 }
                 else {
                     loading.setVisibility(View.GONE);
@@ -90,14 +91,14 @@ public class LoginActivity extends AppCompatActivity {
                     sharedPreferenceLogin();
                     startNewActivity(mLogin);
                 } else {
-                    Util.warningDialog( mLogin.message,LoginActivity.this );
+                    UtilDialog.warningDialog( mLogin.message,LoginActivity.this );
                 }
                 serviceInstanceBeenCalled = false;
             }
 
             @Override
             public void onError(VolleyError error) {
-                Util.warningDialog( getResources().getString(R.string.error_connection), LoginActivity.this );
+                UtilDialog.warningDialog( getResources().getString(R.string.error_connection), LoginActivity.this );
                 serviceInstanceBeenCalled = false;
             }
         });
@@ -105,14 +106,14 @@ public class LoginActivity extends AppCompatActivity {
         if (validateLoginFields() ) {
             vimp.buildJsonLogin(user.getText().toString(), password.getText().toString());
         } else {
-            Util.warningDialog( getResources().getString(R.string.invalid_data), LoginActivity.this );
+            UtilDialog.warningDialog( getResources().getString(R.string.invalid_data), LoginActivity.this );
         }
 
         if(UtilNetwork.isNetworkEnable( LoginActivity.this )){
             vimp.doConnectionLogin();
         }
         else {
-            Util.warningDialog( getResources().getString( R.string.warning_connection ), LoginActivity.this );
+            UtilDialog.warningDialog( getResources().getString( R.string.warning_connection ), LoginActivity.this );
         }
     }
 

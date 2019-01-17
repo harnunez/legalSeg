@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.R;
 import com.example.gabriela.legalsecurityandroid.Constants.Constants;
+import com.example.gabriela.legalsecurityandroid.Utils.UtilDialog;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilNetwork;
 import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
@@ -88,7 +89,7 @@ public class HomeActivity extends AppCompatActivity {
     private void checkAppProviders() {
         if (!UtilNetwork.isNetworkEnable( HomeActivity.this )) {
             endRunningServiceCall();
-            Util.warningDialog( getResources().getString( R.string.warning_connection ), HomeActivity.this );
+            UtilDialog.warningDialog( getResources().getString( R.string.warning_connection ), HomeActivity.this );
         }
         else {
             executeService(eventSelected);
@@ -161,7 +162,7 @@ public class HomeActivity extends AppCompatActivity {
                 if (event.availableEvents > 0) {
                     showNewActivity(eventSelected);
                 } else {
-                    Util.alertError(event.message, HomeActivity.this);
+                    UtilDialog.alertError(event.message, HomeActivity.this);
                 }
                 endRunningServiceCall();
             }
@@ -244,7 +245,7 @@ public class HomeActivity extends AppCompatActivity {
                         break;
                     case RESULT_CANCELED:
                         endRunningServiceCall();
-                        Util.warningDialog( getResources().getString( R.string.warning_gps ), HomeActivity.this );
+                        UtilDialog.warningDialog( getResources().getString( R.string.warning_gps ), HomeActivity.this );
                         break;
                 }
                 break;

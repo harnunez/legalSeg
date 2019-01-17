@@ -3,8 +3,6 @@ package com.example.gabriela.legalsecurityandroid.activities;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -17,13 +15,10 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.media.MediaPlayer;
-import android.media.RingtoneManager;
-import android.net.Uri;
 import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -37,9 +32,11 @@ import android.widget.Toast;
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.R;
 import com.example.gabriela.legalsecurityandroid.Constants.Constants;
+import com.example.gabriela.legalsecurityandroid.Utils.UtilDialog;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilNetwork;
 import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilAlarm;
+import com.example.gabriela.legalsecurityandroid.Utils.UtilNotification;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
 import com.example.gabriela.legalsecurityandroid.models.NewsModel;
 import com.example.gabriela.legalsecurityandroid.services.VolleyImplementation;
@@ -277,7 +274,7 @@ public class InHomeActivity extends AppCompatActivity {
 
     private void executeErrorLocationEvent() {
         finishActivityComponents();
-        Util.alertError( getResources().getString( R.string.error_login ), InHomeActivity.this );
+        UtilDialog.alertError( getResources().getString( R.string.error_login ), InHomeActivity.this );
     }
 
     @Override
@@ -331,7 +328,7 @@ public class InHomeActivity extends AppCompatActivity {
                 checkGpsSettings();
             }
             else if(! UtilNetwork.isNetworkEnable( InHomeActivity.this )){
-                Util.warningDialog( getResources().getString( R.string.warning_connection ), InHomeActivity.this);
+                UtilDialog.warningDialog( getResources().getString( R.string.warning_connection ), InHomeActivity.this);
                 finishTimer();
             }
         }
@@ -389,7 +386,7 @@ public class InHomeActivity extends AppCompatActivity {
 
     private void errorConnectionMessage() {
         if (timerActive){
-            Util.alertError(getResources().getString(R.string.error_connection), InHomeActivity.this);
+            UtilDialog.alertError(getResources().getString(R.string.error_connection), InHomeActivity.this);
         }
     }
 
@@ -428,9 +425,9 @@ public class InHomeActivity extends AppCompatActivity {
                 setSuccessViewLevel();
                 break;
             case Constants.OUTSIDE_COVERAGE_AREA_RESPONSE:
-                if(!endActivity && !Util.showingDialogMessage){
+                if(!endActivity && !UtilDialog.showingDialogMessage){
                     millisOnHold =  millisToFinish;
-                    Util.warningDialog(getResources().getString(R.string.warning_out_of_coverage), InHomeActivity.this);
+                    UtilDialog.warningDialog(getResources().getString(R.string.warning_out_of_coverage), InHomeActivity.this);
                     showNotificationMessage( getResources().getString( R.string.notification_title ), "Te encontras fuera del área de cobertura" );
                 }
                 break;
@@ -438,7 +435,7 @@ public class InHomeActivity extends AppCompatActivity {
                 // response succesfull of backend's call
                 break;
             default:
-                Util.alertError( getResources().getString(R.string.error_default), InHomeActivity.this);
+                UtilDialog.alertError( getResources().getString(R.string.error_default), InHomeActivity.this);
                 break;
         }
     }
@@ -467,7 +464,7 @@ public class InHomeActivity extends AppCompatActivity {
 
     private void showNotificationMessage(String notificationTitle, String notificationMessage ) {
         if(isAppOnBackground){
-            notificationServiceCall(notificationTitle, notificationMessage);
+            UtilNotification.sendNotification(InHomeActivity.this,notificationTitle, notificationMessage);
         }
     }
 
@@ -546,30 +543,12 @@ public class InHomeActivity extends AppCompatActivity {
         public void onReceive(Context context, Intent intent) {
             if(! UtilNetwork.isNetworkEnable( context )){
                 finishTimer();
-                Util.warningDialog(getResources().getString(R.string.warning_lost_connection), InHomeActivity.this);
+                UtilDialog.warningDialog(getResources().getString(R.string.warning_lost_connection), InHomeActivity.this);
             }else {
                 initTimer();
             }
         }
     };
-
-    private void notificationServiceCall(String notificationTitle, String notificationMessage){
-        Uri alarmSound = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        Intent resultIntent  = new Intent( this, InHomeActivity.class );
-        PendingIntent resultPendingIntent = PendingIntent.getActivity( this, 1, resultIntent, PendingIntent.FLAG_UPDATE_CURRENT );
-
-        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, "M_CH_ID")
-                    .setSound( alarmSound )
-                    .setAutoCancel(true)
-                    .setContentIntent( resultPendingIntent )
-                    .setDefaults( NotificationCompat.DEFAULT_ALL )
-                    .setSmallIcon( R.mipmap.ic_launcher )
-                    .setContentTitle(notificationTitle )
-                    .setContentText( notificationMessage );
-
-        NotificationManager notificationManager = (NotificationManager) getSystemService( getApplicationContext().NOTIFICATION_SERVICE );
-        notificationManager.notify( 1,notificationBuilder.build() );
-    }
 
     private void cancelServiceCall(){
         event = Constants.EVENT_CANCEL_BACKEND_CALL;
