@@ -62,7 +62,6 @@ public class InHomeActivity extends AppCompatActivity {
     private View viewTimer;
     private ProgressBar progressBar;
     private TextView title_header_event;
-    private TextView titleHeader;
     private TextView timerBack;
     private TextView timerMessage;
     private Button buttonDefault;
@@ -77,11 +76,11 @@ public class InHomeActivity extends AppCompatActivity {
     private String event;
     private String useNameSelect;
     private String cliente;
-    private Boolean timerActive;
+    private Boolean timerActive = false;
     private int secondsTillServiceCall = 5;
 
     private CountDownTimer timerCount;
-    private long millisToFinish;
+    private long millisToFinish = STARTING_COUNTDOWN_TIME;
     private long millisOnHold = 0;
     private boolean isOperationEnd = false;
     private boolean isAppOnBackground = false;
@@ -103,7 +102,8 @@ public class InHomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_in_home);
         initProperties();
         initFusedLocationClient();
-        getLocation();
+        setLocation();
+        initTimer();
         executeEventCancel();
         executeEventShutDown();
     }
@@ -138,7 +138,6 @@ public class InHomeActivity extends AppCompatActivity {
         shutDown = findViewById(R.id.icon_shut_down);
         viewTimer = findViewById(R.id.view_timer);
         progressBar = findViewById(R.id.progressBarCircle);
-        titleHeader = findViewById(R.id.description_access_strong);
         timerBack = findViewById(R.id.timer_back);
         timerMessage = findViewById(R.id.description_access);
         buttonDefault = findViewById(R.id.cancel_button_image);
@@ -154,7 +153,6 @@ public class InHomeActivity extends AppCompatActivity {
         else {
             title_header_event.setText(R.string.leave_title_header);
         }
-        resetTimer();
     }
 
     private void startTimer(long timeLeftInMillis){
@@ -163,32 +161,47 @@ public class InHomeActivity extends AppCompatActivity {
             @Override
             public void onTick(long millisUntilFinished) {
                 millisToFinish = millisUntilFinished;
-                secondsTillServiceCall--;
-
-                if(isOnCoverageArea){
-                    updateProgressBar(millisUntilFinished);
-                }
-
-                if(secondsTillServiceCall == 0){
-                    secondsTillServiceCall = SERVICE_INTERVAL_TIME;
-                    executeService();
-                }
+                checkUpdateProgressBar(millisUntilFinished);
+                callService();
             }
 
             @Override
             public void onFinish() {
-                if(isOnCoverageArea){
-                    finishTimer();
-                    loadingService.setVisibility(View.GONE);
-                    setSuccessViewLevel();
-                    hideProgressBar();
-                }
-                if(!endResponseApp){
-                    startTimer( STARTING_COUNTDOWN_TIME );
-                }
+                finishTimerTask();
+                resetTimet();
             }
         }.start();
         timerActive = true;
+    }
+
+    private void resetTimet() {
+        if(!endResponseApp){
+            startTimer( STARTING_COUNTDOWN_TIME );
+        }
+    }
+
+    private void finishTimerTask() {
+        if(isOnCoverageArea){
+            finishTimer();
+            loadingService.setVisibility(View.GONE);
+            setSuccessViewLevel();
+            hideProgressBar();
+        }
+    }
+
+    private void checkUpdateProgressBar(long millisUntilFinished) {
+        if(isOnCoverageArea){
+            updateProgressBar(millisUntilFinished);
+        }
+    }
+
+    private void callService() {
+        secondsTillServiceCall--;
+
+        if(secondsTillServiceCall == 0){
+            secondsTillServiceCall = SERVICE_INTERVAL_TIME;
+            executeService();
+        }
     }
 
     private void hideProgressBar(){
@@ -201,11 +214,6 @@ public class InHomeActivity extends AppCompatActivity {
         timerBack.setText("" + timer);
         int progress = (int) (millisUntilFinished / 1000);
         progressBar.setProgress(progress);
-    }
-
-    private void resetTimer(){
-        timerActive = false;
-        millisToFinish = STARTING_COUNTDOWN_TIME;
     }
 
     private void finishTimer(){
@@ -232,12 +240,11 @@ public class InHomeActivity extends AppCompatActivity {
         alarm.stop();
         alarm.setLooping(false);
     }
-
-    private void getLocation() {
+    private void setLocation() {
         if (Util.checkCurrentAndroidVersion()) {
             requestPermissions( new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, Constants.ACCESS_FINE_LOCATION_CODE );
         } else {
-            getUserLocation();
+            setUserLocation();
         }
     }
 
@@ -245,7 +252,7 @@ public class InHomeActivity extends AppCompatActivity {
         fusedLocationClient = LocationServices.getFusedLocationProviderClient( this );
     }
 
-    private void getUserLocation() {
+    private void setUserLocation() {
         checkProvidersPermission();
         fusedLocationClient.getLastLocation()
                 .addOnSuccessListener( InHomeActivity.this, new OnSuccessListener<Location>() {
@@ -253,7 +260,6 @@ public class InHomeActivity extends AppCompatActivity {
                     public void onSuccess(Location location) {
                             executeLocationManager();
                             setLocationCoord( location );
-                            initTimer();
                     }
                 } )
                 .addOnFailureListener( new OnFailureListener() {
@@ -299,7 +305,7 @@ public class InHomeActivity extends AppCompatActivity {
 
                 if(permission.equals(Manifest.permission.ACCESS_FINE_LOCATION)){
                     if(result == PackageManager.PERMISSION_GRANTED){
-                        getUserLocation();
+                        setUserLocation();
                     }
                     else{
                         Toast.makeText(this, "Permiso denegado", Toast.LENGTH_LONG).show();
@@ -313,9 +319,11 @@ public class InHomeActivity extends AppCompatActivity {
     }
 
     private void setLocationCoord(Location location) {
-        if(location != null){
+        try {
             latitud = String.valueOf( location.getLatitude() );
             longitud = String.valueOf( location.getLongitude() );
+        }catch (Exception e){
+            //TODO
         }
     }
 
@@ -383,7 +391,7 @@ public class InHomeActivity extends AppCompatActivity {
             vimp.doConnectionNovedades();
 
         }else{
-            getUserLocation();
+            setUserLocation();
         }
     }
 
@@ -461,11 +469,7 @@ public class InHomeActivity extends AppCompatActivity {
     }
 
     private void checkCoverageArea() {
-        if(newsModel.alertLevel == Constants.OUTSIDE_COVERAGE_AREA_RESPONSE){
-            isOnCoverageArea = false;
-        }else{
-            isOnCoverageArea = true;
-        }
+        isOnCoverageArea = newsModel.alertLevel == Constants.OUTSIDE_COVERAGE_AREA_RESPONSE ? false : true;
     }
 
     private int setViewLevelOkOperationMessage() {
