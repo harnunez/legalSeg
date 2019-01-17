@@ -398,16 +398,16 @@ public class InHomeActivity extends AppCompatActivity {
                 handleTimerTask();
                 break;
             case Constants.OPERATION_OK_RESPONSE :
-                reset();
+                hideCountDownComponents();
                 setSuccessViewLevel();
                 break;
             case Constants.WAIT_RESPONSE:
-                reset();
+                hideCountDownComponents();
                 setViewLevel(R.drawable.prueba_aguada, R.string.message_aguarda_icon);
                 showNotificationMessage( getResources().getString( R.string.notification_title ), getResources().getString( R.string.message_aguarda_icon ));
                 break;
             case Constants.DANGER_RESPONSE :
-                reset();
+                hideCountDownComponents();
                 finishTimer();
                 UtilAlarm.startAlarm(InHomeActivity.this,R.raw.alarm);
                 endResponseApp = true;
@@ -417,7 +417,7 @@ public class InHomeActivity extends AppCompatActivity {
                 showNotificationMessage( getResources().getString( R.string.notification_title_alert ), getResources().getString( R.string.message_call911 ));
                 break;
             case Constants.END_RESPONSE:
-                reset();
+                hideCountDownComponents();
                 finishTimer();
                 endResponseApp = true;
                 isOperationEnd = true;
@@ -468,7 +468,7 @@ public class InHomeActivity extends AppCompatActivity {
         }
     }
 
-    private void reset(){
+    private void hideCountDownComponents(){
         timerBack.setVisibility(View.INVISIBLE);
         loadingService.setVisibility(View.INVISIBLE);
         timerBack.setText("");
