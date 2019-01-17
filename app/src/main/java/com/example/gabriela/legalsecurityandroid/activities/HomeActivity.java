@@ -20,7 +20,7 @@ import android.widget.Toast;
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.R;
 import com.example.gabriela.legalsecurityandroid.Constants.Constants;
-import com.example.gabriela.legalsecurityandroid.Utils.NetworkUtil;
+import com.example.gabriela.legalsecurityandroid.Utils.UtilNetwork;
 import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
 import com.example.gabriela.legalsecurityandroid.models.EventModel;
@@ -86,7 +86,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void checkAppProviders() {
-        if (!NetworkUtil.isNetworkEnable( HomeActivity.this )) {
+        if (!UtilNetwork.isNetworkEnable( HomeActivity.this )) {
             endRunningServiceCall();
             Util.warningDialog( getResources().getString( R.string.warning_connection ), HomeActivity.this );
         }

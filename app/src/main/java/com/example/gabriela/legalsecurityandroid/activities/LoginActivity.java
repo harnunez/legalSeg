@@ -14,7 +14,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.R;
-import com.example.gabriela.legalsecurityandroid.Utils.NetworkUtil;
+import com.example.gabriela.legalsecurityandroid.Utils.UtilNetwork;
 import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.models.LoginUserModel;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
@@ -108,7 +108,7 @@ public class LoginActivity extends AppCompatActivity {
             Util.warningDialog( getResources().getString(R.string.invalid_data), LoginActivity.this );
         }
 
-        if(NetworkUtil.isNetworkEnable( LoginActivity.this )){
+        if(UtilNetwork.isNetworkEnable( LoginActivity.this )){
             vimp.doConnectionLogin();
         }
         else {

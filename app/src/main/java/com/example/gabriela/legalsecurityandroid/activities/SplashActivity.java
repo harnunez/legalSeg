@@ -14,7 +14,7 @@ import android.widget.ProgressBar;
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.Constants.Constants;
 import com.example.gabriela.legalsecurityandroid.R;
-import com.example.gabriela.legalsecurityandroid.Utils.NetworkUtil;
+import com.example.gabriela.legalsecurityandroid.Utils.UtilNetwork;
 import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
 import com.example.gabriela.legalsecurityandroid.models.LoginUserModel;
@@ -69,7 +69,7 @@ public class SplashActivity extends AppCompatActivity {
             String password = prefs.getString("password", "");
 
             //check connection
-            if (NetworkUtil.isNetworkEnable(this)){
+            if (UtilNetwork.isNetworkEnable(this)){
                 executeService(user, password);
             }
             else {
@@ -137,7 +137,7 @@ public class SplashActivity extends AppCompatActivity {
     private BroadcastReceiver networkStatus = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if(NetworkUtil.isNetworkEnable(context)){
+            if(UtilNetwork.isNetworkEnable(context)){
                 startAppSplashActivity();
                 progressBar.setVisibility( View.INVISIBLE );
             }else{

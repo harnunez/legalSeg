@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-public class NetworkUtil {
+public class UtilNetwork {
     public static final boolean NETWORK_ENABLE = true;
     public static final boolean NETWORK_DISABLE = false;
 

@@ -37,7 +37,7 @@ import android.widget.Toast;
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.R;
 import com.example.gabriela.legalsecurityandroid.Constants.Constants;
-import com.example.gabriela.legalsecurityandroid.Utils.NetworkUtil;
+import com.example.gabriela.legalsecurityandroid.Utils.UtilNetwork;
 import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilAlarm;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
@@ -330,7 +330,7 @@ public class InHomeActivity extends AppCompatActivity {
             if(! Util.isGPSEnable(InHomeActivity.this)){
                 checkGpsSettings();
             }
-            else if(! NetworkUtil.isNetworkEnable( InHomeActivity.this )){
+            else if(! UtilNetwork.isNetworkEnable( InHomeActivity.this )){
                 Util.warningDialog( getResources().getString( R.string.warning_connection ), InHomeActivity.this);
                 finishTimer();
             }
@@ -338,7 +338,7 @@ public class InHomeActivity extends AppCompatActivity {
     };
 
     private void checkProvidersEnabled(){
-        if (Util.isGPSEnable(InHomeActivity.this ) && NetworkUtil.isNetworkEnable( InHomeActivity.this )){
+        if (Util.isGPSEnable(InHomeActivity.this ) && UtilNetwork.isNetworkEnable( InHomeActivity.this )){
             initTimer();
         }
     }
@@ -544,7 +544,7 @@ public class InHomeActivity extends AppCompatActivity {
     private BroadcastReceiver networkStatus = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if(! NetworkUtil.isNetworkEnable( context )){
+            if(! UtilNetwork.isNetworkEnable( context )){
                 finishTimer();
                 Util.warningDialog(getResources().getString(R.string.warning_lost_connection), InHomeActivity.this);
             }else {
@@ -591,7 +591,7 @@ public class InHomeActivity extends AppCompatActivity {
                 .setNegativeButton( getResources().getString( R.string.no_message ), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        if(!NetworkUtil.isNetworkEnable( InHomeActivity.this )) {
+                        if(!UtilNetwork.isNetworkEnable( InHomeActivity.this )) {
                             Toast.makeText( InHomeActivity.this, getResources().getString( R.string.warning_connection ), Toast.LENGTH_SHORT );
                         }
                         if(!Util.isGPSEnable( InHomeActivity.this )){
@@ -635,7 +635,7 @@ public class InHomeActivity extends AppCompatActivity {
     }
 
     private void executeEventsBeforeLeave(){
-        if(NetworkUtil.isNetworkEnable( InHomeActivity.this )) {
+        if(UtilNetwork.isNetworkEnable( InHomeActivity.this )) {
             cancelServiceCall();
         }
         finishActivityComponents();
