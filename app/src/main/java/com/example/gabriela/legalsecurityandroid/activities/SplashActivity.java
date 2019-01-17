@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import com.android.volley.VolleyError;
+import com.example.gabriela.legalsecurityandroid.Constants.Constants;
 import com.example.gabriela.legalsecurityandroid.R;
 import com.example.gabriela.legalsecurityandroid.Utils.NetworkUtil;
 import com.example.gabriela.legalsecurityandroid.Utils.Util;
@@ -26,7 +27,6 @@ public class SplashActivity extends AppCompatActivity {
 
     private ProgressBar progressBar;
     private static final long splashTimeOut=2000;
-    private final static String CONNECTIVITY_ACTION = "android.net.conn.CONNECTIVITY_CHANGE";
     //private final static String WIFI_STATE = "android.net.wifi.WIFI_STATE_CHANGED";
 
     @Override
@@ -130,7 +130,7 @@ public class SplashActivity extends AppCompatActivity {
 
     private void setRegisterReceiver() {
         IntentFilter intentFilter = new IntentFilter();
-        intentFilter.addAction(CONNECTIVITY_ACTION);
+        intentFilter.addAction(Constants.CONNECTIVITY_ACTION);
         registerReceiver(networkStatus, intentFilter);
     }
 
