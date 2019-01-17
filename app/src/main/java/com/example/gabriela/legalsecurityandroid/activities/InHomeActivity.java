@@ -39,6 +39,7 @@ import com.example.gabriela.legalsecurityandroid.R;
 import com.example.gabriela.legalsecurityandroid.Constants.Constants;
 import com.example.gabriela.legalsecurityandroid.Utils.NetworkUtil;
 import com.example.gabriela.legalsecurityandroid.Utils.Util;
+import com.example.gabriela.legalsecurityandroid.Utils.UtilAlarm;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
 import com.example.gabriela.legalsecurityandroid.models.NewsModel;
 import com.example.gabriela.legalsecurityandroid.services.VolleyImplementation;
@@ -223,23 +224,6 @@ public class InHomeActivity extends AppCompatActivity {
         }
     }
 
-    public void activateAlarm() {
-        alarm = MediaPlayer.create(InHomeActivity.this,R.raw.alarm);
-        alarm.start();
-        alarm.setLooping(true);
-    }
-
-    public boolean alarmIsPlaying(){
-        if(alarm != null){
-            return alarm.isPlaying();
-        }
-        return false;
-    }
-
-    public void stopAlarm(){
-        alarm.stop();
-        alarm.setLooping(false);
-    }
     private void setLocation() {
         if (Util.checkCurrentAndroidVersion()) {
             requestPermissions( new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, Constants.ACCESS_FINE_LOCATION_CODE );
@@ -428,7 +412,7 @@ public class InHomeActivity extends AppCompatActivity {
             case Constants.DANGER_RESPONSE :
                 reset();
                 finishTimer();
-                activateAlarm();
+                UtilAlarm.startAlarm(InHomeActivity.this,R.raw.alarm);
                 endResponseApp = true;
                 isOperationEnd = true;
                 buttonDefault.setText(R.string.salir_btn);
@@ -537,9 +521,7 @@ public class InHomeActivity extends AppCompatActivity {
     }
 
     private void finishActivityComponents(){
-        if(alarmIsPlaying()){
-            stopAlarm();
-        }
+        UtilAlarm.stopAlarm();
         finishTimer();
     }
 
