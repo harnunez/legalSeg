@@ -2,19 +2,13 @@ package com.example.gabriela.legalsecurityandroid.Utils;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.IntentSender;
-import android.content.SharedPreferences;
 import android.location.LocationManager;
-import android.media.MediaPlayer;
 import android.os.Build;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.EditText;
 
 import com.example.gabriela.legalsecurityandroid.Constants.Constants;
-import com.example.gabriela.legalsecurityandroid.R;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.location.LocationRequest;

@@ -28,6 +28,10 @@ public abstract class VolleyImplementation {
         this.mDoConnectionEvent = _doConnectionEvent;
     }
 
+    public void doConnection() {
+        doConnectionService();
+    }
+
     private void doConnectionService() {
         mRequestQueue = Volley.newRequestQueue(this.mContext);
 
@@ -51,17 +55,9 @@ public abstract class VolleyImplementation {
         mRequestQueue.add(jsonObjectRequest);
     }
 
-    public void doConnection() {
-        doConnectionService();
-    }
-
     protected abstract String getUrl();
 
     protected abstract int getMethod();
-
-  //  protected abstract void setUrl(String url);
-
- //   protected abstract void setMethod(int method);
 
     protected JSONObject getRequestParams(){
         return mParametros;
@@ -75,5 +71,7 @@ public abstract class VolleyImplementation {
             UtilDialog.alertError( "HashMap is null", mContext );
         }
     }
+
+
 }
 
