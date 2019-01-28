@@ -25,7 +25,7 @@ import com.example.gabriela.legalsecurityandroid.Utils.UtilNetwork;
 import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
 import com.example.gabriela.legalsecurityandroid.models.EventModel;
-import com.example.gabriela.legalsecurityandroid.services.VolleyImplementation;
+import com.example.gabriela.legalsecurityandroid.services.EventsService;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
@@ -152,7 +152,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void executeService(final String eventSelected) {
-        VolleyImplementation vimp = new VolleyImplementation(this, new doConnectionEvent() {
+        EventsService eventsService = new EventsService(this, new doConnectionEvent() {
             @Override
             public void onOk(JSONObject response) {
                 Log.d("Response", response.toString());
@@ -173,8 +173,8 @@ public class HomeActivity extends AppCompatActivity {
                 endRunningServiceCall();
             }
         });
-        vimp.buildJsonEvents(idCliente);
-        vimp.doConnectionEvents();
+        eventsService.buildJsonEvents(idCliente);
+        eventsService.doConnection();
     }
 
     private void executeShutDown() {

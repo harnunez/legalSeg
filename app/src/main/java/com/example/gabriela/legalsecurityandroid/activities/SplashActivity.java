@@ -16,10 +16,9 @@ import com.example.gabriela.legalsecurityandroid.Constants.Constants;
 import com.example.gabriela.legalsecurityandroid.R;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilDialog;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilNetwork;
-import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
 import com.example.gabriela.legalsecurityandroid.models.LoginUserModel;
-import com.example.gabriela.legalsecurityandroid.services.VolleyImplementation;
+import com.example.gabriela.legalsecurityandroid.services.LoginService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.json.JSONObject;
@@ -81,13 +80,11 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
-    private void executeService(String user, String password) {
-
-        VolleyImplementation vimp = new VolleyImplementation(this, new doConnectionEvent() {
-
+    private void executeService(String user, String password){
+        LoginService loginService = new LoginService( this, new doConnectionEvent() {
             @Override
             public void onOk(JSONObject response) {
-               Gson gson = new GsonBuilder().create();
+                Gson gson = new GsonBuilder().create();
                 LoginUserModel mLogin = gson.fromJson(response.toString(), LoginUserModel.class);
                 if (mLogin.codeResponse == 0) {
                     startNewActivity(mLogin);
@@ -100,7 +97,7 @@ public class SplashActivity extends AppCompatActivity {
                         UtilDialog.alertError(getResources().getString(R.string.error_login), SplashActivity.this);
 
                     }
-                   //  alertError(messageError);
+                    //  alertError(messageError);
                 }
             }
 
@@ -108,9 +105,9 @@ public class SplashActivity extends AppCompatActivity {
             public void onError(VolleyError error) {
                 UtilDialog.alertError(getResources().getString(R.string.error_connection), SplashActivity.this);
             }
-        });
-        vimp.buildJsonLogin(user, password);
-        vimp.doConnectionLogin();
+        } );
+        loginService.buildJsonLogin( user,password );
+        loginService.doConnection();
     }
 
     private void showWarningConnectionMessage() {

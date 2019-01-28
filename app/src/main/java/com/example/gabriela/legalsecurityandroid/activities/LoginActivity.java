@@ -19,6 +19,7 @@ import com.example.gabriela.legalsecurityandroid.Utils.UtilNetwork;
 import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.models.LoginUserModel;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
+import com.example.gabriela.legalsecurityandroid.services.LoginService;
 import com.example.gabriela.legalsecurityandroid.services.VolleyImplementation;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -81,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void executeService() {
-        VolleyImplementation vimp = new VolleyImplementation(this, new doConnectionEvent() {
+        LoginService vimp = new LoginService(this, new doConnectionEvent() {
             @Override
             public void onOk(JSONObject response) {
                 Gson gson = new GsonBuilder().create();
@@ -110,7 +111,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         if(UtilNetwork.isNetworkEnable( LoginActivity.this )){
-            vimp.doConnectionLogin();
+            vimp.doConnection();
         }
         else {
             UtilDialog.warningDialog( getResources().getString( R.string.warning_connection ), LoginActivity.this );

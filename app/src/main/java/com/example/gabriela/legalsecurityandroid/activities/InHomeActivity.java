@@ -39,7 +39,7 @@ import com.example.gabriela.legalsecurityandroid.Utils.UtilAlarm;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilNotification;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
 import com.example.gabriela.legalsecurityandroid.models.NewsModel;
-import com.example.gabriela.legalsecurityandroid.services.VolleyImplementation;
+import com.example.gabriela.legalsecurityandroid.services.NewsService;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -348,7 +348,7 @@ public class InHomeActivity extends AppCompatActivity {
 
     private void executeService() {
         if(checkCoordStatus()){
-            VolleyImplementation vimp = new VolleyImplementation(this, new doConnectionEvent() {
+            NewsService newsService = new NewsService(this, new doConnectionEvent() {
                 @Override
                 public void onOk(JSONObject response) {
                     Gson gson = new GsonBuilder().create();
@@ -368,8 +368,8 @@ public class InHomeActivity extends AppCompatActivity {
                 }
             });
 
-            vimp.buildJsonNews(event, latitud, longitud, useNameSelect, cliente);
-            vimp.doConnectionNovedades();
+            newsService.buildJsonNews(event, latitud, longitud, useNameSelect, cliente);
+            newsService.doConnection();
 
         }else{
             setUserLocation();
