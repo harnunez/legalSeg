@@ -11,4 +11,6 @@
     <color name="circlesView2">#05FFFFFF</color>
     <color name="progressBarColor">#863134</color>
     <color name="progressBarColorCharge">#2b2d2c</color>
+    <item name="grey_medium_dark" type="color">#242424</item>
+    <item name="red_medium_light" type="color">#d92921</item>
 </resources>

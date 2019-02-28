@@ -17,6 +17,7 @@ import com.example.gabriela.legalsecurityandroid.R;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilDialog;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilNetwork;
 import com.example.gabriela.legalsecurityandroid.Utils.Util;
+import com.example.gabriela.legalsecurityandroid.fragments.ProgressIndicator;
 import com.example.gabriela.legalsecurityandroid.models.LoginUserModel;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
 import com.example.gabriela.legalsecurityandroid.services.LoginService;
@@ -30,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText user;
     private EditText password;
     private ProgressBar loading;
+    private ProgressIndicator progressIndicator;
     private boolean serviceInstanceBeenCalled = false;
 
     @Override
@@ -48,6 +50,7 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         login = findViewById(R.id.button_login);
         loading = findViewById(R.id.loadingService);
+
     }
 
     // Permissions Location
@@ -101,6 +104,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onError(VolleyError error) {
                 UtilDialog.warningDialog( getResources().getString(R.string.error_connection), LoginActivity.this );
                 serviceInstanceBeenCalled = false;
+                progressIndicator.dismiss();
             }
         });
 
@@ -108,13 +112,17 @@ public class LoginActivity extends AppCompatActivity {
             vimp.buildJsonLogin(user.getText().toString(), password.getText().toString());
         } else {
             UtilDialog.warningDialog( getResources().getString(R.string.invalid_data), LoginActivity.this );
+            serviceInstanceBeenCalled = false;
         }
 
         if(UtilNetwork.isNetworkEnable( LoginActivity.this )){
+            progressIndicator = ProgressIndicator.newInstance();
+            progressIndicator.show(getSupportFragmentManager(), "LOGIN");
             vimp.doConnection();
         }
         else {
             UtilDialog.warningDialog( getResources().getString( R.string.warning_connection ), LoginActivity.this );
+            serviceInstanceBeenCalled = false;
         }
     }
 
