@@ -62,6 +62,7 @@ public class InHomeActivity extends AppCompatActivity {
     private TextView title_header_event;
     private TextView timerBack;
     private TextView timerMessage;
+    private TextView titleMessageEvent;
     private Button buttonDefault;
     private MediaPlayer alarm;
     private LocationManager locationManager;
@@ -140,6 +141,7 @@ public class InHomeActivity extends AppCompatActivity {
         timerMessage = findViewById(R.id.description_access);
         buttonDefault = findViewById(R.id.cancel_button_image);
         loadingService = findViewById(R.id.loadingService);
+        titleMessageEvent = findViewById(R.id.description_access_strong);
 
         event = getIntent().getExtras().getString("event");
         useNameSelect = getIntent().getExtras().getString("userName");
@@ -403,7 +405,7 @@ public class InHomeActivity extends AppCompatActivity {
                 break;
             case Constants.WAIT_RESPONSE:
                 hideCountDownComponents();
-                setViewLevel(R.drawable.prueba_aguada, R.string.message_aguarda_icon);
+                setViewLevel(R.drawable.prueba_alerta, R.string.message_aguarda_icon, R.string.message_strong_aguarda_icon);
                 showNotificationMessage( getResources().getString( R.string.notification_title ), getResources().getString( R.string.message_aguarda_icon ));
                 break;
             case Constants.DANGER_RESPONSE :
@@ -413,7 +415,7 @@ public class InHomeActivity extends AppCompatActivity {
                 endResponseApp = true;
                 isOperationEnd = true;
                 buttonDefault.setText(R.string.salir_btn);
-                setViewLevel(R.drawable.prueba_peligro, R.string.message_peligro);
+                setViewLevel(R.drawable.prueba_peligro, R.string.message_peligro, R.string.message_strong_peligro);
                 showNotificationMessage( getResources().getString( R.string.notification_title_alert ), getResources().getString( R.string.message_call911 ));
                 break;
             case Constants.END_RESPONSE:
@@ -458,7 +460,7 @@ public class InHomeActivity extends AppCompatActivity {
     }
 
     private void setSuccessViewLevel() {
-        setViewLevel(R.drawable.prueba_ok, setViewLevelOkOperationMessage() );
+        setViewLevel(R.drawable.prueba_ok, setViewLevelOkOperationMessage() , R.string.message_strong_succes );
         showNotificationMessage( getResources().getString( R.string.notification_title ), getResources().getString( setViewLevelOkOperationMessage() ));
     }
 
@@ -474,8 +476,9 @@ public class InHomeActivity extends AppCompatActivity {
         timerBack.setText("");
     }
 
-    private void setViewLevel(Integer image, Integer description) {
+    private void setViewLevel(Integer image, Integer description, Integer title) {
         title_header_event.setText("");
+        titleMessageEvent.setText(title);
         viewTimer.setBackgroundResource(image);
         timerMessage.setText(description);
         timerBack.setText("");

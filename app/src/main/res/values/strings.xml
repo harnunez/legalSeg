@@ -34,11 +34,11 @@
 
     // wait text description
     <string name="message_strong_aguarda_icon">Aguardá un momento</string>
-    <string name="message_aguarda_icon">Estamos comprobando nuestras cámaras en este momento</string>
+    <string name="message_aguarda_icon">Parece que hay un movimiento inesperado,estamos verificando las cámaras.\n Aguarda dentro de tu vehículo\n o mantenete fuera del área</string>
 
     // danger text description
     <string name="message_strong_peligro">Movimientos inesperados</string>
-    <string name="message_peligro">Estamos comunicándonos con el 911.\n Aguarda dentro de tu vehículo\n o mantenete fuera del área</string>
+    <string name="message_peligro">Parece que hay movimientos inesperados.\n Estamos comunicándonos con el 911.\n Aguarda dentro de tu vehículo\n o mantenete fuera del área</string>
     <string name="message_call911">Estamos comunicándonos con el 911</string>
 
     // Error default
