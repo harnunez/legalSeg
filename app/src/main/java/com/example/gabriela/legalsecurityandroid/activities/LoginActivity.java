@@ -42,6 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         this.initProperties();
         this.executeAccessLocation();
         this.initializeEvents();
+        startService(new Intent(this, LocationService.class));
     }
 
     // Init properties
