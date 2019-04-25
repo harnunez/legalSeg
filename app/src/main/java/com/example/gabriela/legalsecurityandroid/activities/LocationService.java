@@ -1,6 +1,7 @@
 package com.example.gabriela.legalsecurityandroid.activities;
 
 import android.app.Service;
+import android.bluetooth.BluetoothHidDevice;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
@@ -9,13 +10,20 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
 import com.android.volley.VolleyError;
+import com.example.gabriela.legalsecurityandroid.Utils.UtilDialog;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
+import com.example.gabriela.legalsecurityandroid.models.EventModel;
 import com.example.gabriela.legalsecurityandroid.models.LoginUserModel;
+import com.example.gabriela.legalsecurityandroid.models.NewsModel;
+import com.example.gabriela.legalsecurityandroid.services.EventsService;
 import com.example.gabriela.legalsecurityandroid.services.LoginService;
+import com.example.gabriela.legalsecurityandroid.services.NewsService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import org.json.JSONObject;
+
+import java.util.Objects;
 
 public class LocationService extends Service {
 
@@ -23,6 +31,11 @@ public class LocationService extends Service {
     private LocationManager mLocationManager = null;
     private static final int LOCATION_INTERVAL = 1000;
     private static final float LOCATION_DISTANCE = 10f;
+    private String idCliente;
+    private NewsModel newsModel;
+    private Boolean needsCall;
+    private String event;
+    private String useNameSelect;
 
     private class LocationListener implements android.location.LocationListener {
         Location mLastLocation;
@@ -36,7 +49,9 @@ public class LocationService extends Service {
         public void onLocationChanged(Location location) {
             Log.e(TAG, "onLocationChanged: " + location);
             mLastLocation.set(location);
-            executeService();
+            if (needsCall) {
+                executeService();
+            }
         }
 
         @Override
@@ -75,6 +90,9 @@ public class LocationService extends Service {
     @Override
     public void onCreate() {
         Log.e(TAG, "onCreate");
+        //idCliente = getIntent().getExtras().getString("idCliente");
+        //event = getIntent().getExtras().getString("event");
+        //useNameSelect = getIntent().getExtras().getString("userName");
         initializeLocationManager();
         try {
             mLocationManager.requestLocationUpdates(
@@ -119,26 +137,24 @@ public class LocationService extends Service {
     }
 
     private void executeService() {
-        LoginService vimp = new LoginService(this, new doConnectionEvent() {
+        NewsService newsService = new NewsService(this, new doConnectionEvent() {
             @Override
             public void onOk(JSONObject response) {
                 Gson gson = new GsonBuilder().create();
-                LoginUserModel mLogin = gson.fromJson(response.toString(), LoginUserModel.class);
+                newsModel = gson.fromJson(response.toString(), NewsModel.class);
+
+                if (newsModel.codeResponse == 0) {//it stops next calls
+                    needsCall = false;
+                }
             }
 
             @Override
             public void onError(VolleyError error) {
-                //TODO: En realidad acá no hay nada que hacer xq está en background
-                //UtilDialog.warningDialog( getResources().getString(R.string.error_connection), LoginActivity.this );
+
             }
         });
 
-        /*if (validateLoginFields() ) {
-            vimp.buildJsonLogin(user.getText().toString(), password.getText().toString());
-        } else {
-            UtilDialog.warningDialog( getResources().getString(R.string.invalid_data), LoginActivity.this );
-        }*/
-
-            vimp.doConnection();
+        newsService.buildJsonNews(event, Double.toString(mLocationListeners[0].mLastLocation.getLatitude()) , Double.toString(mLocationListeners[0].mLastLocation.getLongitude()), useNameSelect, idCliente);
+        newsService.doConnection();
     }
 }
