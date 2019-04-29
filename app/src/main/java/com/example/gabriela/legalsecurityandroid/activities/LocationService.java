@@ -84,15 +84,20 @@ public class LocationService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.e(TAG, "onStartCommand");
         super.onStartCommand(intent, flags, startId);
+
+        idCliente = (intent.getExtras().get("idCliente").toString());
+        event = (intent.getExtras().get("event").toString());
+        useNameSelect = (intent.getExtras().get("userName").toString());
+
+
+
         return START_STICKY;
     }
 
     @Override
     public void onCreate() {
         Log.e(TAG, "onCreate");
-        //idCliente = getIntent().getExtras().getString("idCliente");
-        //event = getIntent().getExtras().getString("event");
-        //useNameSelect = getIntent().getExtras().getString("userName");
+
         initializeLocationManager();
         try {
             mLocationManager.requestLocationUpdates(

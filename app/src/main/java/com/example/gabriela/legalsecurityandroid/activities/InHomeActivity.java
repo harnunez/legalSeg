@@ -147,6 +147,14 @@ public class InHomeActivity extends AppCompatActivity {
         useNameSelect = getIntent().getExtras().getString("userName");
         cliente = getIntent().getExtras().getString("idCliente");
 
+        //NOTE: This is the new service which should call every time to backend service when danger is received
+        Intent locationServiceIntent = new Intent(this, LocationService.class);
+        locationServiceIntent.putExtra("idCliente", cliente);
+        locationServiceIntent.putExtra("event", event);
+        locationServiceIntent.putExtra("userName", useNameSelect);
+        startService(locationServiceIntent);
+        //NOTE: END NOTE
+
         if (event.equals(Constants.EVENT_ENTER_HOME)) {
             title_header_event.setText(R.string.enter_title_header);
         }
