@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/joaquin/legal-security-android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
+            "outputFile": "/Users/gabriela/legal-security/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/Users/joaquin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/3f27821f1a8d827bb6e922046868262c/res/values-v24/values-v24.xml",
+                    "source": "/Users/gabriela/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/28d368d78a3e556fea129f5fef430392/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/2d57f0b07a70299b07a2c97cd27b4b95/res/values-v24/values-v24.xml",
+                    "source": "/Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/ec6f832fb834cbf9ce9e6ae4e98f8b72/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

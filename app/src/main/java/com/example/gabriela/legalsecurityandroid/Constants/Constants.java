@@ -14,5 +14,6 @@ public class Constants {
 
     public static final String EVENT_LEAVE_HOME = "2";
     public static final String EVENT_ENTER_HOME = "3";
+    public static final String EVENT_ASK_FOR_EVENT = "4";
     public static final String EVENT_CANCEL_BACKEND_CALL = "5";
 }

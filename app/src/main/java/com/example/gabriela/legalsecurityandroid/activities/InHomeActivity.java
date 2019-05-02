@@ -378,9 +378,9 @@ public class InHomeActivity extends AppCompatActivity {
                 }
             });
 
-            String forceEventToNumberFour = "4";
+            // String forceEventToNumberFour = "4";
             //NOTA: Cambio esto por pedido de Nicolás . Todo pooleo va con nro 4
-            newsService.buildJsonNews(forceEventToNumberFour, latitud, longitud, useNameSelect, cliente);//event
+            newsService.buildJsonNews(Constants.EVENT_ASK_FOR_EVENT, latitud, longitud, useNameSelect, cliente);//event
             newsService.doConnection();
 
         }else{

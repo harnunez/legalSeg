@@ -1,293 +1,293 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:2:1-60:12
-MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/3f27821f1a8d827bb6e922046868262c/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/38a550daba4398b2078779a9cef53daa/AndroidManifest.xml:2:1-11:12
-MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-location-15.0.1.aar/a27940d8fa9cbb493d1da3191da3d453/AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-base:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/626394505ffba5f15a49b54f6e5c7596/AndroidManifest.xml:17:1-29:12
-MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-15.0.1.aar/e42967e9d94baa60c8a6a6e6e4e47cef/AndroidManifest.xml:17:1-24:12
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/3148f62f63d280c5009cdd4a1ac7db0d/AndroidManifest.xml:2:1-9:12
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/cc16d0ce34fd05ac5784e4b14cdbd76e/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-v4-28.0.0.aar/0c19d0a6b35eede3d61d58c977e2484d/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/305bdb49eff158b8e03bc944973ecb93/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.volley:volley:1.1.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/1e377ccc12e40f7da78694787001f681/AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:support-fragment:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/62ac48e4b0488ed591ebdc82f5da618f/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/1a09ac80e3e77be2cf15c6f960820ba7/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/2372fdf862cf8ae36809e93e5c0fbcfe/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/3719d96a39a5b472d52829767460e3ce/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/8cc3e77a221cb8355eef3c18458b3add/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-media-compat:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/2d57f0b07a70299b07a2c97cd27b4b95/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:loader:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/13c563c36f222c28d67080f656b88a51/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:viewpager:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/a8f5b742a582cced13f72282af7781b7/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/8a68c3e7422a8bdf98d9fcd47a565bce/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:drawerlayout:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/694b8807bc83abeefb5b6e8700621961/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/6c0bed0b597f2b519434a8bd87dbce17/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:customview:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/bd9175159dd1b7bf98f4ac9c4a07c0fb/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/34e10dc1f5b873b68d23926c1c9dab4e/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/baf5d183122dae562861bfe2a5402347/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/cbe8b5ec282133d12ddb6b74022aa41b/AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/4e607d0e7d31061ff9d54548e557766f/AndroidManifest.xml:17:1-25:12
-MERGED from [com.android.support:cursoradapter:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/56c7bb4cc54290ba859d1a20311a2209/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/c36afaef31173cd4065d98489d13ec0a/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:documentfile:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/21a2d614300a8ebbda8540893706e7e1/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/c9d162b76ec5ed246f21df22bf40a3c7/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:print:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/92db336ca24391a243a0ea4f2b65cebe/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/9e314d692deb3b730b012188357bdd77/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:interpolator:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/b6839db11967d2d697d35d551e51c018/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/a584097e0ea1548c8aa4467ab93389f1/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/8d12299102733f1fdb2fbce142b7b237/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.core:runtime:1.1.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/5ca619cc148120e4a9866fd31548adfa/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:2:1-60:12
-INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:2:1-60:12
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:2:1-60:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/28d368d78a3e556fea129f5fef430392/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/dca998e975b0b0a042610e1921566de2/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-location-15.0.1.aar/441f119f5db5884ed34aefc0cdf37bb9/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/16e7597cf875daf42c4c8768aca62516/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-15.0.1.aar/af4c8b27bd0b86e8ed8d1b0b983810b6/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/5374264ea7bc35ea5dff0775ca75ca2b/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/cb0a9c467e1aee74e2816149b9fe56e4/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-v4-28.0.0.aar/88e0d2970205865b18da3aad33b22464/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/528fb057181a12e9c9a7ccc9863c7488/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.volley:volley:1.1.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/f145e51a267d07decc88dcda00e98b2b/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/63481dd0797e212bb36f249ac326dc30/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/706739340f823e651e5b41aa92c236d7/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/dc6562e041a09dbbad9f04ad103648fc/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/41feef98f94f918224ca2f15ac927d1a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/0215bb20c68614feba3d69a5295d8781/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/ec6f832fb834cbf9ce9e6ae4e98f8b72/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/3303d0395d1db360d5806ee23a28384b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/1507e11dc5989929e87b440209d449a4/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/4b1912849c56c26e2cbeccf66cb89fe1/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/dbf608a423f2da3827ec36ea263c83f9/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/9328b2e61accdeef9f32ce8287e64ef7/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/50ff1898ba93d0a23c5a73c9786ce705/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/08b3da3e693475cde49ba8a0f813ffce/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/1522dd4f782c52b16771ce8f14c86dc0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/6f6612138ff32883be2ceb18cb7997f2/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/4b276f2142b9b895cef5a553837cfd75/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/fdd077fd0127fb4cc0ba6ee5b1c48d47/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/d747ccd3f02e8039ffd8aa1bb4381831/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/586f7ebb88ff91bd97317d5b3193cfe3/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/036722b15bb27ccf9a264ebb5318f7c6/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/3510ffe718841ef11eb698d83663e3c3/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/4b5b82a7b20daee2d4772c318d429869/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/8919035a8c7a419f3680579cb9650b7a/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/743afa87f9329a1787ce4c864433ba57/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/c4ff41367361e35bd9390282d3b63c0d/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/5fe29c625129c5e1c1c48dde8b10787e/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:2:1-60:12
 	package
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:3:5-56
-		INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:3:5-56
+		INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:2:1-60:12
-		INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:2:1-60:12
+		INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:2:1-60:12
-		INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:2:1-60:12
+		INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:6:5-67
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:6:5-67
 	android:name
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:6:22-64
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:6:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:7:5-79
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:7:5-79
 	android:name
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:7:22-76
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:7:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:8:5-81
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:8:5-81
 	android:name
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:8:22-78
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:8:22-78
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:9:5-79
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:9:5-79
 	android:name
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:9:22-76
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:9:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:10:5-76
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:10:5-76
 	android:name
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:10:22-73
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:10:22-73
 uses-permission-sdk-23#android.permission.INTERNET
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:11:5-74
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:11:5-74
 	android:name
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:11:29-71
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:11:29-71
 uses-permission-sdk-23#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:12:5-86
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:12:5-86
 	android:name
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:12:29-83
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:12:29-83
 uses-permission-sdk-23#android.permission.ACCESS_COARSE_LOCATION
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:13:5-88
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:13:5-88
 	android:name
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:13:29-85
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:13:29-85
 uses-permission-sdk-23#android.permission.ACCESS_FINE_LOCATION
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:14:5-86
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:14:5-86
 	android:name
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:14:29-83
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:14:29-83
 uses-permission-sdk-23#android.permission.ACCESS_WIFI_STATE
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:15:5-83
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:15:5-83
 	android:name
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:15:29-80
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:15:29-80
 uses-feature#android.hardware.location.gps
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:19:5-66
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:19:5-66
 	android:name
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:19:19-63
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:19:19-63
 application
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:21:5-58:19
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/38a550daba4398b2078779a9cef53daa/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/38a550daba4398b2078779a9cef53daa/AndroidManifest.xml:9:5-20
-MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-location-15.0.1.aar/a27940d8fa9cbb493d1da3191da3d453/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-location-15.0.1.aar/a27940d8fa9cbb493d1da3191da3d453/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-base:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/626394505ffba5f15a49b54f6e5c7596/AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-base:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/626394505ffba5f15a49b54f6e5c7596/AndroidManifest.xml:22:5-27:19
-MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-15.0.1.aar/e42967e9d94baa60c8a6a6e6e4e47cef/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-15.0.1.aar/e42967e9d94baa60c8a6a6e6e4e47cef/AndroidManifest.xml:22:5-20
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/3148f62f63d280c5009cdd4a1ac7db0d/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/3148f62f63d280c5009cdd4a1ac7db0d/AndroidManifest.xml:7:5-20
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/cc16d0ce34fd05ac5784e4b14cdbd76e/AndroidManifest.xml:22:5-26:19
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/cc16d0ce34fd05ac5784e4b14cdbd76e/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.volley:volley:1.1.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/1e377ccc12e40f7da78694787001f681/AndroidManifest.xml:9:5-20
-MERGED from [com.android.volley:volley:1.1.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/1e377ccc12e40f7da78694787001f681/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:support-compat:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/cbe8b5ec282133d12ddb6b74022aa41b/AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:support-compat:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/cbe8b5ec282133d12ddb6b74022aa41b/AndroidManifest.xml:22:5-94
-MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/4e607d0e7d31061ff9d54548e557766f/AndroidManifest.xml:22:5-23:19
-MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/4e607d0e7d31061ff9d54548e557766f/AndroidManifest.xml:22:5-23:19
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:21:5-58:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/dca998e975b0b0a042610e1921566de2/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/dca998e975b0b0a042610e1921566de2/AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-location-15.0.1.aar/441f119f5db5884ed34aefc0cdf37bb9/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-location-15.0.1.aar/441f119f5db5884ed34aefc0cdf37bb9/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/16e7597cf875daf42c4c8768aca62516/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/16e7597cf875daf42c4c8768aca62516/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-15.0.1.aar/af4c8b27bd0b86e8ed8d1b0b983810b6/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-15.0.1.aar/af4c8b27bd0b86e8ed8d1b0b983810b6/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/5374264ea7bc35ea5dff0775ca75ca2b/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/5374264ea7bc35ea5dff0775ca75ca2b/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/cb0a9c467e1aee74e2816149b9fe56e4/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/cb0a9c467e1aee74e2816149b9fe56e4/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.volley:volley:1.1.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/f145e51a267d07decc88dcda00e98b2b/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/f145e51a267d07decc88dcda00e98b2b/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-compat:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/6f6612138ff32883be2ceb18cb7997f2/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/6f6612138ff32883be2ceb18cb7997f2/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/4b276f2142b9b895cef5a553837cfd75/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/4b276f2142b9b895cef5a553837cfd75/AndroidManifest.xml:22:5-23:19
 	android:appComponentFactory
-		ADDED from [com.android.support:support-compat:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/cbe8b5ec282133d12ddb6b74022aa41b/AndroidManifest.xml:22:18-91
+		ADDED from [com.android.support:support-compat:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/6f6612138ff32883be2ceb18cb7997f2/AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:28:9-35
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:28:9-35
 	android:label
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:25:9-41
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:25:9-41
 	android:hardwareAccelerated
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:23:9-44
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:23:9-44
 	android:roundIcon
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:27:9-48
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:27:9-48
 	android:largeHeap
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:26:9-33
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:26:9-33
 	android:icon
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:24:9-43
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:24:9-43
 	android:allowBackup
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:22:9-35
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:22:9-35
 	android:theme
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:29:9-53
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:29:9-53
 	android:usesCleartextTraffic
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:30:9-44
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:30:9-44
 service#com.example.gabriela.legalsecurityandroid.activities.LocationService
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:31:9-34:47
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:31:9-34:47
 	android:enabled
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:33:13-35
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:33:13-35
 	android:exported
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:34:13-36
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:34:13-36
 	android:name
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:32:13-55
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:32:13-55
 activity#com.example.gabriela.legalsecurityandroid.activities.SplashActivity
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:36:9-44:20
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:36:9-44:20
 	android:screenOrientation
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:38:13-49
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:38:13-49
 	android:name
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:37:13-54
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:37:13-54
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:39:13-43:29
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:39:13-43:29
 action#android.intent.action.MAIN
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:40:17-69
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:40:17-69
 	android:name
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:40:25-66
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:40:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:42:17-77
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:42:17-77
 	android:name
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:42:27-74
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:42:27-74
 activity#com.example.gabriela.legalsecurityandroid.activities.LoginActivity
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:45:9-47:52
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:45:9-47:52
 	android:screenOrientation
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:47:13-49
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:47:13-49
 	android:name
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:46:13-53
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:46:13-53
 activity#com.example.gabriela.legalsecurityandroid.activities.SelectUserActivity
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:48:9-50:52
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:48:9-50:52
 	android:screenOrientation
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:50:13-49
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:50:13-49
 	android:name
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:49:13-58
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:49:13-58
 activity#com.example.gabriela.legalsecurityandroid.activities.HomeActivity
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:51:9-53:52
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:51:9-53:52
 	android:screenOrientation
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:53:13-49
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:53:13-49
 	android:name
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:52:13-52
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:52:13-52
 activity#com.example.gabriela.legalsecurityandroid.activities.InHomeActivity
-ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:54:9-57:52
+ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:54:9-57:52
 	android:screenOrientation
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:57:13-49
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:57:13-49
 	android:launchMode
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:56:13-43
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:56:13-43
 	android:name
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml:55:13-54
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml:55:13-54
 uses-sdk
-INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml
-INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml
-MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/3f27821f1a8d827bb6e922046868262c/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/3f27821f1a8d827bb6e922046868262c/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/38a550daba4398b2078779a9cef53daa/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/38a550daba4398b2078779a9cef53daa/AndroidManifest.xml:5:5-7:41
-MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-location-15.0.1.aar/a27940d8fa9cbb493d1da3191da3d453/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-location-15.0.1.aar/a27940d8fa9cbb493d1da3191da3d453/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-base:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/626394505ffba5f15a49b54f6e5c7596/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-base:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/626394505ffba5f15a49b54f6e5c7596/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-15.0.1.aar/e42967e9d94baa60c8a6a6e6e4e47cef/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-15.0.1.aar/e42967e9d94baa60c8a6a6e6e4e47cef/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/3148f62f63d280c5009cdd4a1ac7db0d/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/3148f62f63d280c5009cdd4a1ac7db0d/AndroidManifest.xml:5:5-44
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/cc16d0ce34fd05ac5784e4b14cdbd76e/AndroidManifest.xml:20:5-44
-MERGED from [com.google.android.gms:play-services-basement:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/cc16d0ce34fd05ac5784e4b14cdbd76e/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-v4-28.0.0.aar/0c19d0a6b35eede3d61d58c977e2484d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-v4-28.0.0.aar/0c19d0a6b35eede3d61d58c977e2484d/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/305bdb49eff158b8e03bc944973ecb93/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/305bdb49eff158b8e03bc944973ecb93/AndroidManifest.xml:20:5-44
-MERGED from [com.android.volley:volley:1.1.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/1e377ccc12e40f7da78694787001f681/AndroidManifest.xml:7:5-43
-MERGED from [com.android.volley:volley:1.1.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/1e377ccc12e40f7da78694787001f681/AndroidManifest.xml:7:5-43
-MERGED from [com.android.support:support-fragment:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/62ac48e4b0488ed591ebdc82f5da618f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/62ac48e4b0488ed591ebdc82f5da618f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/1a09ac80e3e77be2cf15c6f960820ba7/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/1a09ac80e3e77be2cf15c6f960820ba7/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/2372fdf862cf8ae36809e93e5c0fbcfe/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/2372fdf862cf8ae36809e93e5c0fbcfe/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/3719d96a39a5b472d52829767460e3ce/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/3719d96a39a5b472d52829767460e3ce/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/8cc3e77a221cb8355eef3c18458b3add/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/8cc3e77a221cb8355eef3c18458b3add/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/2d57f0b07a70299b07a2c97cd27b4b95/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/2d57f0b07a70299b07a2c97cd27b4b95/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/13c563c36f222c28d67080f656b88a51/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:loader:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/13c563c36f222c28d67080f656b88a51/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/a8f5b742a582cced13f72282af7781b7/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:viewpager:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/a8f5b742a582cced13f72282af7781b7/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/8a68c3e7422a8bdf98d9fcd47a565bce/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/8a68c3e7422a8bdf98d9fcd47a565bce/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/694b8807bc83abeefb5b6e8700621961/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:drawerlayout:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/694b8807bc83abeefb5b6e8700621961/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/6c0bed0b597f2b519434a8bd87dbce17/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/6c0bed0b597f2b519434a8bd87dbce17/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/bd9175159dd1b7bf98f4ac9c4a07c0fb/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:customview:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/bd9175159dd1b7bf98f4ac9c4a07c0fb/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/34e10dc1f5b873b68d23926c1c9dab4e/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/34e10dc1f5b873b68d23926c1c9dab4e/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/baf5d183122dae562861bfe2a5402347/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/baf5d183122dae562861bfe2a5402347/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/cbe8b5ec282133d12ddb6b74022aa41b/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/cbe8b5ec282133d12ddb6b74022aa41b/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/4e607d0e7d31061ff9d54548e557766f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/4e607d0e7d31061ff9d54548e557766f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/56c7bb4cc54290ba859d1a20311a2209/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cursoradapter:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/56c7bb4cc54290ba859d1a20311a2209/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/c36afaef31173cd4065d98489d13ec0a/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/c36afaef31173cd4065d98489d13ec0a/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/21a2d614300a8ebbda8540893706e7e1/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:documentfile:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/21a2d614300a8ebbda8540893706e7e1/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/c9d162b76ec5ed246f21df22bf40a3c7/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/c9d162b76ec5ed246f21df22bf40a3c7/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/92db336ca24391a243a0ea4f2b65cebe/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:print:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/92db336ca24391a243a0ea4f2b65cebe/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/9e314d692deb3b730b012188357bdd77/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/9e314d692deb3b730b012188357bdd77/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/b6839db11967d2d697d35d551e51c018/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:interpolator:28.0.0] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/b6839db11967d2d697d35d551e51c018/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/a584097e0ea1548c8aa4467ab93389f1/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/a584097e0ea1548c8aa4467ab93389f1/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/8d12299102733f1fdb2fbce142b7b237/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/8d12299102733f1fdb2fbce142b7b237/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/5ca619cc148120e4a9866fd31548adfa/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.core:runtime:1.1.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/5ca619cc148120e4a9866fd31548adfa/AndroidManifest.xml:20:5-44
-INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml
-INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml
+INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/28d368d78a3e556fea129f5fef430392/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/28d368d78a3e556fea129f5fef430392/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/dca998e975b0b0a042610e1921566de2/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.3] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.3.aar/dca998e975b0b0a042610e1921566de2/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-location-15.0.1.aar/441f119f5db5884ed34aefc0cdf37bb9/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-location-15.0.1.aar/441f119f5db5884ed34aefc0cdf37bb9/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/16e7597cf875daf42c4c8768aca62516/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/16e7597cf875daf42c4c8768aca62516/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-15.0.1.aar/af4c8b27bd0b86e8ed8d1b0b983810b6/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-places-placereport-15.0.1.aar/af4c8b27bd0b86e8ed8d1b0b983810b6/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/5374264ea7bc35ea5dff0775ca75ca2b/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-tasks-15.0.1.aar/5374264ea7bc35ea5dff0775ca75ca2b/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/cb0a9c467e1aee74e2816149b9fe56e4/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/cb0a9c467e1aee74e2816149b9fe56e4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-v4-28.0.0.aar/88e0d2970205865b18da3aad33b22464/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-v4-28.0.0.aar/88e0d2970205865b18da3aad33b22464/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/528fb057181a12e9c9a7ccc9863c7488/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/528fb057181a12e9c9a7ccc9863c7488/AndroidManifest.xml:20:5-44
+MERGED from [com.android.volley:volley:1.1.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/f145e51a267d07decc88dcda00e98b2b/AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/volley-1.1.0.aar/f145e51a267d07decc88dcda00e98b2b/AndroidManifest.xml:7:5-43
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/63481dd0797e212bb36f249ac326dc30/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/63481dd0797e212bb36f249ac326dc30/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/706739340f823e651e5b41aa92c236d7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/706739340f823e651e5b41aa92c236d7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/dc6562e041a09dbbad9f04ad103648fc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/dc6562e041a09dbbad9f04ad103648fc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/41feef98f94f918224ca2f15ac927d1a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/41feef98f94f918224ca2f15ac927d1a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/0215bb20c68614feba3d69a5295d8781/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/0215bb20c68614feba3d69a5295d8781/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/ec6f832fb834cbf9ce9e6ae4e98f8b72/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-media-compat-28.0.0.aar/ec6f832fb834cbf9ce9e6ae4e98f8b72/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/3303d0395d1db360d5806ee23a28384b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/3303d0395d1db360d5806ee23a28384b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/1507e11dc5989929e87b440209d449a4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/1507e11dc5989929e87b440209d449a4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/4b1912849c56c26e2cbeccf66cb89fe1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/4b1912849c56c26e2cbeccf66cb89fe1/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/dbf608a423f2da3827ec36ea263c83f9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/dbf608a423f2da3827ec36ea263c83f9/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/9328b2e61accdeef9f32ce8287e64ef7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/9328b2e61accdeef9f32ce8287e64ef7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/50ff1898ba93d0a23c5a73c9786ce705/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/50ff1898ba93d0a23c5a73c9786ce705/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/08b3da3e693475cde49ba8a0f813ffce/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/08b3da3e693475cde49ba8a0f813ffce/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/1522dd4f782c52b16771ce8f14c86dc0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/1522dd4f782c52b16771ce8f14c86dc0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/6f6612138ff32883be2ceb18cb7997f2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/6f6612138ff32883be2ceb18cb7997f2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/4b276f2142b9b895cef5a553837cfd75/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/4b276f2142b9b895cef5a553837cfd75/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/fdd077fd0127fb4cc0ba6ee5b1c48d47/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/fdd077fd0127fb4cc0ba6ee5b1c48d47/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/d747ccd3f02e8039ffd8aa1bb4381831/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/d747ccd3f02e8039ffd8aa1bb4381831/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/586f7ebb88ff91bd97317d5b3193cfe3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/586f7ebb88ff91bd97317d5b3193cfe3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/036722b15bb27ccf9a264ebb5318f7c6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/036722b15bb27ccf9a264ebb5318f7c6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/3510ffe718841ef11eb698d83663e3c3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/3510ffe718841ef11eb698d83663e3c3/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/4b5b82a7b20daee2d4772c318d429869/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/4b5b82a7b20daee2d4772c318d429869/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/8919035a8c7a419f3680579cb9650b7a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/8919035a8c7a419f3680579cb9650b7a/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/743afa87f9329a1787ce4c864433ba57/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/743afa87f9329a1787ce4c864433ba57/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/c4ff41367361e35bd9390282d3b63c0d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/c4ff41367361e35bd9390282d3b63c0d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/5fe29c625129c5e1c1c48dde8b10787e/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/5fe29c625129c5e1c1c48dde8b10787e/AndroidManifest.xml:20:5-44
+INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml
+INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/joaquin/legal-security-android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml
+		ADDED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/gabriela/legal-security/app/src/main/AndroidManifest.xml
 activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/626394505ffba5f15a49b54f6e5c7596/AndroidManifest.xml:23:9-26:75
+ADDED from [com.google.android.gms:play-services-base:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/16e7597cf875daf42c4c8768aca62516/AndroidManifest.xml:23:9-26:75
 	android:exported
-		ADDED from [com.google.android.gms:play-services-base:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/626394505ffba5f15a49b54f6e5c7596/AndroidManifest.xml:25:13-37
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/16e7597cf875daf42c4c8768aca62516/AndroidManifest.xml:25:13-37
 	android:theme
-		ADDED from [com.google.android.gms:play-services-base:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/626394505ffba5f15a49b54f6e5c7596/AndroidManifest.xml:26:13-72
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/16e7597cf875daf42c4c8768aca62516/AndroidManifest.xml:26:13-72
 	android:name
-		ADDED from [com.google.android.gms:play-services-base:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/626394505ffba5f15a49b54f6e5c7596/AndroidManifest.xml:24:13-79
+		ADDED from [com.google.android.gms:play-services-base:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/16e7597cf875daf42c4c8768aca62516/AndroidManifest.xml:24:13-79
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/cc16d0ce34fd05ac5784e4b14cdbd76e/AndroidManifest.xml:23:9-25:69
+ADDED from [com.google.android.gms:play-services-basement:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/cb0a9c467e1aee74e2816149b9fe56e4/AndroidManifest.xml:23:9-25:69
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/cc16d0ce34fd05ac5784e4b14cdbd76e/AndroidManifest.xml:25:13-66
+		ADDED from [com.google.android.gms:play-services-basement:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/cb0a9c467e1aee74e2816149b9fe56e4/AndroidManifest.xml:25:13-66
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:15.0.1] /Users/joaquin/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/cc16d0ce34fd05ac5784e4b14cdbd76e/AndroidManifest.xml:24:13-58
+		ADDED from [com.google.android.gms:play-services-basement:15.0.1] /Users/gabriela/.gradle/caches/transforms-1/files-1.1/play-services-basement-15.0.1.aar/cb0a9c467e1aee74e2816149b9fe56e4/AndroidManifest.xml:24:13-58
