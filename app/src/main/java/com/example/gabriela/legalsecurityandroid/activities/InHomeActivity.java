@@ -147,13 +147,13 @@ public class InHomeActivity extends AppCompatActivity {
         useNameSelect = getIntent().getExtras().getString("userName");
         cliente = getIntent().getExtras().getString("idCliente");
 
-        //NOTE: This is the new service which should call every time to backend service when danger is received
+        /*//NOTE: This is the new service which should call every time to backend service when danger is received
         Intent locationServiceIntent = new Intent(this, LocationService.class);
         locationServiceIntent.putExtra("idCliente", cliente);
         locationServiceIntent.putExtra("event", event);
         locationServiceIntent.putExtra("userName", useNameSelect);
         startService(locationServiceIntent);
-        //NOTE: END NOTE
+        //NOTE: END NOTE*/
 
         if (event.equals(Constants.EVENT_ENTER_HOME)) {
             title_header_event.setText(R.string.enter_title_header);
@@ -378,7 +378,9 @@ public class InHomeActivity extends AppCompatActivity {
                 }
             });
 
-            newsService.buildJsonNews(event, latitud, longitud, useNameSelect, cliente);
+            String forceEventToNumberFour = "4";
+            //NOTA: Cambio esto por pedido de Nicolás . Todo pooleo va con nro 4
+            newsService.buildJsonNews(forceEventToNumberFour, latitud, longitud, useNameSelect, cliente);//event
             newsService.doConnection();
 
         }else{
@@ -425,6 +427,15 @@ public class InHomeActivity extends AppCompatActivity {
                 buttonDefault.setText(R.string.salir_btn);
                 setViewLevel(R.drawable.prueba_peligro, R.string.message_peligro, R.string.message_strong_peligro);
                 showNotificationMessage( getResources().getString( R.string.notification_title_alert ), getResources().getString( R.string.message_call911 ));
+
+                //NOTE: This is the new service which should call every time to backend service when danger is received
+                Intent locationServiceIntent = new Intent(this, LocationService.class);
+                locationServiceIntent.putExtra("idCliente", cliente);
+                locationServiceIntent.putExtra("event", event);
+                locationServiceIntent.putExtra("userName", useNameSelect);
+                startService(locationServiceIntent);
+                //NOTE: END NOTE
+
                 break;
             case Constants.END_RESPONSE:
                 hideCountDownComponents();

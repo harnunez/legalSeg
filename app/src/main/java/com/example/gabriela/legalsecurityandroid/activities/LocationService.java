@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
 import com.android.volley.VolleyError;
+import com.example.gabriela.legalsecurityandroid.Constants.Constants;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilDialog;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
 import com.example.gabriela.legalsecurityandroid.models.EventModel;
@@ -89,7 +90,7 @@ public class LocationService extends Service {
         event = (intent.getExtras().get("event").toString());
         useNameSelect = (intent.getExtras().get("userName").toString());
 
-
+        needsCall = true;
 
         return START_STICKY;
     }
@@ -148,7 +149,7 @@ public class LocationService extends Service {
                 Gson gson = new GsonBuilder().create();
                 newsModel = gson.fromJson(response.toString(), NewsModel.class);
 
-                if (newsModel.codeResponse == 0) {//it stops next calls
+                if (newsModel.codeResponse == 0 && newsModel.alertLevel == Constants.OPERATION_OK_RESPONSE) {//it stops next calls
                     needsCall = false;
                 }
             }
