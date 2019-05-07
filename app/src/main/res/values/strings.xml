@@ -57,7 +57,7 @@
     <string name="warning_title">Atención</string>
     <string name="warning_gps">Necesitamos que aceptes utilizar los servicios de Google para que la aplicación pueda funcionar</string>
     <string name="warning_connection">Necesitamos que estes conectado a internet para que la aplicación pueda funcionar</string>
-    <string name="warning_out_of_coverage">Te encontras fuera del área de cobertura, la aplicación se reanudara cuando estes dentro de la zona delimitada</string>
+    <string name="warning_out_of_coverage">En este momento estás fuera del área de cobertura, por favor ingresá de nuevo cuando estés más cerca de tu hogar</string>
     <string name="warning_lost_connection">Por favor, revisa tu conexión a internet para poder seguir utilizando la aplicación</string>
 
     //popup cancel alert
@@ -65,5 +65,9 @@
     <string name="popup_shutdown">¿Desea salir de la operación?</string>
     <string name="yes_message">Sí</string>
     <string name="no_message">No</string>
+
+    <string name="message_end">Gracias por confiar en nosotros</string>
+    <string name="message_end_title"> </string>
+
 
 </resources>

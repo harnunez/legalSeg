@@ -2,6 +2,7 @@ package com.example.gabriela.legalsecurityandroid.activities;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -16,12 +17,14 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -86,6 +89,7 @@ public class InHomeActivity extends AppCompatActivity {
     private boolean isOnCoverageArea = true;
     private boolean endActivity = false;
     private boolean endResponseApp = false;
+    private boolean operatorRespond = false;
 
     private static final long STARTING_COUNTDOWN_TIME = 121000;
     private static final int SERVICE_INTERVAL_TIME = 5;
@@ -192,7 +196,9 @@ public class InHomeActivity extends AppCompatActivity {
         if(isOnCoverageArea){
             finishTimer();
             loadingService.setVisibility(View.GONE);
-            setSuccessViewLevel();
+            if (!operatorRespond) {
+                setSuccessViewLevel();
+            }
             hideProgressBar();
         }
     }
@@ -363,7 +369,9 @@ public class InHomeActivity extends AppCompatActivity {
                 public void onOk(JSONObject response) {
                     Gson gson = new GsonBuilder().create();
                     newsModel = gson.fromJson(response.toString(), NewsModel.class);
-
+                    if (event.equals("2") || event.equals("3")) {
+                        event = Constants.EVENT_ASK_FOR_EVENT;
+                    }
                     if (newsModel.codeResponse == 0) {
                         changeViewForLevelAlert();
                     } else {
@@ -380,7 +388,8 @@ public class InHomeActivity extends AppCompatActivity {
 
             // String forceEventToNumberFour = "4";
             //NOTA: Cambio esto por pedido de Nicolás . Todo pooleo va con nro 4
-            newsService.buildJsonNews(Constants.EVENT_ASK_FOR_EVENT, latitud, longitud, useNameSelect, cliente);//event
+            newsService.buildJsonNews(event, latitud, longitud, useNameSelect, cliente);//event
+
             newsService.doConnection();
 
         }else{
@@ -405,6 +414,9 @@ public class InHomeActivity extends AppCompatActivity {
     private void changeViewForLevelAlert(){
         checkCoverageArea();
 
+        if (newsModel.alertLevel != Constants.OPERATOR_NOT_RESPONDING){
+            operatorRespond = true;
+        }
         switch (newsModel.alertLevel){
             case Constants.OPERATOR_NOT_RESPONDING :
                 handleTimerTask();
@@ -420,20 +432,20 @@ public class InHomeActivity extends AppCompatActivity {
                 break;
             case Constants.DANGER_RESPONSE :
                 hideCountDownComponents();
-                finishTimer();
+//                finishTimer();
                 UtilAlarm.startAlarm(InHomeActivity.this,R.raw.alarm);
                 endResponseApp = true;
                 isOperationEnd = true;
                 buttonDefault.setText(R.string.salir_btn);
                 setViewLevel(R.drawable.prueba_peligro, R.string.message_peligro, R.string.message_strong_peligro);
                 showNotificationMessage( getResources().getString( R.string.notification_title_alert ), getResources().getString( R.string.message_call911 ));
-
+                event = Constants.EVENT_DANGER;
                 //NOTE: This is the new service which should call every time to backend service when danger is received
-                Intent locationServiceIntent = new Intent(this, LocationService.class);
-                locationServiceIntent.putExtra("idCliente", cliente);
-                locationServiceIntent.putExtra("event", event);
-                locationServiceIntent.putExtra("userName", useNameSelect);
-                startService(locationServiceIntent);
+//                Intent locationServiceIntent = new Intent(this, LocationService.class);
+//                locationServiceIntent.putExtra("idCliente", cliente);
+//                locationServiceIntent.putExtra("event", event);
+//                locationServiceIntent.putExtra("userName", useNameSelect);
+//                startService(locationServiceIntent);
                 //NOTE: END NOTE
 
                 break;
@@ -443,12 +455,15 @@ public class InHomeActivity extends AppCompatActivity {
                 endResponseApp = true;
                 isOperationEnd = true;
                 buttonDefault.setText(R.string.salir_btn);
-                setSuccessViewLevel();
+                setEndViewLevel();
                 break;
             case Constants.OUTSIDE_COVERAGE_AREA_RESPONSE:
                 if(!endActivity && !UtilDialog.showingDialogMessage){
+                    finishTimer();
+                    endResponseApp = true;
+                    isOperationEnd = true;
                     millisOnHold =  millisToFinish;
-                    UtilDialog.warningDialog(getResources().getString(R.string.warning_out_of_coverage), InHomeActivity.this);
+                    UtilDialog.warningOutDialog(getResources().getString(R.string.warning_out_of_coverage), InHomeActivity.this);
                     showNotificationMessage( getResources().getString( R.string.notification_title ), "Te encontras fuera del área de cobertura" );
                 }
                 break;
@@ -482,7 +497,16 @@ public class InHomeActivity extends AppCompatActivity {
         setViewLevel(R.drawable.prueba_ok, setViewLevelOkOperationMessage() , R.string.message_strong_succes );
         showNotificationMessage( getResources().getString( R.string.notification_title ), getResources().getString( setViewLevelOkOperationMessage() ));
     }
-
+    private void setEndViewLevel() {
+        setViewLevel(R.drawable.prueba_ok, R.string.message_end,R.string.message_end);
+        showNotificationMessage( getResources().getString( R.string.notification_title ), getResources().getString( setViewLevelOkOperationMessage() ));
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                ActivityCompat.finishAffinity((Activity) getBaseContext());
+            }
+        },3000);
+    }
     private void showNotificationMessage(String notificationTitle, String notificationMessage ) {
         if(isAppOnBackground){
             UtilNotification.sendNotification(InHomeActivity.this,notificationTitle, notificationMessage);

@@ -49,4 +49,22 @@ public class UtilDialog {
             dlgWarning.create().show();
         }
     }
+    public static void warningOutDialog(String message, final Context context){
+        dlgWarning  = new AlertDialog.Builder(context)
+                .setMessage(message)
+                .setTitle(R.string.warning_title)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        ActivityCompat.finishAffinity((Activity) context);
+                        showingDialogMessage = false;
+                    }
+                })
+                .setCancelable(false);
+
+        if(!showingDialogMessage){
+            showingDialogMessage = true;
+            dlgWarning.create().show();
+        }
+    }
 }

@@ -1,9 +1,12 @@
 package com.example.gabriela.legalsecurityandroid.services;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.android.volley.Request;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
+
+import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -23,6 +26,7 @@ public class NewsService extends VolleyImplementation {
         params.put("idCliente", idCliente);
        // this.mParametros = new JSONObject(params);
 
+        Log.e("params", new JSONObject(params).toString());
         setRequestParams( (HashMap) params );
     }
 
