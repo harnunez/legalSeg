@@ -424,9 +424,11 @@ public class InHomeActivity extends AppCompatActivity {
             case Constants.OPERATION_OK_RESPONSE :
                 hideCountDownComponents();
                 setSuccessViewLevel();
+                buttonDefault.setVisibility(View.VISIBLE);
                 break;
             case Constants.WAIT_RESPONSE:
                 hideCountDownComponents();
+                buttonDefault.setVisibility(View.VISIBLE);
                 setViewLevel(R.drawable.prueba_alerta, R.string.message_aguarda_icon, R.string.message_strong_aguarda_icon);
                 showNotificationMessage( getResources().getString( R.string.notification_title ), getResources().getString( R.string.message_aguarda_icon ));
                 break;
@@ -434,9 +436,9 @@ public class InHomeActivity extends AppCompatActivity {
                 hideCountDownComponents();
 //                finishTimer();
                 UtilAlarm.startAlarm(InHomeActivity.this,R.raw.alarm);
-                endResponseApp = true;
-                isOperationEnd = true;
-                buttonDefault.setText(R.string.salir_btn);
+//                endResponseApp = true;
+//                isOperationEnd = true;
+                buttonDefault.setVisibility(View.GONE);
                 setViewLevel(R.drawable.prueba_peligro, R.string.message_peligro, R.string.message_strong_peligro);
                 showNotificationMessage( getResources().getString( R.string.notification_title_alert ), getResources().getString( R.string.message_call911 ));
                 event = Constants.EVENT_DANGER;
@@ -455,6 +457,7 @@ public class InHomeActivity extends AppCompatActivity {
                 endResponseApp = true;
                 isOperationEnd = true;
                 buttonDefault.setText(R.string.salir_btn);
+                buttonDefault.setVisibility(View.VISIBLE);
                 setEndViewLevel();
                 break;
             case Constants.OUTSIDE_COVERAGE_AREA_RESPONSE:
@@ -466,6 +469,7 @@ public class InHomeActivity extends AppCompatActivity {
                     UtilDialog.warningOutDialog(getResources().getString(R.string.warning_out_of_coverage), InHomeActivity.this);
                     showNotificationMessage( getResources().getString( R.string.notification_title ), "Te encontras fuera del área de cobertura" );
                 }
+                buttonDefault.setVisibility(View.VISIBLE);
                 break;
             case Constants.CANCEL_BACKEND_CALL_RESPONSE:
                 // response succesfull of backend's call
@@ -498,12 +502,13 @@ public class InHomeActivity extends AppCompatActivity {
         showNotificationMessage( getResources().getString( R.string.notification_title ), getResources().getString( setViewLevelOkOperationMessage() ));
     }
     private void setEndViewLevel() {
-        setViewLevel(R.drawable.prueba_ok, R.string.message_end,R.string.message_end);
-        showNotificationMessage( getResources().getString( R.string.notification_title ), getResources().getString( setViewLevelOkOperationMessage() ));
+        setViewLevel(R.drawable.prueba_ok, R.string.message_end_title,R.string.message_end);
+        showNotificationMessage( getResources().getString( R.string.notification_title ),
+                getResources().getString( R.string.message_end));
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                ActivityCompat.finishAffinity((Activity) getBaseContext());
+                finishAffinity();
             }
         },3000);
     }
