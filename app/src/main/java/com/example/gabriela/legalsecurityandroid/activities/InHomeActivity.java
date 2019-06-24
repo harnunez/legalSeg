@@ -55,6 +55,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.annotations.Until;
 
 import org.json.JSONObject;
 
@@ -453,7 +454,7 @@ public class InHomeActivity extends AppCompatActivity {
                 break;
             case Constants.END_RESPONSE:
                 hideCountDownComponents();
-                finishTimer();
+                finishActivityComponents();
                 endResponseApp = true;
                 isOperationEnd = true;
                 buttonDefault.setText(R.string.salir_btn);
@@ -508,7 +509,7 @@ public class InHomeActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                finishAffinity();
+                finishApplicationTask();
             }
         },3000);
     }

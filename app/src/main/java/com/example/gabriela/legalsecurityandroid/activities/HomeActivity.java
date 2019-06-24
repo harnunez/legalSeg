@@ -199,6 +199,7 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private  void showNewActivity(String event) {
+
         Intent myIntent = new Intent(HomeActivity.this, InHomeActivity.class);
         myIntent.putExtra("event", event);
         myIntent.putExtra("userName", useNameSelect);
