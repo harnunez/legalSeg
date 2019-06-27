@@ -92,7 +92,10 @@ public class HomeActivity extends AppCompatActivity {
             UtilDialog.warningDialog( getResources().getString( R.string.warning_connection ), HomeActivity.this );
         }
         else {
-            executeService(eventSelected);
+            endRunningServiceCall();
+            showNewActivity(eventSelected);
+
+           // executeService(eventSelected);
         }
     }
 
