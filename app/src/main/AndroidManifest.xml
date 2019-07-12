@@ -28,17 +28,18 @@
         android:supportsRtl="true"
         android:theme="@style/FullScreenCustomTheme"
         android:usesCleartextTraffic="true">
+
         <service
-            android:name=".activities.LocationService"
+            android:name=".services.LocationUpdatesService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true"/>
 
         <activity
             android:name=".activities.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

@@ -12,18 +12,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.R;
+import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilDialog;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilNetwork;
-import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.fragments.ProgressIndicator;
-import com.example.gabriela.legalsecurityandroid.models.LoginUserModel;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
+import com.example.gabriela.legalsecurityandroid.models.LoginUserModel;
 import com.example.gabriela.legalsecurityandroid.services.LoginService;
-import com.example.gabriela.legalsecurityandroid.services.VolleyImplementation;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 import org.json.JSONObject;
 
 public class LoginActivity extends AppCompatActivity {
@@ -102,6 +103,7 @@ public class LoginActivity extends AppCompatActivity {
                     startNewActivity(mLogin);
                 } else {
                     UtilDialog.warningDialog( mLogin.message,LoginActivity.this );
+                    progressIndicator.dismiss();
                 }
                 serviceInstanceBeenCalled = false;
             }

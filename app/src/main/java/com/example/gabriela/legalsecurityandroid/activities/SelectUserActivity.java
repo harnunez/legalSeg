@@ -1,16 +1,18 @@
 package com.example.gabriela.legalsecurityandroid.activities;
+
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.Toast;
+
 import com.example.gabriela.legalsecurityandroid.R;
 import com.example.gabriela.legalsecurityandroid.adapters.ItemObject;
 import com.example.gabriela.legalsecurityandroid.adapters.adapterGridView;
 import com.example.gabriela.legalsecurityandroid.models.LoginUserModel;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

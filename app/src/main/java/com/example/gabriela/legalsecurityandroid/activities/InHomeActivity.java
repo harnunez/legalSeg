@@ -2,13 +2,14 @@ package com.example.gabriela.legalsecurityandroid.activities;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Criteria;
@@ -16,13 +17,15 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.media.MediaPlayer;
+import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.os.IBinder;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -33,18 +36,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
-import com.example.gabriela.legalsecurityandroid.R;
 import com.example.gabriela.legalsecurityandroid.Constants.Constants;
-import com.example.gabriela.legalsecurityandroid.Utils.UtilDialog;
-import com.example.gabriela.legalsecurityandroid.Utils.UtilNetwork;
+import com.example.gabriela.legalsecurityandroid.R;
 import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilAlarm;
+import com.example.gabriela.legalsecurityandroid.Utils.UtilDialog;
+import com.example.gabriela.legalsecurityandroid.Utils.UtilNetwork;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilNotification;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
 import com.example.gabriela.legalsecurityandroid.models.NewsModel;
+import com.example.gabriela.legalsecurityandroid.services.LocationUpdatesService;
 import com.example.gabriela.legalsecurityandroid.services.NewsService;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.location.LocationSettingsRequest;
 import com.google.android.gms.location.LocationSettingsResponse;
@@ -55,7 +62,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.annotations.Until;
 
 import org.json.JSONObject;
 
@@ -95,14 +101,19 @@ public class InHomeActivity extends AppCompatActivity {
     private static final long STARTING_COUNTDOWN_TIME = 121000;
     private static final int SERVICE_INTERVAL_TIME = 5;
 
+
+
     private FusedLocationProviderClient fusedLocationClient;
     // Model News
     private NewsModel newsModel;
+    private LocationCallback locationCallback;
+
 
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.e("second","true");
         setContentView(R.layout.activity_in_home);
         initProperties();
         initFusedLocationClient();
@@ -112,10 +123,19 @@ public class InHomeActivity extends AppCompatActivity {
         executeEventShutDown();
     }
 
+
     @Override
     protected void onStart() {
         super.onStart();
-        setRegisterReceiver();
+        Log.e("first","true");
+
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
     }
 
     @Override
@@ -135,6 +155,7 @@ public class InHomeActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         isAppOnBackground = false;
+        setRegisterReceiver();
     }
 
     private  void initProperties() {
@@ -167,7 +188,6 @@ public class InHomeActivity extends AppCompatActivity {
             title_header_event.setText(R.string.leave_title_header);
         }
     }
-
     private void startTimer(long timeLeftInMillis){
         timerCount = new CountDownTimer( timeLeftInMillis, 1000 ){
 
@@ -252,11 +272,12 @@ public class InHomeActivity extends AppCompatActivity {
 
     private void setUserLocation() {
         checkProvidersPermission();
+
         fusedLocationClient.getLastLocation()
                 .addOnSuccessListener( InHomeActivity.this, new OnSuccessListener<Location>() {
                     @Override
                     public void onSuccess(Location location) {
-                            executeLocationManager();
+                            executeLocationUpdates();
                             setLocationCoord( location );
                     }
                 } )
@@ -266,6 +287,7 @@ public class InHomeActivity extends AppCompatActivity {
                         executeErrorLocationEvent();
                     }
                 } );
+
     }
 
     private void executeLocationManager() {
@@ -279,6 +301,28 @@ public class InHomeActivity extends AppCompatActivity {
         } catch (Exception e) {
             executeErrorLocationEvent();
         }
+    }
+    private void executeLocationUpdates() {
+        LocationRequest locationRequest = LocationRequest.create();
+        locationRequest.setInterval(10000);
+        locationRequest.setFastestInterval(5000);
+        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        checkProvidersPermission();
+        locationCallback = new LocationCallback() {
+            @Override
+            public void onLocationResult(LocationResult locationResult) {
+                if (locationResult == null) {
+                    return;
+                }
+                for (Location location : locationResult.getLocations()) {
+                    setLocationCoord( location );
+                    Log.e("loca", location.getLatitude()+"");
+                    // Update UI with location data
+                    // ...
+                }
+            };
+        };
+        fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, null);
     }
 
     private void checkProvidersPermission() {
@@ -315,7 +359,6 @@ public class InHomeActivity extends AppCompatActivity {
                 break;
         }
     }
-
     private void setLocationCoord(Location location) {
         try {
             latitud = String.valueOf( location.getLatitude() );
@@ -328,7 +371,7 @@ public class InHomeActivity extends AppCompatActivity {
     LocationListener locationListener = new LocationListener() {
         @Override
         public void onLocationChanged(Location location) {
-            setLocationCoord( location );
+//            setLocationCoord( location );
         }
 
         @Override
@@ -670,8 +713,10 @@ public class InHomeActivity extends AppCompatActivity {
             cancelServiceCall();
         }
         finishActivityComponents();
-        stopLocationManager();
+
+       // stopLocationManager();
         finishApplicationTask();
+        fusedLocationClient.removeLocationUpdates(locationCallback);
         endActivity = true;
     }
 

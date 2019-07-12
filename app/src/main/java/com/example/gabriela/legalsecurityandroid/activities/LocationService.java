@@ -1,7 +1,6 @@
 package com.example.gabriela.legalsecurityandroid.activities;
 
 import android.app.Service;
-import android.bluetooth.BluetoothHidDevice;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Location;
@@ -9,22 +8,16 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.util.Log;
+
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.Constants.Constants;
-import com.example.gabriela.legalsecurityandroid.Utils.UtilDialog;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
-import com.example.gabriela.legalsecurityandroid.models.EventModel;
-import com.example.gabriela.legalsecurityandroid.models.LoginUserModel;
 import com.example.gabriela.legalsecurityandroid.models.NewsModel;
-import com.example.gabriela.legalsecurityandroid.services.EventsService;
-import com.example.gabriela.legalsecurityandroid.services.LoginService;
 import com.example.gabriela.legalsecurityandroid.services.NewsService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import org.json.JSONObject;
-
-import java.util.Objects;
 
 public class LocationService extends Service {
 

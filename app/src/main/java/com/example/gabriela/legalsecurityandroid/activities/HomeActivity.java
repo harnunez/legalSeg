@@ -7,25 +7,20 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.VolleyError;
-import com.example.gabriela.legalsecurityandroid.R;
 import com.example.gabriela.legalsecurityandroid.Constants.Constants;
+import com.example.gabriela.legalsecurityandroid.R;
+import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilDialog;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilNetwork;
-import com.example.gabriela.legalsecurityandroid.Utils.Util;
-import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
-import com.example.gabriela.legalsecurityandroid.models.EventModel;
-import com.example.gabriela.legalsecurityandroid.services.EventsService;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
@@ -34,10 +29,6 @@ import com.google.android.gms.location.LocationSettingsResponse;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-
-import org.json.JSONObject;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -152,32 +143,6 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    public void executeService(final String eventSelected) {
-        EventsService eventsService = new EventsService(this, new doConnectionEvent() {
-            @Override
-            public void onOk(JSONObject response) {
-                Log.d("Response", response.toString());
-                Gson gson = new GsonBuilder().create();
-                EventModel event = gson.fromJson(response.toString(), EventModel.class);
-                Log.d("EventModel", event.toString());
-                if (event.availableEvents > 0) {
-                    showNewActivity(eventSelected);
-                } else {
-                    UtilDialog.alertError(event.message, HomeActivity.this);
-                }
-                endRunningServiceCall();
-            }
-
-            @Override
-            public void onError(VolleyError error) {
-                Log.d("Event", "Error Respuesta en JSON: " + error.getMessage());
-                endRunningServiceCall();
-            }
-        });
-        eventsService.buildJsonEvents(idCliente);
-        eventsService.doConnection();
     }
 
     private void executeShutDown() {

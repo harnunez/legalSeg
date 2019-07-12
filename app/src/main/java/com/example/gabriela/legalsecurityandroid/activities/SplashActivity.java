@@ -5,9 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 
@@ -21,6 +21,7 @@ import com.example.gabriela.legalsecurityandroid.models.LoginUserModel;
 import com.example.gabriela.legalsecurityandroid.services.LoginService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 import org.json.JSONObject;
 
 public class SplashActivity extends AppCompatActivity {
