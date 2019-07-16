@@ -12,15 +12,18 @@ import android.content.IntentFilter;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.content.pm.ProviderInfo;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.IBinder;
+import android.os.Looper;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
@@ -101,35 +104,22 @@ public class InHomeActivity extends AppCompatActivity {
     private static final long STARTING_COUNTDOWN_TIME = 121000;
     private static final int SERVICE_INTERVAL_TIME = 5;
 
-
-
-    private FusedLocationProviderClient fusedLocationClient;
     // Model News
     private NewsModel newsModel;
-    private LocationCallback locationCallback;
+    private boolean mAlreadyStartedService = false;
+
 
 
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e("second","true");
         setContentView(R.layout.activity_in_home);
         initProperties();
-        initFusedLocationClient();
         setLocation();
         initTimer();
         executeEventCancel();
         executeEventShutDown();
-    }
-
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.e("first","true");
-
-
     }
 
     @Override
@@ -266,64 +256,22 @@ public class InHomeActivity extends AppCompatActivity {
         }
     }
 
-    private void initFusedLocationClient() {
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient( this );
-    }
-
     private void setUserLocation() {
         checkProvidersPermission();
-
-        fusedLocationClient.getLastLocation()
-                .addOnSuccessListener( InHomeActivity.this, new OnSuccessListener<Location>() {
-                    @Override
-                    public void onSuccess(Location location) {
-                            executeLocationUpdates();
-                            setLocationCoord( location );
-                    }
-                } )
-                .addOnFailureListener( new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        executeErrorLocationEvent();
-                    }
-                } );
-
-    }
-
-    private void executeLocationManager() {
-        try {
-            checkProvidersPermission();
-            locationManager = (LocationManager) getSystemService( Context.LOCATION_SERVICE );
-            Criteria criteria = new Criteria();
-            provider = locationManager.getBestProvider( criteria, false );
-            locationManager.requestLocationUpdates( provider, 0, 0, locationListener );
-
-        } catch (Exception e) {
-            executeErrorLocationEvent();
+        if (!mAlreadyStartedService) {
+            Intent intent = new Intent(this, LocationUpdatesService.class);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService(intent);
+            }else {
+                startService(intent);
+            }
+            LocalBroadcastManager.getInstance(this).registerReceiver(locationReceiver,
+                    new IntentFilter(LocationUpdatesService.ACTION_LOCATION_BROADCAST));
+            mAlreadyStartedService = true;
         }
+
     }
-    private void executeLocationUpdates() {
-        LocationRequest locationRequest = LocationRequest.create();
-        locationRequest.setInterval(10000);
-        locationRequest.setFastestInterval(5000);
-        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        checkProvidersPermission();
-        locationCallback = new LocationCallback() {
-            @Override
-            public void onLocationResult(LocationResult locationResult) {
-                if (locationResult == null) {
-                    return;
-                }
-                for (Location location : locationResult.getLocations()) {
-                    setLocationCoord( location );
-                    Log.e("loca", location.getLatitude()+"");
-                    // Update UI with location data
-                    // ...
-                }
-            };
-        };
-        fusedLocationClient.requestLocationUpdates(locationRequest, locationCallback, null);
-    }
+
 
     private void checkProvidersPermission() {
         if (ActivityCompat.checkSelfPermission( this, Manifest.permission.ACCESS_FINE_LOCATION ) != PackageManager.PERMISSION_GRANTED
@@ -596,6 +544,12 @@ public class InHomeActivity extends AppCompatActivity {
         else {finish();}
     }
 
+    private void finishUpdatesLocation(){
+        stopService(new Intent(this, LocationUpdatesService.class));
+        LocalBroadcastManager.getInstance(this).unregisterReceiver(locationReceiver);
+        mAlreadyStartedService = false;
+    }
+
     private void executeEventShutDown() {
         shutDown.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -713,16 +667,23 @@ public class InHomeActivity extends AppCompatActivity {
             cancelServiceCall();
         }
         finishActivityComponents();
-
-       // stopLocationManager();
+        finishUpdatesLocation();
         finishApplicationTask();
-        fusedLocationClient.removeLocationUpdates(locationCallback);
         endActivity = true;
     }
-
-    private void stopLocationManager(){
-        locationManager.removeUpdates( locationListener );
-    }
+    private BroadcastReceiver locationReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+           if (intent.getExtras() != null){
+               double latitude = intent.getDoubleExtra(LocationUpdatesService.EXTRA_LATITUDE, 0);
+               double longitude = intent.getDoubleExtra(LocationUpdatesService.EXTRA_LONGITUDE, 0);
+               Location location = new Location("google provider");
+               location.setLongitude(longitude);
+               location.setLatitude(latitude);
+               setLocationCoord(location);
+           }
+        }
+    };
 
     private void checkGpsSettings() {
         LocationSettingsRequest.Builder builder = new LocationSettingsRequest.Builder()
