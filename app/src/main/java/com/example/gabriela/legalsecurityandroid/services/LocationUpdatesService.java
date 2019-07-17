@@ -65,7 +65,7 @@ public class LocationUpdatesService  extends Service {
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         fusedLocationClient = LocationServices.getFusedLocationProviderClient( this );
         locationUpdates();
-        return START_STICKY;
+        return START_NOT_STICKY;
     }
 
     void locationUpdates(){
@@ -90,7 +90,8 @@ public class LocationUpdatesService  extends Service {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private Notification getNotification() {
-        NotificationChannel channel = new NotificationChannel("channel_01", "My Channel", NotificationManager.IMPORTANCE_DEFAULT
+        NotificationChannel channel = new NotificationChannel("channel_01", "My Channel",
+                NotificationManager.IMPORTANCE_LOW
         );
         NotificationManager notificationManager = getSystemService(NotificationManager.class);
         notificationManager.createNotificationChannel(channel);
@@ -113,12 +114,16 @@ public class LocationUpdatesService  extends Service {
 
     }
 
+
     @Override
     public void onDestroy() {
         fusedLocationClient.removeLocationUpdates(locationCallback);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            stopForeground(true); //true will remove notification
+            stopForeground(true);
+            NotificationManager notificationManager = (NotificationManager) getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager.cancel(NOTIFICATION_ID);
         }
+
         stopSelf();
     }
 

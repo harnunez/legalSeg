@@ -108,14 +108,16 @@ public class InHomeActivity extends AppCompatActivity {
     private NewsModel newsModel;
     private boolean mAlreadyStartedService = false;
 
-
-
+    private FusedLocationProviderClient fusedLocationClient;
+    private LocationCallback locationCallback;
+    LocationRequest mLocationRequest = new LocationRequest();
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_in_home);
         initProperties();
+        initFusedLocationClient();
         setLocation();
         initTimer();
         executeEventCancel();
@@ -132,6 +134,8 @@ public class InHomeActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         finishTimer();
+        finishUpdatesLocation();
+        fusedLocationClient.removeLocationUpdates(locationCallback);
         unregisterReceiver(networkStatus);
     }
 
@@ -139,13 +143,18 @@ public class InHomeActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         isAppOnBackground = true;
+        startServiceLocation();
+        fusedLocationClient.removeLocationUpdates(locationCallback);
+
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         isAppOnBackground = false;
+        finishUpdatesLocation();
         setRegisterReceiver();
+        setUserLocation();
     }
 
     private  void initProperties() {
@@ -248,6 +257,13 @@ public class InHomeActivity extends AppCompatActivity {
         }
     }
 
+    void initFusedLocationClient(){
+        mLocationRequest = LocationRequest.create();
+        mLocationRequest.setInterval(1000);
+        mLocationRequest.setFastestInterval(5000);
+        mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient( this );
+    }
     private void setLocation() {
         if (Util.checkCurrentAndroidVersion()) {
             requestPermissions( new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, Constants.ACCESS_FINE_LOCATION_CODE );
@@ -258,6 +274,22 @@ public class InHomeActivity extends AppCompatActivity {
 
     private void setUserLocation() {
         checkProvidersPermission();
+        locationCallback = new LocationCallback() {
+            @Override
+            public void onLocationResult(LocationResult locationResult) {
+                if (locationResult == null) {
+                    return;
+                }
+                for (Location location : locationResult.getLocations()) {
+                    setLocationCoord(location);
+                }
+            };
+        };
+        fusedLocationClient.requestLocationUpdates(mLocationRequest, locationCallback, null);
+    }
+
+    void startServiceLocation(){
+        fusedLocationClient.removeLocationUpdates(locationCallback);
         if (!mAlreadyStartedService) {
             Intent intent = new Intent(this, LocationUpdatesService.class);
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -269,7 +301,6 @@ public class InHomeActivity extends AppCompatActivity {
                     new IntentFilter(LocationUpdatesService.ACTION_LOCATION_BROADCAST));
             mAlreadyStartedService = true;
         }
-
     }
 
 
@@ -315,32 +346,6 @@ public class InHomeActivity extends AppCompatActivity {
             //TODO
         }
     }
-
-    LocationListener locationListener = new LocationListener() {
-        @Override
-        public void onLocationChanged(Location location) {
-//            setLocationCoord( location );
-        }
-
-        @Override
-        public void onStatusChanged(String provider, int status, Bundle extras) {}
-
-        @Override
-        public void onProviderEnabled(String provider) {
-            checkProvidersEnabled();
-        }
-
-        @Override
-        public void onProviderDisabled(String provider) {
-            if(! Util.isGPSEnable(InHomeActivity.this)){
-                checkGpsSettings();
-            }
-            else if(! UtilNetwork.isNetworkEnable( InHomeActivity.this )){
-                UtilDialog.warningDialog( getResources().getString( R.string.warning_connection ), InHomeActivity.this);
-                finishTimer();
-            }
-        }
-    };
 
     private void checkProvidersEnabled(){
         if (Util.isGPSEnable(InHomeActivity.this ) && UtilNetwork.isNetworkEnable( InHomeActivity.this )){
