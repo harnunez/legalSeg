@@ -545,8 +545,10 @@ public class InHomeActivity extends AppCompatActivity {
     }
 
     private void finishApplicationTask() {
-        if(isOperationEnd ){  finishAffinity(); }
-        else {finish();}
+        if(isOperationEnd ){
+            finish();
+            userRootActivity();
+        } else {finish();}
     }
 
     private void finishUpdatesLocation(){
@@ -581,6 +583,11 @@ public class InHomeActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
+    private void userRootActivity() {
+        Intent myIntent = new Intent(InHomeActivity.this, SelectUserActivity.class);
+        myIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(myIntent);
+    }
     private void cleanPreferencesUserLogued() {
         SharedPreferences preferences = getSharedPreferences("CredentialsUserLogued",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
