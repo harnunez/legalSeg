@@ -586,6 +586,7 @@ public class InHomeActivity extends AppCompatActivity {
     private void userRootActivity() {
         Intent myIntent = new Intent(InHomeActivity.this, SelectUserActivity.class);
         myIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        myIntent.putExtra("init", false);
         startActivity(myIntent);
     }
     private void cleanPreferencesUserLogued() {

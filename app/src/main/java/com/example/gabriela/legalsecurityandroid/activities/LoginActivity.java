@@ -157,6 +157,7 @@ public class LoginActivity extends AppCompatActivity {
     private void startNewActivity(LoginUserModel mLogin) {
         Intent myIntent = new Intent(LoginActivity.this, SelectUserActivity.class);
         myIntent.putExtra("useLogued", mLogin);
+        myIntent.putExtra("init", true);
         myIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(myIntent);
     }

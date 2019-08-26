@@ -1,6 +1,8 @@
 package com.example.gabriela.legalsecurityandroid.activities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -8,10 +10,19 @@ import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
+import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.R;
+import com.example.gabriela.legalsecurityandroid.Utils.UtilDialog;
+import com.example.gabriela.legalsecurityandroid.Utils.UtilNetwork;
 import com.example.gabriela.legalsecurityandroid.adapters.ItemObject;
 import com.example.gabriela.legalsecurityandroid.adapters.adapterGridView;
+import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
 import com.example.gabriela.legalsecurityandroid.models.LoginUserModel;
+import com.example.gabriela.legalsecurityandroid.services.LoginService;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +32,7 @@ import java.util.Random;
 public class SelectUserActivity extends AppCompatActivity {
     private GridView gridView;
     private LoginUserModel userLogued;
+    boolean isInit = true;
 
 
     @Override
@@ -34,7 +46,13 @@ public class SelectUserActivity extends AppCompatActivity {
 
 
         // Init set properties
-        initProperties();
+
+        isInit = getIntent().getBooleanExtra("init",true);
+        if (isInit) {
+            initProperties();
+        }else {
+            checkExistCredentialUserLogued();
+        }
     }
 
     // Init properties
@@ -54,6 +72,14 @@ public class SelectUserActivity extends AppCompatActivity {
         executeEvents();
     }
 
+        void initFromEvent(){
+        gridView = findViewById(R.id.grid_view_bills);
+        List<ItemObject> allItems = getAllItemObject();
+        adapterGridView adapterGridView = new adapterGridView(this, allItems);
+        gridView.setAdapter(adapterGridView);
+
+        executeEvents();
+    }
     // Events
     private void executeEvents() {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -95,4 +121,43 @@ public class SelectUserActivity extends AppCompatActivity {
         startActivity(myIntent);
     }
 
+    private void checkExistCredentialUserLogued() {
+        SharedPreferences prefs = getSharedPreferences("CredentialsUserLogued", Context.MODE_PRIVATE);
+        if (prefs.contains("username") && prefs.contains("password")) {
+            String user = prefs.getString("username", "");
+            String password = prefs.getString("password", "");
+
+            //check connection
+            if (UtilNetwork.isNetworkEnable(this)){
+                executeService(user, password);
+            }
+            else {
+                finish();
+            }
+        } else {
+            finish();
+        }
+    }
+
+    private void executeService(String user, String password){
+        LoginService loginService = new LoginService( this, new doConnectionEvent() {
+            @Override
+            public void onOk(JSONObject response) {
+                Gson gson = new GsonBuilder().create();
+                LoginUserModel mLogin = gson.fromJson(response.toString(), LoginUserModel.class);
+                if (mLogin.codeResponse == 0) {
+                   userLogued = mLogin;
+                    initFromEvent();
+                } else {
+                   finish();
+                }
+            }
+
+            @Override
+            public void onError(VolleyError error) {
+            }
+        } );
+        loginService.buildJsonLogin( user,password );
+        loginService.doConnection();
+    }
 }

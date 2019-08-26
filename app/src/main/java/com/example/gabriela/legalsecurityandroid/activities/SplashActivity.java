@@ -124,6 +124,7 @@ public class SplashActivity extends AppCompatActivity {
     private void startNewActivity(LoginUserModel mLogin) {
         Intent myIntent = new Intent(SplashActivity.this, SelectUserActivity.class);
         myIntent.putExtra("useLogued", mLogin);
+        myIntent.putExtra("init", true);
         startActivity(myIntent);
     }
 
