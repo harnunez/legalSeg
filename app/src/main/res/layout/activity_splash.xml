@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -17,68 +17,57 @@
         android:cropToPadding="false"
         android:scaleType="centerCrop"
         android:visibility="visible"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@drawable/background3x"
         />
 
-    <ImageView
-        android:id="@+id/logo_splash"
-        android:layout_width="162dp"
-        android:layout_height="162dp"
-        android:layout_marginTop="203dp"
-        android:layout_marginStart="107dp"
-        android:layout_marginEnd="106dp"
-        android:backgroundTint="@color/backgroundColor"
-        android:contentDescription="@string/LogoImageView"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_legal_sat24"/>
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="222dp"
-        android:layout_height="32dp"
-        android:layout_marginTop="389dp"
-        android:fontFamily="@font/antenna_cond_bold"
-        android:text="@string/Title_Splash"
-        android:textAlignment="center"
-        android:textColor="@color/backgroundTextView"
-        android:textSize="28sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo3x" />
-
-    <TextView
-        android:id="@+id/textViewMessage"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="428dp"
-        android:fontFamily="@font/lato_bold"
+        android:orientation="vertical"
         android:gravity="center"
-        android:text="@string/splash_caption"
-        android:textAlignment="center"
-        android:textColor="@color/backgroundTextView"
-        android:textSize="18sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo3x"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/logo_splash"
+            android:layout_width="162dp"
+            android:layout_height="162dp"
+            android:backgroundTint="@color/backgroundColor"
+            android:contentDescription="@string/LogoImageView"
+            app:srcCompat="@drawable/logo_legal_sat24" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="222dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/antenna_cond_bold"
+            android:text="@string/Title_Splash"
+            android:textAlignment="center"
+            android:textColor="@color/backgroundTextView"
+            android:textSize="28sp"
+            app:srcCompat="@drawable/logo3x" />
+
+        <TextView
+            android:id="@+id/textViewMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/lato_bold"
+            android:gravity="center"
+            android:text="@string/splash_caption"
+            android:textAlignment="center"
+            android:textColor="@color/backgroundTextView"
+            android:textSize="18sp"
+            app:srcCompat="@drawable/logo3x" />
+
+    </LinearLayout>
 
     <ProgressBar
         android:id="@+id/splash_progress_bar"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="468dp"
+        android:layout_gravity="center"
         android:indeterminate="true"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:indeterminateTint="#FFFFFF"
-        android:visibility="invisible"
-        />
+        android:visibility="invisible" />
 
-</android.support.constraint.ConstraintLayout>
+</FrameLayout>
