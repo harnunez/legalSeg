@@ -46,6 +46,7 @@
         </activity>
         <activity
             android:name=".activities.LoginActivity"
+            android:windowSoftInputMode="adjustPan|stateHidden"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activities.SelectUserActivity"

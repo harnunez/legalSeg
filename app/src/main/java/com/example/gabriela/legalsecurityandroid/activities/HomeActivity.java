@@ -178,7 +178,7 @@ public class HomeActivity extends AppCompatActivity {
     private void popupShoutDown(){
         AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this)
                 .setTitle( getResources().getString( R.string.warning_title ) )
-                .setMessage( getResources().getString( R.string.popup_shutdown ))
+                .setMessage( getResources().getString( R.string.popup_logout ))
                 .setPositiveButton( getResources().getString( R.string.yes_message ), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

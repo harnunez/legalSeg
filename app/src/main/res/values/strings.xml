@@ -27,18 +27,20 @@
 
     // succes text description
     <string name="message_strong_succes">Listo</string>
-    <string name="message_succes">Podés salir tranquilo de tu vivienda</string>
-    <string name="message_succes_entry">Podés entrar tranquilo a tu vivienda</string>
+    <string name="message_succes">Podés salir tranquilo de tu vivienda.</string>
+    <string name="message_succes_entry">Podés ingresar tranquilo a tu vivienda.</string>
     <string name="notification_title">Te informamos que</string>
     <string name="notification_title_alert">Alerta !</string>
 
     // wait text description
     <string name="message_strong_aguarda_icon">Aguardá un momento</string>
-    <string name="message_aguarda_icon">Parece que hay un movimiento inesperado,estamos verificando las cámaras.\n Aguarda dentro de tu vehículo\n o mantenete fuera del área</string>
+    <string name="message_aguarda_icon">Parece que hay un movimiento inesperado, estamos
+        verificando las cámaras.</string>
 
     // danger text description
     <string name="message_strong_peligro">Movimientos inesperados</string>
-    <string name="message_peligro">Parece que hay movimientos inesperados.\n Estamos comunicándonos con el 911.\n Aguarda dentro de tu vehículo\n o mantenete fuera del área</string>
+    <string name="message_peligro">Estamos comunicándonos con el 911.\n\n Aguardá dentro de tu
+        vehículo\n o mantenete fuera del área.</string>
     <string name="message_call911">Estamos comunicándonos con el 911</string>
 
     // Error default
@@ -62,11 +64,12 @@
 
     //popup cancel alert
     <string name="popup_message">¿Desea cancelar la operación?</string>
+    <string name="popup_logout">¿Querés cerrar sesión?</string>
     <string name="popup_shutdown">¿Desea salir de la operación?</string>
     <string name="yes_message">Sí</string>
     <string name="no_message">No</string>
 
-    <string name="message_end">Gracias por confiar en nosotros</string>
+    <string name="message_end">Gracias por confiar en nosotros.</string>
     <string name="message_end_title"> </string>
 
 

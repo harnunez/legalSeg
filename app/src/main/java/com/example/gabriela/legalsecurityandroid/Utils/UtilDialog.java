@@ -56,7 +56,7 @@ public class UtilDialog {
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
-                        ActivityCompat.finishAffinity((Activity) context);
+                        ((Activity)context).finish();
                         showingDialogMessage = false;
                     }
                 })

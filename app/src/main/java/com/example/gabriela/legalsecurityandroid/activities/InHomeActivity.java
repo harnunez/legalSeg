@@ -86,6 +86,7 @@ public class InHomeActivity extends AppCompatActivity {
     private String latitud;
     private String longitud;
     private String event;
+    private String eventInit;
     private String useNameSelect;
     private String cliente;
     private Boolean timerActive = false;
@@ -169,6 +170,7 @@ public class InHomeActivity extends AppCompatActivity {
         titleMessageEvent = findViewById(R.id.description_access_strong);
 
         event = getIntent().getExtras().getString("event");
+        eventInit = getIntent().getExtras().getString("event");
         useNameSelect = getIntent().getExtras().getString("userName");
         cliente = getIntent().getExtras().getString("idCliente");
 
@@ -180,7 +182,7 @@ public class InHomeActivity extends AppCompatActivity {
         startService(locationServiceIntent);
         //NOTE: END NOTE*/
 
-        if (event.equals(Constants.EVENT_ENTER_HOME)) {
+        if (eventInit.equals(Constants.EVENT_ENTER_HOME)) {
             title_header_event.setText(R.string.enter_title_header);
         }
         else {
@@ -431,21 +433,11 @@ public class InHomeActivity extends AppCompatActivity {
                 break;
             case Constants.DANGER_RESPONSE :
                 hideCountDownComponents();
-//                finishTimer();
                 UtilAlarm.startAlarm(InHomeActivity.this,R.raw.alarm);
-//                endResponseApp = true;
-//                isOperationEnd = true;
                 buttonDefault.setVisibility(View.GONE);
                 setViewLevel(R.drawable.prueba_peligro, R.string.message_peligro, R.string.message_strong_peligro);
                 showNotificationMessage( getResources().getString( R.string.notification_title_alert ), getResources().getString( R.string.message_call911 ));
                 event = Constants.EVENT_DANGER;
-                //NOTE: This is the new service which should call every time to backend service when danger is received
-//                Intent locationServiceIntent = new Intent(this, LocationService.class);
-//                locationServiceIntent.putExtra("idCliente", cliente);
-//                locationServiceIntent.putExtra("event", event);
-//                locationServiceIntent.putExtra("userName", useNameSelect);
-//                startService(locationServiceIntent);
-                //NOTE: END NOTE
 
                 break;
             case Constants.END_RESPONSE:
@@ -454,7 +446,7 @@ public class InHomeActivity extends AppCompatActivity {
                 endResponseApp = true;
                 isOperationEnd = true;
                 buttonDefault.setText(R.string.salir_btn);
-                buttonDefault.setVisibility(View.VISIBLE);
+                buttonDefault.setVisibility(View.GONE);
                 setEndViewLevel();
                 break;
             case Constants.OUTSIDE_COVERAGE_AREA_RESPONSE:
@@ -491,11 +483,18 @@ public class InHomeActivity extends AppCompatActivity {
     }
 
     private int setViewLevelOkOperationMessage() {
-        return  event.equals(Constants.EVENT_ENTER_HOME) ?  R.string.message_succes_entry  : R.string.message_succes ;
+        return  eventInit.equals(Constants.EVENT_ENTER_HOME) ?  R.string.message_succes_entry  :
+                R.string.message_succes ;
     }
 
     private void setSuccessViewLevel() {
-        setViewLevel(R.drawable.prueba_ok, setViewLevelOkOperationMessage() , R.string.message_strong_succes );
+        if (eventInit.equals(Constants.EVENT_ENTER_HOME)) {
+            setViewLevel(R.drawable.prueba_ingresar, setViewLevelOkOperationMessage(),
+                    R.string.message_strong_succes);
+        }else{
+            setViewLevel(R.drawable.prueba_salir, setViewLevelOkOperationMessage(),
+                    R.string.message_strong_succes);
+        }
         showNotificationMessage( getResources().getString( R.string.notification_title ), getResources().getString( setViewLevelOkOperationMessage() ));
     }
     private void setEndViewLevel() {

@@ -44,14 +44,13 @@
         android:id="@+id/icon_shut_down"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginStart="314dp"
-        android:layout_marginEnd="23dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/ic_power_settings_new_black_24dp"
+        android:contentDescription="@string/button_shut_down"
+        android:visibility="gone"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/button_shut_down" />
+        app:layout_constraintTop_toTopOf="parent" />
     <View
         android:id="@+id/view_timer"
         android:layout_width="156dp"
