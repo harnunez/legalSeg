@@ -23,83 +23,90 @@
         app:srcCompat="@drawable/background3x"
         />
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:focusableInTouchMode="true"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true" >
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="134dp"
-            android:layout_height="134dp"
-            android:backgroundTint="@color/backgroundColor"
-            android:contentDescription="@string/LogoImageView"
-            app:srcCompat="@drawable/logo3x" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="269dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="30dp"
-            android:fontFamily="@font/antenna_medium"
-            android:text="@string/iniciar_sesi_n"
-            android:textAlignment="center"
-            android:textColor="@color/backgroundTextView"
-            android:textSize="24sp"
-            app:srcCompat="@drawable/logo3x" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="134dp"
+                android:layout_height="134dp"
+                android:backgroundTint="@color/backgroundColor"
+                android:contentDescription="@string/LogoImageView"
+                app:srcCompat="@drawable/logo3x" />
 
-        <TextView
-            android:id="@+id/userTv"
-            android:layout_width="269dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="40dp"
-            android:fontFamily="@font/antenna_medium"
-            android:text="@string/User"
-            android:textAlignment="textStart"
-            android:textColor="@color/backgroundTextView"
-            android:textSize="18sp" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="269dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/antenna_medium"
+                android:text="@string/iniciar_sesi_n"
+                android:textAlignment="center"
+                android:textColor="@color/backgroundTextView"
+                android:textSize="24sp"
+                app:srcCompat="@drawable/logo3x" />
 
-        <EditText
-            android:id="@+id/user"
-            android:layout_width="269sp"
-            android:layout_height="50sp"
-            android:inputType="text"
-            android:textColor="@color/backgroundTextView"
-            android:textSize="18sp" />
+            <TextView
+                android:id="@+id/userTv"
+                android:layout_width="269dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/antenna_medium"
+                android:text="@string/User"
+                android:textAlignment="textStart"
+                android:textColor="@color/backgroundTextView"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/passwordTv"
-            android:layout_width="269dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/antenna_medium"
-            android:text="@string/password"
-            android:textAlignment="textStart"
-            android:textColor="@color/backgroundTextView"
-            android:textSize="18sp" />
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="269sp"
-            android:layout_height="50sp"
-            android:inputType="textPassword"
-            android:labelFor="@id/password"
-            android:textColor="@color/backgroundTextView"
-            android:textSize="18sp"
-            android:textAlignment="textStart"/>
+            <EditText
+                android:id="@+id/user"
+                android:layout_width="269sp"
+                android:layout_height="50sp"
+                android:inputType="text"
+                android:textColor="@color/backgroundTextView"
+                android:textSize="18sp" />
 
-        <Button
-            android:id="@+id/button_login"
-            android:layout_width="269dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/corner_radius_button"
-            android:bottomLeftRadius="10dp"
-            android:bottomRightRadius="10dp"
-            android:text="@string/iniciar_sesi_n"
-            android:textColor="@color/backgroundTextView" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/passwordTv"
+                android:layout_width="269dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/antenna_medium"
+                android:text="@string/password"
+                android:textAlignment="textStart"
+                android:textColor="@color/backgroundTextView"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="269sp"
+                android:layout_height="50sp"
+                android:inputType="textPassword"
+                android:labelFor="@id/password"
+                android:textAlignment="textStart"
+                android:textColor="@color/backgroundTextView"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/button_login"
+                android:layout_width="269dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/corner_radius_button"
+                android:bottomLeftRadius="10dp"
+                android:bottomRightRadius="10dp"
+                android:text="@string/iniciar_sesi_n"
+                android:textColor="@color/backgroundTextView" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 
 
     <ProgressBar

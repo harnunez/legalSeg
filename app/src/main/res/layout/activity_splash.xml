@@ -37,7 +37,7 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="222dp"
-            android:layout_height="32dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:fontFamily="@font/antenna_cond_bold"
             android:text="@string/Title_Splash"
