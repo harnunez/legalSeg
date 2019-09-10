@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatEditText;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -111,6 +112,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onError(VolleyError error) {
+                Log.e("ee", error.getMessage());
                 UtilDialog.warningDialog( getResources().getString(R.string.error_connection), LoginActivity.this );
                 serviceInstanceBeenCalled = false;
                 progressIndicator.dismiss();

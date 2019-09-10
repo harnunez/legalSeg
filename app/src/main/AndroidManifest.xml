@@ -26,6 +26,7 @@
         android:label="@string/app_name"
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher"
+        android:name=".Utils.Legal"
         android:supportsRtl="true"
         android:theme="@style/FullScreenCustomTheme"
         android:usesCleartextTraffic="true">

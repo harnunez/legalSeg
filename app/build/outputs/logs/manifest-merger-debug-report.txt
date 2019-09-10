@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:2:1-62:12
-INJECTED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:2:1-62:12
-INJECTED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:2:1-62:12
-INJECTED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:2:1-62:12
+ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:2:1-63:12
+INJECTED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:2:1-63:12
+INJECTED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:2:1-63:12
+INJECTED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:2:1-63:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\ninibeth_parra\.gradle\caches\transforms-1\files-1.1\appcompat-v7-28.0.0.aar\9ca21ad92a87795268acf9e3cebc090d\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\ninibeth_parra\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\54b6acb4eab65b595d65d8abc84aea54\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.gms:play-services-location:15.0.1] C:\Users\ninibeth_parra\.gradle\caches\transforms-1\files-1.1\play-services-location-15.0.1.aar\18c3ebc131860f8d987040ba9d07e337\AndroidManifest.xml:2:1-9:12
@@ -40,20 +40,20 @@ MERGED from [com.android.support:interpolator:28.0.0] C:\Users\ninibeth_parra\.g
 MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\ninibeth_parra\.gradle\caches\transforms-1\files-1.1\livedata-1.1.1.aar\0e6e47893d3255ae2e47d16ef4599f2f\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\ninibeth_parra\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.1.aar\141c8b6ce2dbd95ce5e2aba3d73a925e\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\ninibeth_parra\.gradle\caches\transforms-1\files-1.1\runtime-1.1.1.aar\758ba91b37181539cf46b3f4d2b3db63\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:2:1-62:12
-INJECTED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:2:1-62:12
-INJECTED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:2:1-62:12
+INJECTED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:2:1-63:12
+INJECTED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:2:1-63:12
+INJECTED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:2:1-63:12
 	package
 		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:3:5-56
 		INJECTED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:2:1-62:12
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:2:1-63:12
 		INJECTED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:2:1-62:12
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:2:1-63:12
 		INJECTED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:2:11-69
@@ -106,7 +106,7 @@ ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\A
 	android:name
 		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:20:19-63
 application
-ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:22:5-60:19
+ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:22:5-61:19
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\ninibeth_parra\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\54b6acb4eab65b595d65d8abc84aea54\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\ninibeth_parra\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\54b6acb4eab65b595d65d8abc84aea54\AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.gms:play-services-location:15.0.1] C:\Users\ninibeth_parra\.gradle\caches\transforms-1\files-1.1\play-services-location-15.0.1.aar\18c3ebc131860f8d987040ba9d07e337\AndroidManifest.xml:7:5-20
@@ -128,7 +128,7 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\ninibeth_p
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\ninibeth_parra\.gradle\caches\transforms-1\files-1.1\support-compat-28.0.0.aar\0b9fd568309c5e79bab52de5384046f7\AndroidManifest.xml:22:18-91
 	android:supportsRtl
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:29:9-35
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:30:9-35
 	android:label
 		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:26:9-41
 	android:hardwareAccelerated
@@ -142,63 +142,65 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\ninibeth_p
 	android:allowBackup
 		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:23:9-35
 	android:theme
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:30:9-53
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:31:9-53
 	android:usesCleartextTraffic
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:31:9-44
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:32:9-44
+	android:name
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:29:9-36
 service#com.example.gabriela.legalsecurityandroid.services.LocationUpdatesService
-ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:33:9-36:38
+ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:34:9-37:38
 	android:enabled
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:35:13-35
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:36:13-35
 	android:exported
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:36:13-36
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:37:13-36
 	android:name
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:34:13-60
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:35:13-60
 activity#com.example.gabriela.legalsecurityandroid.activities.SplashActivity
-ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:38:9-46:20
+ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:39:9-47:20
 	android:screenOrientation
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:40:13-49
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:41:13-49
 	android:name
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:39:13-54
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:40:13-54
 intent-filter#action:name:android.intent.action.MAIN+action:name:android.intent.action.VIEW+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:41:13-45:29
+ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:42:13-46:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:42:17-69
-	android:name
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:42:25-66
-action#android.intent.action.VIEW
 ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:43:17-69
 	android:name
 		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:43:25-66
+action#android.intent.action.VIEW
+ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:44:17-69
+	android:name
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:44:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:44:17-77
+ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:45:17-77
 	android:name
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:44:27-74
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:45:27-74
 activity#com.example.gabriela.legalsecurityandroid.activities.LoginActivity
-ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:47:9-49:52
+ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:48:9-50:52
 	android:screenOrientation
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:49:13-49
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:50:13-49
 	android:name
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:48:13-53
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:49:13-53
 activity#com.example.gabriela.legalsecurityandroid.activities.SelectUserActivity
-ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:50:9-52:52
+ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:51:9-53:52
 	android:screenOrientation
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:52:13-49
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:53:13-49
 	android:name
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:51:13-58
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:52:13-58
 activity#com.example.gabriela.legalsecurityandroid.activities.HomeActivity
-ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:53:9-55:52
+ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:54:9-56:52
 	android:screenOrientation
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:55:13-49
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:56:13-49
 	android:name
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:54:13-52
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:55:13-52
 activity#com.example.gabriela.legalsecurityandroid.activities.InHomeActivity
-ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:56:9-59:52
+ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:57:9-60:52
 	android:screenOrientation
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:59:13-49
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:60:13-49
 	android:launchMode
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:58:13-43
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:59:13-43
 	android:name
-		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:57:13-54
+		ADDED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml:58:13-54
 uses-sdk
 INJECTED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\ninibeth_parra\Desktop\Projects\legalsecurity\app\src\main\AndroidManifest.xml
