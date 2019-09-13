@@ -374,8 +374,12 @@ public class InHomeActivity extends AppCompatActivity {
                     if (newsModel.codeResponse == 0) {
                         changeViewForLevelAlert();
                     } else {
-                        errorConnectionMessage();
-                        finishTimer();
+                        if (newsModel.codeResponse == 3) {
+                            errorAbonoMessage(newsModel.message);
+                        }else {
+                            errorConnectionMessage();
+                            finishTimer();
+                        }
                     }
                 }
 
@@ -409,6 +413,14 @@ public class InHomeActivity extends AppCompatActivity {
             UtilDialog.alertError(getResources().getString(R.string.error_connection), InHomeActivity.this);
         }
     }
+    private void errorAbonoMessage(String message) {
+        if (timerActive){
+            endResponseApp = true;
+            isOperationEnd = true;
+            finishTimer();
+            UtilDialog.errorDialog(message, InHomeActivity.this);
+        }
+    }
 
     private void changeViewForLevelAlert(){
         checkCoverageArea();
@@ -438,7 +450,6 @@ public class InHomeActivity extends AppCompatActivity {
                 setViewLevel(R.drawable.prueba_peligro, R.string.message_peligro, R.string.message_strong_peligro);
                 showNotificationMessage( getResources().getString( R.string.notification_title_alert ), getResources().getString( R.string.message_call911 ));
                 event = Constants.EVENT_DANGER;
-
                 break;
             case Constants.END_RESPONSE:
                 hideCountDownComponents();
@@ -543,7 +554,7 @@ public class InHomeActivity extends AppCompatActivity {
         });
     }
 
-    private void finishApplicationTask() {
+    public void finishApplicationTask() {
         if(isOperationEnd ){
             finish();
             userRootActivity();

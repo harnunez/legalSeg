@@ -112,7 +112,6 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onError(VolleyError error) {
-                Log.e("ee", error.getMessage());
                 UtilDialog.warningDialog( getResources().getString(R.string.error_connection), LoginActivity.this );
                 serviceInstanceBeenCalled = false;
                 progressIndicator.dismiss();
