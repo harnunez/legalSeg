@@ -7,9 +7,24 @@ android {
         applicationId "ar.com.legalsecurity"
         minSdkVersion 21
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "2.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    bundle {
+        density {
+            // Different APKs are generated for devices with different screen densities; true by default.
+            enableSplit true
+        }
+        abi {
+            // Different APKs are generated for devices with different CPU architectures; true by default.
+            enableSplit true
+        }
+        language {
+            // This is disabled so that the App Bundle does NOT split the APK for each language.
+            // We're gonna use the same APK for all languages.
+            enableSplit false
+        }
     }
     buildTypes {
         release {
@@ -23,6 +38,8 @@ android {
         // but continue the build even when errors are found:
         abortOnError false
     }
+
+
 }
 
 dependencies {
