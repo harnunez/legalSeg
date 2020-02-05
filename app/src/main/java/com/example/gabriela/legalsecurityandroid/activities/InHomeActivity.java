@@ -435,6 +435,7 @@ public class InHomeActivity extends AppCompatActivity {
             case Constants.OPERATION_OK_RESPONSE :
                 hideCountDownComponents();
                 setSuccessViewLevel();
+                finishAlarm();
                 buttonDefault.setVisibility(View.VISIBLE);
                 break;
             case Constants.WAIT_RESPONSE:
@@ -588,6 +589,9 @@ public class InHomeActivity extends AppCompatActivity {
         finishTimer();
     }
 
+    private void finishAlarm(){
+        UtilAlarm.stopAlarm();
+    }
     private void backRootActivity() {
         Intent myIntent = new Intent(InHomeActivity.this, LoginActivity.class);
         startActivity(myIntent);
