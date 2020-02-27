@@ -455,6 +455,7 @@ public class InHomeActivity extends AppCompatActivity {
             case Constants.END_RESPONSE:
                 hideCountDownComponents();
                 finishActivityComponents();
+                finishAlarm();
                 endResponseApp = true;
                 isOperationEnd = true;
                 buttonDefault.setText(R.string.salir_btn);
