@@ -24,11 +24,13 @@ import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
+import android.preference.PreferenceManager;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SwitchCompat;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -46,6 +48,7 @@ import com.example.gabriela.legalsecurityandroid.Utils.UtilAlarm;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilDialog;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilNetwork;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilNotification;
+import com.example.gabriela.legalsecurityandroid.fragments.SettingsFragmentFab;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
 import com.example.gabriela.legalsecurityandroid.models.NewsModel;
 import com.example.gabriela.legalsecurityandroid.services.LocationUpdatesService;
@@ -67,6 +70,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import org.json.JSONObject;
+
+import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
 public class InHomeActivity extends AppCompatActivity {
     private ImageButton shutDown;
@@ -101,6 +106,8 @@ public class InHomeActivity extends AppCompatActivity {
     private boolean endActivity = false;
     private boolean endResponseApp = false;
     private boolean operatorRespond = false;
+
+    private boolean myboolpreferences;
 
     private static final long STARTING_COUNTDOWN_TIME = 121000;
     private static final int SERVICE_INTERVAL_TIME = 5;
@@ -168,6 +175,10 @@ public class InHomeActivity extends AppCompatActivity {
         buttonDefault = findViewById(R.id.cancel_button_image);
         loadingService = findViewById(R.id.loadingService);
         titleMessageEvent = findViewById(R.id.description_access_strong);
+
+
+        SharedPreferences sharedPref = getSharedPreferences("configList", MODE_PRIVATE);
+        myboolpreferences = sharedPref.getBoolean("soundAlarm",false);
 
         event = getIntent().getExtras().getString("event");
         eventInit = getIntent().getExtras().getString("event");
@@ -446,7 +457,9 @@ public class InHomeActivity extends AppCompatActivity {
                 break;
             case Constants.DANGER_RESPONSE :
                 hideCountDownComponents();
-                UtilAlarm.startAlarm(InHomeActivity.this,R.raw.alarm);
+                if(myboolpreferences){
+                    UtilAlarm.startAlarm(InHomeActivity.this,R.raw.alarm);
+                }
                 buttonDefault.setVisibility(View.GONE);
                 setViewLevel(R.drawable.prueba_peligro, R.string.message_peligro, R.string.message_strong_peligro);
                 showNotificationMessage( getResources().getString( R.string.notification_title_alert ), getResources().getString( R.string.message_call911 ));

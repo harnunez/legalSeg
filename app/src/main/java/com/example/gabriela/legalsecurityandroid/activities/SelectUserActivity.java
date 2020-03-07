@@ -12,13 +12,14 @@ import android.widget.GridView;
 
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.R;
-import com.example.gabriela.legalsecurityandroid.Utils.UtilDialog;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilNetwork;
 import com.example.gabriela.legalsecurityandroid.adapters.ItemObject;
 import com.example.gabriela.legalsecurityandroid.adapters.adapterGridView;
 import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
 import com.example.gabriela.legalsecurityandroid.models.LoginUserModel;
 import com.example.gabriela.legalsecurityandroid.services.LoginService;
+import com.github.clans.fab.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -33,7 +34,10 @@ public class SelectUserActivity extends AppCompatActivity {
     private GridView gridView;
     private LoginUserModel userLogued;
     boolean isInit = true;
+    private FloatingActionMenu fabMenu;
+    private FloatingActionButton fabSetting;
 
+    public static final String KEY_SETTINGS_FAB="keySettings";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +47,6 @@ public class SelectUserActivity extends AppCompatActivity {
 
         // Status bar
         // this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
 
         // Init set properties
 
@@ -62,6 +65,9 @@ public class SelectUserActivity extends AppCompatActivity {
         userLogued = getIntent().getParcelableExtra("useLogued");
         gridView = findViewById(R.id.grid_view_bills);
 
+        //Floating action buttons
+        fabSetting =  findViewById(R.id.group_fabSetting);
+        fabSetting.setOnClickListener(onclickFab());
 
         List<ItemObject> allItems = getAllItemObject();
         adapterGridView adapterGridView = new adapterGridView(this, allItems);
@@ -80,6 +86,21 @@ public class SelectUserActivity extends AppCompatActivity {
 
         executeEvents();
     }
+
+    private View.OnClickListener onclickFab(){
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(v==fabSetting){
+                    String valSett="settingsFragment";
+                    Intent intent = new Intent(v.getContext(), FloatingActionsContainer.class);
+                    intent.putExtra(KEY_SETTINGS_FAB,valSett);
+                    startActivity(intent);
+                }
+            }
+        };
+    }
+
     // Events
     private void executeEvents() {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
