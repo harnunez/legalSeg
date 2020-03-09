@@ -1,9 +1,11 @@
 package com.example.gabriela.legalsecurityandroid.activities;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
@@ -34,7 +36,9 @@ public class SelectUserActivity extends AppCompatActivity {
     private GridView gridView;
     private LoginUserModel userLogued;
     boolean isInit = true;
+
     private FloatingActionMenu fabMenu;
+    private FloatingActionButton fabPower;
     private FloatingActionButton fabSetting;
 
     public static final String KEY_SETTINGS_FAB="keySettings";
@@ -66,8 +70,12 @@ public class SelectUserActivity extends AppCompatActivity {
         gridView = findViewById(R.id.grid_view_bills);
 
         //Floating action buttons
+        fabMenu = findViewById(R.id.groupfab);
         fabSetting =  findViewById(R.id.group_fabSetting);
+        fabPower = findViewById(R.id.group_fabpower);
+
         fabSetting.setOnClickListener(onclickFab());
+        fabPower.setOnClickListener(onclickFab());
 
         List<ItemObject> allItems = getAllItemObject();
         adapterGridView adapterGridView = new adapterGridView(this, allItems);
@@ -92,13 +100,42 @@ public class SelectUserActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(v==fabSetting){
+                    fabMenu.close(true);
                     String valSett="settingsFragment";
                     Intent intent = new Intent(v.getContext(), FloatingActionsContainer.class);
                     intent.putExtra(KEY_SETTINGS_FAB,valSett);
                     startActivity(intent);
                 }
+
+                if(v==fabPower){
+                    fabMenu.close(true);
+                    shoutDownPowerFAB();
+                }
             }
         };
+    }
+
+    private void shoutDownPowerFAB(){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(SelectUserActivity.this)
+                .setTitle(getResources().getString( R.string.warning_title ))
+                .setMessage(getResources().getString( R.string.popup_logout ))
+                .setPositiveButton(getResources().getString(R.string.yes_message), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        cleanPreferencesUserLogued();
+                        backRootActivity();
+                    }
+                }).setNegativeButton(getResources().getString(R.string.no_message), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     // Events
@@ -180,5 +217,17 @@ public class SelectUserActivity extends AppCompatActivity {
         } );
         loginService.buildJsonLogin( user,password );
         loginService.doConnection();
+    }
+
+    private void cleanPreferencesUserLogued() {
+        SharedPreferences preferences = getSharedPreferences("CredentialsUserLogued",Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.clear();
+        editor.commit();
+    }
+
+    private void backRootActivity() {
+        Intent myIntent = new Intent(SelectUserActivity.this, LoginActivity.class);
+        startActivity(myIntent);
     }
 }

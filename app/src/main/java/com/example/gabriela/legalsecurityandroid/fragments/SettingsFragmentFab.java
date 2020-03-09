@@ -1,10 +1,8 @@
 package com.example.gabriela.legalsecurityandroid.fragments;
 
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.SwitchCompat;
 import android.view.LayoutInflater;
@@ -39,11 +37,16 @@ public class SettingsFragmentFab extends Fragment {
 
         mySwitchAlarm = rootView.findViewById(R.id.switch_alarm);
 
+        saveCustomConfiguration();
 
+        return rootView;
+    }
+
+
+    private void saveCustomConfiguration(){
         //Save switch state in shared Preferences
-         SharedPreferences sharedPref = getContext().getSharedPreferences("configList", MODE_PRIVATE);
-         mySwitchAlarm.setChecked(sharedPref.getBoolean("soundAlarm", true));
-
+        SharedPreferences sharedPref = getContext().getSharedPreferences("configList", MODE_PRIVATE);
+        mySwitchAlarm.setChecked(sharedPref.getBoolean("soundAlarm", true));
 
         mySwitchAlarm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,8 +72,6 @@ public class SettingsFragmentFab extends Fragment {
 
             }
         });
-
-        return rootView;
     }
 
 }

@@ -17,18 +17,8 @@ public class FloatingActionsContainer extends AppCompatActivity {
 
         configureToolbar();
 
-        String keyVal = getValueFromSelectUserActivity();
+        showSelectedFragment();
 
-        if(keyVal!=null){
-
-            switch (keyVal){
-                case "settingsFragment":
-                    SettingsFragmentFab setFragmentFab = new SettingsFragmentFab();
-                    getSupportFragmentManager().beginTransaction().replace(R.id.container_menufab,setFragmentFab)
-                    .commit();
-                    break;
-            }
-        }
 
     }
 
@@ -44,6 +34,21 @@ public class FloatingActionsContainer extends AppCompatActivity {
         Intent intent = getIntent();
         String message = intent.getStringExtra(SelectUserActivity.KEY_SETTINGS_FAB);
         return message;
+    }
+
+    private void showSelectedFragment(){
+        String keyVal = getValueFromSelectUserActivity();
+
+        if(keyVal!=null){
+
+            switch (keyVal){
+                case "settingsFragment":
+                    SettingsFragmentFab setFragmentFab = new SettingsFragmentFab();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container_menufab,setFragmentFab)
+                            .commit();
+                    break;
+            }
+        }
     }
 
 }

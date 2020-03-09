@@ -70,6 +70,7 @@
         app:menu_icon="@drawable/ic_menufab"
         app:menu_colorNormal="@android:color/white"
         app:menu_shadowColor="@android:color/white"
+        app:menu_fab_show_animation="@anim/fab_slide_in_from_left"
         >
 
 
