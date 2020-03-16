@@ -64,7 +64,7 @@
 
         <activity
             android:name=".activities.FloatingActionsContainer"
-            android:parentActivityName=".activities.LoginActivity">
+            android:parentActivityName=".activities.InHomeActivity">
         </activity>
 
     </application>

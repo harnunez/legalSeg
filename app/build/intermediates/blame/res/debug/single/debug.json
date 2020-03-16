@@ -4,12 +4,12 @@
         "source": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\src\\main\\res\\drawable\\background_gray.png"
     },
     {
-        "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_light_normal.xml.flat",
-        "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\6a7dc073c0edb3026f526dd32eb33108\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml"
-    },
-    {
         "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_light_normal.xml.flat",
+        "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\6a7dc073c0edb3026f526dd32eb33108\\res\\drawable\\common_google_signin_btn_icon_light_normal.xml"
     },
     {
         "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
@@ -24,12 +24,12 @@
         "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\color\\abc_background_cache_hint_selector_material_light.xml"
     },
     {
-        "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_btn_unelevated_state_list_anim.xml.flat",
-        "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\fc985dea26f22db9c018c4e482ecbe96\\res\\animator\\mtrl_btn_unelevated_state_list_anim.xml"
-    },
-    {
         "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\drawable-mdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_btn_unelevated_state_list_anim.xml.flat",
+        "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\fc985dea26f22db9c018c4e482ecbe96\\res\\animator\\mtrl_btn_unelevated_state_list_anim.xml"
     },
     {
         "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_menu_selectall_mtrl_alpha.png.flat",
@@ -40,12 +40,12 @@
         "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\6a7dc073c0edb3026f526dd32eb33108\\res\\drawable-xhdpi-v4\\common_google_signin_btn_icon_light_normal_background.9.png"
     },
     {
-        "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_edit_text_material.xml.flat",
-        "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\drawable-v21\\abc_edit_text_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\layout-sw600dp-v13_mtrl_layout_snackbar.xml.flat",
         "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\fc985dea26f22db9c018c4e482ecbe96\\res\\layout-sw600dp-v13\\mtrl_layout_snackbar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_abc_edit_text_material.xml.flat",
+        "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\drawable-v21\\abc_edit_text_material.xml"
     },
     {
         "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_design_ic_visibility_off.png.flat",
@@ -68,12 +68,12 @@
         "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
     },
     {
-        "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_go_search_api_material.xml.flat",
-        "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\drawable\\abc_ic_go_search_api_material.xml"
-    },
-    {
         "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item_header.xml.flat",
         "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\fc985dea26f22db9c018c4e482ecbe96\\res\\layout\\design_navigation_item_header.xml"
+    },
+    {
+        "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_ic_go_search_api_material.xml.flat",
+        "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\drawable\\abc_ic_go_search_api_material.xml"
     },
     {
         "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\layout-watch-v20_abc_alert_dialog_button_bar_material.xml.flat",
@@ -84,20 +84,20 @@
         "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\layout\\abc_screen_toolbar.xml"
     },
     {
-        "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\drawable-xhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
-    },
-    {
         "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_design_ic_visibility.png.flat",
         "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\fc985dea26f22db9c018c4e482ecbe96\\res\\drawable-xxhdpi-v4\\design_ic_visibility.png"
     },
     {
-        "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_chip_state_list_anim.xml.flat",
-        "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\fc985dea26f22db9c018c4e482ecbe96\\res\\animator\\mtrl_chip_state_list_anim.xml"
+        "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_primary_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\drawable-xhdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png"
     },
     {
         "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_btn_checkable.xml.flat",
         "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\color-v23\\abc_tint_btn_checkable.xml"
+    },
+    {
+        "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\animator_mtrl_chip_state_list_anim.xml.flat",
+        "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\fc985dea26f22db9c018c4e482ecbe96\\res\\animator\\mtrl_chip_state_list_anim.xml"
     },
     {
         "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_design_bottom_navigation_item_background.xml.flat",
@@ -136,24 +136,24 @@
         "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\design-28.0.0.aar\\fc985dea26f22db9c018c4e482ecbe96\\res\\animator\\mtrl_fab_show_motion_spec.xml"
     },
     {
-        "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
-        "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\drawable-xxhdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
+        "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
+        "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
     },
     {
         "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
         "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\drawable-xxxhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
     {
-        "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_btn_switch_to_on_mtrl_00001.9.png.flat",
-        "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\drawable-mdpi-v4\\abc_btn_switch_to_on_mtrl_00001.9.png"
-    },
-    {
-        "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_grow_fade_in_from_bottom.xml.flat",
-        "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+        "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_text_select_handle_middle_mtrl_dark.png.flat",
+        "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\drawable-xxhdpi-v4\\abc_text_select_handle_middle_mtrl_dark.png"
     },
     {
         "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-hdpi-v17_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_grow_fade_in_from_bottom.xml.flat",
+        "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
         "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_ic_arrow_down_24dp.png.flat",
@@ -196,12 +196,12 @@
         "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\color-v23\\abc_tint_default.xml"
     },
     {
-        "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_full_open_on_phone.png.flat",
-        "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\6a7dc073c0edb3026f526dd32eb33108\\res\\drawable-hdpi-v4\\common_full_open_on_phone.png"
-    },
-    {
         "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-watch-v20_abc_dialog_material_background.xml.flat",
         "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\drawable-watch-v20\\abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_full_open_on_phone.png.flat",
+        "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\6a7dc073c0edb3026f526dd32eb33108\\res\\drawable-hdpi-v4\\common_full_open_on_phone.png"
     },
     {
         "merged": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\res\\merged\\debug\\drawable_common_google_signin_btn_icon_light_focused.xml.flat",

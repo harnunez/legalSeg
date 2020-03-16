@@ -59,6 +59,7 @@ public class SelectUserActivity extends AppCompatActivity {
             initProperties();
         }else {
             checkExistCredentialUserLogued();
+            executeFAB();
         }
     }
 
@@ -71,15 +72,7 @@ public class SelectUserActivity extends AppCompatActivity {
         gridView = findViewById(R.id.grid_view_bills);
 
         //Floating action buttons
-        fabMenu = findViewById(R.id.groupfab);
-        fabMenu.setIconAnimated(false);
-
-        fabSetting =  findViewById(R.id.group_fabSetting);
-        fabPower = findViewById(R.id.group_fabpower);
-
-        fabMenu.setOnClickListener(onclickFab());
-        fabSetting.setOnClickListener(onclickFab());
-        fabPower.setOnClickListener(onclickFab());
+        executeFAB();
 
         List<ItemObject> allItems = getAllItemObject();
         adapterGridView adapterGridView = new adapterGridView(this, allItems);
@@ -121,6 +114,19 @@ public class SelectUserActivity extends AppCompatActivity {
         };
     }
 
+    private void executeFAB(){
+
+        fabMenu = findViewById(R.id.groupfab);
+        fabMenu.setIconAnimated(false);
+
+        fabSetting =  findViewById(R.id.group_fabSetting);
+        fabPower = findViewById(R.id.group_fabpower);
+
+        fabMenu.setOnClickListener(onclickFab());
+        fabSetting.setOnClickListener(onclickFab());
+        fabPower.setOnClickListener(onclickFab());
+
+    }
 
     private void shoutDownPowerFAB(){
 
