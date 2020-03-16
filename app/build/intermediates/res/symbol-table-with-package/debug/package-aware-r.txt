@@ -1219,6 +1219,7 @@ drawable fab_add
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_arrow_down_24dp
+drawable ic_fabclose
 drawable ic_launcher_background
 drawable ic_menufab
 drawable ic_mtrl_chip_checked_black

@@ -62,6 +62,7 @@ public class SelectUserActivity extends AppCompatActivity {
         }
     }
 
+
     // Init properties
     private void initProperties() {
 
@@ -71,9 +72,12 @@ public class SelectUserActivity extends AppCompatActivity {
 
         //Floating action buttons
         fabMenu = findViewById(R.id.groupfab);
+        fabMenu.setIconAnimated(false);
+
         fabSetting =  findViewById(R.id.group_fabSetting);
         fabPower = findViewById(R.id.group_fabpower);
 
+        fabMenu.setOnClickListener(onclickFab());
         fabSetting.setOnClickListener(onclickFab());
         fabPower.setOnClickListener(onclickFab());
 
@@ -96,9 +100,11 @@ public class SelectUserActivity extends AppCompatActivity {
     }
 
     private View.OnClickListener onclickFab(){
+
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if(v==fabSetting){
                     fabMenu.close(true);
                     String valSett="settingsFragment";
@@ -114,6 +120,7 @@ public class SelectUserActivity extends AppCompatActivity {
             }
         };
     }
+
 
     private void shoutDownPowerFAB(){
 

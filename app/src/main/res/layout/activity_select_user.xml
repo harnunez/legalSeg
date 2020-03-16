@@ -67,10 +67,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
+        app:menu_colorNormal="@android:color/transparent"
         app:menu_icon="@drawable/ic_menufab"
-        app:menu_colorNormal="@android:color/white"
-        app:menu_shadowColor="@android:color/white"
-        app:menu_fab_show_animation="@anim/fab_slide_in_from_left"
+        app:menu_showShadow="false"
         >
 
 
@@ -79,6 +78,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_powerfab"
+            app:fab_colorNormal="@android:color/transparent"
+            app:fab_showShadow="false"
 
         />
 
@@ -87,6 +88,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_settingsfab"
+            app:fab_colorNormal="@android:color/transparent"
+            app:fab_showShadow="false"
 
         />
 
