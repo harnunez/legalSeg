@@ -11,7 +11,7 @@
         android:id="@+id/switch_alarm"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Sonido de alarma"
+        android:text="@string/fab_soundcustom"
         android:textSize="22sp"
         android:gravity="left"/>
 

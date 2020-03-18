@@ -60,7 +60,7 @@ public class HomeActivity extends AppCompatActivity {
         inHome = findViewById(R.id.ingresar_btn);
         outHome = findViewById(R.id.salir_btn);
         shutDown = findViewById(R.id.icon_shut_down);
-        userName.setText("Hola " + useNameSelect);
+        userName.setText(getResources().getString(R.string.user_inicial)+ " " + useNameSelect);
     }
 
     private void executeActionButtons() {

@@ -11,7 +11,7 @@
     <string name="name_select_user">Nombre</string>
     <string name="imageViewGrid">imageViewGrid</string>
     <string name="button_shut_down">button_shut_down</string>
-    <string name="TextUserNameSelected">Hola</string>
+    <string name="TextUserName_Selected">Hola</string>
     <string name="text_description_user_home">¿Qué vas a hacer hoy?</string>
     <string name="salir_tv">Salir</string>
     <string name="ingresar_btn">ingresar_btn</string>
@@ -70,10 +70,14 @@
     <string name="no_message">No</string>
 
     <string name="message_end">Gracias por confiar en nosotros.</string>
-    <string name="message_end_title"> </string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="message_end_title" />
+
+    <string name="user_inicial">Hola</string>
+
+    <string name="fab_soundcustom">Sonido de alarma</string>
 
 
 </resources>

@@ -1636,7 +1636,7 @@ raw alarm
 raw alarm_alternative
 string BackgoundIV
 string LogoImageView
-string TextUserNameSelected
+string TextUserName_Selected
 string Title_Splash
 string User
 string abc_action_bar_home_description
@@ -1714,6 +1714,7 @@ string error_default
 string error_location
 string error_login
 string expand_button_title
+string fab_soundcustom
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string hello_blank_fragment
@@ -1755,6 +1756,7 @@ string status_bar_notification_info_overflow
 string summary_collapsed_preference_list
 string text_description_user_home
 string title_select_user
+string user_inicial
 string v7_preference_off
 string v7_preference_on
 string warning_connection

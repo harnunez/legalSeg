@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/antenna_medium"
-        android:text="@string/TextUserNameSelected"
+        android:text="@string/user_inicial"
         android:textAlignment="textStart"
         android:textSize="21sp"
         app:layout_constraintHorizontal_bias="0.196"
