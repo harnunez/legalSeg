@@ -13,7 +13,7 @@
     <string name="complete_fields">Fill the form and try again</string>
     <string name="complete_password_field">Please, enter your password</string>
     <string name="complete_user_field">Please, enter your username</string>
-    <string name="description_message">In a few minutes our operators will assist you.One moment please</string>
+    <string name="description_message">In a few minutes our operators will assist you. One moment please</string>
     <string name="error_connection">Something went wrong. Please again try later</string>
     <string name="error_default">Something went wrong.Please try later</string>
     <string name="error_location">We can`t trace your location right now, please try again</string>
