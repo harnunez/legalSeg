@@ -78,6 +78,6 @@
     <string name="user_inicial">Hola</string>
 
     <string name="fab_soundcustom">Sonido de alarma</string>
-
+    <string name="toolbar_Title">Configuración</string>
 
 </resources>

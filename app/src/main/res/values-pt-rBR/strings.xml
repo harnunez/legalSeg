@@ -30,7 +30,7 @@
     <string name="splash_caption">"Um produto de legal security "</string>
     <string name="text_description_user_home">Que vai fazer hoje?</string>
     <string name="popup_logout">Deseja fechar sessão</string>
-    <string name="password">senha</string>
+    <string name="password">Senha</string>
     <string name="notification_title_alert">Alerta</string>
     <string name="notification_title">"Te informamos que "</string>
     <string name="no_message">Não</string>
@@ -55,4 +55,5 @@
     <string name="LogoImageView">LogoImageView</string>
     <string name="message_end_title" />
     <string name="fab_soundcustom">Som de alarme</string>
+    <string name="toolbar_Title">Configuração</string>
 </resources>

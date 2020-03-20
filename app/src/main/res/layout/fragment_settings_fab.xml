@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:text="@string/fab_soundcustom"
         android:textSize="22sp"
+        android:layout_marginLeft="10dp"
         android:gravity="left"/>
 
 

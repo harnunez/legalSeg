@@ -4,13 +4,17 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.R;
@@ -130,8 +134,15 @@ public class SelectUserActivity extends AppCompatActivity {
 
     private void shoutDownPowerFAB(){
 
+        TextView aTv = new TextView(this);
+        aTv.setGravity(Gravity.CENTER);
+        aTv.setTextSize(20);
+        aTv.setTextColor(Color.WHITE);
+        aTv.setTypeface(null, Typeface.BOLD);
+        aTv.setText(getResources().getString( R.string.warning_title ));
+
         AlertDialog.Builder builder = new AlertDialog.Builder(SelectUserActivity.this)
-                .setTitle(getResources().getString( R.string.warning_title ))
+                .setCustomTitle(aTv)
                 .setMessage(getResources().getString( R.string.popup_logout ))
                 .setPositiveButton(getResources().getString(R.string.yes_message), new DialogInterface.OnClickListener() {
                     @Override

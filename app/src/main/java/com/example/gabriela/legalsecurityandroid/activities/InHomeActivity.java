@@ -13,6 +13,8 @@ import android.content.ServiceConnection;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.pm.ProviderInfo;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
@@ -33,6 +35,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -648,8 +651,15 @@ public class InHomeActivity extends AppCompatActivity {
     private void popupAppRequest(){
         if(timerActive){ finishTimer(); }
 
+        TextView aTv = new TextView(this);
+        aTv.setGravity(Gravity.CENTER);
+        aTv.setTextSize(20);
+        aTv.setTextColor(Color.WHITE);
+        aTv.setTypeface(null, Typeface.BOLD);
+        aTv.setText(getResources().getString( R.string.warning_title ));
+
         AlertDialog.Builder builder = new AlertDialog.Builder(InHomeActivity.this)
-                .setTitle( getResources().getString( R.string.warning_title ) )
+                .setCustomTitle(aTv)
                 .setMessage( getResources().getString( R.string.popup_message ))
                 .setPositiveButton( getResources().getString( R.string.yes_message ), new DialogInterface.OnClickListener() {
                     @Override
@@ -677,8 +687,16 @@ public class InHomeActivity extends AppCompatActivity {
     }
 
     private void popupShoutDown(){
+
+        TextView aTv = new TextView(this);
+        aTv.setGravity(Gravity.CENTER);
+        aTv.setTextSize(20);
+        aTv.setTextColor(Color.WHITE);
+        aTv.setTypeface(null, Typeface.BOLD);
+        aTv.setText(getResources().getString( R.string.warning_title ));
+
         AlertDialog.Builder builder = new AlertDialog.Builder(InHomeActivity.this)
-                .setTitle( getResources().getString( R.string.warning_title ) )
+                .setCustomTitle(aTv)
                 .setMessage( getResources().getString( R.string.popup_shutdown ))
                 .setPositiveButton( getResources().getString( R.string.yes_message ), new DialogInterface.OnClickListener() {
                     @Override

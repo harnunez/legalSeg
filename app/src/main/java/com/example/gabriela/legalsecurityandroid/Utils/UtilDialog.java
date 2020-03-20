@@ -3,8 +3,12 @@ package com.example.gabriela.legalsecurityandroid.Utils;
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
+import android.view.Gravity;
+import android.widget.TextView;
 
 import com.example.gabriela.legalsecurityandroid.R;
 import com.example.gabriela.legalsecurityandroid.activities.InHomeActivity;
@@ -35,9 +39,16 @@ public class UtilDialog {
     }
 
     public static void warningDialog(String message,Context context){
+        TextView aTv = new TextView(context);
+        aTv.setGravity(Gravity.CENTER);
+        aTv.setTextSize(20);
+        aTv.setTextColor(Color.WHITE);
+        aTv.setTypeface(null, Typeface.BOLD);
+        aTv.setText(R.string.warning_title);
+
         dlgWarning  = new AlertDialog.Builder(context)
                 .setMessage(message)
-                .setTitle(R.string.warning_title)
+                .setCustomTitle(aTv)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
@@ -53,9 +64,16 @@ public class UtilDialog {
     }
 
     public static void errorDialog(String message, final Context context){
+        TextView aTv = new TextView(context);
+        aTv.setGravity(Gravity.CENTER);
+        aTv.setTextSize(20);
+        aTv.setTextColor(Color.WHITE);
+        aTv.setTypeface(null, Typeface.BOLD);
+        aTv.setText(R.string.warning_title);
+
         dlgError  = new AlertDialog.Builder(context)
                 .setMessage(message)
-                .setTitle(R.string.warning_title)
+                .setCustomTitle(aTv)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
@@ -71,9 +89,16 @@ public class UtilDialog {
         }
     }
     public static void warningOutDialog(String message, final Context context){
+        TextView aTv = new TextView(context);
+        aTv.setGravity(Gravity.CENTER);
+        aTv.setTextSize(20);
+        aTv.setTextColor(Color.WHITE);
+        aTv.setTypeface(null, Typeface.BOLD);
+        aTv.setText(R.string.warning_title);
+
         dlgWarning  = new AlertDialog.Builder(context)
                 .setMessage(message)
-                .setTitle(R.string.warning_title)
+                .setCustomTitle(aTv)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();

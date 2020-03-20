@@ -25,7 +25,7 @@
     <string name="warning_title">Atention</string>
     <string name="yes_message">Yes</string>
     <string name="title_select_user">Choose an user</string>
-    <string name="popup_message">Do you want to cancel?</string>
+    <string name="popup_message">Do you want to cancel the action?</string>
     <string name="popup_shutdown">Do you want to exit the application?</string>
     <string name="salir_btn">Exit</string>
     <string name="salir_tv">Exit</string>
@@ -35,7 +35,7 @@
     <string name="password">Password</string>
     <string name="notification_title_alert">Alert!</string>
     <string name="notification_title">We have to inform you</string>
-    <string name="no_message">Not</string>
+    <string name="no_message">No</string>
     <string name="name_select_user">Name</string>
     <string name="message_strong_succes">Done</string>
     <string name="message_strong_peligro">Suspicious movements detected</string>
@@ -55,4 +55,5 @@
     <string name="LogoImageView">LogoImageView</string>
     <string name="message_end_title" />
     <string name="fab_soundcustom">Alarm sound</string>
+    <string name="toolbar_Title">Settings</string>
 </resources>

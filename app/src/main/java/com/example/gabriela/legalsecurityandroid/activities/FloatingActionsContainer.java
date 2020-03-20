@@ -26,6 +26,7 @@ public class FloatingActionsContainer extends AppCompatActivity {
     private void configureToolbar(){
         Toolbar myToolbar = findViewById(R.id.toolbar_utility);
         setSupportActionBar(myToolbar);
+        getSupportActionBar().setTitle(R.string.toolbar_Title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
