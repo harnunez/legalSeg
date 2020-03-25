@@ -41,7 +41,7 @@
                 android:layout_height="134dp"
                 android:backgroundTint="@color/backgroundColor"
                 android:contentDescription="@string/LogoImageView"
-                app:srcCompat="@drawable/logo3x" />
+                app:srcCompat="@drawable/logo_legal_sat24" />
 
             <TextView
                 android:id="@+id/textView"
