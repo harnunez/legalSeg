@@ -134,15 +134,8 @@ public class SelectUserActivity extends AppCompatActivity {
 
     private void shoutDownPowerFAB(){
 
-        TextView aTv = new TextView(this);
-        aTv.setGravity(Gravity.CENTER);
-        aTv.setTextSize(20);
-        aTv.setTextColor(Color.WHITE);
-        aTv.setTypeface(null, Typeface.BOLD);
-        aTv.setText(getResources().getString( R.string.warning_title ));
-
         AlertDialog.Builder builder = new AlertDialog.Builder(SelectUserActivity.this)
-                .setCustomTitle(aTv)
+                .setTitle(R.string.warning_title)
                 .setMessage(getResources().getString( R.string.popup_logout ))
                 .setPositiveButton(getResources().getString(R.string.yes_message), new DialogInterface.OnClickListener() {
                     @Override

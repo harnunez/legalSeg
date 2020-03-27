@@ -39,16 +39,10 @@ public class UtilDialog {
     }
 
     public static void warningDialog(String message,Context context){
-        TextView aTv = new TextView(context);
-        aTv.setGravity(Gravity.CENTER);
-        aTv.setTextSize(20);
-        aTv.setTextColor(Color.WHITE);
-        aTv.setTypeface(null, Typeface.BOLD);
-        aTv.setText(R.string.warning_title);
 
         dlgWarning  = new AlertDialog.Builder(context)
                 .setMessage(message)
-                .setCustomTitle(aTv)
+                .setTitle(R.string.warning_title)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
@@ -64,16 +58,10 @@ public class UtilDialog {
     }
 
     public static void errorDialog(String message, final Context context){
-        TextView aTv = new TextView(context);
-        aTv.setGravity(Gravity.CENTER);
-        aTv.setTextSize(20);
-        aTv.setTextColor(Color.WHITE);
-        aTv.setTypeface(null, Typeface.BOLD);
-        aTv.setText(R.string.warning_title);
 
         dlgError  = new AlertDialog.Builder(context)
                 .setMessage(message)
-                .setCustomTitle(aTv)
+                .setTitle(R.string.warning_title)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();
@@ -89,16 +77,10 @@ public class UtilDialog {
         }
     }
     public static void warningOutDialog(String message, final Context context){
-        TextView aTv = new TextView(context);
-        aTv.setGravity(Gravity.CENTER);
-        aTv.setTextSize(20);
-        aTv.setTextColor(Color.WHITE);
-        aTv.setTypeface(null, Typeface.BOLD);
-        aTv.setText(R.string.warning_title);
 
         dlgWarning  = new AlertDialog.Builder(context)
                 .setMessage(message)
-                .setCustomTitle(aTv)
+                .setTitle(R.string.warning_title)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         dialog.dismiss();

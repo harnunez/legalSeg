@@ -651,15 +651,8 @@ public class InHomeActivity extends AppCompatActivity {
     private void popupAppRequest(){
         if(timerActive){ finishTimer(); }
 
-        TextView aTv = new TextView(this);
-        aTv.setGravity(Gravity.CENTER);
-        aTv.setTextSize(20);
-        aTv.setTextColor(Color.WHITE);
-        aTv.setTypeface(null, Typeface.BOLD);
-        aTv.setText(getResources().getString( R.string.warning_title ));
-
         AlertDialog.Builder builder = new AlertDialog.Builder(InHomeActivity.this)
-                .setCustomTitle(aTv)
+                .setTitle(R.string.warning_title)
                 .setMessage( getResources().getString( R.string.popup_message ))
                 .setPositiveButton( getResources().getString( R.string.yes_message ), new DialogInterface.OnClickListener() {
                     @Override
@@ -688,15 +681,8 @@ public class InHomeActivity extends AppCompatActivity {
 
     private void popupShoutDown(){
 
-        TextView aTv = new TextView(this);
-        aTv.setGravity(Gravity.CENTER);
-        aTv.setTextSize(20);
-        aTv.setTextColor(Color.WHITE);
-        aTv.setTypeface(null, Typeface.BOLD);
-        aTv.setText(getResources().getString( R.string.warning_title ));
-
         AlertDialog.Builder builder = new AlertDialog.Builder(InHomeActivity.this)
-                .setCustomTitle(aTv)
+                .setTitle(R.string.warning_title)
                 .setMessage( getResources().getString( R.string.popup_shutdown ))
                 .setPositiveButton( getResources().getString( R.string.yes_message ), new DialogInterface.OnClickListener() {
                     @Override
