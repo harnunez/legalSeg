@@ -20,7 +20,7 @@ public abstract class VolleyImplementation {
     protected Context mContext;
 
   //  protected String base_url = "https://legalsat24.com:8443/LegalSecurity";
-    protected String base_url =  "http://10.1.7.0:8080/LegalSecurity";
+    protected String base_url =  "http://10.1.6.226:8080/LegalSecurity";
 
     protected String login_url = base_url + "/loginWS";
     protected String news_url = base_url + "/novedadesWS";
