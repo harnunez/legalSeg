@@ -19,12 +19,18 @@ public abstract class VolleyImplementation {
     private RequestQueue mRequestQueue;
     protected Context mContext;
 
+<<<<<<< HEAD
   //  protected String base_url = "https://legalsat24.com:8443/LegalSecurity";
     protected String base_url =  "http://10.1.6.226:8080/LegalSecurity";
 
+=======
+//    protected String base_url = "https://legalsat24.com:8443/LegalSecurity";
+    protected String base_url =  "http://10.1.6.226:8080/LegalSecurity";
+>>>>>>> devCambios_pushNotification
     protected String login_url = base_url + "/loginWS";
     protected String news_url = base_url + "/novedadesWS";
     protected String event_url = base_url + "/eventosWS";
+    protected String FCM_URL = base_url + "/pushNotify/subscribe";
     private JSONObject mParametros;
 
 

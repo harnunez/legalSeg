@@ -1707,18 +1707,29 @@ string complete_fields
 string complete_password_field
 string complete_user_field
 string cuenta_atras
+string default_web_client_id
 string description_message
 string enter_title_header
 string error_connection
 string error_default
 string error_location
 string error_login
+<<<<<<< HEAD
 string expand_button_title
 string fab_soundcustom
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
+=======
+string fcm_fallback_notification_channel_label
+string firebase_database_url
+string gcm_defaultSenderId
+string google_api_key
+string google_app_id
+string google_crash_reporting_api_key
+string google_storage_bucket
+>>>>>>> devCambios_pushNotification
 string imageViewGrid
 string ingresar_btn
 string iniciar_sesi_n
@@ -1748,6 +1759,7 @@ string path_password_strike_through
 string popup_logout
 string popup_message
 string popup_shutdown
+string project_id
 string salir_btn
 string salir_tv
 string search_menu_title
