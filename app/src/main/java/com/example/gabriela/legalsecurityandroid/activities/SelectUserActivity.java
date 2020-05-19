@@ -7,15 +7,14 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
-<<<<<<< HEAD
+
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
-=======
+
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
->>>>>>> devCambios_pushNotification
+
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -31,15 +30,15 @@ import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
 import com.example.gabriela.legalsecurityandroid.models.LoginUserModel;
 import com.example.gabriela.legalsecurityandroid.services.FCMService;
 import com.example.gabriela.legalsecurityandroid.services.LoginService;
-<<<<<<< HEAD
+
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
-=======
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
->>>>>>> devCambios_pushNotification
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -55,16 +54,15 @@ public class SelectUserActivity extends AppCompatActivity {
     private LoginUserModel userLogued;
     boolean isInit = true;
 
-<<<<<<< HEAD
+
     private FloatingActionMenu fabMenu;
     private FloatingActionButton fabPower;
     private FloatingActionButton fabSetting;
 
     public static final String KEY_SETTINGS_FAB="keySettings";
-=======
+
     private String firebaseToken;
 
->>>>>>> devCambios_pushNotification
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,13 +73,12 @@ public class SelectUserActivity extends AppCompatActivity {
         // Status bar
         // this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-<<<<<<< HEAD
-=======
+
         //Se obtiene el token firebase del dispositivo
         getFirebaseToken();
 
 
->>>>>>> devCambios_pushNotification
+
         // Init set properties
 
         isInit = getIntent().getBooleanExtra("init",true);
@@ -262,7 +259,7 @@ public class SelectUserActivity extends AppCompatActivity {
         loginService.doConnection();
     }
 
-<<<<<<< HEAD
+
     private void cleanPreferencesUserLogued() {
         SharedPreferences preferences = getSharedPreferences("CredentialsUserLogued",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
@@ -273,7 +270,9 @@ public class SelectUserActivity extends AppCompatActivity {
     private void backRootActivity() {
         Intent myIntent = new Intent(SelectUserActivity.this, LoginActivity.class);
         startActivity(myIntent);
-=======
+
+    }
+
     private void executeFCMService(){
         FCMService fcmService = new FCMService(this, new doConnectionEvent() {
             @Override
@@ -307,6 +306,6 @@ public class SelectUserActivity extends AppCompatActivity {
                         }
                     }
                 });
->>>>>>> devCambios_pushNotification
+
     }
 }

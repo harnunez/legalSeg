@@ -4,11 +4,7 @@
             "outputFile": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
                 {
-<<<<<<< HEAD
-                    "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ee0d647d98e5f76957a98e6c7784de51\\res\\values-night-v8\\values-night-v8.xml",
-=======
                     "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-28.0.0.aar\\ef2aa2803b3cabc1c028ea50862a20a3\\res\\values-night-v8\\values-night-v8.xml",
->>>>>>> devCambios_pushNotification
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",

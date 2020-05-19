@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="legal-security/app" />
       <module fileurl="file://$PROJECT_DIR$/legal-legal-security.iml" filepath="$PROJECT_DIR$/legal-legal-security.iml" group="legal-security" />
       <module fileurl="file://$PROJECT_DIR$/legal-security.iml" filepath="$PROJECT_DIR$/legal-security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/legal-security-app.iml" filepath="$PROJECT_DIR$/app/legal-security-app.iml" group="legal-security/app" />
+      <module fileurl="file://$PROJECT_DIR$/volley/legal-security-volley.iml" filepath="$PROJECT_DIR$/volley/legal-security-volley.iml" group="legal-security/volley" />
       <module fileurl="file://$PROJECT_DIR$/volley/volley.iml" filepath="$PROJECT_DIR$/volley/volley.iml" group="legal-security/volley" />
     </modules>
   </component>
