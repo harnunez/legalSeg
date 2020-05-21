@@ -79,5 +79,6 @@
 
     <string name="fab_soundcustom">Sonido de alarma</string>
     <string name="toolbar_Title">Configuración</string>
+    <string name="token_FCM" />
 
 </resources>

@@ -1420,6 +1420,7 @@ id progressBar
 id progressBarCircle
 id progress_circular
 id progress_horizontal
+id push_notify
 id radio
 id recycler_view
 id right
@@ -1765,6 +1766,7 @@ string status_bar_notification_info_overflow
 string summary_collapsed_preference_list
 string text_description_user_home
 string title_select_user
+string token_FCM
 string toolbar_Title
 string user_inicial
 string v7_preference_off

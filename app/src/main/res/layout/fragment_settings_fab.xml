@@ -7,14 +7,31 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <android.support.v7.widget.SwitchCompat
-        android:id="@+id/switch_alarm"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/fab_soundcustom"
-        android:textSize="22sp"
-        android:layout_marginLeft="10dp"
-        android:gravity="left"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/switch_alarm"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/fab_soundcustom"
+            android:textSize="22sp"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"/>
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/push_notify"
+            android:layout_marginTop="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Push Notification"
+            android:textSize="22sp"
+            android:layout_marginLeft="10dp"
+            android:gravity="left"/>
+
+    </LinearLayout>
 
 </LinearLayout>

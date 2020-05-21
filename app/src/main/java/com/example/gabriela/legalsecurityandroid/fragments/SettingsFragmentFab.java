@@ -23,7 +23,7 @@ public class SettingsFragmentFab extends Fragment {
 
 
     private SwitchCompat mySwitchAlarm;
-
+    private SwitchCompat pushNotifySwitch;
     /*  public SettingsFragmentFab() {
         // Required empty public constructor
     }*/
@@ -36,42 +36,73 @@ public class SettingsFragmentFab extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_settings_fab, container, false);
 
         mySwitchAlarm = rootView.findViewById(R.id.switch_alarm);
+        pushNotifySwitch = rootView.findViewById(R.id.push_notify);
 
         saveCustomConfiguration();
-
+        pushSaved();
         return rootView;
     }
 
 
-    private void saveCustomConfiguration(){
-        //Save switch state in shared Preferences
-        SharedPreferences sharedPref = getContext().getSharedPreferences("configList", MODE_PRIVATE);
-        mySwitchAlarm.setChecked(sharedPref.getBoolean("soundAlarm", true));
+        private void saveCustomConfiguration(){
+            //Save switch state in shared Preferences
+            SharedPreferences sharedPref = getContext().getSharedPreferences("configList", MODE_PRIVATE);
+            mySwitchAlarm.setChecked(sharedPref.getBoolean("soundAlarm", true));
 
-        mySwitchAlarm.setOnClickListener(new View.OnClickListener() {
+            mySwitchAlarm.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(mySwitchAlarm.isChecked()){
+                        SharedPreferences sharedPref = getContext().getSharedPreferences("configList", MODE_PRIVATE);
+
+                        SharedPreferences.Editor shPrefEditor = sharedPref.edit();
+                        shPrefEditor.putBoolean("soundAlarm",true);
+
+                        shPrefEditor.commit();
+                        mySwitchAlarm.setChecked(true);
+
+                    }else {
+                        SharedPreferences sharedPref = getContext().getSharedPreferences("configList", MODE_PRIVATE);
+
+                        SharedPreferences.Editor shPrefEditor = sharedPref.edit();
+                        shPrefEditor.putBoolean("soundAlarm",false);
+
+                        shPrefEditor.commit();
+                        mySwitchAlarm.setChecked(false);
+                    }
+
+                }
+            });
+
+
+        }
+
+    private void pushSaved(){
+        SharedPreferences sharedPrefNotif = getContext().getSharedPreferences("pushList", MODE_PRIVATE);
+        pushNotifySwitch.setChecked(sharedPrefNotif.getBoolean("pushNtf",true));
+
+        pushNotifySwitch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mySwitchAlarm.isChecked()){
-                    SharedPreferences sharedPref = getContext().getSharedPreferences("configList", MODE_PRIVATE);
-
-                    SharedPreferences.Editor shPrefEditor = sharedPref.edit();
-                    shPrefEditor.putBoolean("soundAlarm",true);
-
-                    shPrefEditor.commit();
-                    mySwitchAlarm.setChecked(true);
-
-                }else {
-                    SharedPreferences sharedPref = getContext().getSharedPreferences("configList", MODE_PRIVATE);
-
-                    SharedPreferences.Editor shPrefEditor = sharedPref.edit();
-                    shPrefEditor.putBoolean("soundAlarm",false);
+                if(pushNotifySwitch.isChecked()){
+                    SharedPreferences sharedPrefNotif = getContext().getSharedPreferences("pushList", MODE_PRIVATE);
+                    SharedPreferences.Editor shPrefEditor = sharedPrefNotif.edit();
+                    shPrefEditor.putBoolean("pushNtf",true);
 
                     shPrefEditor.commit();
-                    mySwitchAlarm.setChecked(false);
+                    pushNotifySwitch.setChecked(true);
                 }
+                else{
+                    SharedPreferences sharedPrefNotif = getContext().getSharedPreferences("pushList", MODE_PRIVATE);
+                    SharedPreferences.Editor shPrefEditor = sharedPrefNotif.edit();
+                    shPrefEditor.putBoolean("pushNtf",false);
 
+                    shPrefEditor.commit();
+                    pushNotifySwitch.setChecked(false);
+                }
             }
         });
+
     }
 
 }

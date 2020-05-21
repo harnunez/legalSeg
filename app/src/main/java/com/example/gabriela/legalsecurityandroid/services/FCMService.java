@@ -17,14 +17,15 @@ public class FCMService extends VolleyImplementation {
         super(_context, _doConnectionEvent);
     }
 
-    public void buildJSONFCM(String token, String idCliente){ //, String device, String UUID, String pushNotification, String cuenta,
+    public void buildJSONFCM(String token, String idCliente,String UUID,String userAccFCM,String pushNotify){ // String pushNotification
 
         Map<String, String> params= new HashMap();
         params.put("token", token);
-      /*  params.put("device", device);
+        params.put("device", "1");
         params.put("identifier", UUID);
-        params.put("cuenta", cuenta);*/
+        params.put("cuenta", userAccFCM);
         params.put("idCliente", idCliente);
+        params.put("pushNotification",pushNotify);
         // this.mParametros = new JSONObject(params);
 
         Log.e("params", new JSONObject(params).toString());

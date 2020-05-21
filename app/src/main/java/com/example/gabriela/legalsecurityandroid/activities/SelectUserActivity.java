@@ -10,6 +10,7 @@ import android.os.Bundle;
 
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.preference.PreferenceManager;
 import android.view.Gravity;
 
 import android.support.annotation.NonNull;
@@ -47,6 +48,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.UUID;
 
 
 public class SelectUserActivity extends AppCompatActivity {
@@ -62,7 +64,8 @@ public class SelectUserActivity extends AppCompatActivity {
     public static final String KEY_SETTINGS_FAB="keySettings";
 
     private String firebaseToken;
-
+    private String uniqueID;
+    private String userAccountFCM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,8 +78,7 @@ public class SelectUserActivity extends AppCompatActivity {
 
 
         //Se obtiene el token firebase del dispositivo
-        getFirebaseToken();
-
+        getUUID();
 
 
         // Init set properties
@@ -105,6 +107,7 @@ public class SelectUserActivity extends AppCompatActivity {
         adapterGridView adapterGridView = new adapterGridView(this, allItems);
         gridView.setAdapter(adapterGridView);
 
+        getFirebaseToken();
         executeFCMService();
 
         executeEvents();
@@ -184,6 +187,8 @@ public class SelectUserActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Toast.makeText(SelectUserActivity.this, "Position: " + position, Toast.LENGTH_SHORT).show();
+                userAccountFCM = userLogued.bills[position];
+                Log.d("USER CUENTA",userAccountFCM);
                 startNewActivity(userLogued.bills[position], userLogued.clientId);
             }
         });
@@ -270,6 +275,33 @@ public class SelectUserActivity extends AppCompatActivity {
     private void backRootActivity() {
         Intent myIntent = new Intent(SelectUserActivity.this, LoginActivity.class);
         startActivity(myIntent);
+    }
+
+    private void getUUID(){
+        uniqueID =UUID.randomUUID().toString();
+        Log.d("USER UUID",uniqueID);
+    }
+
+    private void getFirebaseToken(){
+
+        FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        if (task.isSuccessful()) {
+
+                            firebaseToken = task.getResult().getToken();
+
+                            SharedPreferences preferencesFCMToken = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                            preferencesFCMToken.edit().putString("tokenFCMFirebase", firebaseToken).apply();
+
+                            Log.d("USER TOKEN FIREBASE", firebaseToken);
+                        }else {
+                           Log.d("USER TOKEN FAILED", "NO USER TOKEN");
+                        }
+
+                    }
+                });
 
     }
 
@@ -288,24 +320,18 @@ public class SelectUserActivity extends AppCompatActivity {
             }
         });
 
-        fcmService.buildJSONFCM(firebaseToken,userLogued.clientId);
+        SharedPreferences sharedPref = getSharedPreferences("pushList", MODE_PRIVATE);
+        boolean myboolNotify = sharedPref.getBoolean("pushNtf",false);
+        String valStrBool = String.valueOf(myboolNotify);
+
+
+        SharedPreferences preferencesFCMToken = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String fcmTkn = preferencesFCMToken.getString("tokenFCMFirebase","");
+
+        fcmService.buildJSONFCM(fcmTkn,userLogued.clientId,uniqueID,userAccountFCM,valStrBool);
+        Log.d("USER LOGEDDDD", userLogued.clientId);
+
         fcmService.doConnection();
     }
 
-    private void getFirebaseToken(){
-
-        FirebaseInstanceId.getInstance().getInstanceId()
-                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
-                        if (task.isSuccessful()) {
-                            firebaseToken = task.getResult().getToken();
-                            Log.d("USER TOKEN FIREBASE", firebaseToken);
-                        }else {
-                            Log.d("USER TOKEN FAILED", "NO USER TOKEN");
-                        }
-                    }
-                });
-
-    }
 }
