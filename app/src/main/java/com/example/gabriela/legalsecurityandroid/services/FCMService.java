@@ -22,7 +22,7 @@ public class FCMService extends VolleyImplementation {
         Map<String, String> params= new HashMap();
         params.put("token", token);
         params.put("device", "1");
-        params.put("identifier", UUID);
+        params.put("UUID", UUID);
         params.put("cuenta", userAccFCM);
         params.put("idCliente", idCliente);
         params.put("pushNotification",pushNotify);

@@ -63,9 +63,6 @@ public class SelectUserActivity extends AppCompatActivity {
 
     public static final String KEY_SETTINGS_FAB="keySettings";
 
-    private String firebaseToken;
-    private String uniqueID;
-    private String userAccountFCM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,11 +72,6 @@ public class SelectUserActivity extends AppCompatActivity {
 
         // Status bar
         // this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-
-        //Se obtiene el token firebase del dispositivo
-        getUUID();
-
 
         // Init set properties
 
@@ -106,9 +98,6 @@ public class SelectUserActivity extends AppCompatActivity {
         List<ItemObject> allItems = getAllItemObject();
         adapterGridView adapterGridView = new adapterGridView(this, allItems);
         gridView.setAdapter(adapterGridView);
-
-        getFirebaseToken();
-        executeFCMService();
 
         executeEvents();
     }
@@ -187,8 +176,6 @@ public class SelectUserActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Toast.makeText(SelectUserActivity.this, "Position: " + position, Toast.LENGTH_SHORT).show();
-                userAccountFCM = userLogued.bills[position];
-                Log.d("USER CUENTA",userAccountFCM);
                 startNewActivity(userLogued.bills[position], userLogued.clientId);
             }
         });
@@ -264,7 +251,6 @@ public class SelectUserActivity extends AppCompatActivity {
         loginService.doConnection();
     }
 
-
     private void cleanPreferencesUserLogued() {
         SharedPreferences preferences = getSharedPreferences("CredentialsUserLogued",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
@@ -275,63 +261,6 @@ public class SelectUserActivity extends AppCompatActivity {
     private void backRootActivity() {
         Intent myIntent = new Intent(SelectUserActivity.this, LoginActivity.class);
         startActivity(myIntent);
-    }
-
-    private void getUUID(){
-        uniqueID =UUID.randomUUID().toString();
-        Log.d("USER UUID",uniqueID);
-    }
-
-    private void getFirebaseToken(){
-
-        FirebaseInstanceId.getInstance().getInstanceId()
-                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
-                        if (task.isSuccessful()) {
-
-                            firebaseToken = task.getResult().getToken();
-
-                            SharedPreferences preferencesFCMToken = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-                            preferencesFCMToken.edit().putString("tokenFCMFirebase", firebaseToken).apply();
-
-                            Log.d("USER TOKEN FIREBASE", firebaseToken);
-                        }else {
-                           Log.d("USER TOKEN FAILED", "NO USER TOKEN");
-                        }
-
-                    }
-                });
-
-    }
-
-    private void executeFCMService(){
-        FCMService fcmService = new FCMService(this, new doConnectionEvent() {
-            @Override
-            public void onOk(JSONObject response) {
-                Gson gson = new GsonBuilder().create();
-                Log.d("FCM SUCCESS","Se envio correctamente los parametros");
-            }
-
-            @Override
-            public void onError(VolleyError error) {
-
-                Log.d("FCM FAILED","No se envio los parametros");
-            }
-        });
-
-        SharedPreferences sharedPref = getSharedPreferences("pushList", MODE_PRIVATE);
-        boolean myboolNotify = sharedPref.getBoolean("pushNtf",false);
-        String valStrBool = String.valueOf(myboolNotify);
-
-
-        SharedPreferences preferencesFCMToken = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        String fcmTkn = preferencesFCMToken.getString("tokenFCMFirebase","");
-
-        fcmService.buildJSONFCM(fcmTkn,userLogued.clientId,uniqueID,userAccountFCM,valStrBool);
-        Log.d("USER LOGEDDDD", userLogued.clientId);
-
-        fcmService.doConnection();
     }
 
 }

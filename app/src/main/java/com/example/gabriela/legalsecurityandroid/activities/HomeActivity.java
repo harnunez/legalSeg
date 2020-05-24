@@ -13,17 +13,23 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.preference.PreferenceManager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.VolleyError;
 import com.example.gabriela.legalsecurityandroid.Constants.Constants;
 import com.example.gabriela.legalsecurityandroid.R;
 import com.example.gabriela.legalsecurityandroid.Utils.Util;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilDialog;
 import com.example.gabriela.legalsecurityandroid.Utils.UtilNetwork;
+import com.example.gabriela.legalsecurityandroid.interfaces.doConnectionEvent;
+import com.example.gabriela.legalsecurityandroid.models.LoginUserModel;
+import com.example.gabriela.legalsecurityandroid.services.FCMService;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
@@ -32,6 +38,14 @@ import com.google.android.gms.location.LocationSettingsResponse;
 import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import org.json.JSONObject;
+
+import java.util.UUID;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -45,6 +59,11 @@ public class HomeActivity extends AppCompatActivity {
     private String eventSelected;
     private boolean runningServiceCall = false;
 
+    //Fields FCM Service
+    private String firebaseToken;
+    private String uniqueID;
+    private String userAccountFCM;
+
     private GoogleApiClient mGoogleApiClient;
 
     @Override
@@ -53,6 +72,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView( R.layout.activity_home );
         initProperties();
         initGoogleAPIClient();
+        executeMethodsFCMService();
         executeActionButtons();
     }
 
@@ -64,6 +84,7 @@ public class HomeActivity extends AppCompatActivity {
         outHome = findViewById(R.id.salir_btn);
         shutDown = findViewById(R.id.icon_shut_down);
         userName.setText(getResources().getString(R.string.user_inicial)+ " " + useNameSelect);
+
     }
 
     private void executeActionButtons() {
@@ -72,6 +93,11 @@ public class HomeActivity extends AppCompatActivity {
         executeShutDown();
     }
 
+    private void executeMethodsFCMService(){
+        getUUID();
+        getFirebaseToken();
+        executeFCMService();
+    }
     private void checkAppLocationPermisson() {
         if (Util.checkCurrentAndroidVersion()) {
             requestPermissions( new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, Constants.ACCESS_FINE_LOCATION_CODE );
@@ -254,6 +280,63 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
         } );
+    }
+
+    private void getUUID(){
+        uniqueID = UUID.randomUUID().toString();
+        Log.d("USER UUID",uniqueID);
+    }
+
+    private void getFirebaseToken(){
+
+        FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        if (task.isSuccessful()) {
+
+                            firebaseToken = task.getResult().getToken();
+
+                            SharedPreferences preferencesFCMToken = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                            preferencesFCMToken.edit().putString("tokenFCMFirebase", firebaseToken).apply();
+
+                            Log.d("USER TOKEN FIREBASE", firebaseToken);
+                        }else {
+                            Log.d("USER TOKEN FAILED", "NO USER TOKEN");
+                        }
+
+                    }
+                });
+
+    }
+
+    private void executeFCMService(){
+        FCMService fcmService = new FCMService(this, new doConnectionEvent() {
+            @Override
+            public void onOk(JSONObject response) {
+                Gson gson = new GsonBuilder().create();
+                Log.d("FCM SUCCESS","Se envio correctamente los parametros");
+            }
+
+            @Override
+            public void onError(VolleyError error) {
+
+                Log.d("FCM FAILED","No se envio los parametros");
+            }
+        });
+
+        SharedPreferences sharedPref = getSharedPreferences("pushList", MODE_PRIVATE);
+        boolean myboolNotify = sharedPref.getBoolean("pushNtf",false);
+        String valStrBool = String.valueOf(myboolNotify);
+
+
+        SharedPreferences preferencesFCMToken = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        String fcmTkn = preferencesFCMToken.getString("tokenFCMFirebase","");
+
+        fcmService.buildJSONFCM(fcmTkn,idCliente,uniqueID,useNameSelect,valStrBool);
+        Log.d("USER LOGEDDDD", idCliente);
+
+        fcmService.doConnection();
     }
 
 }

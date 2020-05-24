@@ -44,38 +44,38 @@ public class SettingsFragmentFab extends Fragment {
     }
 
 
-        private void saveCustomConfiguration(){
-            //Save switch state in shared Preferences
-            SharedPreferences sharedPref = getContext().getSharedPreferences("configList", MODE_PRIVATE);
-            mySwitchAlarm.setChecked(sharedPref.getBoolean("soundAlarm", true));
+    private void saveCustomConfiguration(){
+        //Save switch state in shared Preferences
+        SharedPreferences sharedPref = getContext().getSharedPreferences("configList", MODE_PRIVATE);
+        mySwitchAlarm.setChecked(sharedPref.getBoolean("soundAlarm", true));
 
-            mySwitchAlarm.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if(mySwitchAlarm.isChecked()){
-                        SharedPreferences sharedPref = getContext().getSharedPreferences("configList", MODE_PRIVATE);
+        mySwitchAlarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mySwitchAlarm.isChecked()){
+                    SharedPreferences sharedPref = getContext().getSharedPreferences("configList", MODE_PRIVATE);
 
-                        SharedPreferences.Editor shPrefEditor = sharedPref.edit();
-                        shPrefEditor.putBoolean("soundAlarm",true);
+                    SharedPreferences.Editor shPrefEditor = sharedPref.edit();
+                    shPrefEditor.putBoolean("soundAlarm",true);
 
-                        shPrefEditor.commit();
-                        mySwitchAlarm.setChecked(true);
+                    shPrefEditor.commit();
+                    mySwitchAlarm.setChecked(true);
 
-                    }else {
-                        SharedPreferences sharedPref = getContext().getSharedPreferences("configList", MODE_PRIVATE);
+                }else {
+                    SharedPreferences sharedPref = getContext().getSharedPreferences("configList", MODE_PRIVATE);
 
-                        SharedPreferences.Editor shPrefEditor = sharedPref.edit();
-                        shPrefEditor.putBoolean("soundAlarm",false);
+                    SharedPreferences.Editor shPrefEditor = sharedPref.edit();
+                    shPrefEditor.putBoolean("soundAlarm",false);
 
-                        shPrefEditor.commit();
-                        mySwitchAlarm.setChecked(false);
-                    }
-
+                    shPrefEditor.commit();
+                    mySwitchAlarm.setChecked(false);
                 }
-            });
+
+            }
+        });
 
 
-        }
+    }
 
     private void pushSaved(){
         SharedPreferences sharedPrefNotif = getContext().getSharedPreferences("pushList", MODE_PRIVATE);
