@@ -327,13 +327,13 @@ public class HomeActivity extends AppCompatActivity {
 
         SharedPreferences sharedPref = getSharedPreferences("pushList", MODE_PRIVATE);
         boolean myboolNotify = sharedPref.getBoolean("pushNtf",false);
-        String valStrBool = String.valueOf(myboolNotify);
+
 
 
         SharedPreferences preferencesFCMToken = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         String fcmTkn = preferencesFCMToken.getString("tokenFCMFirebase","");
 
-        fcmService.buildJSONFCM(fcmTkn,idCliente,uniqueID,useNameSelect,valStrBool);
+        fcmService.buildJSONFCM(fcmTkn,idCliente,uniqueID,useNameSelect,myboolNotify);
         Log.d("USER LOGEDDDD", idCliente);
 
         fcmService.doConnection();
