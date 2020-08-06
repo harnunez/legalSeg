@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Harnefer_Nunez\\workspace\\legal\\legal-security\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rHK\\values-zh-rHK.xml",
+            "outputFile": "C:\\Users\\Harnefer_Nunez\\Desktop\\workspace-private\\legalSeg\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh-rHK\\values-zh-rHK.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Harnefer_Nunez\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-16.0.1.aar\\65cdaaf9b5e144595ff3c5c705856a1b\\res\\values-zh-rHK\\values.xml",
